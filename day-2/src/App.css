@@ -2,6 +2,23 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+#c{
+  height: 50px;
+  width: 100px;
+  border: 1px solid red;
+}
+#btn{
+  height: 50px;
+  width: 100px;
+  border: none;
+  margin: 2px;
+  font-size: 25px;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   scroll-behavior: smooth;
 }
 #main-counter{
