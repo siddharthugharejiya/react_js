@@ -11,10 +11,11 @@ function Counter(){
    
   }
   function countdecrease(){
-    setstate(state-a)
-    if(state==0)
+      if(state!=0)
         {
-            alert("please value enter positive");
+            setstate(state-a)
+            // alert("please value enter positive");
+      
            
         }
   }

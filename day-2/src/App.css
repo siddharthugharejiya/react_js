@@ -4,9 +4,15 @@
   box-sizing: border-box;
 }
 #c{
-  height: 50px;
+  height: 100px;
   width: 100px;
-  border: 1px solid red;
+  border-radius: 50%;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  background-color: orange;
 }
 #btn{
   height: 50px;
