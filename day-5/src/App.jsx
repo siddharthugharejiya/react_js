@@ -1,14 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import "./Counter.jsx"
-import Counter from './Counter.jsx';
+import Login_Signup from './Componets/Login_Signup';
 
 function App() {
   return (
-    <div>
-   
-      <Counter/>
-    </div>
+  <Login_Signup/>
   );
 }
 
