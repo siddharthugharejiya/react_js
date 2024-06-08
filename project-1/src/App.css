@@ -1,38 +1,165 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+	--d: 2500ms;
+	--angle: 90deg;
+	--gradX: 100%;
+	--gradY: 50%;
+	--c1: rgba(168, 239, 255, 1);
+	--c2: rgba(168, 239, 255, 0.1);
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 90deg;
+  inherits: true;
+}
+
+@property --gradX {
+  syntax: '<percentage>';
+  initial-value: 50%;
+  inherits: true;
+}
+
+@property --gradY {
+  syntax: '<percentage>';
+  initial-value: 0%;
+  inherits: true;
+}
+.main{
+  height: 100vh;
+  width: 100%;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: black;
+  /* align-items: center; */
+}
+.show{
+  height: 50vh;
+  color: white;
+  width: 100%;
+  background: black;
+  /* border: 1px solid red; */
+}
+.s{
+  height: 40vh;
+  width:100%;
+  /* border: 1px solid blue; */
+
+}
+.head{
+  height: 10vh;
+  width: 100%;
+  /* border: 1px solid red; */
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+img{
+  height: 300px; /* Adjust based on your needs */
+  width: 200px; /* Adjust based on your needs */
+  background-color: #000; /* Default background */
+  position: relative;
+  overflow: hidden;
+  background-size: cover; /* Ensure the image covers the div */
+  background-repeat: no-repeat; /* No repetition of the image */
+  transition: background 0.5s ease; /* Smooth transition for background changes */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Shine appears on hover */
+img:hover:after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%; /* Start from the top-left */
+  height: 200%; /* Larger to ensure complete coverage during the animation */
+  width: 200%; /* Larger to ensure complete coverage during the animation */
+  background: linear-gradient(to bottom right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+  animation: slide 1s forwards; /* Use 'forwards' to retain the last frame */
+  filter: blur(33px);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@keyframes slide {
+  from { top: -100%; left: -100%; }
+  to { top: 100%; left: 100%; }
+}
+
+.sec{
+  height: 70vh;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+  justify-content:center;
+  align-items: center;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  background: black;
+}
+.pic{
+  height: 20vh;
+  width: 100%;
+  /* border: 1px solid red; */
+}
+.pic img{
+  height: 100%;
+  width: 20%;
+}
+.h{
+  height: 50vh;
+  width: 100%;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+input{
+  font-size: 14px;
+  padding: 10px 40px;
+}
+.box {
+  margin: 13px;
+	/* font-size: 3vw; */
+	/* margin: max(1rem, 3vw); */
+	border: 0.35rem solid;
+	padding: 1vw;
+	border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+	animation: borderRotate var(--d) linear infinite forwards;
 }
 
-.App-link {
-  color: #61dafb;
+.box:nth-child(2) {
+	border-image: radial-gradient(ellipse at var(--gradX) var(--gradY), var(--c1), var(--c1) 10%, var(--c2) 40%) 30;
+	animation: borderRadial var(--d) linear infinite forwards;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes borderRotate {
+	100% {
+		--angle: 420deg;
+	}
+}
+
+@keyframes borderRadial {
+	20% {
+		--gradX: 100%;
+		--gradY: 50%;
+	}
+	40% {
+		--gradX: 100%;
+		--gradY: 100%;
+	}
+	60% {
+		--gradX: 50%;
+		--gradY: 100%;
+	}
+	80% {
+		--gradX: 0%;
+		--gradY: 50%;
+	}
+	100% {
+		--gradX: 50%;
+		--gradY: 0%;
+	}
 }
