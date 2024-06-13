@@ -1,0 +1,13 @@
+.main{
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+  flex-direction: column;
+  margin: 9px;
+}
+input{
+  width: 25% !important;
+}
