@@ -5,7 +5,7 @@ import Count from './Componets/Count'
 
 function App() {
   return (
-    <div>
+    <div className='a'>
      <Project/>
      <Count/>
      </div>

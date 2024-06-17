@@ -21,7 +21,7 @@ return(
   <div>
     <div className="main">
     <input type="text" name="pro_name" placeholder="product_Name" className="form-control" onChange={change} />
-    <input type="text" name="pro_img" placeholder="product_Img" className="form-control" onChange={change}/>
+    <input type="text" name="pro_img" placeholder="product_Img" className="form-control" onChange={change} style={{height:"300px"}}/>
     <button className="btn btn-danger" onClick={add}>add</button>
     {
     arr.map((e)=>{

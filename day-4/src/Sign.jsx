@@ -11,10 +11,12 @@ function Sign(){
     setstate(e.target.value);
   }
   console.log(state);
+  // console.log(state);
   function pass(el){
     setpass(el.target.value)
   }
-  console.log(setarr);
+  // console.log(setarr);
+  console.log(passw);
   function add(){
     let obj={
         task:state,
@@ -25,6 +27,7 @@ function Sign(){
     
   }
 
+  // console.log(arr);
 
     return(
         <div>

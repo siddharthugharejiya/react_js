@@ -19,10 +19,10 @@ function Count(){
 //    console.log(state);
    return(
        <div>
-        <div className="d-flex">
-        <h3>{state.up} -  </h3>   <h3> {state.thor}</h3>
+        <div className="d-flex justify-content-center mt-5">
+        <h3>{state.up}  -  </h3>   <h3> {state.thor}</h3>
         </div>
-        <button className="btn btn-danger fs-3 px-4" onClick={increment}>+</button>
+        <button className="btn btn-danger fs-3 px-4 m-3" onClick={increment}>+</button>
         <button className="btn btn-warning fs-3 px-4" onClick={des}>-</button>
     </div>
    )
