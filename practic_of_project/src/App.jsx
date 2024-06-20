@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import "./Component/project"
 import Project from './Component/project';
+import Todolist from './Component/Todolist';
 
 function App() {
   let sub=[
@@ -19,11 +20,13 @@ function App() {
 
   return (
     <div>
-      <Project  uday={uday}   viraj={viraj} p={price} />
+      {/* <Project  uday={uday}   viraj={viraj} p={price} /> */}
  
 
+      <Todolist/>
     </div>
   );
+  
 }
 
 export default App;
