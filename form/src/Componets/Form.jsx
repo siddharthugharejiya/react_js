@@ -18,6 +18,8 @@ function Form() {
     setState({ ...state, [name]: value });
   };
 
+  
+
   const f = (e) => {
     e.preventDefault();
     setarr([...arr, state]);
@@ -69,14 +71,12 @@ function Form() {
                   name="pass"
                   placeholder="Password"
                   onChange={change}
-                  value={state.pass}
-                />
+                  value={state.pass}/>
                 <span id="a" onClick={() => setsee(!see)}>
                   <FontAwesomeIcon icon={see ? faEyeSlash : faEye} />
                 </span>
               </div>
               <button className="btn btn-dark" type="submit">
-                  
                 <span>Submit</span>
               </button>
             </form>
@@ -87,4 +87,4 @@ function Form() {
   );
 }
 
-export default Form;
+export default Form
