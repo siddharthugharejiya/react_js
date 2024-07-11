@@ -1,0 +1,19 @@
+.main{
+  height: 20vh;
+  width: 99%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
+  flex-direction: column;
+  margin: 9px;
+margin-top: 20px;
+}
+.a{
+  text-align: center;
+}
+input{
+  margin: 20px 30px;
+
+  width: 25% !important;
+}

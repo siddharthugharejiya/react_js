@@ -1,0 +1,61 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+.main{
+  height: 100vh;
+  width: 100%;
+  background-image: url(./Componets/Img/space-adventure-game-background-with-neon-moon-rocky-cliffs-modern-illustration-stars-glowing-dark-sky-stone-platforms-hanging-air-alien-planet-surface_76964-208903.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.singup{
+  height: 50px;
+  width: 130px;
+  background-image: url(./Componets/Img/download.webp);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.nav-link{
+   margin-left: 40px;
+}
+.main-text{
+  /* width: 100%; */
+  font-size: 90px;
+  /* border: 1px solid red; */
+  color: white;
+  font-family: "Space Grotesk", sans-serif;
+  text-shadow: 3px 3px 0 #b154f0;
+}
+.aa{
+  height: 60vh;
+  /* border: 1px solid red; */
+}
+.main-image{
+  height: 74vh;
+  width: 100%;
+  background-image: url(./Componets/Img/hero-position-img.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* border: 1px solid red; */
+}
+@media(max-width:992px){
+  .main{
+   height: auto;
+  }
+}
+@media(max-width:576px){
+     .main{
+      height: auto;
+     }
+}
