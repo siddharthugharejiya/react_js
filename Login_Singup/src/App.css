@@ -9,3 +9,60 @@ a{
     text-decoration: none;
     color: black !important;
 }
+
+/* Product.css */
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px 0;
+  }
+  
+  .card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .card-title {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .card-title h3 {
+    margin: 0;
+    font-size: 1.2em;
+  }
+  
+  .card-body {
+    padding: 15px;
+  }
+  
+  .card-body p {
+    margin: 10px 0;
+  }
+  
+  .card-body p:last-child {
+    font-weight: bold;
+    color: #007bff;
+  }
+  

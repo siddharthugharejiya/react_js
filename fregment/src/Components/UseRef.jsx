@@ -40,7 +40,7 @@ function UseRef() {
     } else {
       alert("Please enter a 4-digit OTP");
     }
-  }
+   }
   function genrate() {
     setstate(otp);
   }
@@ -49,7 +49,7 @@ function UseRef() {
       alert(state);
     }
   }, [state]);
-
+/
   return (
     <>
       <input type="text" ref={a} onChange={aa} maxLength={1} />

@@ -16,7 +16,8 @@ function Navbar1() {
             <Link to={"/"}>Home</Link>
             <Link to={"/Login"}>Login</Link>
             <Link to={"/Product"}>Product</Link>
-            <Link to={"/Singlepage"}>Singlepage</Link>
+            <Link to={"/Singup"}>Singup</Link>
+            {/* <Link to={"/Singlepage:id"}>Singlepage</Link> */}
            
            </Nav>
         </Navbar.Collapse>
