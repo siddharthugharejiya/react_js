@@ -4,7 +4,8 @@ import Login from '../Componets/Login'
 import { Route , Routes  } from 'react-router-dom'
 import Product from '../Componets/Product'
 import Singlepage from '../Componets/Singlepage'
-import Singup from '../Componets/Singup'
+// import Singup from '../Componets/Singup'
+import Singup from "../Componets/Singup";
 import PrivateRoute from '../Routes/Private_Com'; 
 const Main_Routes = () => {
   return (
@@ -19,7 +20,7 @@ const Main_Routes = () => {
           
           }></Route>
 
-        <Route path='/Singup' element={<Singup/>}></Route>
+        <Route path='/singup' element={<Singup/>}></Route>
         <Route path='/Product/:id' element={<Singlepage/>}></Route>
     </Routes>
     </div>

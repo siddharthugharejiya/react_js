@@ -5,7 +5,7 @@ const Private_Com = ({ children }) => {
     let isLogin = localStorage.getItem('Login');
     return (
         <>
-            {isLogin === "true" ? children : <Navigate to="/login" />}
+            {isLogin === "true" ? children : <Navigate to="/singup" />}
         </>
     );
 }
