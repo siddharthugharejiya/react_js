@@ -1,0 +1,50 @@
+.main-single {
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 120px;
+  }
+  
+  .card{
+    height: 65vh;
+    width: 100vh;
+    margin-top: -6px;
+  }
+  .image-side img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+  }
+  
+  .main-single-text {
+    max-width: 600px;
+  }
+  
+  .card-body {
+    padding: 10px;
+  }
+  
+  .card-text {
+    margin: 5px 0;
+  }
+  
+  .bb {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+  }
+  
+  button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #f0f0f0;
+  }
+  

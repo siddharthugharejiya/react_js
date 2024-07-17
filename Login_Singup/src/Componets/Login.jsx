@@ -18,10 +18,8 @@ const Login = () => {
 
   const sub = (e) => {
     e.preventDefault();
-    if (login.email === "" || login.password === "") {
-      localStorage.setItem("Login", false);
-    }
-   else if (login.email) {
+   
+    if (login.email && login.password) {
       fetch(`http://localhost:3000/User?email=${login.email}`)
         .then(res => res.json())
         .then((res) => {
