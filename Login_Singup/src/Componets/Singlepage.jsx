@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import "../App.css";
-// import 'font-awesome/css/font-awesome.min.css';  // Make sure you have FontAwesome installed
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import "./Single.css"
+import "./Single.css";
 
 const SinglePage = () => {
   const [state, setState] = useState({});
@@ -42,7 +40,7 @@ const SinglePage = () => {
       </div>
 
       <div className="main-single-text">
-        <div className="card">
+        <div className="card" id='c'>
           <div className="card-body bb">
             <p className="card-text">
               <i className="fa fa-star" style={{ color: "#FFD43B" }}></i>

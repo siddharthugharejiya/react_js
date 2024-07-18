@@ -47,7 +47,7 @@ const Product = () => {
         <div className="row">
           {state.length > 0 ? (
             state.map((el) => (
-              <div className="col-md-6 mb-4 col-sm-12 col-lg-4 col-xl-3" key={el.id}>
+              <div className="col-md-6  col-sm-12 col-lg-4 col-xl-3" key={el.id} style={{marginBottom:"80px"}}>
                 <Link to={`/product/${el.id}`} className="text-decoration-none">
                   <div className="card h-100 w-100">
                     <img

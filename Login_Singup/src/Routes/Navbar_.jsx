@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Navbar1() {
   return (
-    <div className="container-fluid">
+    // <div className="container-fluid">
       <Navbar expand="lg" className='bg-dark'>
         <Container>
           <Navbar.Brand>
@@ -45,7 +45,7 @@ function Navbar1() {
           </Dropdown>
         </Container>
       </Navbar>
-    </div>
+    // </div>
   );
 }
 

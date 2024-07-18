@@ -1,18 +1,6 @@
 {
   "User": [
     {
-      "id": "5d82",
-      "user": "sidhdharth",
-      "email": "sid123@gmail.com",
-      "pass": "123456789"
-    },
-    {
-      "id": "8cc0",
-      "user": "sidhdharth",
-      "email": "sid123@gmail.com",
-      "pass": "123456"
-    },
-    {
       "id": "abd0",
       "user": "sidhdharth",
       "email": "sid123@gmail.com",
@@ -35,6 +23,18 @@
       "user": "sidhdharth",
       "email": "sid123@gmail.com",
       "pass": "123"
+    },
+    {
+      "id": "7176",
+      "user": "sidhdharth",
+      "email": "sid123@gmail.com",
+      "pass": "12345"
+    },
+    {
+      "id": "46c9",
+      "user": "sidhdharth",
+      "email": "sid123@gmail.com",
+      "pass": "123"
     }
   ],
   "product": [
@@ -44,7 +44,7 @@
       "price": 109.95,
       "description": "GALAX Slider 04 Wired Optical Gaming Mouse - GALAX",
       "category": "gaming",
-      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/12_dc57ffaa-3b81-4023-9cb9-c7b48a097369_1000x.jpg?v=1671088147",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/1_1000x.jpg?v=1671088147",
       "rating": {
         "rate": 3.9,
         "count": 120
@@ -52,11 +52,11 @@
     },
     {
       "id": "2",
-      "title": "Mens Casual Premium Slim Fit T-Shirts ",
+      "title": "Mens Casual Premium Slim Fit T-Shirts",
       "price": 22.3,
       "description": "Skullcandy Fix Rapid G Max Dual-Port USB-A And USB-C Adapter",
       "category": "gaming",
-      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/1_9ee49fc8-91e0-4ead-b296-3d5a1fe16728_1000x.jpg?v=1671087825",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/2_1000x.jpg?v=1671087825",
       "rating": {
         "rate": 4.1,
         "count": 259
@@ -68,7 +68,7 @@
       "price": 55.99,
       "description": "Power Advantage Wired Gaming Controller For Xbox",
       "category": "gaming",
-      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/14_1000x.jpg?v=1671087619",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/3_1000x.jpg?v=1671087619",
       "rating": {
         "rate": 4.7,
         "count": 500
@@ -80,7 +80,7 @@
       "price": 15.99,
       "description": "Wireless Bluetooth Gamepad Controller For Switch",
       "category": "gaming",
-      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/17_1000x.jpg?v=1671087264",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/4_1000x.jpg?v=1671087264",
       "rating": {
         "rate": 2.1,
         "count": 430
@@ -88,11 +88,11 @@
     },
     {
       "id": "5",
-      "title": "John Hardy Women's Legends Naga Gold ",
+      "title": "John Hardy Women's Legends Naga Gold",
       "price": 695,
       "description": "Amkette Evo Pro Bluetooth Controller3 EGP3",
       "category": "gaming",
-      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/15_1000x.jpg?v=1671087412",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/5_1000x.jpg?v=1671087412",
       "rating": {
         "rate": 4.6,
         "count": 400
@@ -100,11 +100,11 @@
     },
     {
       "id": "6",
-      "title": "Solid Gold Petite Micropave ",
+      "title": "Solid Gold Petite Micropave",
       "price": 168,
       "description": "Redragon H350 Wired Gaming Headset Dynamic RGB Backlight",
       "category": "gaming",
-      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/5_78f399a1-7bb7-4b5a-9271-17d583dcdb8e_1000x.jpg?v=1671088416",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/6_1000x.jpg?v=1671088416",
       "rating": {
         "rate": 3.9,
         "count": 70
@@ -116,22 +116,166 @@
       "price": 9.99,
       "description": "Thrustmaster Ferrari 458 Spider Racing Wheel",
       "category": "gaming",
-      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/10_33192bd6-786a-4727-9d03-b8fc0ef0ea0f_1000x.jpg?v=1671088770",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/7_1000x.jpg?v=1671088770",
       "rating": {
         "rate": 3,
         "count": 400
       }
     },
     {
-      "id": "7",
-      "title": "White Gold Plated Princess",
-      "price": 9.99,
-      "description": "Thrustmaster Ferrari 458 Spider Racing Wheel",
-      "category": "gaming",
-      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/19_dbfdf2e5-b1a1-48cd-924b-110c05ed1599_1000x.jpg?v=1671088770",
+      "id": "8",
+      "title": "Wireless Bluetooth Earphones",
+      "price": 29.99,
+      "description": "High-quality wireless Bluetooth earphones with noise-cancellation.",
+      "category": "electronics",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/8_1000x.jpg?v=1671088264",
       "rating": {
-        "rate": 3,
-        "count": 400
+        "rate": 4.2,
+        "count": 150
+      }
+    },
+    {
+      "id": "9",
+      "title": "Gaming Keyboard and Mouse Combo",
+      "price": 79.99,
+      "description": "RGB backlit mechanical gaming keyboard with high-precision mouse.",
+      "category": "gaming",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/9_1000x.jpg?v=1671088674",
+      "rating": {
+        "rate": 4.5,
+        "count": 200
+      }
+    },
+    {
+      "id": "10",
+      "title": "Smartwatch with Heart Rate Monitor",
+      "price": 199.99,
+      "description": "Feature-packed smartwatch with heart rate and fitness tracking.",
+      "category": "electronics",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/10_1000x.jpg?v=1671088574",
+      "rating": {
+        "rate": 4.8,
+        "count": 180
+      }
+    },
+    {
+      "id": "11",
+      "title": "Portable Bluetooth Speaker",
+      "price": 49.99,
+      "description": "Compact and powerful Bluetooth speaker with deep bass.",
+      "category": "electronics",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/11_1000x.jpg?v=1671088474",
+      "rating": {
+        "rate": 4.3,
+        "count": 300
+      }
+    },
+    {
+      "id": "12",
+      "title": "Wireless Gaming Headset",
+      "price": 99.99,
+      "description": "High-fidelity wireless gaming headset with surround sound.",
+      "category": "gaming",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/12_1000x.jpg?v=1671088374",
+      "rating": {
+        "rate": 4.4,
+        "count": 250
+      }
+    },
+    {
+      "id": "13",
+      "title": "Ergonomic Office Chair",
+      "price": 299.99,
+      "description": "Comfortable and adjustable ergonomic chair for office use.",
+      "category": "furniture",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/6_8b8e3116-2a23-4b30-a837-e03b6367fd48_1000x.jpg?v=1671087410",
+      "rating": {
+        "rate": 4.6,
+        "count": 100
+      }
+    },
+    {
+      "id": "14",
+      "title": "4K Ultra HD Monitor",
+      "price": 399.99,
+      "description": "Stunning 4K monitor with vibrant colors and sharp details.",
+      "category": "electronics",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/14_1000x.jpg?v=1671088174",
+      "rating": {
+        "rate": 4.7,
+        "count": 80
+      }
+    },
+    {
+      "id": "15",
+      "title": "VR Headset with Controllers",
+      "price": 499.99,
+      "description": "Immersive VR headset with motion controllers for an ultimate experience.",
+      "category": "gaming",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/15_1000x.jpg?v=1671088074",
+      "rating": {
+        "rate": 4.9,
+        "count": 60
+      }
+    },
+    {
+      "id": "16",
+      "title": "Noise-Cancelling Headphones",
+      "price": 199.99,
+      "description": "Over-ear headphones with active noise cancellation and long battery life.",
+      "category": "electronics",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/16_1000x.jpg?v=1671087974",
+      "rating": {
+        "rate": 4.4,
+        "count": 220
+      }
+    },
+    {
+      "id": "17",
+      "title": "Electric Standing Desk",
+      "price": 499.99,
+      "description": "Adjustable electric standing desk with memory settings.",
+      "category": "furniture",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/17_1000x.jpg?v=1671087874",
+      "rating": {
+        "rate": 4.6,
+        "count": 90
+      }
+    },
+    {
+      "id": "18",
+      "title": "Smart Home Security Camera",
+      "price": 129.99,
+      "description": "1080p smart security camera with motion detection and cloud storage.",
+      "category": "electronics",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/18_1000x.jpg?v=1671087774",
+      "rating": {
+        "rate": 4.5,
+        "count": 110
+      }
+    },
+    {
+      "id": "19",
+      "title": "Bluetooth Soundbar",
+      "price": 149.99,
+      "description": "Wireless soundbar with subwoofer for rich audio experience.",
+      "category": "electronics",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/19_1000x.jpg?v=1671087674",
+      "rating": {
+        "rate": 4.3,
+        "count": 130
+      }
+    },
+    {
+      "id": "20",
+      "title": "Smart Thermostat",
+      "price": 199.99,
+      "description": "Smart thermostat with remote control and energy-saving features.",
+      "category": "electronics",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/20_1000x.jpg?v=1671087574",
+      "rating": {
+        "rate": 4.7,
+        "count": 160
       }
     }
   ]
