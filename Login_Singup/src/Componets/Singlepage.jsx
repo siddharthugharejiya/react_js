@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import "../App.css";
 import "./Single.css";
+import  "./Money.css"
 
 const SinglePage = () => {
   const [state, setState] = useState({});
@@ -12,20 +13,7 @@ const SinglePage = () => {
       .then((res) => res.json())
       .then((data) => {
         setState(data);
-      });
-
-    const initCloudZoom = () => {
-      if (window.jQuery) {
-        window.jQuery('.cloud-zoom-big').CloudZoom();
-      } else {
-        console.error('jQuery is required for Cloud Zoom');
-      }
-    };
-
-    setTimeout(() => {
-      initCloudZoom();
-    }, 1000);
-  }, [id]);
+      })})
 
   return (
     <div className='main-single'>
