@@ -1,11 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 // import "bootstrap/dist/css/bootstrap.min.css";
+import "./product.css";
 
 const Product = () => {
   const [state, setState] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [fill, setFill] = useState({
+    gaming: false,
+    electronics: false,
+    furniture: false,
+  });
+  const [money, setMoney] = useState("ASC");
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:3000/product")
@@ -26,47 +34,45 @@ const Product = () => {
       });
   }, []);
 
-  const [fill, setFill] = useState({
-    gaming: false,
-    electronics: false,
-    furniture: false,
-  });
-
-  function filter(e) {
+  const filter = (e) => {
     setFill({
       ...fill,
       [e.target.name]: e.target.checked,
     });
-  }
+  };
 
-  const FillterData = state.filter((el) => {
-    if (fill.gaming && el.category === "gaming") {
-      return true;
-    }
-    if (fill.electronics && el.category === "electronics") {
-      return true;
-    }
-    if (fill.furniture && el.category === "furniture") {
-      return true;
-    }
-    if (!fill.gaming && !fill.electronics && !fill.furniture) return true;
-    return false;
-  });
-
-  const [money, setMoney] = useState("ASC");
   const changeMoney = (e) => {
     setMoney(e.target.value);
   };
 
-  const Sortdata = FillterData.sort((a, b) => {
-    if (money === "ASC") {
-      return a.price - b.price;
-    }
-    if (money === "DES") {
-      return b.price - a.price;
-    }
-    return 0;
-  });
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const finalFilteredData = state
+    .filter((el) => {
+      if (fill.gaming && el.category === "gaming") {
+        return true;
+      }
+      if (fill.electronics && el.category === "electronics") {
+        return true;
+      }
+      if (fill.furniture && el.category === "furniture") {
+        return true;
+      }
+      if (!fill.gaming && !fill.electronics && !fill.furniture) return true;
+      return false;
+    })
+    .sort((a, b) => {
+      if (money === "ASC") {
+        return a.price - b.price;
+      }
+      if (money === "DES") {
+        return b.price - a.price;
+      }
+      return 0;
+    })
+    .filter((el) => el.title.toLowerCase().includes(search.toLowerCase()));
 
   if (loading) {
     return <p className="text-center">Loading...</p>;
@@ -79,38 +85,44 @@ const Product = () => {
   return (
     <div className="product_main">
       <div className="container">
-      <form className="form-container">
-  <label>
-    <input type="checkbox" name="gaming" onChange={filter} />
-    Gaming
-  </label>
-  <label>
-    <input type="checkbox" name="electronics" onChange={filter} />
-    Electronics
-  </label>
-  <label>
-    <input type="checkbox" name="furniture" onChange={filter} />
-    Furniture
-  </label>
-  <label>
-    Sort by price
-    <select onChange={changeMoney} style={{marginLeft:"15px"}}>
-      <option value="ASC">Low to High</option>
-      <option value="DES">High to Low</option>
-    </select>
-  </label>
-</form>
+        <form className="form-container text-light">
+          <label>
+            <input type="checkbox" name="gaming" onChange={filter} />
+           <span className="text-light"> Gaming </span>
+          </label>
+          <label>
+            <input type="checkbox" name="electronics" onChange={filter} />
+            <span className="text-light">   Electronics </span>
+          
+          </label>
+          <label>
+            <input type="checkbox" name="furniture" onChange={filter} />
+    
+            <span className="text-light">Furniture</span>
+            
+          </label>
+          <label>
+            Sort by price
+            <select onChange={changeMoney} style={{ marginLeft: "15px" }}>
+              <option value="ASC">Low to High</option>
+              <option value="DES">High to Low</option>
+            </select>
+          </label>
+          <input type="text" onChange={handleSearch} placeholder="Search..." />
+        </form>
 
         <div className="row justify-content-center align-items-center">
           <div className="col-md-8 d-flex justify-content-center align-items-center">
-            <p className="display-4 mt-4 text-light our" style={{ fontWeight: "500" }}>Our Products</p>
+            <p className="display-4 mt-4 text-light our" style={{ fontWeight: "500" }}>
+              Our Products
+            </p>
           </div>
         </div>
       </div>
       <div className="container mt-1">
         <div className="row">
-          {Sortdata.length > 0 ? (
-            Sortdata.map((el) => (
+          {finalFilteredData.length > 0 ? (
+            finalFilteredData.map((el) => (
               <div className="col-md-6 col-sm-12 col-lg-4 col-xl-3" key={el.id} style={{ marginBottom: "80px" }}>
                 <Link to={`/product/${el.id}`} className="text-decoration-none">
                   <div className="card h-100 w-100">
