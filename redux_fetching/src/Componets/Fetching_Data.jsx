@@ -15,7 +15,10 @@ const Fetching_Data = () => {
     };
 
     return (
-        <>
+        <> 
+
+        
+
             <button onClick={add}>fetch_data</button>
         </>
     );

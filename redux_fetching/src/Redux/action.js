@@ -1,14 +1,13 @@
- const fetching_data_from_api=(dispath)=>{
-    dispath({type:"loading"})
+const fetching_data_from_api = (dispatch) => {
+    dispatch({ type: "loading" });
     fetch(`https://fakestoreapi.com/products`)
-    .then(res=>res.json())
-    .then(res=>{
-        dispath({type:"data",payload:res})
+        .then((res) => res.json())
+        .then((res) => {
+            dispatch({ type: "data", payload: res });
+        })
+        .catch((error) => {
+            dispatch({ type: "error" });
+        });
+};
 
-    })
-    .catch((error)=>{
-        dispath({type:"erro"})
-    })  
-}
-
-export default fetching_data_from_api
+export default fetching_data_from_api;
