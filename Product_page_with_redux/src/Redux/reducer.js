@@ -6,8 +6,6 @@ const initialstate = {
 };
 
 const reducer = (state = initialstate, action) => {
-  console.log('Action:', action);
-  console.log('State:', state);
   switch (action.type) {
     case DATA:
       return {

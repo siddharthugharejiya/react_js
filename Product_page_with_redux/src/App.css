@@ -1,42 +1,111 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Space Mono", monospace;
+}
+body{
+    background-color: black;
+}
+.main{
+    height: 90vh;
+    width: 100%;
+    border: 1px solid red;
+}
+.galary{
+    /* height: 70vh; */
+    border: 1px solid white;
+}
+.galary img{
+width: 100%;
+height: 100%;
+}
+.main-text{
+    height: 100%;
+    width: 100%;
+    border: 1px solid red;
+    position: relative;
+}
+.game{
+    position: absolute;
+    transform: rotate(90deg);
+    top: 50px;
+    font-size: 18px;
+    left: -60px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+button {
+    position: relative;
+    /* //display:block; */
+    height: 50px;
+    width: 200px;
+    margin: 10px 7px;
+    padding: 5px 5px;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 2px;
+    color: white;
+    border: 2px white solid;
+    /* border-radius: 4px; */
+    text-transform: uppercase;
+    outline: 0;
+    overflow:hidden;
+    background: none;
+    z-index: 1;
+    cursor: pointer;
+    transition:         0.08s ease-in;
+    -o-transition:      0.08s ease-in;
+    -ms-transition:     0.08s ease-in;
+    -moz-transition:    0.08s ease-in;
+    -webkit-transition: 0.08s ease-in;
+    transition: 1.3s;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.fill:hover {
+    color: black;
+}
+
+.fill:before {
+    content: "";
+    position: absolute;
+    background: white;
+    bottom: 0;
+    color: black;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: -1;
+    -webkit-transition: top 0.09s ease-in;
+}
+.fill::after{
+    content: "";
+    position: absolute;
+    background: white;
+    height: 8px;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+}
+.twi{
+    position: relative;
+}
+.twi::after{
+    content: "";
+    position: absolute;
+    background: white;
+    height: 4px;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+}
+
+.fill:hover:before {
+    top: 0;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .twitch{
+    height: 90vh;
+    color: white;
+    width: 100%;
+    border: 1px solid red;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}

@@ -1,12 +1,14 @@
 
 import './App.css'
-import Product from './Componets/Product'
+import Home from './Componets/Home'
+// import Product from './Componets/Product'
+
 
 function App() {
 
   return (
    <>
-   <Product/>
+   <Home/>
    </>
   )
 }

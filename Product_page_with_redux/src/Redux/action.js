@@ -1,6 +1,6 @@
 import { DATA, DATA_ERROR } from "./actionType";
 
-const fetching_data = (dispatch) => {
+const fetchingData = () => {
   return (dispatch) => {
     fetch(`https://fakestoreapi.com/products`)
       .then((res) => res.json())
@@ -10,13 +10,13 @@ const fetching_data = (dispatch) => {
           payload: data,
         });
       })
-      .catch((err) =>
+      .catch((error) =>
         dispatch({
           type: DATA_ERROR,
-          payload: err.message,
+          payload: error,
         })
       );
   };
 };
 
-export default fetching_data;
+export default fetchingData;

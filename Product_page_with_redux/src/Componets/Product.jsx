@@ -1,35 +1,27 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import fetching_data from '../Redux/action';
-// import { fetching_data } from "../Redux/action"; 
+import fetchingData from '../Redux/action';
 
 const Product = () => {
   const dispatch = useDispatch();
-  const { data, error } = useSelector((state) => state); 
-
+  const {data} = useSelector((state) => state);
+  
+  
+  
   useEffect(() => {
-    dispatch(fetching_data()); 
+    dispatch(fetchingData()); 
   }, [dispatch]);
-
-  const fetchData = () => {
-    console.log(data);
-  }
+  const add=()=>{
+ }
 
   return (
     <div>
-      <button onClick={fetchData}>Fetching_data</button>
-      {error ? (
-        <div>Error: {error}</div>
-      ) : (
-        <div>
-          {data && data.map((product) => (
-            <div key={product.id}>
-              <h2>{product.title}</h2>
-              <p>{product.description}</p>
-            </div>
-          ))}
-        </div>
-      )}
+      {
+        data.map((e)=>(
+          <h1>{e.price}</h1>
+        ))
+      }
+      <button onClick={add}>Fetch_Data</button>
     </div>
   );
 }
