@@ -2,7 +2,7 @@ import { DATA, DATA_ERROR } from "./actionType";
 
 const initialstate = {
   data: [],
-  error: null,
+  error: false,
 };
 
 const reducer = (state = initialstate, action) => {
@@ -11,7 +11,7 @@ const reducer = (state = initialstate, action) => {
       return {
         ...state,
         data: action.payload,
-        error: null,
+        error: false,
       };
     case DATA_ERROR:
       return {
