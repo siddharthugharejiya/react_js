@@ -1,29 +1,22 @@
-
-
 import React from 'react';
-import { RESET_FORM, UPDATE_FORM } from './actionType';
-
+import { UPDATE_FORM } from './actionType';
 const initial={
-        user: "",
-        pass: "",
-        email: ""
-      
+    name:"",
+    email:"",
+    pass:""
 }
 
 const Singreducer = (state=initial,action) => {
-     switch(action.type)
-     {
-        case UPDATE_FORM:
-        return {
-            ...state,
-            [action.payload.name]:action.payload.value
-        }
 
-        case RESET_FORM:
-        return initial;
-
-        default:state
-     }
+   switch(action.type){
+    case UPDATE_FORM:
+    return{
+        ...state,
+        [action.payload.name]:action.payload.value
+    }
+    default:
+    return state
+   }
 }
 
 export default Singreducer;
