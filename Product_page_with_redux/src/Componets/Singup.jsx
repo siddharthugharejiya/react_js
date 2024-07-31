@@ -1,79 +1,72 @@
-import { useEffect, useState } from "react";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { email, password, username } from '../Redux/actionType';
 
 const Signup = () => {
-  const [state, setState] = useState({
-    user: "",
-    pass: "",
-    email: ""
+  const dispatch = useDispatch();
+  const [sing, setsing] = useState({
+    username: "",
+    email: "",
+    password: ""
   });
 
   const change = (e) => {
-    setState({ ...state, [e.target.name]: e.target.value });
+    setsing({
+      ...sing,
+      [e.target.name]: e.target.value
+    });
   };
 
   const submit = (e) => {
     e.preventDefault();
-    
-    fetch("http://localhost:8000/UserName", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(state),
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-
-    setState({
-      user: "",
-      pass: "",
-      email: ""
+    dispatch({
+      type: username,
+      payload: sing.username
     });
+    dispatch({
+      type: email,
+      payload: sing.email
+    });
+    dispatch({
+      type: password,
+      payload: sing.password
+    });
+
+    setsing({
+      username: "",
+      email: "",
+      password: ""
+    })
   };
 
   return (
     <>
-      <form action="" className="form" onSubmit={submit}>
-        <label htmlFor="user" className="label">Username</label>
+      <form onSubmit={submit}>
         <input
           type="text"
-          className="form-control"
-          name="user"
-          required
-          value={state.user}
+          name="username"
+          value={sing.username}
           onChange={change}
+          placeholder="Username"
         />
-
-        <label htmlFor="email" className="label">Email</label>
         <input
           type="email"
-          className="form-control"
           name="email"
-          required
-
-          value={state.email}
+          value={sing.email}
           onChange={change}
+          placeholder="Email"
         />
-
-        <label htmlFor="pass" className="label">Password</label>
         <input
           type="password"
-          className="form-control"
-          name="pass"
-          value={state.pass}
-          required
-
+          name="password"
+          value={sing.password}
           onChange={change}
+          placeholder="Password"
         />
-        <button type="submit" className="btn btn-dark">Submit</button>
+        <button type="submit" className='btn btn-dark'>Submit</button>
       </form>
     </>
   );
-};
+}
 
 export default Signup;

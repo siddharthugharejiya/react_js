@@ -4,26 +4,28 @@ import fetchingData from '../Redux/action';
 
 const Product = () => {
   const dispatch = useDispatch();
-  const {data} = useSelector((state) => state);
-  
-  
-  
+  const { data } = useSelector((state) => state);
+
   useEffect(() => {
-    dispatch(fetchingData()); 
+    dispatch(fetchingData());
   }, [dispatch]);
-  const add=()=>{
- }
+
+  const add = () => {
+    dispatch(fetchingData());
+  };
 
   return (
     <div>
-      {
-        data.map((e)=>(
-          <h1>{e.price}</h1>
+      {data && data.length > 0 ? (
+        data.map((e) => (
+          <h1 key={e.id}>{e.price}</h1> 
         ))
-      }
-      <button onClick={add}>Fetch_Data</button>
+      ) : (
+        <p>Loading...</p>
+      )}
+      <button onClick={add}>Fetch Data</button>
     </div>
   );
-}
+};
 
 export default Product;
