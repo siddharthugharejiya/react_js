@@ -1,72 +1,59 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { email, password, username } from '../Redux/actionType';
+import { SignupAction } from '../Redux/action';
+import { useNavigate } from 'react-router-dom';
+
 
 const Signup = () => {
-  const dispatch = useDispatch();
-  const [sing, setsing] = useState({
-    username: "",
-    email: "",
-    password: ""
+  const [formState, setFormState] = useState({
+    username: '',
+    email: '',
+    pass: '',
   });
+  let nav=useNavigate()
 
-  const change = (e) => {
-    setsing({
-      ...sing,
-      [e.target.name]: e.target.value
+  const dispatch = useDispatch();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormState({
+      ...formState,
+      [name]: value,
     });
   };
 
-  const submit = (e) => {
+  const Submit = (e) => {
     e.preventDefault();
-    dispatch({
-      type: username,
-      payload: sing.username
-    });
-    dispatch({
-      type: email,
-      payload: sing.email
-    });
-    dispatch({
-      type: password,
-      payload: sing.password
-    });
-
-    setsing({
-      username: "",
-      email: "",
-      password: ""
-    })
+    dispatch(SignupAction(formState,nav));
+    
   };
 
   return (
-    <>
-      <form onSubmit={submit}>
-        <input
-          type="text"
-          name="username"
-          value={sing.username}
-          onChange={change}
-          placeholder="Username"
-        />
-        <input
-          type="email"
-          name="email"
-          value={sing.email}
-          onChange={change}
-          placeholder="Email"
-        />
-        <input
-          type="password"
-          name="password"
-          value={sing.password}
-          onChange={change}
-          placeholder="Password"
-        />
-        <button type="submit" className='btn btn-dark'>Submit</button>
-      </form>
-    </>
+    <form onSubmit={Submit}>
+      <input
+        type="text"
+        name="username"
+        value={formState.username}
+        onChange={handleChange}
+        placeholder="Username"
+      />
+      <input
+        type="email"
+        name="email"
+        value={formState.email}
+        onChange={handleChange}
+        placeholder="Email"
+      />
+      <input
+        type="password"
+        name="pass"
+        value={formState.pass}
+        onChange={handleChange}
+        placeholder="Password"
+      />
+      <button type="submit" className='btn btn-dark'>Signup</button>
+    </form>
   );
-}
+};
 
 export default Signup;

@@ -5,13 +5,18 @@ import Product from '../Componets/Product';
 import Error from '../Componets/Error';
 import Singup from '../Componets/Singup';
 import Login from '../Componets/Login';
+import PrivateRoute from './PrivateRoute';
 
 
 const Routers = () => {
     return (
         <Routes>
             <Route path="/" element={<Home/>}></Route>
-            <Route path="/product" element={<Product/>}></Route>
+            <Route path="/product" element={
+                <PrivateRoute>
+                     <Product/>
+                </PrivateRoute>
+               }></Route>
             <Route path='*' element={<Error/>}></Route>
             <Route path='/singup' element={<Singup/>}></Route>
             <Route path='/login' element={<Login/>}></Route>

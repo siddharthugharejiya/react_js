@@ -1,5 +1,16 @@
 {
-  "UserName": [
-   
+  "username": [
+    {
+      "id": "f551",
+      "username": "Sid_00_95",
+      "email": "sid@gmail.com",
+      "pass": "123"
+    },
+    {
+      "id": "a8c6",
+      "username": "Sid_00_95",
+      "email": "multiera95@gmail.com",
+      "pass": "eramulti95"
+    }
   ]
 }
