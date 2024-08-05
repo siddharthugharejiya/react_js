@@ -2,7 +2,7 @@
 import { DATA, DATA_ERROR, EMAIL, ERROR, L_EMAIL, L_PASSWORD, PASSWORD, USERNAME } from "./actionType";
 
 export const fetchingData = () => (dispatch)=> {
-    fetch(`https://fakestoreapi.com/products`)
+    fetch(`http://localhost:9595/product`)
         .then((res) => res.json())
         .then((res) => {
             dispatch({

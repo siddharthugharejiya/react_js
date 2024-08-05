@@ -4,7 +4,7 @@ import { SignupAction } from '../Redux/action';
 import { useNavigate } from 'react-router-dom';
 
 
-const Signup = () => {
+const Singup = () => {
   const [formState, setFormState] = useState({
     username: '',
     email: '',
@@ -56,4 +56,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Singup;
