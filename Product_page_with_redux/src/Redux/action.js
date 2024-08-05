@@ -61,9 +61,16 @@ export const Login_Action=(login,nav_login)=>{
       .then(response => response.json())
       .then(res=>{
         if(res.length>0){
-          alert("login successfully")
-          localStorage.setItem("Login",true)
-          nav_login("/")
+        if(res[0].pass==login.password)
+          {
+            alert("login successfully")
+            localStorage.setItem("Login",true)
+            nav_login("/")
+          }
+          else{
+          alert("invalid email or password")
+
+          }
         }
         else{
           alert("invalid email or password")

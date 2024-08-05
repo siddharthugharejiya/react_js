@@ -1,22 +1,40 @@
 {
   "username": [
     {
-      "id": "f551",
-      "username": "Sid_00_95",
-      "email": "sid@gmail.com",
-      "password": "123"
-    },
-    {
-      "id": "a8c6",
-      "username": "Sid_00_95",
-      "email": "multiera95@gmail.com",
-      "password": "eramulti95"
-    },
-    {
-      "id": "74d1",
-      "username": "Sid_00_95",
-      "email": "sid@gmail.com",
+      "id": "cdd3",
+      "username": "multiera95@gmail.com",
+      "email": "sid12345@gmail.com",
       "pass": "12345"
+    },
+    {
+      "id": "8b6d",
+      "username": "multiera95@gmail.com",
+      "email": "sid12345@gmail.com",
+      "pass": "123456"
+    },
+    {
+      "id": "4a64",
+      "username": "sdf",
+      "email": "sid12345@gmail.com",
+      "pass": "12345"
+    },
+    {
+      "id": "9a06",
+      "username": "sidhdharthugharejiya@gmail.com",
+      "email": "multiera95@gmail.com",
+      "pass": "17131432"
+    },
+    {
+      "id": "eded",
+      "username": "viraj",
+      "email": "viraj@gmail.com",
+      "pass": "12345"
+    },
+    {
+      "id": "b57d",
+      "username": "sdf",
+      "email": "multiera95@gmail.com",
+      "pass": "17131432"
     }
   ],
   "product": {
