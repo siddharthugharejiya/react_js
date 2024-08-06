@@ -88,15 +88,18 @@ export const Login_Action=(login,nav_login)=>{
  
 }
 
-export const Singlepage_action = (id) => async (dispatch) => {
-  try {
-    const response = await fetch(`http://localhost:9595/product/${id}`); // Ensure the endpoint matches your API
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    const data = await response.json();
-    dispatch({ type: 'FETCH_SINGLE_PAGE_DATA_SUCCESS', payload: data });
-  } catch (error) {
-    dispatch({ type: 'FETCH_SINGLE_PAGE_DATA_FAILURE', error: error.message });
-  }
+export const Singlepage_action = (id) => (dispatch) => {
+  fetch(`http://localhost:9595/product/${id}`) // Ensure the endpoint matches your API
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then((data) => {
+      dispatch({ type: 'FETCH_SINGLE_PAGE_DATA_SUCCESS', payload: data });
+    })
+    .catch((error) => {
+      dispatch({ type: 'FETCH_SINGLE_PAGE_DATA_FAILURE', error: error.message });
+    });
 };

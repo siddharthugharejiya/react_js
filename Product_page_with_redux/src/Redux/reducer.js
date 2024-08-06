@@ -85,7 +85,7 @@ const initialStates = {
   // other state fields
 };
 
-const reducer = (state = initialStates, action) => {
+export const reducer = (state = initialStates, action) => {
   switch (action.type) {
     case 'FETCH_SINGLE_PAGE_DATA_SUCCESS':
       return {
@@ -96,10 +96,43 @@ const reducer = (state = initialStates, action) => {
       return {
         ...state,
         singlePageData: null,
-        // handle error if needed
+       
       };
-    // other cases
+   
     default:
       return state;
   }
 };
+const initialStateq = {
+    data: null,
+    loading: false,
+    error: null,
+  };
+  
+ export const singlepage_reducer = (state = initialStateq, action) => {
+    switch (action.type) {
+      case 'FETCH_SINGLE_PAGE_DATA_REQUEST':
+        return {
+          ...state,
+          loading: true,
+          error: null,
+        };
+      case 'FETCH_SINGLE_PAGE_DATA_SUCCESS':
+        return {
+          ...state,
+          loading: false,
+          data: action.payload,
+        };
+      case 'FETCH_SINGLE_PAGE_DATA_FAILURE':
+        return {
+          ...state,
+          loading: false,
+          error: action.error,
+        };
+      default:
+        return state;
+    }
+  };
+  
+  
+  

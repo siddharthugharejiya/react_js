@@ -1,22 +1,22 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom'; // For extracting route params
+import { useParams } from 'react-router-dom';
 import { Singlepage_action } from '../Redux/action';
-import "../App.css"; // Adjust as needed
+import "../App.css";
 
 const Singlepage = () => {
-  const { id } = useParams(); // Extracts the id from the URL params
+  const { id } = useParams();
   const dispatch = useDispatch();
-  const singlePageData = useSelector((state) => state.singlePageData); // Adjust according to your state structure
+  const singlePageData = useSelector((state) => state.singlePageData);
 
   useEffect(() => {
     if (id) {
-      dispatch(Singlepage_action(id)); // Fetch data for the specific id
+      dispatch(Singlepage_action(id));
     }
   }, [dispatch, id]);
 
   if (!singlePageData) {
-    return <div>Loading...</div>; // Loading state
+    return <div>Loading...</div>;
   }
 
   // Handle potential errors

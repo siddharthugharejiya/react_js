@@ -11,6 +11,18 @@
       "username": "Sid_00_95",
       "email": "multiera95@gmail.com",
       "pass": "eramulti95"
+    },
+    {
+      "id": "644a",
+      "username": "sidhdharth",
+      "email": "multiera96@gmail.com",
+      "pass": "12345"
+    },
+    {
+      "id": "ea4e",
+      "username": "Sid_00_95",
+      "email": "sid@gmail.com",
+      "pass": "12345"
     }
   ],
   "product": [
@@ -89,7 +101,7 @@
     {
       "id": "7",
       "title": "Merlin Figurine",
-      "price": 75.00,
+      "price": 75,
       "description": "Wireless Bluetooth Gamepad Controller For Switch",
       "category": "gaming",
       "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list5-img-1.jpg",
@@ -101,7 +113,7 @@
     {
       "id": "8",
       "title": "Virtual Goggles",
-      "price": 121.00,
+      "price": 121,
       "description": "Wireless Bluetooth Gamepad Controller For Switch",
       "category": "gaming",
       "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list6-img-1.jpg",
@@ -113,7 +125,7 @@
     {
       "id": "9",
       "title": "Friendly Ghost",
-      "price": 89.00,
+      "price": 89,
       "description": "Wireless Bluetooth Gamepad Controller For Switch",
       "category": "gaming",
       "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list7-img-1.jpg",
@@ -125,7 +137,7 @@
     {
       "id": "10",
       "title": "Mechanical Keyboard",
-      "price": 89.00,
+      "price": 89,
       "description": "Wireless Bluetooth Gamepad Controller For Switch",
       "category": "gaming",
       "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list-img-1.jpg",

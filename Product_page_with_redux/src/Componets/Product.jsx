@@ -80,15 +80,16 @@ const Product = () => {
               <span className="text-light">Furniture</span>
             </label>
           </div>
-          <div className="form-group">
-            <label>Sort by price</label>
+         
+          <div className="form-group ms-3">
+            <input type="text" className="form-search" placeholder="Search..." value={searchQuery} onChange={handleSearchChange} />
+          </div>
+          <div className="form-group ms-1">
+            {/* <label>Sort by price</label> */}
             <select className="form-select" value={sortOrder} onChange={handleSortChange}>
               <option value="ASC">Low to High</option>
               <option value="DESC">High to Low</option>
             </select>
-          </div>
-          <div className="form-group">
-            <input type="text" className="form-search" placeholder="Search..." value={searchQuery} onChange={handleSearchChange} />
           </div>
         </form>
       </div>
