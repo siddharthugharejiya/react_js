@@ -7,3 +7,5 @@ export const ERROR = 'ERROR';
 export const L_EMAIL ="l_email";
 export const L_PASSWORD ="l_password";
 export const SINGLEPAGE ="singlepage"
+export const FETCH_SINGLEPAGE_SUCCESS="FETCH_SINGLEPAGE_SUCCESS"
+export const FETCH_SINGLEPAGE_FAILURE="FETCH_SINGLEPAGE_FAILURE"

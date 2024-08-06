@@ -1,7 +1,7 @@
 
 import { useParams } from "react-router-dom";
-import { DATA, DATA_ERROR, EMAIL, ERROR, L_EMAIL, L_PASSWORD, PASSWORD, SINGLEPAGE, USERNAME } from "./actionType";
-
+import { DATA, DATA_ERROR, EMAIL, ERROR, FETCH_SINGLEPAGE_FAILURE, FETCH_SINGLEPAGE_SUCCESS, L_EMAIL, L_PASSWORD, PASSWORD, SINGLEPAGE, USERNAME } from "./actionType";
+import Swal from "sweetalert2";
 export const fetchingData = () => (dispatch)=> {
     fetch(`http://localhost:9595/product`)
         .then((res) => res.json())
@@ -31,7 +31,11 @@ export const SignupAction = (formState, navigate) => (dispatch) => {
   .then(response => response.json())
   .then(data => {
     if (data) {
-      alert("Successfully submitted data");
+      Swal.fire({
+        title: "Good job!",
+        text: "successfully Singup the data",
+        icon: "success"
+      });
       navigate("/login"); 
     }
     dispatch({
@@ -65,12 +69,24 @@ export const Login_Action=(login,nav_login)=>{
         if(res.length>0){
         if(res[0].pass==login.password)
           {
-            alert("login successfully")
+          
+            Swal.fire({
+              title: "Good job!",
+              text: "Successfully Login the data",
+              icon: "success"
+            });
             localStorage.setItem("Login",true)
             nav_login("/")
           }
           else{
-          alert("invalid email or password")
+          // alert("invalid email or password")
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Invalid Email And Password",
+            footer: '<a href="#">Why do I have this issue?</a>'
+          });
+          
 
           }
         }
@@ -88,18 +104,19 @@ export const Login_Action=(login,nav_login)=>{
  
 }
 
+
 export const Singlepage_action = (id) => (dispatch) => {
-  fetch(`http://localhost:9595/product/${id}`) // Ensure the endpoint matches your API
-    .then((response) => {
+  fetch(`http://localhost:9595/product/${id}`)
+    .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
       return response.json();
     })
-    .then((data) => {
-      dispatch({ type: 'FETCH_SINGLE_PAGE_DATA_SUCCESS', payload: data });
+    .then(data => {
+      dispatch({ type: FETCH_SINGLEPAGE_SUCCESS, payload: data });
     })
-    .catch((error) => {
-      dispatch({ type: 'FETCH_SINGLE_PAGE_DATA_FAILURE', error: error.message });
+    .catch(error => {
+      dispatch({ type: FETCH_SINGLEPAGE_FAILURE, error: error.message });
     });
 };

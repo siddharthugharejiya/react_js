@@ -1,0 +1,137 @@
+/* singlepage.css */
+
+/* Container Styles */
+.singlepage-container {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Image Section */
+  .image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2rem;
+  }
+  
+  .product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .product-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Details Section */
+  .details-section {
+    flex: 2;
+  }
+  
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  .rating i {
+    color: #ddd;
+    transition: color 0.3s ease;
+  }
+  
+  .rating i:hover {
+    color: #FFD43B;
+  }
+  
+  .product-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .product-title:hover {
+    color: #e74c3c;
+  }
+  
+  .product-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  
+  .pricing {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .current-price {
+    color: #e74c3c;
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+  
+  .old-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-right: 0.5rem;
+  }
+  
+  .discount {
+    color: #27ae60;
+    font-weight: bold;
+  }
+  
+  .additional-info {
+    font-size: 0.9rem;
+    color: #777;
+    margin: 1rem 0;
+  }
+  
+  .product-category {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Hover Effects for Buttons */
+  button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  

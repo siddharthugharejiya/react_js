@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchingData } from '../Redux/action';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
@@ -9,6 +10,7 @@ import "../App.css";
 
 const Product = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate(); // Initialize useNavigate
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedFilters, setSelectedFilters] = useState({
     gaming: false,
@@ -62,6 +64,10 @@ const Product = () => {
       }
     });
 
+  const handleCardClick = (id) => {
+    navigate(`/product/${id}`);
+  };
+
   return (
     <>
       <div className="container">
@@ -85,7 +91,6 @@ const Product = () => {
             <input type="text" className="form-search" placeholder="Search..." value={searchQuery} onChange={handleSearchChange} />
           </div>
           <div className="form-group ms-1">
-            {/* <label>Sort by price</label> */}
             <select className="form-select" value={sortOrder} onChange={handleSortChange}>
               <option value="ASC">Low to High</option>
               <option value="DESC">High to Low</option>
@@ -99,12 +104,11 @@ const Product = () => {
           {filteredData.length > 0 ? (
             filteredData.map((el) => (
               <Col key={el.id} xs={12} sm={6} md={4} lg={3} className="mb-4">
-                <Card className="product-card h-100">
-                  <Card.Img variant="top" src={el.image} className="product-image" />
+                <Card className="product-card h-100 " style={{background:"black"}} onClick={() => handleCardClick(el.id)}> {/* Add onClick handler */}
+                  <Card.Img variant="top" src={el.image} className="product-image " />
                   <Card.Body className="d-flex flex-column">
                     <Card.Title>{el.title}</Card.Title>
                     <Card.Text className="mt-auto">${el.price}</Card.Text>
-                    {/* <Button variant="primary" onClick={add}>Add to Cart</Button> */}
                   </Card.Body>
                 </Card>
               </Col>

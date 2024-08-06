@@ -8,20 +8,19 @@ import Login from '../Componets/Login';
 import PrivateRoute from './PrivateRoute';
 import Singlepage from '../Componets/Singlepage';
 
-
 const Routers = () => {
     return (
         <Routes>
             <Route path="/" element={<Home/>}></Route>
             <Route path="/product" element={
                 <PrivateRoute>
-                     <Product/>
+                    <Product/>
                 </PrivateRoute>
-               }></Route>
-            <Route path='*' element={<Error/>}></Route>
-            <Route path='/singup' element={<Singup/>}></Route>
-            <Route path='/product:id' element={<Singlepage/>}></Route>
-            <Route path='/login' element={<Login/>}></Route>
+            }></Route>
+            <Route path="*" element={<Error/>}></Route>
+            <Route path="/singup" element={<Singup/>}></Route>
+            <Route path="/product/:id" element={<Singlepage/>}></Route> 
+            <Route path="/login" element={<Login/>}></Route>
         </Routes>
     );
 }

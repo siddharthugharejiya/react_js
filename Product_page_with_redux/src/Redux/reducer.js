@@ -77,62 +77,23 @@ export const Login_reducer = (state = Login_initialstate, action) => {
             return state;
     }
 };
-const s={
-    state:null
-}
-const initialStates = {
-  singlePageData: null,
-  // other state fields
-};
 
-export const reducer = (state = initialStates, action) => {
+
+const initial = {
+  singlePageData: {}
+};
+  
+ export const singlepage_reducer = (state = initial, action) => {
   switch (action.type) {
-    case 'FETCH_SINGLE_PAGE_DATA_SUCCESS':
+    case 'FETCH_SINGLEPAGE_SUCCESS':
       return {
         ...state,
         singlePageData: action.payload,
-      };
-    case 'FETCH_SINGLE_PAGE_DATA_FAILURE':
-      return {
-        ...state,
-        singlePageData: null,
-       
-      };
-   
+      }
     default:
       return state;
   }
 };
-const initialStateq = {
-    data: null,
-    loading: false,
-    error: null,
-  };
-  
- export const singlepage_reducer = (state = initialStateq, action) => {
-    switch (action.type) {
-      case 'FETCH_SINGLE_PAGE_DATA_REQUEST':
-        return {
-          ...state,
-          loading: true,
-          error: null,
-        };
-      case 'FETCH_SINGLE_PAGE_DATA_SUCCESS':
-        return {
-          ...state,
-          loading: false,
-          data: action.payload,
-        };
-      case 'FETCH_SINGLE_PAGE_DATA_FAILURE':
-        return {
-          ...state,
-          loading: false,
-          error: action.error,
-        };
-      default:
-        return state;
-    }
-  };
-  
+ 
   
   
