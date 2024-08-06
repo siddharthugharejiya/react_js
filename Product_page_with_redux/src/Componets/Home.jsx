@@ -82,7 +82,7 @@ const Home = () => {
      
 
       <div className="container-fluid">
-        <div className="main d-flex flex-sm-column flex-md-column flex-lg-row justify-content-evenly">
+        <div className="main d-flex flex-sm-column flex-md-column flex-lg-row justify-content-evenly" style={{background:"black"}}>
           <div className="col-lg-4 galary h-100">
             <img src={img} alt="Thumbnail" className="img-fluid" />
           </div>

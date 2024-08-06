@@ -6,6 +6,7 @@ import Error from '../Componets/Error';
 import Singup from '../Componets/Singup';
 import Login from '../Componets/Login';
 import PrivateRoute from './PrivateRoute';
+import Singlepage from '../Componets/Singlepage';
 
 
 const Routers = () => {
@@ -19,6 +20,7 @@ const Routers = () => {
                }></Route>
             <Route path='*' element={<Error/>}></Route>
             <Route path='/singup' element={<Singup/>}></Route>
+            <Route path='/product:id' element={<Singlepage/>}></Route>
             <Route path='/login' element={<Login/>}></Route>
         </Routes>
     );

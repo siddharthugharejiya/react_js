@@ -10,12 +10,12 @@ export const dataReducer = (state = initialState, action) => {
         case DATA:
             return {
                 ...state,
-                data: action.payload,
+                data: action.payload
             };
         case DATA_ERROR:
             return {
                 ...state,
-                error: action.payload,
+                error: action.payload
             };
         default:
             return state;
@@ -76,4 +76,30 @@ export const Login_reducer = (state = Login_initialstate, action) => {
         default:
             return state;
     }
+};
+const s={
+    state:null
+}
+const initialStates = {
+  singlePageData: null,
+  // other state fields
+};
+
+const reducer = (state = initialStates, action) => {
+  switch (action.type) {
+    case 'FETCH_SINGLE_PAGE_DATA_SUCCESS':
+      return {
+        ...state,
+        singlePageData: action.payload,
+      };
+    case 'FETCH_SINGLE_PAGE_DATA_FAILURE':
+      return {
+        ...state,
+        singlePageData: null,
+        // handle error if needed
+      };
+    // other cases
+    default:
+      return state;
+  }
 };

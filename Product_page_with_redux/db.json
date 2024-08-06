@@ -1,315 +1,294 @@
 {
   "username": [
     {
-      "id": "cdd3",
-      "username": "multiera95@gmail.com",
-      "email": "sid12345@gmail.com",
-      "pass": "12345"
+      "id": "f551",
+      "username": "Sid_00_95",
+      "email": "sid@gmail.com",
+      "pass": "123"
     },
     {
-      "id": "8b6d",
-      "username": "multiera95@gmail.com",
-      "email": "sid12345@gmail.com",
-      "pass": "123456"
-    },
-    {
-      "id": "4a64",
-      "username": "sdf",
-      "email": "sid12345@gmail.com",
-      "pass": "12345"
-    },
-    {
-      "id": "9a06",
-      "username": "sidhdharthugharejiya@gmail.com",
+      "id": "a8c6",
+      "username": "Sid_00_95",
       "email": "multiera95@gmail.com",
-      "pass": "17131432"
-    },
-    {
-      "id": "eded",
-      "username": "viraj",
-      "email": "viraj@gmail.com",
-      "pass": "12345"
-    },
-    {
-      "id": "b57d",
-      "username": "sdf",
-      "email": "multiera95@gmail.com",
-      "pass": "17131432"
-    },
-    {
-      "id": "8bf1",
-      "username": "multiera95@gmail.com",
-      "email": "multiera95@gmail.com",
-      "pass": "12345"
-    },
-    {
-      "id": "e512",
-      "username": "multiera96@gmail.com",
-      "email": "multiera95@gmail.com",
-      "pass": "weqe"
+      "pass": "eramulti95"
     }
   ],
-  "product": {
-    "gaming": [
-      {
-        "id": "1",
-        "title": "Evo Pro Bluetooth Controller3",
-        "price": 109.95,
-        "description": "GALAX Slider 04 Wired Optical Gaming Mouse - GALAX",
-        "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/1_1000x.jpg?v=1671088147",
-        "rating": {
-          "rate": 3.9,
-          "count": 120
-        }
-      },
-      {
-        "id": "2",
-        "title": "Mens Casual Premium Slim Fit T-Shirts",
-        "price": 22.3,
-        "description": "Skullcandy Fix Rapid G Max Dual-Port USB-A And USB-C Adapter",
-        "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/2_1000x.jpg?v=1671087825",
-        "rating": {
-          "rate": 4.1,
-          "count": 259
-        }
-      },
-      {
-        "id": "3",
-        "title": "Mens Cotton Jacket",
-        "price": 55.99,
-        "description": "Power Advantage Wired Gaming Controller For Xbox",
-        "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/3_1000x.jpg?v=1671087619",
-        "rating": {
-          "rate": 4.7,
-          "count": 500
-        }
-      },
-      {
-        "id": "4",
-        "title": "Mens Casual Slim Fit",
-        "price": 15.99,
-        "description": "Wireless Bluetooth Gamepad Controller For Switch",
-        "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/4_1000x.jpg?v=1671087264",
-        "rating": {
-          "rate": 2.1,
-          "count": 430
-        }
-      },
-      {
-        "id": "5",
-        "title": "Wrist Controller",
-        "price": 122.99,
-        "description": "Wireless Bluetooth Gamepad Controller For Switch",
-        "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list3-img-1.jpg",
-        "rating": {
-          "rate": 2.1,
-          "count": 430
-        }
-      },
-      {
-        "id": "6",
-        "title": "Purple Sword",
-        "price": 122.99,
-        "description": "Wireless Bluetooth Gamepad Controller For Switch",
-        "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list4-img-1.jpg",
-        "rating": {
-          "rate": 2.1,
-          "count": 430
-        }
-      },
-      {
-        "id": "7",
-        "title": "Merlin Figurine",
-        "price": 75,
-        "description": "Wireless Bluetooth Gamepad Controller For Switch",
-        "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list5-img-1.jpg",
-        "rating": {
-          "rate": 2.1,
-          "count": 430
-        }
-      },
-      {
-        "id": "8",
-        "title": "Virtual Goggles",
-        "price": 121,
-        "description": "Wireless Bluetooth Gamepad Controller For Switch",
-        "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list6-img-1.jpg",
-        "rating": {
-          "rate": 2.1,
-          "count": 430
-        }
-      },
-      {
-        "id": "9",
-        "title": "Friendly Ghost",
-        "price": 89,
-        "description": "Wireless Bluetooth Gamepad Controller For Switch",
-        "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list7-img-1.jpg",
-        "rating": {
-          "rate": 2.1,
-          "count": 430
-        }
-      },
-      {
-        "id": "10",
-        "title": "Mechanical Keyboard",
-        "price": 89,
-        "description": "Wireless Bluetooth Gamepad Controller For Switch",
-        "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list-img-1.jpg",
-        "rating": {
-          "rate": 2.1,
-          "count": 430
-        }
-      },
-      {
-        "id": "12",
-        "title": "Wireless Gaming Headset",
-        "price": 99.99,
-        "description": "High-fidelity wireless gaming headset with surround sound.",
-        "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/12_1000x.jpg?v=1671088374",
-        "rating": {
-          "rate": 4.4,
-          "count": 250
-        }
-      },
-      {
-        "id": "15",
-        "title": "VR Headset with Controllers",
-        "price": 499.99,
-        "description": "Immersive VR headset with motion controllers for an ultimate experience.",
-        "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/15_1000x.jpg?v=1671088074",
-        "rating": {
-          "rate": 4.9,
-          "count": 60
-        }
+  "product": [
+    {
+      "id": "1",
+      "title": "Evo Pro Bluetooth Controller3",
+      "price": 109.95,
+      "description": "GALAX Slider 04 Wired Optical Gaming Mouse - GALAX",
+      "category": "gaming",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/1_1000x.jpg?v=1671088147",
+      "rating": {
+        "rate": 3.9,
+        "count": 120
       }
-    ],
-    "electronics": [
-      {
-        "id": "11",
-        "title": "Portable Bluetooth Speaker",
-        "price": 49.99,
-        "description": "Compact and powerful Bluetooth speaker with deep bass.",
-        "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/11_1000x.jpg?v=1671088474",
-        "rating": {
-          "rate": 4.3,
-          "count": 300
-        }
-      },
-      {
-        "id": "14",
-        "title": "4K Ultra HD Monitor",
-        "price": 399.99,
-        "description": "Stunning 4K monitor with vibrant colors and sharp details.",
-        "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/14_1000x.jpg?v=1671088174",
-        "rating": {
-          "rate": 4.7,
-          "count": 80
-        }
-      },
-      {
-        "id": "16",
-        "title": "Noise-Cancelling Headphones",
-        "price": 199.99,
-        "description": "Over-ear headphones with active noise cancellation and long battery life.",
-        "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/16_1000x.jpg?v=1671087974",
-        "rating": {
-          "rate": 4.4,
-          "count": 220
-        }
-      },
-      {
-        "id": "18",
-        "title": "Smart Home Security Camera",
-        "price": 129.99,
-        "description": "1080p smart security camera with motion detection and cloud storage.",
-        "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/18_1000x.jpg?v=1671087774",
-        "rating": {
-          "rate": 4.5,
-          "count": 110
-        }
-      },
-      {
-        "id": "19",
-        "title": "Bluetooth Soundbar",
-        "price": 149.99,
-        "description": "Wireless soundbar with subwoofer for rich audio experience.",
-        "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/19_1000x.jpg?v=1671087674",
-        "rating": {
-          "rate": 4.3,
-          "count": 130
-        }
-      },
-      {
-        "id": "20",
-        "title": "Smart Thermostat",
-        "price": 199.99,
-        "description": "Smart thermostat with remote control and energy-saving features.",
-        "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/20_1000x.jpg?v=1671087574",
-        "rating": {
-          "rate": 4.7,
-          "count": 160
-        }
+    },
+    {
+      "id": "2",
+      "title": "Mens Casual Premium Slim Fit T-Shirts",
+      "price": 22.3,
+      "description": "Skullcandy Fix Rapid G Max Dual-Port USB-A And USB-C Adapter",
+      "category": "gaming",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/2_1000x.jpg?v=1671087825",
+      "rating": {
+        "rate": 4.1,
+        "count": 259
       }
-    ],
-    "furniture": [
-      {
-        "id": "13",
-        "title": "Ergonomic Office Chair",
-        "price": 299.99,
-        "description": "Comfortable and adjustable ergonomic chair for office use.",
-        "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/6_8b8e3116-2a23-4b30-a837-e03b6367fd48_1000x.jpg?v=1671087410",
-        "rating": {
-          "rate": 4.6,
-          "count": 100
-        }
-      },
-      {
-        "id": "17",
-        "title": "Electric Standing Desk",
-        "price": 499.99,
-        "description": "Adjustable electric standing desk with memory settings.",
-        "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/17_1000x.jpg?v=1671087874",
-        "rating": {
-          "rate": 4.6,
-          "count": 90
-        }
+    },
+    {
+      "id": "3",
+      "title": "Mens Cotton Jacket",
+      "price": 55.99,
+      "description": "Power Advantage Wired Gaming Controller For Xbox",
+      "category": "gaming",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/3_1000x.jpg?v=1671087619",
+      "rating": {
+        "rate": 4.7,
+        "count": 500
       }
-    ],
-    "figurines": [
-      {
-        "id": "20",
-        "title": "Filipio Figurine",
-        "price": 199.99,
-        "description": "Smart thermostat with remote control and energy-saving features.",
-        "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list9-img-1.jpg",
-        "rating": {
-          "rate": 4.7,
-          "count": 160
-        }
-      },
-      {
-        "id": "20",
-        "title": "Strong Head",
-        "price": 1150.99,
-        "description": "Smart thermostat with remote control and energy-saving features.",
-        "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list11-img-1.jpg",
-        "rating": {
-          "rate": 4.7,
-          "count": 160
-        }
-      },
-      {
-        "id": "21",
-        "title": "Purple Figurine",
-        "price": 1200.99,
-        "description": "Smart thermostat with remote control and energy-saving features.",
-        "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list12-img-1.jpg",
-        "rating": {
-          "rate": 4.7,
-          "count": 160
-        }
+    },
+    {
+      "id": "4",
+      "title": "Mens Casual Slim Fit",
+      "price": 15.99,
+      "description": "Wireless Bluetooth Gamepad Controller For Switch",
+      "category": "gaming",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/4_1000x.jpg?v=1671087264",
+      "rating": {
+        "rate": 2.1,
+        "count": 430
       }
-    ]
-  }
+    },
+    {
+      "id": "5",
+      "title": "Wrist Controller",
+      "price": 122.99,
+      "description": "Wireless Bluetooth Gamepad Controller For Switch",
+      "category": "gaming",
+      "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list3-img-1.jpg",
+      "rating": {
+        "rate": 2.1,
+        "count": 430
+      }
+    },
+    {
+      "id": "6",
+      "title": "Purple Sword",
+      "price": 122.99,
+      "description": "Wireless Bluetooth Gamepad Controller For Switch",
+      "category": "gaming",
+      "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list4-img-1.jpg",
+      "rating": {
+        "rate": 2.1,
+        "count": 430
+      }
+    },
+    {
+      "id": "7",
+      "title": "Merlin Figurine",
+      "price": 75.00,
+      "description": "Wireless Bluetooth Gamepad Controller For Switch",
+      "category": "gaming",
+      "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list5-img-1.jpg",
+      "rating": {
+        "rate": 2.1,
+        "count": 430
+      }
+    },
+    {
+      "id": "8",
+      "title": "Virtual Goggles",
+      "price": 121.00,
+      "description": "Wireless Bluetooth Gamepad Controller For Switch",
+      "category": "gaming",
+      "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list6-img-1.jpg",
+      "rating": {
+        "rate": 2.1,
+        "count": 430
+      }
+    },
+    {
+      "id": "9",
+      "title": "Friendly Ghost",
+      "price": 89.00,
+      "description": "Wireless Bluetooth Gamepad Controller For Switch",
+      "category": "gaming",
+      "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list7-img-1.jpg",
+      "rating": {
+        "rate": 2.1,
+        "count": 430
+      }
+    },
+    {
+      "id": "10",
+      "title": "Mechanical Keyboard",
+      "price": 89.00,
+      "description": "Wireless Bluetooth Gamepad Controller For Switch",
+      "category": "gaming",
+      "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list-img-1.jpg",
+      "rating": {
+        "rate": 2.1,
+        "count": 430
+      }
+    },
+    {
+      "id": "11",
+      "title": "Portable Bluetooth Speaker",
+      "price": 49.99,
+      "description": "Compact and powerful Bluetooth speaker with deep bass.",
+      "category": "electronics",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/11_1000x.jpg?v=1671088474",
+      "rating": {
+        "rate": 4.3,
+        "count": 300
+      }
+    },
+    {
+      "id": "12",
+      "title": "Wireless Gaming Headset",
+      "price": 99.99,
+      "description": "High-fidelity wireless gaming headset with surround sound.",
+      "category": "gaming",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/12_1000x.jpg?v=1671088374",
+      "rating": {
+        "rate": 4.4,
+        "count": 250
+      }
+    },
+    {
+      "id": "13",
+      "title": "Ergonomic Office Chair",
+      "price": 299.99,
+      "description": "Comfortable and adjustable ergonomic chair for office use.",
+      "category": "furniture",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/6_8b8e3116-2a23-4b30-a837-e03b6367fd48_1000x.jpg?v=1671087410",
+      "rating": {
+        "rate": 4.6,
+        "count": 100
+      }
+    },
+    {
+      "id": "14",
+      "title": "4K Ultra HD Monitor",
+      "price": 399.99,
+      "description": "Stunning 4K monitor with vibrant colors and sharp details.",
+      "category": "electronics",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/14_1000x.jpg?v=1671088174",
+      "rating": {
+        "rate": 4.7,
+        "count": 80
+      }
+    },
+    {
+      "id": "15",
+      "title": "VR Headset with Controllers",
+      "price": 499.99,
+      "description": "Immersive VR headset with motion controllers for an ultimate experience.",
+      "category": "gaming",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/15_1000x.jpg?v=1671088074",
+      "rating": {
+        "rate": 4.9,
+        "count": 60
+      }
+    },
+    {
+      "id": "16",
+      "title": "Noise-Cancelling Headphones",
+      "price": 199.99,
+      "description": "Over-ear headphones with active noise cancellation and long battery life.",
+      "category": "electronics",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/16_1000x.jpg?v=1671087974",
+      "rating": {
+        "rate": 4.4,
+        "count": 220
+      }
+    },
+    {
+      "id": "17",
+      "title": "Electric Standing Desk",
+      "price": 499.99,
+      "description": "Adjustable electric standing desk with memory settings.",
+      "category": "furniture",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/17_1000x.jpg?v=1671087874",
+      "rating": {
+        "rate": 4.6,
+        "count": 90
+      }
+    },
+    {
+      "id": "18",
+      "title": "Smart Home Security Camera",
+      "price": 129.99,
+      "description": "1080p smart security camera with motion detection and cloud storage.",
+      "category": "electronics",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/18_1000x.jpg?v=1671087774",
+      "rating": {
+        "rate": 4.5,
+        "count": 110
+      }
+    },
+    {
+      "id": "19",
+      "title": "Bluetooth Soundbar",
+      "price": 149.99,
+      "description": "Wireless soundbar with subwoofer for rich audio experience.",
+      "category": "electronics",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/19_1000x.jpg?v=1671087674",
+      "rating": {
+        "rate": 4.3,
+        "count": 130
+      }
+    },
+    {
+      "id": "20",
+      "title": "Smart Thermostat",
+      "price": 199.99,
+      "description": "Smart thermostat with remote control and energy-saving features.",
+      "category": "electronics",
+      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/20_1000x.jpg?v=1671087574",
+      "rating": {
+        "rate": 4.7,
+        "count": 160
+      }
+    },
+    {
+      "id": "21",
+      "title": "Filipio Figurine",
+      "price": 199.99,
+      "description": "Elegant figurine with detailed craftsmanship.",
+      "category": "figurines",
+      "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list9-img-1.jpg",
+      "rating": {
+        "rate": 4.7,
+        "count": 160
+      }
+    },
+    {
+      "id": "22",
+      "title": "Strong Head",
+      "price": 1150.99,
+      "description": "Detailed figurine with exceptional craftsmanship.",
+      "category": "figurines",
+      "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list11-img-1.jpg",
+      "rating": {
+        "rate": 4.7,
+        "count": 160
+      }
+    },
+    {
+      "id": "23",
+      "title": "Purple Figurine",
+      "price": 1200.99,
+      "description": "Exclusive figurine with intricate details.",
+      "category": "figurines",
+      "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list12-img-1.jpg",
+      "rating": {
+        "rate": 4.7,
+        "count": 160
+      }
+    }
+  ]
 }

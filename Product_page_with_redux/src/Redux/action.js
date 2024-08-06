@@ -1,10 +1,12 @@
 
-import { DATA, DATA_ERROR, EMAIL, ERROR, L_EMAIL, L_PASSWORD, PASSWORD, USERNAME } from "./actionType";
+import { useParams } from "react-router-dom";
+import { DATA, DATA_ERROR, EMAIL, ERROR, L_EMAIL, L_PASSWORD, PASSWORD, SINGLEPAGE, USERNAME } from "./actionType";
 
 export const fetchingData = () => (dispatch)=> {
     fetch(`http://localhost:9595/product`)
         .then((res) => res.json())
         .then((res) => {
+
             dispatch({
                 type: DATA,
                 payload: res
@@ -85,3 +87,16 @@ export const Login_Action=(login,nav_login)=>{
     }
  
 }
+
+export const Singlepage_action = (id) => async (dispatch) => {
+  try {
+    const response = await fetch(`http://localhost:9595/product/${id}`); // Ensure the endpoint matches your API
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    dispatch({ type: 'FETCH_SINGLE_PAGE_DATA_SUCCESS', payload: data });
+  } catch (error) {
+    dispatch({ type: 'FETCH_SINGLE_PAGE_DATA_FAILURE', error: error.message });
+  }
+};

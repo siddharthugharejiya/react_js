@@ -19,7 +19,7 @@ const NavbarMain = () => {
             <Nav className="m-auto navbar-nav">
               <Link to={"/"}>Home</Link>
               <Link to={"/product"}>Product</Link>
-              <Link to={"/error"}>Error</Link>
+              {/* <Link to={"/error"}>Error</Link> */}
               <Link to={"/singup"}>Signup</Link>
               <Link to={"/login"}>Login</Link>
             </Nav>

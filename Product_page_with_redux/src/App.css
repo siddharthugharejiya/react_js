@@ -404,7 +404,7 @@ button {
 
 .product-card {
   transition: transform 0.2s, box-shadow 0.2s;
-  border: 1px solid white;
+  /* border: 1px solid white; */
   background: transparent;
   color: white;
 }
@@ -415,12 +415,10 @@ button {
 }
 
 .product-image {
-  height: 400px;
+  height: 300px;
+  border: 1px solid
+   white;
   object-fit: cover;
-}
-
-.card-title, .card-text {
-  color: white;
 }
 
 .container {
@@ -456,6 +454,7 @@ button {
 
 .fill:hover {
   color: black;
+  /* border: 1x solid red; */
 }
 
 .fill:before {
@@ -482,4 +481,64 @@ button {
 
 .fill:hover:before {
   top: 0;
+}
+
+
+.form-container {
+  /* background-color: #fff; */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px white;
+  margin-bottom: 20px;
+
+  display: flex;
+  flex-wrap: wrap;
+  /* margin-top: 10px; */
+  justify-content: space-between;
+}
+
+/* Label and input elements */
+.form-container label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-container input[type="checkbox"] {
+  margin-right: 10px;
+  accent-color: #007bff;
+}
+
+.form-container select,
+.form-container input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* Full-width search input */
+.form-container input[type="text"] {
+  flex: 1 1 100%;
+}
+
+.form-container label[for="sort"] {
+  margin-left: 15px;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+}
+
+.form-container select {
+  flex: 0 0 auto;
+  margin-left: 10px;
+}
+
+
+
+.our {
+  color: #007bff;
 }
