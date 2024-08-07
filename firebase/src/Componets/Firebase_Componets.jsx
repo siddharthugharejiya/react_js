@@ -1,20 +1,27 @@
-import { addDoc, collection, deleteDoc, doc, getDocs } from 'firebase/firestore'
-import React, { useEffect, useState } from 'react'
-import { db } from '../Firebase/Firebase'
+import {
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+  getDocs,
+} from "firebase/firestore";
+import React, { useEffect, useState } from "react";
+import { db } from "../Firebase/Firebase";
 
 const Firebase_Components = () => {
   const [state, setState] = useState({
     email: "",
-    password: ""
+    password: "",
   });
   const [arr, setArr] = useState([]);
+  const [update,setupate]=useState(null)
   const usercollection = collection(db, "user");
 
   const change = (e) => {
     const { name, value } = e.target;
     setState({
       ...state,
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -22,13 +29,13 @@ const Firebase_Components = () => {
     e.preventDefault();
     let obj = {
       email: state.email,
-      password: state.password
+      password: state.password,
     };
 
     await addDoc(usercollection, obj);
     alert("Data added successfully");
-    get(); 
-    setState({ email: "", password: "" }); 
+    get();
+    setState({ email: "", password: "" });
   };
 
   const get = async () => {
@@ -36,7 +43,7 @@ const Firebase_Components = () => {
     let d = getted.docs.map((el) => {
       return {
         id: el.id,
-        ...el.data()
+        ...el.data(),
       };
     });
     setArr(d);
@@ -44,13 +51,25 @@ const Firebase_Components = () => {
 
   useEffect(() => {
     get();
-  }, []); 
+  }, []);
 
   const del = async (id) => {
     let d = doc(db, "user", id);
     await deleteDoc(d);
-    get(); 
+    get();
     alert("Deleted successfully");
+  };
+
+  const edit = (id) => {
+    console.log(id);
+    arr.map((el) => {
+      if (el.id == id) {
+        setState({
+          email: el.email,
+          password: el.password,
+        });
+      }
+    });
   };
 
   return (
@@ -58,13 +77,23 @@ const Firebase_Components = () => {
       <form onSubmit={submit}>
         <div>
           <label>Email:</label>
-          <input type="text" name="email" value={state.email} onChange={change} />
+          <input
+            type="text"
+            name="email"
+            value={state.email}
+            onChange={change}
+          />
         </div>
         <div>
           <label>Password:</label>
-          <input type="text" name="password" value={state.password} onChange={change} />
+          <input
+            type="text"
+            name="password"
+            value={state.password}
+            onChange={change}
+          />
         </div>
-        <button type="submit">Submit</button>
+        <input type="submit"/>
       </form>
       <div>
         {arr.map((el) => (
@@ -72,6 +101,7 @@ const Firebase_Components = () => {
             <div>{el.email}</div>
             <div>{el.password}</div>
             <button onClick={() => del(el.id)}>Delete</button>
+            <button onClick={() => edit(el.id)}>Edit</button>
           </div>
         ))}
       </div>
