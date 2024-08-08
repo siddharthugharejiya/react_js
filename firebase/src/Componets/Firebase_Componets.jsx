@@ -44,7 +44,7 @@ const Firebase_Components = () => {
     get(); 
     setState({ email: "", password: "" }); 
 
-   
+    setupdate(id)
   };
 
   const get = async () => {
