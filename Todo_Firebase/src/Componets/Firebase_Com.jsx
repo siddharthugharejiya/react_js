@@ -1,4 +1,4 @@
-import { addDoc, collection, deleteDoc, getDocs,Doc } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, getDocs } from "firebase/firestore";
 import { useState ,useEffect} from "react";
 import { db } from "../Firebase/db";
 
@@ -49,9 +49,21 @@ const [arr,setarr]=useState([])
        }, []);
 
     const del = async(id) =>{
-    let d = await Doc(db,"users",id)
+    let d = await doc(db,"users",id)
     deleteDoc(d)
     get()
+    }
+
+    const edit = (id) =>{
+        arr.map((el)=>{
+          if(el.id == id)
+          {
+            setstate({
+              email:el.email,
+              password:el.password
+            })
+          }
+        })
     }
   
   return (
@@ -78,6 +90,7 @@ const [arr,setarr]=useState([])
             <div>{el.email}</div>
             <div>{el.password}</div>
             <button className="btn btn-danger" onClick={()=>del(el.id)}>Delete</button>
+            <button className="btn btn-primary" onClick={()=>edit(el.id)}>edit</button>
         </div>
       ))}
     </>
