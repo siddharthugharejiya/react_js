@@ -10,6 +10,7 @@ export const Firebase_Com = () => {
     email: "",
     password: ""
   })
+  
   const change = (e) => {
     const { name, value } = e.target;
     setstate({
@@ -29,6 +30,10 @@ export const Firebase_Com = () => {
     await addDoc(usercollection,obj)   
     alert("data add successfully")
     get()
+    setstate({
+      email:"",
+      password:""
+    })
 
 }
 
@@ -64,6 +69,7 @@ const [arr,setarr]=useState([])
             })
           }
         })
+      
     }
   
   return (
