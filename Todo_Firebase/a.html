@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Field Drop Animation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        h2 {
+            text-align: center;
+        }
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #ff6666;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #ff3333;
+        }
+        .fade-drop {
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Task Deletion</h2>
+        <input type="text" id="task-input" placeholder="Enter task name to delete">
+        <input type="submit" id="delete-button" value="Delete Task">
+    </div>
+
+    <script>
+        document.getElementById('delete-button').addEventListener('click', function() {
+            const inputField = document.getElementById('task-input');
+            const inputValue = inputField.value.trim();
+
+            if (inputValue === '') {
+                alert('Please enter a task name to delete.');
+                return;
+            }
+
+            // Add fade-drop class to trigger animation
+            inputField.classList.add('fade-drop');
+
+            // Remove the input field after animation
+            setTimeout(() => {
+                inputField.remove();
+                alert('Task "' + inputValue + '" deleted successfully!');
+            }, 500); // Match the transition duration in CSS
+
+            // Optionally, clear the input field value
+            inputField.value = '';
+        });
+    </script>
+</body>
+</html>
