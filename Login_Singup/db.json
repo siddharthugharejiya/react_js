@@ -1,52 +1,22 @@
 {
-  "User": [
+  "username": [
     {
-      "id": "abd0",
-      "user": "sidhdharth",
-      "email": "sid123@gmail.com",
-      "pass": "1234323"
-    },
-    {
-      "id": "82e6",
-      "user": "fsdf",
-      "email": "sid123@gmail.com",
-      "pass": "12345678"
-    },
-    {
-      "id": "d4d0",
-      "user": "sidhdharth",
-      "email": "sid123@gmail.com",
-      "pass": "17131432"
-    },
-    {
-      "id": "921f",
-      "user": "sidhdharth",
-      "email": "sid123@gmail.com",
+      "id": "f551",
+      "username": "Sid_00_95",
+      "email": "sid@gmail.com",
       "pass": "123"
     },
     {
-      "id": "7176",
-      "user": "sidhdharth",
-      "email": "sid123@gmail.com",
-      "pass": "12345"
-    },
-    {
-      "id": "46c9",
-      "user": "sidhdharth",
-      "email": "sid123@gmail.com",
-      "pass": "123"
-    },
-    {
-      "id": "97cf",
-      "user": "sidhdharth",
-      "email": "sid123@gmail.com",
-      "pass": "123"
+      "id": "a8c6",
+      "username": "Sid_00_95",
+      "email": "multiera95@gmail.com",
+      "pass": "eramulti95"
     }
   ],
-  "product": [
+  "product":[
     {
       "id": "1",
-      "title": "Amkette Evo Pro Bluetooth Controller3 EGP3",
+      "title": "Evo Pro Bluetooth Controller3",
       "price": 109.95,
       "description": "GALAX Slider 04 Wired Optical Gaming Mouse - GALAX",
       "category": "gaming",
@@ -86,6 +56,9 @@
       "price": 15.99,
       "description": "Wireless Bluetooth Gamepad Controller For Switch",
       "category": "gaming",
+
+
+
       "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/4_1000x.jpg?v=1671087264",
       "rating": {
         "rate": 2.1,
@@ -93,75 +66,93 @@
       }
     },
     {
-      "id": "5",
-      "title": "John Hardy Women's Legends Naga Gold",
-      "price": 695,
-      "description": "Amkette Evo Pro Bluetooth Controller3 EGP3",
+      "id": "4",
+      "title": "Mens Casual Slim Fit",
+      "price": 15.99,
+      "description": "Wireless Bluetooth Gamepad Controller For Switch",
       "category": "gaming",
-      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/5_1000x.jpg?v=1671087412",
+      "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list2-img-1-600x660.jpg",
       "rating": {
-        "rate": 4.6,
-        "count": 400
+        "rate": 2.1,
+        "count": 430
       }
     },
+    {
+      "id": "5",
+      "title": "Wrist Controiler",
+      "price": 122.99,
+      "description": "Wireless Bluetooth Gamepad Controller For Switch",
+      "category": "gaming",
+      "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list3-img-1.jpg",
+      "rating": {
+        "rate": 2.1,
+        "count": 430
+      }
+    },
+
     {
       "id": "6",
-      "title": "Solid Gold Petite Micropave",
-      "price": 168,
-      "description": "Redragon H350 Wired Gaming Headset Dynamic RGB Backlight",
+      "title": "Purple Sward",
+      "price": 122.99,
+      "description": "Wireless Bluetooth Gamepad Controller For Switch",
       "category": "gaming",
-      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/6_1000x.jpg?v=1671088416",
+      "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list4-img-1.jpg",
       "rating": {
-        "rate": 3.9,
-        "count": 70
+        "rate": 2.1,
+        "count": 430
       }
     },
+
     {
       "id": "7",
-      "title": "White Gold Plated Princess",
-      "price": 9.99,
-      "description": "Thrustmaster Ferrari 458 Spider Racing Wheel",
+      "title": "Merlin Figurine",
+      "price": 75.00,
+      "description": "Wireless Bluetooth Gamepad Controller For Switch",
       "category": "gaming",
-      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/7_1000x.jpg?v=1671088770",
+      "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list5-img-1.jpg",
       "rating": {
-        "rate": 3,
-        "count": 400
+        "rate": 2.1,
+        "count": 430
       }
     },
+
     {
       "id": "8",
-      "title": "Wireless Bluetooth Earphones",
-      "price": 29.99,
-      "description": "High-quality wireless Bluetooth earphones with noise-cancellation.",
-      "category": "electronics",
-      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/8_1000x.jpg?v=1671088264",
+      "title": "Virtual Googles",
+      "price": 121.00,
+      "description": "Wireless Bluetooth Gamepad Controller For Switch",
+      "category": "gaming",
+      "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list6-img-1.jpg",
       "rating": {
-        "rate": 4.2,
-        "count": 150
+        "rate": 2.1,
+        "count": 430
       }
     },
+
+
     {
       "id": "9",
-      "title": "Gaming Keyboard and Mouse Combo",
-      "price": 79.99,
-      "description": "RGB backlit mechanical gaming keyboard with high-precision mouse.",
+      "title": "Friendly Ghost",
+      "price": 89.00,
+      "description": "Wireless Bluetooth Gamepad Controller For Switch",
       "category": "gaming",
-      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/9_1000x.jpg?v=1671088674",
+      "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list7-img-1.jpg",
       "rating": {
-        "rate": 4.5,
-        "count": 200
+        "rate": 2.1,
+        "count": 430
       }
     },
+    
     {
       "id": "10",
-      "title": "Smartwatch with Heart Rate Monitor",
-      "price": 199.99,
-      "description": "Feature-packed smartwatch with heart rate and fitness tracking.",
-      "category": "electronics",
-      "image": "https://gamewar-codezeel.myshopify.com/cdn/shop/products/10_1000x.jpg?v=1671088574",
+      "title": "Mechanical Keyboard",
+      "price": 89.00,
+      "description": "Wireless Bluetooth Gamepad Controller For Switch",
+      "category": "gaming",
+      "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list-img-1.jpg",
       "rating": {
-        "rate": 4.8,
-        "count": 180
+        "rate": 2.1,
+        "count": 430
       }
     },
     {
@@ -283,6 +274,45 @@
         "rate": 4.7,
         "count": 160
       }
+    },
+    {
+      "id": "20",
+      "title": "Filipio Figurine",
+      "price": 199.99,
+      "description": "Smart thermostat with remote control and energy-saving features.",
+      "category": "electronics",
+      "image": "https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list9-img-1.jpg",
+      "rating": {
+        "rate": 4.7,
+        "count": 160
+      }
+    },
+
+    {
+      "id": "20",
+      "title": "Strong Head",
+      "price": 1150.99,
+      "description": "Smart thermostat with remote control and energy-saving features.",
+      "category": "electronics",
+      "image":"https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list11-img-1.jpg",
+      "rating": {
+        "rate": 4.7,
+        "count": 160
+      }
+    },
+    {
+      "id": "21",
+      "title": "Purple Figurine",
+      "price": 1200.99,
+      "description": "Smart thermostat with remote control and energy-saving features.",
+      "category": "electronics",
+      "image":"https://artorias.qodeinteractive.com/wp-content/uploads/2022/10/product-list12-img-1.jpg",
+      "rating": {
+        "rate": 4.7,
+        "count": 160
+      }
     }
+
+    
   ]
 }

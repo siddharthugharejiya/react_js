@@ -24,7 +24,7 @@ const TodoInput = () => {
   }
 
   let up=(id)=>{
-  let d=   arr.map((e)=>{
+  let d=arr.map((e)=>{
     
             if(e.id==id){
             return {...e,status : !e.status}
