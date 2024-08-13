@@ -92,10 +92,8 @@ const Firebase_Components = () => {
           <label>Email:</label>
           <input type="text" name="email" value={state.email} onChange={change} className='formcontrol'/>
         </div>
-        {/* <div> */}
         <label>Password:</label>
           <input type="text" name="password" value={state.password} onChange={change} />
-        {/* </div> */}
         <br />
         <input type="submit" value={update != null ? "Update" : "Submit"}/>
       </form>
