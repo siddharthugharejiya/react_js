@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { addDoc, collection, deleteDoc, getDocs, doc, updateDoc } from 'firebase/firestore';
 import { db } from "../Firebase/Firebase";
-// import Swal from 'sweetalert2';
+import Swal from 'sweetalert2';
 
 function Addproducts() {
   const [name, setName] = useState('');
@@ -24,10 +24,10 @@ function Addproducts() {
     if (edit) {
       const docRef = doc(db, 'products', edit);
       await updateDoc(docRef, obj);
-      alert("Data updated successfully", "", "success");
+      Swal.fire("Success", "Data updated successfully", "success");
     } else {
       await addDoc(userCollection, obj);
-     alert("Data added successfully", "", "success");
+      Swal.fire("Success", "Data added successfully", "success");
     }
 
     setName('');
@@ -50,7 +50,7 @@ function Addproducts() {
   const handleDelete = async (id) => {
     const docRef = doc(db, 'products', id);
     await deleteDoc(docRef);
-    alert("Data deleted successfully", "", "success");
+    Swal.fire("Success", "Data deleted successfully", "success");
     getData();
   };
 
@@ -65,47 +65,50 @@ function Addproducts() {
   return (
     <div id="wra">
       <div className="container d-flex flex-column justify-content-center alighn-items-center">
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Enter product name"
-          required
-        />
-        <input
-          type="number"
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-          placeholder="Enter price"
-          required
-        />
-        <input
-          type="text"
-          value={imageUrl}
-          onChange={(e) => setImageUrl(e.target.value)}
-          placeholder="Enter image URL"
-          required
-        />
-        <input type="submit" value={edit ? "Update" : "Submit"} />
-      </form>
+        <div className="d-flex justify-content-center">
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Enter product name"
+              required
+            />
+            <input
+              type="number"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              placeholder="Enter price"
+              required
+            />
+            <input
+              type="text"
+              value={imageUrl}
+              onChange={(e) => setImageUrl(e.target.value)}
+              placeholder="Enter image URL"
+              required
+            />
+            <input type="submit" value={edit ? "Update" : "Submit"} />
+          </form>
+        </div>
 
-      <ul className="user-list">
-        {arry.map((el) => (
-          <li key={el.id} className="user-item">
-            <h1>{el.name}</h1>
-            <p>Price: ${el.price}</p>
-            <img src={el.imageUrl} alt={el.name} style={{ width: '100px', height: '100px' }} />
-            <div className="buttons">
-              <button className="delete-btn" onClick={() => handleDelete(el.id)}>Delete</button>
-              <button className="update-btn" onClick={() => handleEdit(el.id)}>Edit</button>
-            </div>
-          </li>
-        ))}
-      </ul>
+        <div className="d-flex">
+          <ul className="user-list">
+            {arry.map((el) => (
+              <li key={el.id} className="user-item">
+                <img src={el.imageUrl} alt={el.name} style={{ width: '250px', height: '250px' }} />
+                <h1>{el.name}</h1>
+                <p>Price: ${el.price}</p>
+                <div className="buttons">
+                  <button className="delete-btn" onClick={() => handleDelete(el.id)}>Delete</button>
+                  <button className="update-btn" onClick={() => handleEdit(el.id)}>Edit</button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
-    </div>
-    
   );
 }
 

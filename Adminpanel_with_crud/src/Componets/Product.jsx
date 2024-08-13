@@ -24,12 +24,12 @@ const Product = () => {
    },[])
   return (
    <>
-   <div className="main">
+   <div className="main-1">
      {arr.map((el)=>(
        <div key={el.id}>
         <img src={el.imageUrl} alt="alt" />
-        <div>{el.name}</div>
-        <div>{el.price}</div>
+        <div>Name : {el.name}</div>
+        <div>Price : {el.price}</div>
 
       </div>
      ))}

@@ -6,7 +6,7 @@ export const Dashboard = () => {
       <div className="container-fluid">
         <div className="row">
           {/* Projects Section */}
-          <div className="col-lg-12">
+          <div className="col-lg-6">
             <div className="card shadow mb-4">
               <div className="card-header py-3">
                 <h6 className="m-0 font-weight-bold text-primary">Projects</h6>
@@ -77,7 +77,7 @@ export const Dashboard = () => {
               <div className="card-body text-center">
                 <img
                   className="img-fluid px-3 px-sm-4 mt-3 mb-4"
-                  style={{ width: "15rem" }}
+                  style={{ width: "14rem" }}
                   src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/undraw_like_post_dn6g_(1)_vgik.svg"
                   alt="..."
                 />
@@ -99,9 +99,9 @@ export const Dashboard = () => {
           </div>
         </div>
 
-        {/* Color Cards Section */}
-        <div className="row">
-          <div className="col-lg-6 mb-4">
+      
+        <div className="row shadow">
+          <div className="col-lg-6 mb-4 ">
             <div className="card bg-primary text-white shadow">
               <div className="card-body">
                 Primary
