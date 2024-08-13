@@ -301,3 +301,7 @@ input[type="submit"]:hover {
 .update-btn:hover {
   background-color: #218838;
 }
+
+form{
+  width: 30%;
+}

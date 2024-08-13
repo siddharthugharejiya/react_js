@@ -64,7 +64,7 @@ function Addproducts() {
 
   return (
     <div id="wra">
-      <div className="container">
+      <div className="container d-flex flex-column justify-content-center alighn-items-center">
       <form onSubmit={handleSubmit}>
         <input
           type="text"

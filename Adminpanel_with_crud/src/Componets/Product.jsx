@@ -25,7 +25,6 @@ const Product = () => {
   return (
    <>
    <div className="main">
-
      {arr.map((el)=>(
        <div key={el.id}>
         <img src={el.imageUrl} alt="alt" />

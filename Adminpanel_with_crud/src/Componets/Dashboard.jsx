@@ -6,7 +6,7 @@ export const Dashboard = () => {
       <div className="container-fluid">
         <div className="row">
           {/* Projects Section */}
-          <div className="col-lg-6">
+          <div className="col-lg-12">
             <div className="card shadow mb-4">
               <div className="card-header py-3">
                 <h6 className="m-0 font-weight-bold text-primary">Projects</h6>
