@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { DATA, DATA_ERROR, EMAIL, ERROR, FETCH_SINGLEPAGE_FAILURE, FETCH_SINGLEPAGE_SUCCESS, L_EMAIL, L_PASSWORD, PASSWORD, SINGLEPAGE, USERNAME } from "./actionType";
 import Swal from "sweetalert2";
 export const fetchingData = () => (dispatch)=> {
-    fetch(`http://localhost:9595/product`)
+    fetch(`https://mock-server-rea1.onrender.com/product`)
         .then((res) => res.json())
         .then((res) => {
 
@@ -21,7 +21,7 @@ export const fetchingData = () => (dispatch)=> {
 };
 
 export const SignupAction = (formState, navigate) => (dispatch) => {
-  fetch('http://localhost:9595/username', {
+  fetch('https://mock-server-rea1.onrender.com/username', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -63,7 +63,7 @@ export const SignupAction = (formState, navigate) => (dispatch) => {
 export const Login_Action=(login,nav_login)=>{
   if(login.email && login.password)
     {
-      fetch(`http://localhost:9595/username?email=${login.email}`)
+      fetch(`https://mock-server-rea1.onrender.com/username?email=${login.email}`)
       .then(response => response.json())
       .then(res=>{
         if(res.length>0){
@@ -106,7 +106,7 @@ export const Login_Action=(login,nav_login)=>{
 
 
 export const Singlepage_action = (id) => (dispatch) => {
-  fetch(`http://localhost:9595/product/${id}`)
+  fetch(`https://mock-server-rea1.onrender.com//product/${id}`)
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');

@@ -7,7 +7,7 @@ import './singlepage.css';
 const Singlepage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const singlePageData = useSelector((state) => state.singlePage.singlePageData); // Accessing the specific part of the state
+  const singlePageData = useSelector((state) => state.singlePage.singlePageData); 
 
   useEffect(() => {
     if (id) {

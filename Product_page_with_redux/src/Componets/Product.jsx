@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchingData } from '../Redux/action';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom'; 
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
@@ -10,7 +10,7 @@ import "../App.css";
 
 const Product = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); 
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedFilters, setSelectedFilters] = useState({
     gaming: false,
@@ -25,7 +25,6 @@ const Product = () => {
     dispatch(fetchingData());
   }, [dispatch]);
 
-  // Handle filter changes
   const handleFilterChange = (e) => {
     const { name, checked } = e.target;
     setSelectedFilters((prevFilters) => ({
@@ -34,17 +33,16 @@ const Product = () => {
     }));
   };
 
-  // Handle sort order change
+  
   const handleSortChange = (e) => {
     setSortOrder(e.target.value);
   };
 
-  // Handle search query change
+ 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
 
-  // Apply filters, sorting, and searching
   const filteredData = data
     .filter((item) => {
       if (searchQuery && !item.title.toLowerCase().includes(searchQuery.toLowerCase())) {

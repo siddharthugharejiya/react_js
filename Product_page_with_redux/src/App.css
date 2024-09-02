@@ -126,7 +126,7 @@ button {
   transform: rotate(-90deg);
 }
 .witch{
-  height: 40vh;
+  height: 90vh;
   width: 100%;
   /* border: 1px solid red; */
   transition: 2s;
@@ -541,4 +541,29 @@ button {
 
 .our {
   color: #007bff;
+}
+
+
+/* Media Query for devices with a width between 576px and 778px */
+@media(max-width: 576px)  {
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .main{
+    height: 147vh !important;
+  } 
+ .new {
+  height: 49vh;
+ }
+     .witch{
+      flex-wrap: wrap;
+     }
+  .witch-image {
+    width: 30%;
+  }
+  .footer-logo img{
+    width: 50%;
+  }
 }
