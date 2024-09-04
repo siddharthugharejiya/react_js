@@ -93,7 +93,23 @@ const initial = {
     default:
       return state;
   }
-};
+}
+
+const initial_cart={
+    store:[]
+}
  
+export const cart_reducer = (state=initial_cart,action)=>{
+    switch(action.type)
+    {
+        case 'cart_items':
+            return{
+                ...state,
+                cart : action.payload
+            }
+            default:
+           return state
+    }
+}
   
   

@@ -7,7 +7,7 @@ import './singlepage.css';
 const Singlepage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const singlePageData = useSelector((state) => state.singlePage.singlePageData); 
+  const singlePageData = useSelector((state) => state.singlePage.singlePageData);
 
   useEffect(() => {
     if (id) {
@@ -15,14 +15,34 @@ const Singlepage = () => {
     }
   }, [dispatch, id]);
 
-  if (!singlePageData || Object.keys(singlePageData).length === 0) {
-    return <div className="loading">Loading...</div>;
-  }
+  const add_cart = () => {
+    const cartData = {
+      id: singlePageData.id,
+      title: singlePageData.title,
+      price: singlePageData.price,
+      quantity: 1,  
+    };
 
-  // Handle potential errors
-  if (singlePageData.error) {
-    return <div className="error">Error: {singlePageData.error.message}</div>;
-  }
+    fetch(`https://mock-server-rea1.onrender.com/cart`, {  
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(cartData),
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log("Item added to cart:", data);
+    })
+    .catch(error => {
+      console.error("Error adding item to cart:", error.message);
+    });
+  };
 
   return (
     <div className="singlepage-container">
@@ -53,6 +73,9 @@ const Singlepage = () => {
               No Need to Wait-Plugged and connected, the white gaming mic is instantly recognized by your device. The plug-and-play USB microphone is compatible with Windows, Mac OS, and PS4/5. No redundant steps like software downloads, you just start speaking away. Simple...
             </p>
             <p className="product-category">Category: {singlePageData.category}</p>
+            <div>
+              <button onClick={add_cart}>ADD_cart</button>
+            </div>
           </div>
         </div>
       </div>

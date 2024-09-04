@@ -126,7 +126,7 @@ button {
   transform: rotate(-90deg);
 }
 .witch{
-  height: 90vh;
+  height: 40vh;
   width: 100%;
   /* border: 1px solid red; */
   transition: 2s;
@@ -545,25 +545,36 @@ button {
 
 
 /* Media Query for devices with a width between 576px and 778px */
-@media(max-width: 576px)  {
+@media(max-width: 550px)  {
   .container {
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
   .main{
-    height: 147vh !important;
+    height: 142vh !important;
   } 
  .new {
   height: 49vh;
  }
      .witch{
       flex-wrap: wrap;
+      height: 100vh;
+      margin-top: 100px;
+
      }
   .witch-image {
     width: 30%;
   }
-  .footer-logo img{
-    width: 50%;
+  .new-text{
+    height: 40vh;
   }
+  .footer-logo img{
+    height: 85%;
+    width: 44%;
+  }
+  .footer{
+    height: 80vh;
+  }
+
 }

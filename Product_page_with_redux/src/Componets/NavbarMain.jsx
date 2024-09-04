@@ -22,6 +22,7 @@ const NavbarMain = () => {
               {/* <Link to={"/error"}>Error</Link> */}
               <Link to={"/singup"}>Signup</Link>
               <Link to={"/login"}>Login</Link>
+              <Link to={"/cart"}>Cart</Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

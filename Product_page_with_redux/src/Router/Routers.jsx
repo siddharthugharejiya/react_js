@@ -7,6 +7,7 @@ import Singup from '../Componets/Singup';
 import Login from '../Componets/Login';
 import PrivateRoute from './PrivateRoute';
 import Singlepage from '../Componets/Singlepage';
+import Cart from '../Componets/Cart';
 
 const Routers = () => {
     return (
@@ -21,6 +22,7 @@ const Routers = () => {
             <Route path="/singup" element={<Singup/>}></Route>
             <Route path="/product/:id" element={<Singlepage/>}></Route> 
             <Route path="/login" element={<Login/>}></Route>
+            <Route path='/cart' element={<Cart/>}></Route>
         </Routes>
     );
 }

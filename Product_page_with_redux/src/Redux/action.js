@@ -91,7 +91,12 @@ export const Login_Action=(login,nav_login)=>{
           }
         }
         else{
-          alert("invalid email or password")
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Invalid Email And Password",
+            footer: '<a href="#">Why do I have this issue?</a>'
+          });
         }
           
       })
@@ -106,7 +111,7 @@ export const Login_Action=(login,nav_login)=>{
 
 
 export const Singlepage_action = (id) => (dispatch) => {
-  fetch(`https://mock-server-rea1.onrender.com//product/${id}`)
+  fetch(`https://mock-server-rea1.onrender.com/product/${id}`)
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -120,3 +125,18 @@ export const Singlepage_action = (id) => (dispatch) => {
       dispatch({ type: FETCH_SINGLEPAGE_FAILURE, error: error.message });
     });
 };
+export const Cart_items = () =>(dispatch)=>{
+              //  console.log(hello);
+               
+        fetch(`https://mock-server-rea1.onrender.com/cart`)
+        .then(res=>res.json())
+        .then(res=>{
+          dispatch({
+            type:"cart_items",
+            payload:res
+          })
+          console.log(res);
+          
+        })
+
+}
