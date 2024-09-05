@@ -96,7 +96,7 @@ function Addproducts() {
           <ul className="user-list">
             {arry.map((el) => (
               <li key={el.id} className="user-item">
-                <img src={el.imageUrl} alt={el.name} style={{ width: '250px', height: '250px' }} />
+                <img src={el.imageUrl} alt={el.name} />
                 <h1>{el.name}</h1>
                 <p>Price: ${el.price}</p>
                 <div className="buttons">

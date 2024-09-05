@@ -29,7 +29,7 @@ const TodoInput = () => {
             if(e.id==id){
             return {...e,status : !e.status}
             }
-        else{
+        else{ 
             return e
         }
      })
