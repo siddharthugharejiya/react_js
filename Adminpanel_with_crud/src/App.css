@@ -334,7 +334,7 @@ form{
   border-radius: 10px;
   text-align: center;
   overflow: hidden;
-  height: 53vh;
+  height: 63vh;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
   width: 320px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -515,3 +515,9 @@ nav button:hover {
   }
 }
 
+
+
+
+.filters{
+  margin: 0px 400px;
+}

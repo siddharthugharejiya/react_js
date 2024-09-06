@@ -9,7 +9,7 @@ function Addproducts() {
   const [imageUrl, setImageUrl] = useState('');
   const [arry, setArry] = useState([]);
   const [edit, setEdit] = useState(null);
-  
+  const [category,setcategory]=useState("")  
 
   const userCollection = collection(db, 'products');
 
@@ -19,7 +19,8 @@ function Addproducts() {
     const obj = {
       name,
       price,
-      imageUrl
+      imageUrl,
+      category
     };
 
     if (edit) {
@@ -33,6 +34,7 @@ function Addproducts() {
 
     setName('');
     setPrice('');
+    setcategory('')
     setImageUrl('');
     setEdit(null);
     getData();
@@ -42,7 +44,7 @@ function Addproducts() {
     const data = await getDocs(userCollection);
     const items = data.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
     setArry(items);
-  };
+  }
 
   useEffect(() => {
     getData();
@@ -87,6 +89,13 @@ function Addproducts() {
               value={imageUrl}
               onChange={(e) => setImageUrl(e.target.value)}
               placeholder="Enter image URL"
+              required
+            />
+             <input
+              type="text"
+              value={category}
+              onChange={(e) => setcategory(e.target.value)}
+              placeholder="Enter Category"
               required
             />
             <input type="submit" value={edit ? "Update" : "Submit"} />
