@@ -324,7 +324,7 @@ form{
   padding: 30px;
   justify-content: space-around;
   background-color: #e0e0e0;
-  height: 100vh;
+  height: 135vh;
   width: 87%;
   margin-left: 13%;
 }
@@ -336,7 +336,7 @@ form{
   overflow: hidden;
   height: 63vh;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-  width: 320px;
+  width: 340px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -517,7 +517,44 @@ nav button:hover {
 
 
 
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  gap: 10px;
+  margin: 0 630px;
+}
 
-.filters{
-  margin: 0px 400px;
+.filters input[type="text"] {
+  width: 200px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.filters input[type="text"]:focus {
+  border-color: #007bff;
+}
+
+.filters select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.filters select:focus {
+  border-color: #007bff;
+}
+
+.filters select option {
+  padding: 5px;
 }

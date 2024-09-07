@@ -62,6 +62,7 @@ function Addproducts() {
     setName(item.name);
     setPrice(item.price);
     setImageUrl(item.imageUrl);
+    setcategory(item.category)
     setEdit(id);
   };
 
@@ -107,7 +108,8 @@ function Addproducts() {
             {arry.map((el) => (
               <li key={el.id} className="user-item">
                 <img src={el.imageUrl} alt={el.name} />
-                <h1>{el.name}</h1>
+                <h1>Name : {el.name}</h1>
+                <p>category : {el.category}</p>
                 <p>Price: ${el.price}</p>
                 <div className="buttons">
                   <button className="delete-btn" onClick={() => handleDelete(el.id)}>Delete</button>

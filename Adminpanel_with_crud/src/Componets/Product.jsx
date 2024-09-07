@@ -82,7 +82,7 @@ const Product = () => {
    
         <select onChange={handleFilter} value={filterCategory}>
           <option value="">All Categories</option>
-          <option value="Electronics">Electronics</option>
+          <option value="gaming">Gaming</option>
           <option value="Clothing">Clothing</option>
           <option value="Furniture">Furniture</option>
         </select>
