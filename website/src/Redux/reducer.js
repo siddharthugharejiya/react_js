@@ -40,5 +40,6 @@ export const Signup_reducer = (state=Signup_initial,action) =>{
                 ...state,
                 password:action.payload
             }
+        default:return state
       }
 }
