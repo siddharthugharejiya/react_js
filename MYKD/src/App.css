@@ -1,0 +1,42 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.main-home{
+  height: 130vh;
+  width: 100%;
+  border: 1px solid red !important;
+  background-image: url(./Componets/image/slider_bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#header-logo{
+  height: 7vh;
+  width: 100%;
+}
+/* Custom style for active Nav.Link */
+.navbar-nav .nav-link.active {
+  position: relative;
+  transition: all 0.3s ease-out 0s;
+
+  color: #45f882!important; /* Change this to your desired active color */
+}
+.navbar-nav .nav-link.active::before{
+  transform:translateY(-50%) rotate(0deg);
+  content: "";
+  transition: all 0.3s ease-out 0s;
+  position: absolute;
+  width: 40px;
+  height: 1px;
+  opacity: 0;
+  /* border: 1px solid  #45f882; */
+  background: #45f882;
+  top: 22px;
+
+}
+
+.navbar-nav .nav-link.active::after{
+  opacity: 1;
+}

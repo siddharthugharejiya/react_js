@@ -9,8 +9,12 @@ function Addproducts() {
   const [imageUrl, setImageUrl] = useState('');
   const [arry, setArry] = useState([]);
   const [edit, setEdit] = useState(null);
+<<<<<<< HEAD
   const [category,setcategory]=useState("")
 
+=======
+  const [category,setcategory]=useState("")  
+>>>>>>> e1e62634e4ff176c549e31f07f1e7cfd62c63b6f
 
   const userCollection = collection(db, 'products');
 
@@ -20,7 +24,8 @@ function Addproducts() {
     const obj = {
       name,
       price,
-      imageUrl
+      imageUrl,
+      category
     };
 
     if (edit) {
@@ -34,6 +39,7 @@ function Addproducts() {
 
     setName('');
     setPrice('');
+    setcategory('')
     setImageUrl('');
     setEdit(null);
     getData();
@@ -43,7 +49,7 @@ function Addproducts() {
     const data = await getDocs(userCollection);
     const items = data.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
     setArry(items);
-  };
+  }
 
   useEffect(() => {
     getData();
@@ -61,6 +67,7 @@ function Addproducts() {
     setName(item.name);
     setPrice(item.price);
     setImageUrl(item.imageUrl);
+    setcategory(item.category)
     setEdit(id);
   };
 
@@ -97,6 +104,13 @@ function Addproducts() {
               placeholder="Enter image URL"
               required
             />
+             <input
+              type="text"
+              value={category}
+              onChange={(e) => setcategory(e.target.value)}
+              placeholder="Enter Category"
+              required
+            />
             <input type="submit" value={edit ? "Update" : "Submit"} />
           </form>
         </div>
@@ -105,8 +119,9 @@ function Addproducts() {
           <ul className="user-list">
             {arry.map((el) => (
               <li key={el.id} className="user-item">
-                <img src={el.imageUrl} alt={el.name} style={{ width: '250px', height: '250px' }} />
-                <h1>{el.name}</h1>
+                <img src={el.imageUrl} alt={el.name} />
+                <h1>Name : {el.name}</h1>
+                <p>category : {el.category}</p>
                 <p>Price: ${el.price}</p>
                 <p>Category : {el.category} </p>
                 <div className="buttons">
