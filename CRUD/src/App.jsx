@@ -2,12 +2,12 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  // Initialize state with the correct key
+
   const [state, setState] = useState({
-    name: "", // Changed from email to name to match the input field name
+    name: "", 
   });
 
-  // Handle input change
+
   const change = (e) => {
     const { name, value } = e.target;
     setState({
@@ -16,7 +16,7 @@ function App() {
     });
   };
 
-  // Handle form submission
+
   const submit = () => {
     // Save the form data to localStorage
     localStorage.setItem("user", JSON.stringify(state));

@@ -9,7 +9,8 @@ function Addproducts() {
   const [imageUrl, setImageUrl] = useState('');
   const [arry, setArry] = useState([]);
   const [edit, setEdit] = useState(null);
-  
+  const [category,setcategory]=useState("")
+
 
   const userCollection = collection(db, 'products');
 
@@ -82,6 +83,13 @@ function Addproducts() {
               placeholder="Enter price"
               required
             />
+             <input
+              type="text"
+              value={category}
+              onChange={(e) => setcategory(e.target.value)}
+              placeholder="Enter Category"
+              required
+            />
             <input
               type="text"
               value={imageUrl}
@@ -100,6 +108,7 @@ function Addproducts() {
                 <img src={el.imageUrl} alt={el.name} style={{ width: '250px', height: '250px' }} />
                 <h1>{el.name}</h1>
                 <p>Price: ${el.price}</p>
+                <p>Category : {el.category} </p>
                 <div className="buttons">
                   <button className="delete-btn" onClick={() => handleDelete(el.id)}>Delete</button>
                   <button className="update-btn" onClick={() => handleEdit(el.id)}>Edit</button>

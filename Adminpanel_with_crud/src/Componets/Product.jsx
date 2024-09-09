@@ -8,7 +8,7 @@ const Product = () => {
    const userCollection = collection(db,"products")
    const [arr,setarr] = useState([])
    const get=async()=>{
-     let d= await getDocs(userCollection)
+     let d=await getDocs(userCollection)
      let data = d.docs.map((el)=>{
            return{
              id : el.id,
@@ -16,7 +16,7 @@ const Product = () => {
            }
           })
           setarr(data)
-          console.log(data);
+          // console.log(data);
           
    }
    useEffect(()=>{
@@ -29,6 +29,7 @@ const Product = () => {
        <div key={el.id}>
         <img src={el.imageUrl} alt="alt" />
         <div>Name : {el.name}</div>
+        <div>Category : {el.category}</div>
         <div>Price : {el.price}</div>
 
       </div>
