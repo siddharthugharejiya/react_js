@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+input.me-2.form-control {
+    padding-inline-end: 300px;
+}
+placeholder{
+    width: 100%;
+}
