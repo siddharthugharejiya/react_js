@@ -3,9 +3,150 @@
     padding: 0;
     box-sizing: border-box;
 }
-input.me-2.form-control {
-    padding-inline-end: 300px;
-}
-placeholder{
+.navbar_1{
     width: 100%;
+    background-color:rgb(248, 249, 250);
+}
+.custom-navbar {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+img.img-fluid.logo{
+    height: 45px !important;
+}
+.logo {
+    max-width: 100px;
+}
+
+.explore-plus {
+    font-size: 14px;
+    color: white;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.plus {
+    color: #ff9f00;
+}
+
+.search-bar {
+    flex: 1;
+    max-width: 600px;
+    margin-right: 10px;
+    position: relative;
+}
+
+.search-input {
+    border: none;
+    border-radius: 2px;
+    padding: 8px;
+    width: 100%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icons .nav-link {
+    color: black; /* Make nav links black */
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.nav-icons .nav-link:hover {
+    color: #ff9f00;
+}
+
+.nav-icons svg {
+    font-size: 1.2rem;
+    color: black; /* Make icons black */
+}
+
+.dropdown-toggle, 
+.dropdown-toggle .nav-link {
+    color: black; /* Ensure dropdown toggler text is black */
+}
+
+.navbar-nav .nav-link {
+    color: black; /* Apply black color to all links in the navbar */
+}
+
+
+.nav-icons svg {
+    color: black;
+}
+
+.nav-icons .nav-link {
+    color: black;
+}
+
+.dropdown-toggle, .dropdown-toggle .nav-link {
+    color: black;
+}
+
+.nav-item.dropdown,.nav-link{
+    font-size: 20px !important;
+    font-weight: 600 !important;
+}
+
+
+
+/* General Navbar styling */
+.custom-navbar {
+    background-color: #2874f0; /* Flipkart's blue */
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo styling */
+.logo {
+    max-width: 100px;
+}
+
+/* Search bar centered with shadow effect */
+.search-bar {
+    flex: 1;
+    max-width: 600px;
+    margin-right: 10px;
+    position: relative;
+}
+
+.search-input {
+    border: none;
+    border-radius: 2px;
+    padding: 8px;
+    width: 100%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon and Nav link styling */
+.nav-icons {
+    display: flex;
+    align-items: center;
+}
+
+.main-sub{
+    height: 300px;
+    width: 100%;
+    border: 1px solid
+     red;
+}
+
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .search-bar {
+        max-width: 100%;
+        margin: 10px 0;
+    }
 }

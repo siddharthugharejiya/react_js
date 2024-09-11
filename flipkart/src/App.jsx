@@ -7,7 +7,7 @@ function App() {
 
   return (
   <>
-  <Navbar1/>
+  {/* <Navbar1/> */}
   <Mainroutes/>
   </>
   )
