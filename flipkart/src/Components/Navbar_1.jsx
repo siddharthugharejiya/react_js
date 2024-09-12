@@ -14,10 +14,11 @@ const Navbar1 = () => {
   return (
     <div className="navbar_1">
       <div className="container-fluid">
+        <div className="container">
         <Navbar expand="lg" className="custom-navbar bg-light">
           <Container fluid>
             <Navbar.Brand href="#">
-              <img src="flipkart/public/image/fkheaderlogo_ex     ploreplus_mobile-39120d.svg" className="img-fluid logo" alt="Brand Logo" />
+              <img src="public/image/fkheaderlogo_exploreplus_mobile-39120d.svg" className="img-fluid logo" alt="Brand Logo" />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
@@ -57,6 +58,8 @@ const Navbar1 = () => {
             </Navbar.Collapse>
           </Container>
         </Navbar>
+        </div>
+       
       </div>
     </div>
   );
