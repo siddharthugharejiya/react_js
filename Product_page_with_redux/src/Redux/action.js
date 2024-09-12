@@ -6,7 +6,6 @@ export const fetchingData = () => (dispatch)=> {
     fetch(`https://mock-server-rea1.onrender.com/product`)
         .then((res) => res.json())
         .then((res) => {
-
             dispatch({
                 type: DATA,
                 payload: res

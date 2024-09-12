@@ -1,8 +1,8 @@
-import { addDoc, collection, deleteDoc, doc, getDocs, updateDoc } from 'firebase/firestore'
-import React, { useEffect, useState } from 'react'
-import { db } from '../Firebase/Firebase'
-// import { btn } from 'bootstrap';
-import "../App.css"
+import { addDoc, collection, deleteDoc, doc, getDocs, updateDoc } from 'firebase/firestore';
+import { onAuthStateChanged, signInWithPopup, GoogleAuthProvider, signOut } from 'firebase/auth';
+import React, { useEffect, useState } from 'react';
+import { db, auth } from '../Firebase/Firebase'; 
+import "../App.css";
 
 const Firebase_Components = () => {
   const [state, setState] = useState({
@@ -10,7 +10,9 @@ const Firebase_Components = () => {
     password: ""
   });
   const [arr, setArr] = useState([]);
-  const usercollection = collection(db, "user");
+  const [update, setUpdate] = useState(null);
+  const [user, setUser] = useState(null);
+  const userCollection = collection(db, "user");
 
   const change = (e) => {
     const { name, value } = e.target;
@@ -20,8 +22,6 @@ const Firebase_Components = () => {
     });
   };
 
-  const [update,setupdate]=useState(null)
-
   const submit = async (e) => {
     e.preventDefault();
     let obj = {
@@ -29,84 +29,131 @@ const Firebase_Components = () => {
       password: state.password
     };
 
-    if(update != null)
-    {
-     let d=doc(db,"user",update)
-     await updateDoc(d,obj)
-     setupdate(null)
-    }
-    else{
-    
-      await addDoc(usercollection, obj);
-      alert(`Data added successfully`);
+    if (update != null) {
+      let docRef = doc(db, "user", update);
+      await updateDoc(docRef, obj);
+      alert("Data updated successfully");
+      setUpdate(null);
+    } else {
+      await addDoc(userCollection, obj);
+      alert("Data added successfully");
     }
 
-    get(); 
-    setState({ email: "", password: "" }); 
-
-    setupdate(id)
+    get(); // Fetch the updated list of records
+    setState({ email: "", password: "" }); // Reset the form
   };
 
   const get = async () => {
-    const getted = await getDocs(usercollection);
-    let d = getted.docs.map((el) => {
-      return {
-        id: el.id,
-        ...el.data()
-      };
-    });
-    setArr(d);
+    const snapshot = await getDocs(userCollection);
+    let data = snapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data()
+    }));
+    setArr(data);
   };
 
-  useEffect(() => {
-    get();
-  }, []); 
-
   const del = async (id) => {
-    let d = doc(db, "user", id);
-    await deleteDoc(d);
-    get(); 
+    let docRef = doc(db, "user", id);
+    await deleteDoc(docRef);
+    get(); // Refresh data after deletion
     alert("Deleted successfully");
   };
 
+  const edit = (id) => {
+    const record = arr.find((el) => el.id === id);
+    if (record) {
+      setState({
+        email: record.email,
+        password: record.password
+      });
+      setUpdate(id); // Set update mode with the document ID
+    }
+  };
 
-     const edit = (id) =>{
-      console.log(id);
-      console.log(arr);
-      arr.map((el)=>{
-        if(el.id==id)
-        setState({
-          email:el.email,
-          password:el.password
-        })
-        setupdate(id)
+  const googleSignIn = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        setUser(result.user);
+        alert("Signed in successfully");
       })
-      
-     }
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
 
+  const googleSignOut = () => {
+    signOut(auth)
+      .then(() => {
+        setUser(null);
+        alert("Signed out successfully");
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
+
+  useEffect(() => {
+    // Track user authentication state
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        setUser(currentUser);
+        get(); // Fetch data if authenticated
+      } else {
+        setUser(null);
+      }
+    });
+
+    return () => unsubscribe(); // Cleanup the listener on unmount
+  }, []);
 
   return (
     <div>
-      <form onSubmit={submit}>
+      {user ? (
         <div>
-          <label>Email:</label>
-          <input type="text" name="email" value={state.email} onChange={change} className='formcontrol'/>
-        </div>
-        <label>Password:</label>
-          <input type="text" name="password" value={state.password} onChange={change} />
-        <br />
-        <input type="submit" value={update != null ? "Update" : "Submit"}/>
-      </form>
-      <div>
-        {arr.map((el) => (
-          <div key={el.id}>
-            <div>{el.email}</div>
-            <div>{el.password}</div>
-            <button onClick={() => del(el.id)} >Delete</button>
-            <button onClick={()=>edit(el.id)}>edit</button>
+          <button onClick={googleSignOut}>Sign out</button>
+
+          <form onSubmit={submit}>
+            <div>
+              <label>Email:</label>
+              <input
+                type="text"
+                name="email"
+                value={state.email}
+                onChange={change}
+                className="form-control"
+              />
+            </div>
+            <div>
+              <label>Password:</label>
+              <input
+                type="text"
+                name="password"
+                value={state.password}
+                onChange={change}
+                className="form-control"
+              />
+            </div>
+            <br />
+            <input type="submit" value={update != null ? "Update" : "Submit"} />
+          </form>
+
+          <div>
+            {arr.map((el) => (
+              <div key={el.id}>
+                <div>{el.email}</div>
+                <div>{el.password}</div>
+                <button onClick={() => del(el.id)}>Delete</button>
+                <button onClick={() => edit(el.id)}>Edit</button>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
+      ) : (
+        <div>
+          <button onClick={googleSignIn}>Sign in with Google</button>
+        </div>
+      )}
     </div>
   );
 };
