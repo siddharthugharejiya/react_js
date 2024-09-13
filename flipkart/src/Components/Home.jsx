@@ -4,6 +4,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import Form from "react-bootstrap/Form";
 import Slider from "react-slick";
 import Card from "react-bootstrap/Card";
+import { useEffect } from "react";
 
 // import Slider from "react-slick";
 import "../App.css";
@@ -51,6 +52,17 @@ const CustomMenu = React.forwardRef(
 );
 
 const Home = () => {
+  const [fetchdata, setfetchdata] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://localhost:9595/product`)
+      .then((res) => res.json())
+      .then((data) => {
+        setfetchdata(data);
+        console.log(data);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
   const settings = {
     className: "",
     dots: true,
@@ -96,6 +108,9 @@ const Home = () => {
   return (
     <>
       <Navbar1 />
+      {fetchdata.map((el)=>{
+        <div key={el.id}>{el.description}</div>
+      })}
       <div className="main-sub">
         <div className="container-fluid bg-white h-100">
           <div
@@ -278,53 +293,55 @@ const Home = () => {
               </Dropdown>
             </div>
           </div>
-
-          <div className="home-slider">
-            <div className="slider-container">
-              <Slider {...settings}>
-                <div>
-                  <h3>
-                    <img
-                      src="./public/image/7c6cf1a109b087d2.jpg"
-                      alt=""
-                      id="img"
-                    />
-                  </h3>
-                </div>
-                <div>
-                  <h3>
-                    <img
-                      src="./public/image/668e0875ca6dca50.png"
-                      alt=""
-                      id="img"
-                    />
-                  </h3>
-                </div>
-                <div>
-                  <h3>
-                    <img
-                      src="./public/image/01c63eaa43ccb5ed.jpg"
-                      alt=""
-                      id="img"
-                    />
-                  </h3>
-                </div>
-                <div>
-                  <h3>
-                    <img
-                      src="./public/image/d9290fb51138d286.png"
-                      alt=""
-                      id="img"
-                    />
-                  </h3>
-                </div>
-              </Slider>
+          <div className="container-fluid">
+            <div className="home-slider">
+              <div className="slider-container">
+                <Slider {...settings}>
+                  <div>
+                    <h3>
+                      <img
+                        src="./public/image/7c6cf1a109b087d2.jpg"
+                        alt=""
+                        id="img"
+                      />
+                    </h3>
+                  </div>
+                  <div>
+                    <h3>
+                      <img
+                        src="./public/image/668e0875ca6dca50.png"
+                        alt=""
+                        id="img"
+                      />
+                    </h3>
+                  </div>
+                  <div>
+                    <h3>
+                      <img
+                        src="./public/image/01c63eaa43ccb5ed.jpg"
+                        alt=""
+                        id="img"
+                      />
+                    </h3>
+                  </div>
+                  <div>
+                    <h3>
+                      <img
+                        src="./public/image/d9290fb51138d286.png"
+                        alt=""
+                        id="img"
+                      />
+                    </h3>
+                  </div>
+                </Slider>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="container-fluid">
+      <div className="container-fluid mt-3">
         <div className="sub-slider">
+          <h1>Best of Electronics</h1>
           <div className="sub-slider-1">
             <div className="slider-container">
               <Slider {...settingss}>
@@ -333,7 +350,12 @@ const Home = () => {
                     <Card.Img
                       variant="top"
                       src="./public/image/ultra-pods-in-ear-earbuds-headphones-noise-canceling-haiidra-original-imahfk4fpzwufzts.jpeg"
-                      className="a"
+                      // className="a"
+                      style={{
+                        width: "145px",
+                        height: "170px",
+                        margin: "20px",
+                      }}
                     />
                     <Card.Body id="card-body">
                       <Card.Title>Best Truewireless...</Card.Title>
@@ -354,7 +376,7 @@ const Home = () => {
                       <Card.Title>Noice SmartWatchies</Card.Title>
                       <Card.Text>
                         <b>
-                          frome <i class="fa-solid fa-indian-rupee-sign"></i>{" "}
+                          frome <i className="fa-solid fa-indian-rupee-sign"></i>{" "}
                           1,999
                         </b>
                       </Card.Text>
@@ -372,15 +394,15 @@ const Home = () => {
                       <Card.Title>projector</Card.Title>
                       <Card.Text>
                         <b>
-                          frome <i class="fa-solid fa-indian-rupee-sign"></i>{" "}
+                          frome <i className="fa-solid fa-indian-rupee-sign"></i>{" "}
                           6,999
                         </b>
                       </Card.Text>
                     </Card.Body>
                   </Card>
                 </div>
-                 
-                  <div className="text-center">
+
+                <div className="text-center">
                   <Card style={{ width: "15rem" }} id="card">
                     <Card.Img
                       variant="top"
@@ -391,7 +413,7 @@ const Home = () => {
                       <Card.Title>Monitor dabbo</Card.Title>
                       <Card.Text>
                         <b>
-                          frome <i class="fa-solid fa-indian-rupee-sign"></i>{" "}
+                          frome <i className="fa-solid fa-indian-rupee-sign"></i>{" "}
                           7495
                         </b>
                       </Card.Text>
@@ -399,46 +421,46 @@ const Home = () => {
                   </Card>
                 </div>
                 <div>
-                <div className="text-center">
-                  <Card style={{ width: "15rem" }} id="card">
-                    <Card.Img
-                      variant="top"
-                      src="./public/image/-original-imagfykthgudy4qz.jpeg"
-                      className="a"
-                    />
-                    <Card.Body id="card-body">
-                      <Card.Title>Geared Cycles</Card.Title>
-                      <Card.Text>
-                        <b>
-                          Up to 70% off
-                          {/* frome <i class="fa-solid fa-indian-rupee-sign"></i>{" "} */}
-                        </b>
-                      </Card.Text>
-                    </Card.Body>
-                  </Card>
-                </div>
+                  <div className="text-center">
+                    <Card style={{ width: "15rem" }} id="card">
+                      <Card.Img
+                        variant="top"
+                        src="./public/image/-original-imagfykthgudy4qz.jpeg"
+                        className="a"
+                      />
+                      <Card.Body id="card-body">
+                        <Card.Title>Geared Cycles</Card.Title>
+                        <Card.Text>
+                          <b>
+                            Up to 70% off
+                            {/* frome <i class="fa-solid fa-indian-rupee-sign"></i>{" "} */}
+                          </b>
+                        </Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </div>
                 </div>
                 <div>
-                <div className="text-center">
-                  <Card style={{ width: "15rem" }} id="card">
-                    <Card.Img
-                      variant="top"
-                      src="./public/image/eos-r100-24-1-eos-r100-kit-canon-original-imagqeydhsxgacxp.jpeg"
-                      className="a"
-                    />
-                    <Card.Body id="card-body">
-                      <Card.Title>Mirrorless Cameras</Card.Title>
-                      <Card.Text>
-                        <b>
-                         Shop Now!
-                          {/* frome <i class="fa-solid fa-indian-rupee-sign"></i>{" "} */}
-                        </b>
-                      </Card.Text>
-                    </Card.Body>
-                  </Card>
+                  <div className="text-center">
+                    <Card style={{ width: "15rem" }} id="card">
+                      <Card.Img
+                        variant="top"
+                        src="./public/image/eos-r100-24-1-eos-r100-kit-canon-original-imagqeydhsxgacxp.jpeg"
+                        className="a"
+                      />
+                      <Card.Body id="card-body">
+                        <Card.Title>Mirrorless Cameras</Card.Title>
+                        <Card.Text>
+                          <b>
+                            Shop Now!
+                            {/* frome <i class="fa-solid fa-indian-rupee-sign"></i>{" "} */}
+                          </b>
+                        </Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </div>
                 </div>
-                </div>
-             
+
                 <div className="text-center">
                   <Card style={{ width: "15rem" }} id="card">
                     <Card.Img
@@ -450,7 +472,6 @@ const Home = () => {
                       <Card.Title>boAt Smartwatches</Card.Title>
                       <Card.Text>
                         <b>
-                         
                           frome <i class="fa-solid fa-indian-rupee-sign"></i>{" "}
                           1,099
                         </b>
@@ -464,14 +485,13 @@ const Home = () => {
                       variant="top"
                       src="./public/image/philips-s1121-45-s1121-45-original-imafry2qgxcwnm9r.jpeg"
                       // className="a"
-                      style={{width:"95px",height:"170px",margin:"20px"}}
+                      style={{ width: "95px", height: "170px", margin: "20px" }}
                     />
                     <Card.Body id="card-body">
                       <Card.Title>Best of Shavers</Card.Title>
                       <Card.Text>
                         <b>
-                         
-                          frome <i class="fa-solid fa-indian-rupee-sign"></i>{" "}
+                          frome <i className="fa-solid fa-indian-rupee-sign"></i>{" "}
                           1,099
                         </b>
                       </Card.Text>
@@ -481,7 +501,15 @@ const Home = () => {
               </Slider>
             </div>
           </div>
+          <div className="sub-sid"></div>
         </div>
+      </div>
+
+      <div className="container mt-3">
+        <h2>Fetched Products</h2>
+        {/* {fetchdata.map((el) => (
+          <div key={el.id}>{el.name}</div> // Assuming each element has a name property
+        ))} */}
       </div>
     </>
   );
