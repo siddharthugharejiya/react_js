@@ -10,14 +10,14 @@ const Product = () => {
                 setState(res);
                   console.log(res)
             })
-            .catch(err => console.error(err)); // Add error handling in case the fetch fails
+            .catch(err => console.error(err)); 
     }, []);
 
     return (
         <div>
             <h1>Product</h1>
             {state.map((el) => (
-                <div key={el.id}>{el.title}</div> // Return the JSX here
+                <div key={el.id}>{el.title}</div>
             ))}
         </div>
     );

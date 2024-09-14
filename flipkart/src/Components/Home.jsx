@@ -5,9 +5,9 @@ import Form from "react-bootstrap/Form";
 import Slider from "react-slick";
 import Card from "react-bootstrap/Card";
 import { useEffect } from "react";
-
-// import Slider from "react-slick";
 import "../App.css";
+import { product_action } from "../Redux/action";
+import { useDispatch , useSelector} from "react-redux";
 
 const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
   <a
@@ -52,32 +52,30 @@ const CustomMenu = React.forwardRef(
 );
 
 const Home = () => {
-  const [fetchdata, setfetchdata] = useState([]);
+  
+  const dispatch = useDispatch()
+ const product=useSelector(state=>state.product.data)
+//  console.log(pro);
+ 
+  
+  useEffect(()=>{
+     dispatch(product_action())
+  },[dispatch])
 
-  useEffect(() => {
-    fetch(`http://localhost:9595/product`)
-      .then((res) => res.json())
-      .then((data) => {
-        setfetchdata(data);
-        console.log(data);
-      })
-      .catch((error) => console.error("Error fetching data:", error));
-  }, []);
   const settings = {
-    className: "",
     dots: true,
-    infinite: true,
+    infinite: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     adaptiveHeight: true,
   };
-  var settingss = {
+
+  const settingss = {
     dots: true,
     infinite: false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
-    initialSlide: 0,
     responsive: [
       {
         breakpoint: 1024,
@@ -108,9 +106,7 @@ const Home = () => {
   return (
     <>
       <Navbar1 />
-      {fetchdata.map((el)=>{
-        <div key={el.id}>{el.description}</div>
-      })}
+     
       <div className="main-sub">
         <div className="container-fluid bg-white h-100">
           <div
@@ -507,9 +503,22 @@ const Home = () => {
 
       <div className="container mt-3">
         <h2>Fetched Products</h2>
-        {/* {fetchdata.map((el) => (
-          <div key={el.id}>{el.name}</div> // Assuming each element has a name property
-        ))} */}
+         {
+          product.map((el)=>(
+
+            <div key={el.id}>
+             <div> 
+               {el.title}
+              </div>
+              <img
+                src={el.image}
+                class="img-fluid rounded-top"
+                alt=""
+              />
+              
+            </div>
+          ))
+         }
       </div>
     </>
   );
