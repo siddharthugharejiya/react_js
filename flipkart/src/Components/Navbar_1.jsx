@@ -18,7 +18,7 @@ const Navbar1 = () => {
         <Navbar expand="lg" className="custom-navbar bg-light">
           <Container fluid>
             <Navbar.Brand href="#">
-              <img src="public/image/fkheaderlogo_exploreplus_mobile-39120d.svg" className="img-fluid logo" alt="Brand Logo" />
+              <img src="./public/image/flipkart.svg" className="img-fluid logo" alt="Brand Logo" />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">

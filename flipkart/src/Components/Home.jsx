@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import "../App.css";
 import { product_action } from "../Redux/action";
 import { useDispatch , useSelector} from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
   <a
@@ -52,10 +53,11 @@ const CustomMenu = React.forwardRef(
 );
 
 const Home = () => {
-  
+   const navigate = useNavigate()
+   const navigates = useNavigate()
   const dispatch = useDispatch()
  const product=useSelector(state=>state.product.data)
-//  console.log(pro);
+
  
   
   useEffect(()=>{
@@ -103,6 +105,10 @@ const Home = () => {
       },
     ],
   };
+  const handleclick = (id) =>{
+    navigate(`/product/${id}`)
+    navigates(`/Singlepage/${id}`)
+  }
   return (
     <>
       <Navbar1 />
@@ -501,25 +507,44 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="container mt-3">
-        <h2>Fetched Products</h2>
-         {
-          product.map((el)=>(
-
-            <div key={el.id}>
-             <div> 
-               {el.title}
-              </div>
-              <img
+      <div className="container-fluid mt-3">
+  <h2>Fetched Products</h2>
+  <div className="sub-slider-1-1">
+    <div className="container-fluid">
+    <div className="slider-container">
+      <Slider {...settingss}>
+        {product.map((el) => (
+          <div className="text-center" key={el.id}>
+            <Card style={{ width: "19rem" }} id="card" onClick={()=>handleclick(el.id)}>
+              <Card.Img
+                variant="top"
+                id="c"
                 src={el.image}
-                class="img-fluid rounded-top"
-                alt=""
+                style={{
+                  width: "70%",
+                  height: "200px",
+                 
+                }}
               />
-              
-            </div>
-          ))
-         }
-      </div>
+              <Card.Body style={{height:"160px"}}>
+                <Card.Title>{el.title}</Card.Title>
+                <Card.Text>
+                  <b>Grab Now</b>
+                </Card.Text>
+                <Card.Text>
+                 <p>Price : ${el.price}</p>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </div>
+        ))}
+      </Slider>
+    </div>
+    </div>
+
+  </div>
+</div>
+
     </>
   );
 };
