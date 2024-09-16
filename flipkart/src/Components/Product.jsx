@@ -1,27 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Button, Col, Row, Container, Card } from 'react-bootstrap';
+import { Button, Col, Row, Container } from 'react-bootstrap';
 import Navbar1 from './Navbar_1';
+import Card from 'react-bootstrap/Card';
+import Swal from 'sweetalert2';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../App.css";
-
 const Product = () => {
   const [product, setProduct] = useState(null);
   const [similarProducts, setSimilarProducts] = useState([]);
-  const [quantity, setQuantity] = useState(1); 
+  const [quantity, setQuantity] = useState(1);
+  const [selectedImage, setSelectedImage] = useState(''); // Added state for selected image
   const { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`https://mock-server-rea1.onrender.com/product/${id}`)
-      .then(res => res.json())
-      .then(res => {
+      .then((res) => res.json())
+      .then((res) => {
         setProduct(res);
-
-        fetch(`https://mock-server-rea1.onrender.com/product?category=${res.category}`) 
-          .then(response => response.json())
-          .then(allProducts => {
-
+        setSelectedImage(res.image); // Set initial selected image
+        fetch(`https://mock-server-rea1.onrender.com/product?category=${res.category}`)
+          .then((response) => response.json())
+          .then((allProducts) => {
             setSimilarProducts(allProducts);
             console.log('Filtered Similar Products:', allProducts);
           });
@@ -29,11 +30,11 @@ const Product = () => {
   }, [id]);
 
   const handleIncrement = () => {
-    setQuantity(prev => prev + 1);
+    setQuantity((prev) => prev + 1);
   };
 
   const handleDecrement = () => {
-    setQuantity(prev => (prev > 1 ? prev - 1 : 1));
+    setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
   };
 
   const handleAddToCart = () => {
@@ -41,8 +42,13 @@ const Product = () => {
       product: product,
       quantity: quantity,
     };
-    alert(`Successfully added ${quantity} item(s) to cart`);
-    navigate("/add",{state:cartItem});
+    Swal.fire({
+      title: "Good job!",
+      text: "Success full add data",
+      icon: "success"
+    });
+    // alert(`Successfully added ${quantity} item(s) to cart`);
+    navigate("/add", { state: cartItem });
   };
 
   return (
@@ -64,7 +70,11 @@ const Product = () => {
                 ))}
               </div>
               <div className="main-image">
-                <img src={product.image} alt="Selected Product" className="product-image img-fluid" />
+                <img
+                  src={selectedImage} 
+                  alt="Selected Product"
+                  className="product-image img-fluid"
+                />
               </div>
             </Col>
 
@@ -102,28 +112,32 @@ const Product = () => {
                 <p>Delivery by 21 Sep, Saturday | Free</p>
                 <p>Installation & Demo by 20 Sep, Friday | ₹499</p>
               </div>
-
-              
             </Col>
           </Row>
         ) : (
           <p>Loading...</p>
         )}
       </Container>
-      {
-        similarProducts.map((el)=>(
-          <div>
-            <img
-              src={el.image}
-              class="img-fluid rounded-top"
-              alt=""
-              height={"100px"}
-              width={"100px"}
-            />
-            
-          </div>
-        ))
-      }
+      <Container className="my-5">
+  <h3 className="text-center mb-4">Similar Products</h3>
+  <Row>
+    {similarProducts.map((el, idx) => (
+          <Card style={{ width: '18rem' ,margin:"10px"}} key={el.id}>
+          <Card.Img variant="top" src={el.image} id='m' />
+          <Card.Body id='ss'>
+              <Card.Title>{el.title}</Card.Title>
+              <Card.Text style={{ background: "#388e3c" }} id='cc'>
+                  {el.rating.rate} <i className="fa-solid fa-star"></i>
+              </Card.Text>
+              <Card.Text>
+                  <i className="fa-solid fa-indian-rupee-sign"></i> {el.price}
+              </Card.Text>
+          </Card.Body>
+      </Card>
+    ))}
+  </Row>
+</Container>
+
     </div>
   );
 };

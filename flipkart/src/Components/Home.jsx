@@ -5,10 +5,18 @@ import Form from "react-bootstrap/Form";
 import Slider from "react-slick";
 import Card from "react-bootstrap/Card";
 import { useEffect } from "react";
+// import React from "react";
+import Container from "react-bootstrap/Container";
+// import Form from "react-bootstrap/Form";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import "../App.css";
 import { product_action } from "../Redux/action";
 import { useDispatch , useSelector} from "react-redux";
 import { useNavigate } from "react-router-dom";
+import Top from "./Top";
+import Footerd from "./Footerd";
 
 const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
   <a
@@ -106,12 +114,13 @@ const Home = () => {
     ],
   };
   const handleclick = (id) =>{
-    navigate(`/product/${id}`)
+    
     navigates(`/Singlepage/${id}`)
   }
   return (
     <>
       <Navbar1 />
+
      
       <div className="main-sub">
         <div className="container-fluid bg-white h-100">
@@ -343,7 +352,7 @@ const Home = () => {
       </div>
       <div className="container-fluid mt-3">
         <div className="sub-slider">
-          <h1>Best of Electronics</h1>
+          <h1 className="ms-5">Best of Electronics</h1>
           <div className="sub-slider-1">
             <div className="slider-container">
               <Slider {...settingss}>
@@ -508,7 +517,7 @@ const Home = () => {
       </div>
 
       <div className="container-fluid mt-3">
-  <h2>Fetched Products</h2>
+  <h2>Products</h2>
   <div className="sub-slider-1-1">
     <div className="container-fluid">
     <div className="slider-container">
@@ -545,6 +554,167 @@ const Home = () => {
   </div>
 </div>
 
+
+
+<div className="container-fluid mt-3">
+  <h2>Products</h2>
+  <div className="sub-slider-1-1">
+    <div className="container-fluid">
+    <div className="slider-container">
+      <Slider {...settingss}>
+        {product.map((el) => (
+          <div className="text-center" key={el.id}>
+            <Card style={{ width: "19rem" }} id="card" onClick={()=>handleclick(el.id)}>
+              <Card.Img
+                variant="top"
+                id="c"
+                src={el.image}
+                style={{
+                  width: "70%",
+                  height: "200px",
+                 
+                }}
+              />
+              <Card.Body style={{height:"160px"}}>
+                <Card.Title>{el.title}</Card.Title>
+                <Card.Text>
+                  <b>Grab Now</b>
+                </Card.Text>
+                <Card.Text>
+                 <p>Price : ${el.price}</p>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </div>
+        ))}
+      </Slider>
+    </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<div className="container-fluid mt-3">
+  <h2>Products</h2>
+  <div className="sub-slider-1-1">
+    <div className="container-fluid">
+    <div className="slider-container">
+      <Slider {...settingss}>
+        {product.map((el) => (
+          <div className="text-center" key={el.id}>
+            <Card style={{ width: "19rem" }} id="card" onClick={()=>handleclick(el.id)}>
+              <Card.Img
+                variant="top"
+                id="c"
+                src={el.image}
+                style={{
+                  width: "70%",
+                  height: "200px",
+                 
+                }}
+              />
+              <Card.Body style={{height:"160px"}}>
+                <Card.Title>{el.title}</Card.Title>
+                <Card.Text>
+                  <b>Grab Now</b>
+                </Card.Text>
+                <Card.Text>
+                 <p>Price : ${el.price}</p>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </div>
+        ))}
+      </Slider>
+    </div>
+    </div>
+
+  </div>
+</div>  
+
+
+<div className="container-fluid mt-3">
+  <h2>Products</h2>
+  <div className="sub-slider-1-1">
+    <div className="container-fluid">
+    <div className="slider-container">
+      <Slider {...settingss}>
+        {product.map((el) => (
+          <div className="text-center" key={el.id}>
+            <Card style={{ width: "19rem" }} id="card" onClick={()=>handleclick(el.id)}>
+              <Card.Img
+                variant="top"
+                id="c"
+                src={el.image}
+                style={{
+                  width: "70%",
+                  height: "200px",
+                 
+                }}
+              />
+              <Card.Body style={{height:"160px"}}>
+                <Card.Title>{el.title}</Card.Title>
+                <Card.Text>
+                  <b>Grab Now</b>
+                </Card.Text>
+                <Card.Text>
+                 <p>Price : ${el.price}</p>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </div>
+        ))}
+      </Slider>
+    </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div className="container-fluid mt-3">
+  <h2>Products</h2>
+  <div className="sub-slider-1-1">
+    <div className="container-fluid">
+    <div className="slider-container">
+      <Slider {...settingss}>
+        {product.map((el) => (
+          <div className="text-center" key={el.id}>
+            <Card style={{ width: "19rem" }} id="card" onClick={()=>handleclick(el.id)}>
+              <Card.Img
+                variant="top"
+                id="c"
+                src={el.image}
+                style={{
+                  width: "70%",
+                  height: "200px",
+                 
+                }}
+              />
+              <Card.Body style={{height:"160px"}} id="s">
+                <Card.Title>{el.title}</Card.Title>
+                <Card.Text>
+                  <b>Grab Now</b>
+                </Card.Text>
+                <Card.Text>
+                 <p>Price : ${el.price}</p>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </div>
+        ))}
+      </Slider>
+    </div>
+    </div>
+
+  </div>
+</div>
+  <Top/>
+  <Footerd/>
     </>
   );
 };

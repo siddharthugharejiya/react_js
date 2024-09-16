@@ -8,7 +8,9 @@ import "../App.css";
 import { BsPerson, BsCart } from "react-icons/bs";
 import { MdStoreMallDirectory } from "react-icons/md";
 import { BiDotsVerticalRounded } from "react-icons/bi";
-// import logo from "../assets/image/fkheaderlogo_exploreplus_mobile-39120d.svg";
+import S_up from "./S_up";
+import Login from "./Login";
+// import Login from "./Login"
 
 const Navbar1 = () => {
   return (
@@ -18,32 +20,24 @@ const Navbar1 = () => {
         <Navbar expand="lg" className="custom-navbar bg-light">
           <Container fluid>
             <Navbar.Brand href="#">
-              <img src="./public/image/flipkart.svg" className="img-fluid logo" alt="Brand Logo" />
+              <img src="../public/image/flipkart.svg" className="img-fluid logo" alt="Brand Logo" />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
-              <Form className="d-flex search-bar mx-auto">
-                <Form.Control
-                  type="search"
-                  placeholder="Search for Products, Brands and More"
-                  className="me-2 search-input"
-                  id="in"
-                  aria-label="Search"
-                />
-              </Form>
               <Nav className="ms-auto nav-icons">
                 <NavDropdown
                   title={
                     <>
                       <BsPerson />
-                      Login
+                    Login
+                      
                     </>
                   }
-                  id="navbarScrollingDropdown"
-                >
-                  <NavDropdown.Item href="#action3">My Account</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Orders</NavDropdown.Item>
-                  <NavDropdown.Item href="#action5">Wishlist</NavDropdown.Item>
+                  id="navbarScrollingDropdown">
+                  
+                  <NavDropdown.Item><Login/></NavDropdown.Item>
+                  {/* <NavDropdown.Item><S_up/></NavDropdown.Item> */}
+                 
                 </NavDropdown>
                 <Nav.Link href="#cart">
                   <BsCart /> Cart
