@@ -35,8 +35,9 @@ const Navbar1 = () => {
                   }
                   id="navbarScrollingDropdown">
                   
-                  <NavDropdown.Item><Login/></NavDropdown.Item>
-                  {/* <NavDropdown.Item><S_up/></NavDropdown.Item> */}
+                  {/* <NavDropdown.Item><Login/></NavDropdown.Item> */}
+                  <NavDropdown.Item>Sign</NavDropdown.Item>
+                  
                  
                 </NavDropdown>
                 <Nav.Link href="#cart">

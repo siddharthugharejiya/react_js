@@ -14,7 +14,7 @@ const Add = () => {
     }
 
     const submit = () =>{
-    //   nav("/signup")
+      nav("/")
       
     }
 

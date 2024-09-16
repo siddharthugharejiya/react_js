@@ -249,7 +249,7 @@ const Home = () => {
               style={{ margin: "5px 0" }}
             >
               <img
-                src="/image/71050627a56b4693.png"
+                src="./image/71050627a56b4693.png"
                 alt="Grocery"
                 style={{ width: "70px", height: "70px" }}
               />
@@ -350,7 +350,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="container-fluid mt-3">
+      <div className="container-fluid mt-5">
         <div className="sub-slider">
           <h1 className="ms-5">Best of Electronics</h1>
           <div className="sub-slider-1">
@@ -360,7 +360,7 @@ const Home = () => {
                   <Card style={{ width: "15rem" }} id="card">
                     <Card.Img
                       variant="top"
-                      src="./public/image/ultra-pods-in-ear-earbuds-headphones-noise-canceling-haiidra-original-imahfk4fpzwufzts.jpeg"
+                      src="../public/image/ultra-pods-in-ear-earbuds-headphones-noise-canceling-haiidra-original-imahfk4fpzwufzts.jpeg"
                       // className="a"
                       style={{
                         width: "145px",
@@ -380,7 +380,7 @@ const Home = () => {
                   <Card style={{ width: "15rem" }} id="card">
                     <Card.Img
                       variant="top"
-                      src="./public/image/1.jpg"
+                      src="../public/image/1.jpg"
                       className="a"
                     />
                     <Card.Body id="card-body">
@@ -398,7 +398,7 @@ const Home = () => {
                   <Card style={{ width: "15rem" }} id="card">
                     <Card.Img
                       variant="top"
-                      src="./public/image/i9-pro-10-ei9027-led-projector-egate-original-imah3tzkr5jkzhyq.jpeg"
+                      src="../public/image/i9-pro-10-ei9027-led-projector-egate-original-imah3tzkr5jkzhyq.jpeg"
                       className="a"
                     />
                     <Card.Body id="card-body">
@@ -417,7 +417,7 @@ const Home = () => {
                   <Card style={{ width: "15rem" }} id="card">
                     <Card.Img
                       variant="top"
-                      src="./public/image/-original-imahf4rbgwtzquxh.jpeg"
+                      src="../public/image/-original-imahf4rbgwtzquxh.jpeg"
                       className="a"
                     />
                     <Card.Body id="card-body">
@@ -436,7 +436,7 @@ const Home = () => {
                     <Card style={{ width: "15rem" }} id="card">
                       <Card.Img
                         variant="top"
-                        src="./public/image/-original-imagfykthgudy4qz.jpeg"
+                        src="../public/image/-original-imagfykthgudy4qz.jpeg"
                         className="a"
                       />
                       <Card.Body id="card-body">
@@ -456,7 +456,7 @@ const Home = () => {
                     <Card style={{ width: "15rem" }} id="card">
                       <Card.Img
                         variant="top"
-                        src="./public/image/eos-r100-24-1-eos-r100-kit-canon-original-imagqeydhsxgacxp.jpeg"
+                        src="../public/image/eos-r100-24-1-eos-r100-kit-canon-original-imagqeydhsxgacxp.jpeg"
                         className="a"
                       />
                       <Card.Body id="card-body">
@@ -476,7 +476,7 @@ const Home = () => {
                   <Card style={{ width: "15rem" }} id="card">
                     <Card.Img
                       variant="top"
-                      src="./public/image/-original-imagn53zhtyzh4tn.jpeg"
+                      src="../public/image/-original-imagn53zhtyzh4tn.jpeg"
                       className="a"
                     />
                     <Card.Body id="card-body">
@@ -516,7 +516,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="container-fluid mt-3">
+  <div className="container-fluid mt-3">
   <h2>Products</h2>
   <div className="sub-slider-1-1">
     <div className="container-fluid">
@@ -554,6 +554,44 @@ const Home = () => {
   </div>
 </div>
 
+
+<div className="container-fluid mt-3">
+  <h2>Products</h2>
+  <div className="sub-slider-1-1">
+    <div className="container-fluid">
+    <div className="slider-container">
+      <Slider {...settingss}>
+        {product.map((el) => (
+          <div className="text-center" key={el.id}>
+            <Card style={{ width: "19rem" }} id="card" onClick={()=>handleclick(el.id)}>
+              <Card.Img
+                variant="top"
+                id="c"
+                src={el.image}
+                style={{
+                  width: "70%",
+                  height: "200px",
+                 
+                }}
+              />
+              <Card.Body style={{height:"160px"}}>
+                <Card.Title>{el.title}</Card.Title>
+                <Card.Text>
+                  <b>Grab Now</b>
+                </Card.Text>
+                <Card.Text>
+                 <p>Price : ${el.price}</p>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </div>
+        ))}
+      </Slider>
+    </div>
+    </div>
+
+  </div>
+</div>
 
 
 <div className="container-fluid mt-3">
@@ -633,86 +671,8 @@ const Home = () => {
     </div>
 
   </div>
-</div>  
-
-
-<div className="container-fluid mt-3">
-  <h2>Products</h2>
-  <div className="sub-slider-1-1">
-    <div className="container-fluid">
-    <div className="slider-container">
-      <Slider {...settingss}>
-        {product.map((el) => (
-          <div className="text-center" key={el.id}>
-            <Card style={{ width: "19rem" }} id="card" onClick={()=>handleclick(el.id)}>
-              <Card.Img
-                variant="top"
-                id="c"
-                src={el.image}
-                style={{
-                  width: "70%",
-                  height: "200px",
-                 
-                }}
-              />
-              <Card.Body style={{height:"160px"}}>
-                <Card.Title>{el.title}</Card.Title>
-                <Card.Text>
-                  <b>Grab Now</b>
-                </Card.Text>
-                <Card.Text>
-                 <p>Price : ${el.price}</p>
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </div>
-        ))}
-      </Slider>
-    </div>
-    </div>
-
-  </div>
 </div>
 
-
-
-<div className="container-fluid mt-3">
-  <h2>Products</h2>
-  <div className="sub-slider-1-1">
-    <div className="container-fluid">
-    <div className="slider-container">
-      <Slider {...settingss}>
-        {product.map((el) => (
-          <div className="text-center" key={el.id}>
-            <Card style={{ width: "19rem" }} id="card" onClick={()=>handleclick(el.id)}>
-              <Card.Img
-                variant="top"
-                id="c"
-                src={el.image}
-                style={{
-                  width: "70%",
-                  height: "200px",
-                 
-                }}
-              />
-              <Card.Body style={{height:"160px"}} id="s">
-                <Card.Title>{el.title}</Card.Title>
-                <Card.Text>
-                  <b>Grab Now</b>
-                </Card.Text>
-                <Card.Text>
-                 <p>Price : ${el.price}</p>
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </div>
-        ))}
-      </Slider>
-    </div>
-    </div>
-
-  </div>
-</div>
   <Top/>
   <Footerd/>
     </>
