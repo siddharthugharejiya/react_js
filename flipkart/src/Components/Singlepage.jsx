@@ -86,7 +86,7 @@ const Singlepage = () => {
         <div>
             <div className="container-fluid">
                 <Navbar1 />
-                <div className="d-flex">
+                <div className="d-flex price">
                     <div className="aside" style={{borderRadius:"10px",margin:"10px 0"}}>
                        
                         <div className="filter-section">
@@ -125,7 +125,7 @@ const Singlepage = () => {
 
                         <div className="sort-section">
                             <h5>SORT BY</h5>
-                            <select onChange={(e) => setSortType(e.target.value)}>
+                            <select onChange={(e) => setSortType(e.target.value)} id='search'>
                                 <option value="none">None</option>
                                 <option value="priceLowToHigh">Price: Low to High</option>
                                 <option value="priceHighToLow">Price: High to Low</option>

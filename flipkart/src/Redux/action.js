@@ -81,16 +81,23 @@ export const Login_Action = (login, nav_login) => {
       return;
     }
 
-    fetch(`https://mock-server-rea1.onrender.com/username?email=multiera95@gmail.com`)
-      .then((response) => response.json())
+    // Make the fetch request dynamic based on user input
+    fetch(`https://mock-server-rea1.onrender.com/username?email=${email}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch user");
+        }
+        return response.json();
+      })
       .then((res) => {
+        console.log(res)
         if (res.length === 0) {
           Swal.fire({
             icon: 'error',
             title: 'Error',
             text: 'No account found with this email address.',
           });
-        } else if (res[0].pass === password) {
+        } else if (res[0].pass === password) { 
           Swal.fire({
             title: 'Success',
             text: 'Logged in successfully.',
@@ -101,7 +108,7 @@ export const Login_Action = (login, nav_login) => {
             type: LOGIN,
             payload: { email, password },
           });
-          nav_login('/');
+          nav_login('/'); 
         } else {
           Swal.fire({
             icon: 'error',

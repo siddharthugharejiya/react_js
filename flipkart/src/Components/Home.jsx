@@ -71,21 +71,24 @@ const Home = () => {
   useEffect(()=>{
      dispatch(product_action())
   },[dispatch])
-
   const settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     adaptiveHeight: true,
+    autoplay: true,
+    autoplaySpeed: 3000, // 3 seconds
   };
-
+  
   const settingss = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
+    autoplay: true,
+    autoplaySpeed: 3000,
     responsive: [
       {
         breakpoint: 1024,
@@ -113,6 +116,7 @@ const Home = () => {
       },
     ],
   };
+  
   const handleclick = (id) =>{
     
     navigates(`/Singlepage/${id}`)
@@ -174,7 +178,7 @@ const Home = () => {
 
             <div className="col-12 col-sm-6 col-md-4 col-xl-1 d-flex justify-content-center align-items-center flex-column">
               <img
-                src="/image/69c6589653afdb9a.png"
+                src="https://rukminim2.flixcart.com/flap/64/64/image/69c6589653afdb9a.png?q=100"
                 alt="Dropdown"
                 style={{ width: "70px", height: "70px" }}
               />
@@ -308,15 +312,8 @@ const Home = () => {
             <div className="home-slider">
               <div className="slider-container">
                 <Slider {...settings}>
-                  <div>
-                    <h3>
-                      <img
-                        src="./public/image/7c6cf1a109b087d2.jpg"
-                        alt=""
-                        id="img"
-                      />
-                    </h3>
-                  </div>
+          
+                 
                   <div>
                     <h3>
                       <img
@@ -329,16 +326,7 @@ const Home = () => {
                   <div>
                     <h3>
                       <img
-                        src="./public/image/01c63eaa43ccb5ed.jpg"
-                        alt=""
-                        id="img"
-                      />
-                    </h3>
-                  </div>
-                  <div>
-                    <h3>
-                      <img
-                        src="./public/image/d9290fb51138d286.png"
+                        src="./public/image/7c6cf1a109b087d2.jpg"
                         alt=""
                         id="img"
                       />
@@ -350,171 +338,77 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="container-fluid mt-5">
-        <div className="sub-slider">
-          <h1 className="ms-5">Best of Electronics</h1>
-          <div className="sub-slider-1">
-            <div className="slider-container">
-              <Slider {...settingss}>
-                <div className="text-center">
-                  <Card style={{ width: "15rem" }} id="card">
-                    <Card.Img
-                      variant="top"
-                      src="../public/image/ultra-pods-in-ear-earbuds-headphones-noise-canceling-haiidra-original-imahfk4fpzwufzts.jpeg"
-                      // className="a"
-                      style={{
-                        width: "145px",
-                        height: "170px",
-                        margin: "20px",
-                      }}
-                    />
-                    <Card.Body id="card-body">
-                      <Card.Title>Best Truewireless...</Card.Title>
-                      <Card.Text>
-                        <b>Grab Now</b>
-                      </Card.Text>
-                    </Card.Body>
-                  </Card>
-                </div>
-                <div className="text-center">
-                  <Card style={{ width: "15rem" }} id="card">
-                    <Card.Img
-                      variant="top"
-                      src="../public/image/1.jpg"
-                      className="a"
-                    />
-                    <Card.Body id="card-body">
-                      <Card.Title>Noice SmartWatchies</Card.Title>
-                      <Card.Text>
-                        <b>
-                          frome <i className="fa-solid fa-indian-rupee-sign"></i>{" "}
-                          1,999
-                        </b>
-                      </Card.Text>
-                    </Card.Body>
-                  </Card>
-                </div>
-                <div className="text-center">
-                  <Card style={{ width: "15rem" }} id="card">
-                    <Card.Img
-                      variant="top"
-                      src="../public/image/i9-pro-10-ei9027-led-projector-egate-original-imah3tzkr5jkzhyq.jpeg"
-                      className="a"
-                    />
-                    <Card.Body id="card-body">
-                      <Card.Title>projector</Card.Title>
-                      <Card.Text>
-                        <b>
-                          frome <i className="fa-solid fa-indian-rupee-sign"></i>{" "}
-                          6,999
-                        </b>
-                      </Card.Text>
-                    </Card.Body>
-                  </Card>
-                </div>
-
-                <div className="text-center">
-                  <Card style={{ width: "15rem" }} id="card">
-                    <Card.Img
-                      variant="top"
-                      src="../public/image/-original-imahf4rbgwtzquxh.jpeg"
-                      className="a"
-                    />
-                    <Card.Body id="card-body">
-                      <Card.Title>Monitor dabbo</Card.Title>
-                      <Card.Text>
-                        <b>
-                          frome <i className="fa-solid fa-indian-rupee-sign"></i>{" "}
-                          7495
-                        </b>
-                      </Card.Text>
-                    </Card.Body>
-                  </Card>
-                </div>
-                <div>
-                  <div className="text-center">
-                    <Card style={{ width: "15rem" }} id="card">
-                      <Card.Img
-                        variant="top"
-                        src="../public/image/-original-imagfykthgudy4qz.jpeg"
-                        className="a"
-                      />
-                      <Card.Body id="card-body">
-                        <Card.Title>Geared Cycles</Card.Title>
-                        <Card.Text>
-                          <b>
-                            Up to 70% off
-                            {/* frome <i class="fa-solid fa-indian-rupee-sign"></i>{" "} */}
-                          </b>
-                        </Card.Text>
-                      </Card.Body>
-                    </Card>
-                  </div>
-                </div>
-                <div>
-                  <div className="text-center">
-                    <Card style={{ width: "15rem" }} id="card">
-                      <Card.Img
-                        variant="top"
-                        src="../public/image/eos-r100-24-1-eos-r100-kit-canon-original-imagqeydhsxgacxp.jpeg"
-                        className="a"
-                      />
-                      <Card.Body id="card-body">
-                        <Card.Title>Mirrorless Cameras</Card.Title>
-                        <Card.Text>
-                          <b>
-                            Shop Now!
-                            {/* frome <i class="fa-solid fa-indian-rupee-sign"></i>{" "} */}
-                          </b>
-                        </Card.Text>
-                      </Card.Body>
-                    </Card>
-                  </div>
-                </div>
-
-                <div className="text-center">
-                  <Card style={{ width: "15rem" }} id="card">
-                    <Card.Img
-                      variant="top"
-                      src="../public/image/-original-imagn53zhtyzh4tn.jpeg"
-                      className="a"
-                    />
-                    <Card.Body id="card-body">
-                      <Card.Title>boAt Smartwatches</Card.Title>
-                      <Card.Text>
-                        <b>
-                          frome <i class="fa-solid fa-indian-rupee-sign"></i>{" "}
-                          1,099
-                        </b>
-                      </Card.Text>
-                    </Card.Body>
-                  </Card>
-                </div>
-                <div className="text-center">
-                  <Card style={{ width: "15rem" }} id="card">
-                    <Card.Img
-                      variant="top"
-                      src="./public/image/philips-s1121-45-s1121-45-original-imafry2qgxcwnm9r.jpeg"
-                      // className="a"
-                      style={{ width: "95px", height: "170px", margin: "20px" }}
-                    />
-                    <Card.Body id="card-body">
-                      <Card.Title>Best of Shavers</Card.Title>
-                      <Card.Text>
-                        <b>
-                          frome <i className="fa-solid fa-indian-rupee-sign"></i>{" "}
-                          1,099
-                        </b>
-                      </Card.Text>
-                    </Card.Body>
-                  </Card>
-                </div>
-              </Slider>
-            </div>
+   {/* <div className="container-fluid mt-5">
+  <div className="sub-slider">
+    <h1 className="ms-5">Best of Electronics</h1>
+    <div className="sub-slider-1">
+      <div className="slider-container">
+        <Slider {...settings}>
+      
+        <div className="text-center">
+            <Card style={{ width: "15rem" }} id="card">
+              <Card.Img
+                variant="top"
+                src="https://yourcdn.com/path-to-image/truewireless.jpg"
+                alt="Best True Wireless Earbuds"
+                style={{
+                  width: "145px",
+                  height: "170px",
+                  margin: "20px",
+                }}
+              />
+              <Card.Body id="card-body">
+                <Card.Title>Best True Wireless</Card.Title>
+                <Card.Text>
+                  <b>Grab Now</b>
+                </Card.Text>
+              </Card.Body>
+            </Card>
           </div>
-          <div className="sub-sid"></div>
-        </div>
+
+  
+          <div className="text-center">
+            <Card style={{ width: "15rem" }} id="card">
+              <Card.Img
+                variant="top"
+                src="https://www.flipkart.com/path-to-image/noise-smartwatch.jpg"
+                alt="Noise Smart Watches"
+                className="a"
+              />
+              <Card.Body id="card-body">
+                <Card.Title>Noise Smart Watches</Card.Title>
+                <Card.Text>
+                  <b>from ₹1,999</b>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </div>
+
+          <div className="text-center">
+            <Card style={{ width: "15rem" }} id="card">
+              <Card.Img
+                variant="top"
+                src="https://yourcdn.com/path-to-image/projector.jpg"
+                alt="Projector"
+                className="a"
+              />
+              <Card.Body id="card-body">
+                <Card.Title>Projector</Card.Title>
+                <Card.Text>
+                  <b>from ₹6,999</b>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </div>
+
+      
+        </Slider>
       </div>
+    </div>
+    <div className="sub-sid"></div>
+  </div>
+</div>  */}
+
 
   <div className="container-fluid mt-3">
   <h2>Products</h2>
