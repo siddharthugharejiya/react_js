@@ -24,7 +24,7 @@ const Mainroutes = () => {
               } 
               path='/Singlepage/:id' 
             />
-            <Route element={<Add/>} path='/add' />
+            <Route element={<Add/>} path='/add'/>
          </Routes>
        </>
     );

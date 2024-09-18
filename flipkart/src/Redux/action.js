@@ -90,13 +90,16 @@ export const Login_Action = (login, nav_login) => {
       })
       .then((res) => {
         console.log(res)
-        if (res.length === 0) {
-          Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'No account found with this email address.',
-          });
-        } else if (res[0].pass === password) { 
+        // if (. === 0) {
+        //   Swal.fire({
+        //     icon: 'error',
+        //     title: 'Error',
+        //     text: 'No account found with this email address.',
+        //   });
+        // } 
+         if (login.password === password) { 
+          console.log(login.password);
+          
           Swal.fire({
             title: 'Success',
             text: 'Logged in successfully.',

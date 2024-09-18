@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -10,6 +10,12 @@ import { BiDotsVerticalRounded } from "react-icons/bi";
 import "../App.css";
 
 const Navbar1 = () => {
+  const [showCart, setShowCart] = useState(false);
+
+  const handleCartClick = () => {
+    setShowCart(!showCart);
+  };
+
   return (
     <div className="navbar_1">
       <div className="container-fluid">
@@ -41,7 +47,7 @@ const Navbar1 = () => {
                       <Link to="/signup">Sign Up</Link>
                     </NavDropdown.Item>
                   </NavDropdown>
-                  <Nav.Link href="#cart">
+                  <Nav.Link onClick={handleCartClick}>
                     <BsCart /> Cart
                   </Nav.Link>
                   <Nav.Link href="#seller">
@@ -54,6 +60,12 @@ const Navbar1 = () => {
               </Navbar.Collapse>
             </Container>
           </Navbar>
+          {showCart && (
+            <div className="cart-dropdown">
+              <h5>Your Cart</h5>
+              <p>Cart is currently empty</p>
+            </div>
+          )}
         </div>
       </div>
     </div>

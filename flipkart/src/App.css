@@ -875,13 +875,16 @@ button:hover {
   }
   .price {
     width: 100%;
-    /* flex-direction: column; */
+   
   }
   .left{
     width: auto;
   }
   #ss{
-    height: 120px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
   }
    
   #search{
@@ -892,7 +895,7 @@ button:hover {
   } 
   .quantity-section{
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
   } 
 }
@@ -1206,7 +1209,7 @@ button:hover {
   }
 
   .main-sub {
-    height: 340vh;
+    height: 270vh;
   }
 
   .sub-slider {
@@ -1221,7 +1224,7 @@ button:hover {
     width: 86%;
   }
   .sub-slider-1-1 {
-    height: 145vh;
+    height: 105vh;
   }
   div#card {
     width: 14rem !important;
@@ -1317,7 +1320,7 @@ button:hover {
   } 
   .quantity-section{
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
   }
 }
@@ -1340,8 +1343,8 @@ button:hover {
   }
 
   .main-sub {
-    height: 225vh;
-    /* border: 1px solid red; */
+    height: 190vh;
+   
   }
 
   .sub-slider {
@@ -1356,7 +1359,7 @@ button:hover {
     width: 86%;
   }
   .sub-slider-1-1 {
-    height: 100vh;
+    height: 90vh;
   }
   div#card {
     width: 14rem !important;
@@ -1435,7 +1438,7 @@ button:hover {
   
   .slick-next:before{
    
-    margin: 0 0px;
+    margin: 0 47px;
   }
   .price {
     width: 100%;

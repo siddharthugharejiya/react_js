@@ -10,7 +10,7 @@ const Product = () => {
   const [product, setProduct] = useState(null);
   const [similarProducts, setSimilarProducts] = useState([]);
   const [quantity, setQuantity] = useState(1);
-  const [selectedImage, setSelectedImage] = useState(''); // Added state for selected image
+  const [selectedImage, setSelectedImage] = useState(''); 
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -19,7 +19,7 @@ const Product = () => {
       .then((res) => res.json())
       .then((res) => {
         setProduct(res);
-        setSelectedImage(res.image); // Set initial selected image
+        setSelectedImage(res.image); 
         fetch(`https://mock-server-rea1.onrender.com/product?category=${res.category}`)
           .then((response) => response.json())
           .then((allProducts) => {
@@ -47,7 +47,7 @@ const Product = () => {
       text: "Success full add data",
       icon: "success"
     });
-    // alert(`Successfully added ${quantity} item(s) to cart`);
+
     navigate("/add", { state: cartItem });
   };
 
@@ -118,7 +118,7 @@ const Product = () => {
           <p>Loading...</p>
         )}
       </Container>
-      <Container className="my-5">
+      {/* <Container className="my-5">
   <h3 className="text-center mb-4">Similar Products</h3>
   <Row>
     {similarProducts.map((el, idx) => (
@@ -136,7 +136,7 @@ const Product = () => {
       </Card>
     ))}
   </Row>
-</Container>
+</Container> */}
 
     </div>
   );
