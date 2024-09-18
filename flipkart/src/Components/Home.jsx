@@ -317,7 +317,7 @@ const Home = () => {
                   <div>
                     <h3>
                       <img
-                        src="./public/image/668e0875ca6dca50.png"
+                        src="/image/668e0875ca6dca50.png"
                         alt=""
                         id="img"
                       />
@@ -326,7 +326,7 @@ const Home = () => {
                   <div>
                     <h3>
                       <img
-                        src="./public/image/7c6cf1a109b087d2.jpg"
+                        src="/image/7c6cf1a109b087d2.jpg"
                         alt=""
                         id="img"
                       />

@@ -81,7 +81,6 @@ export const Login_Action = (login, nav_login) => {
       return;
     }
 
-    // Make the fetch request dynamic based on user input
     fetch(`https://mock-server-rea1.onrender.com/username?email=${email}`)
       .then((response) => {
         if (!response.ok) {
