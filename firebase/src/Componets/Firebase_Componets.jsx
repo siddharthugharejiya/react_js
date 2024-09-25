@@ -55,7 +55,7 @@ const Firebase_Components = () => {
   const del = async (id) => {
     let docRef = doc(db, "user", id);
     await deleteDoc(docRef);
-    get(); // Refresh data after deletion
+    get(); 
     alert("Deleted successfully");
   };
 
@@ -66,7 +66,7 @@ const Firebase_Components = () => {
         email: record.email,
         password: record.password
       });
-      setUpdate(id); // Set update mode with the document ID
+      setUpdate(id);
     }
   };
 

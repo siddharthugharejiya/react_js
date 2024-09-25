@@ -258,7 +258,7 @@ span {
 
 #c {
   margin: 15px;
-  width: 67% !important;
+  /* width: 67% !important; */
 }
 .main-image img {
   width: 100%;
@@ -1092,17 +1092,17 @@ button:hover {
   .sub-slider-1-1 {
     height: 145vh;
   }
-  div#card {
+  /* div#card {
     width: 14rem !important;
-  }
+  } */
 
   img.card-img-top.a {
     object-fit: contain;
     width: 150px !important;
   }
-  #c {
+  /* #c {
     width: 80% !important;
-  }
+  } */
   #s {
     height: 200px;
   }
@@ -1194,7 +1194,10 @@ button:hover {
 
 /* Extra small screens (small mobile devices) */
 @media (max-width: 576px) {
-  .custom-navbar {
+  .main-sub {
+    height: auto;
+  }
+  /* .custom-navbar {
     flex-direction: column;
   }
 
@@ -1208,9 +1211,7 @@ button:hover {
     justify-content: space-around;
   }
 
-  .main-sub {
-    height: 270vh;
-  }
+ 
 
   .sub-slider {
     height: auto;
@@ -1222,9 +1223,9 @@ button:hover {
   .sub-slider-1 {
     margin-left: 0;
     width: 86%;
-  }
+  } */
   .sub-slider-1-1 {
-    height: 105vh;
+    height: auto;
   }
   div#card {
     width: 14rem !important;
@@ -1234,9 +1235,9 @@ button:hover {
     object-fit: contain;
     width: 150px !important;
   }
-  #c {
+  /* #c {
     width: 80% !important;
-  }
+  } */
   #s {
     height: 200px;
   }
@@ -1295,7 +1296,7 @@ button:hover {
     left: 90% !important;
   }
   .slick-dots {
-    bottom: -110px !important;
+    bottom: auto !important;
   }
   .aside {
     height: auto !important;
@@ -1332,6 +1333,10 @@ button:hover {
     flex-direction: column;
   }
 
+  .hight{
+    height: 125vh;
+    width: auto;
+  }
   .search-bar {
     max-width: 100%;
     margin: 10px 0;
@@ -1343,7 +1348,7 @@ button:hover {
   }
 
   .main-sub {
-    height: 190vh;
+    height: auto;
    
   }
 
@@ -1359,7 +1364,7 @@ button:hover {
     width: 86%;
   }
   .sub-slider-1-1 {
-    height: 90vh;
+    height: auto;
   }
   div#card {
     width: 14rem !important;
@@ -1438,7 +1443,7 @@ button:hover {
   
   .slick-next:before{
    
-    margin: 0 47px;
+    margin: 0 auto;
   }
   .price {
     width: 100%;

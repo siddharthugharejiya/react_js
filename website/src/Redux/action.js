@@ -19,7 +19,7 @@ export const signup_action = (userData, navigate) => (dispatch) => {
     fetch('http://localhost:9595/username', {
         method: "POST",
         headers: {
-            "Content-Type": "application/json" // Fixed capitalization
+            "Content-Type": "application/json" 
         },
         body: JSON.stringify(userData)
     })

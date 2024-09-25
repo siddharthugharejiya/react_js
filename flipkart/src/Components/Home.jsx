@@ -125,7 +125,7 @@ const Home = () => {
     <>
       <Navbar1 />
 
-     
+    
       <div className="main-sub">
         <div className="container-fluid bg-white h-100">
           <div
@@ -409,16 +409,20 @@ const Home = () => {
   </div>
 </div>  */}
 
+<div className="hight">
+
 
   <div className="container-fluid mt-3">
   <h2>Products</h2>
   <div className="sub-slider-1-1">
     <div className="container-fluid">
-    <div className="slider-container">
+      <div className="row">
+        <div className="col-xl-12 col-lg-4 col-ms-3 col-sm-12">
+        <div className="slider-container">
       <Slider {...settingss}>
         {product.map((el) => (
-          <div className="text-center" key={el.id}>
-            <Card style={{ width: "19rem" }} id="card" onClick={()=>handleclick(el.id)}>
+          <div className="text-center col-lg-12 col-md-3 col-sm-12" key={el.id}>
+            <Card style={{ width: "14rem" }} id="card" onClick={()=>handleclick(el.id)}>
               <Card.Img
                 variant="top"
                 id="c"
@@ -443,21 +447,28 @@ const Home = () => {
         ))}
       </Slider>
     </div>
+        </div>
+      </div>
+   
     </div>
 
   </div>
 </div>
+</div>
+
 
 
 <div className="container-fluid mt-3">
   <h2>Products</h2>
   <div className="sub-slider-1-1">
     <div className="container-fluid">
-    <div className="slider-container">
+      <div className="row">
+        <div className="col-xl-12 col-lg-4 col-ms-3 col-sm-12">
+        <div className="slider-container">
       <Slider {...settingss}>
         {product.map((el) => (
-          <div className="text-center" key={el.id}>
-            <Card style={{ width: "19rem" }} id="card" onClick={()=>handleclick(el.id)}>
+          <div className="text-center col-lg-12 col-md-3 col-sm-12" key={el.id}>
+            <Card style={{ width: "14rem" }} id="card" onClick={()=>handleclick(el.id)}>
               <Card.Img
                 variant="top"
                 id="c"
@@ -482,49 +493,15 @@ const Home = () => {
         ))}
       </Slider>
     </div>
+        </div>
+      </div>
+   
     </div>
 
   </div>
 </div>
 
 
-<div className="container-fluid mt-3">
-  <h2>Products</h2>
-  <div className="sub-slider-1-1">
-    <div className="container-fluid">
-    <div className="slider-container">
-      <Slider {...settingss}>
-        {product.map((el) => (
-          <div className="text-center" key={el.id}>
-            <Card style={{ width: "19rem" }} id="card" onClick={()=>handleclick(el.id)}>
-              <Card.Img
-                variant="top"
-                id="c"
-                src={el.image}
-                style={{
-                  width: "70%",
-                  height: "200px",
-                 
-                }}
-              />
-              <Card.Body style={{height:"160px"}}>
-                <Card.Title>{el.title}</Card.Title>
-                <Card.Text>
-                  <b>Grab Now</b>
-                </Card.Text>
-                <Card.Text>
-                 <p>Price : ${el.price}</p>
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </div>
-        ))}
-      </Slider>
-    </div>
-    </div>
-
-  </div>
-</div>
 
 
 
@@ -533,11 +510,13 @@ const Home = () => {
   <h2>Products</h2>
   <div className="sub-slider-1-1">
     <div className="container-fluid">
-    <div className="slider-container">
+      <div className="row">
+        <div className="col-xl-12 col-lg-4 col-ms-3 col-sm-12">
+        <div className="slider-container">
       <Slider {...settingss}>
         {product.map((el) => (
-          <div className="text-center" key={el.id}>
-            <Card style={{ width: "19rem" }} id="card" onClick={()=>handleclick(el.id)}>
+          <div className="text-center col-lg-12 col-md-3 col-sm-12" key={el.id}>
+            <Card style={{ width: "14rem" }} id="card" onClick={()=>handleclick(el.id)}>
               <Card.Img
                 variant="top"
                 id="c"
@@ -562,10 +541,19 @@ const Home = () => {
         ))}
       </Slider>
     </div>
+        </div>
+      </div>
+   
     </div>
 
   </div>
 </div>
+
+
+
+
+
+
 
   <Top/>
   <Footerd/>
