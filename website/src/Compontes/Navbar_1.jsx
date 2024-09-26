@@ -8,7 +8,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 function Navbar_1() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary flex-wrap">
-      <Container>
+      <Container id="con">
         <Navbar.Brand to={"/"}>
           <img
             src="./public/image/logo.png"
@@ -104,6 +104,7 @@ function Navbar_1() {
         </div>
        
       </Container>
+      
     </Navbar>
   );
 }

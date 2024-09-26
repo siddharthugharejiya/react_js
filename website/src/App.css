@@ -4,6 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+#con{
+  border-bottom:1px solid rgb(233 233 233/1);
+}
 .in{
   margin: 0px 80px !important; 
     border: rgb(100 180 150);
