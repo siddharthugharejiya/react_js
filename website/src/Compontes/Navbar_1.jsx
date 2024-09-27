@@ -43,7 +43,7 @@ function Navbar_1() {
         <Container id="con">
           <Navbar.Brand as={Link} to={"/"}>
             <img
-              src="./public/image/logo.png"
+              src="./image/logo.png"
               className="img-fluid rounded-top"
               alt="Logo"
             />

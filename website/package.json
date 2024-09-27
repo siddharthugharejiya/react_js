@@ -19,7 +19,8 @@
     "react-router-dom": "^6.26.1",
     "redux": "^5.0.1",
     "redux-thunk": "^3.1.0",
-    "thunk": "^0.0.1"
+    "thunk": "^0.0.1",
+    "vercel": "^37.6.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
