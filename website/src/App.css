@@ -1,16 +1,28 @@
-/* Navbar Container */
-.container {
-  margin-top: 20px;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
+.container-fluid{
+  width: 80% !important;
+}
+.col-12.col-lg-3.d-flex.justify-content-around.align-items-center{
+       margin-right: -110px;
+}
 #con {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 20px;
-  border-bottom: 2px solid rgb(233, 233, 233 / 1);
-}
 
+  /* border-bottom: 1px solid rgb(233, 233, 233 / 1) !important; */
+  border-bottom: 1px solid rgb(233 233 233 / 1);
+}
+.bor{
+  border-bottom: 85px solid rgb(233 233 233 / 1);
+
+}
 /* Input and Dropdown Styles */
 .in {
   margin: 0px 80px !important;
@@ -51,6 +63,8 @@
 /* Dropdown Styles */
 #dropdown-basic {
   background: none;
+  border: 1px solid rgb(100, 180, 150);
+
   color: black;
   border-radius: 0;
   border-left: 0;
@@ -59,6 +73,7 @@
 /* Additional Navbar Item Styles */
 .tab-btn {
   margin: 5px 0;
+  border: 1px solid rgb(100, 180, 150);
   padding: 10px;
   background: transparent;
   border: none;
@@ -67,6 +82,8 @@
 
 .tab-btn.active {
   font-weight: bold;
+  border: 1px solid rgb(100, 180, 150);
+
   color: rgb(100, 180, 150);
 }
 
@@ -76,7 +93,7 @@
 }
 
 .dropdown-content {
-  display: none; /* Change this to 'block' when dropdown is active */
+  display: none;
 }
 
 .paste-button:hover .dropdown-content {
@@ -100,7 +117,11 @@ i {
 
 /* Logo styling */
 #con img {
-  width: 100px;
+  width: 125px;
+}
+
+.col-12.col-lg-5.d-flex.align-items-center {
+  margin: 0 60px;
 }
 
 /* Search bar container */
@@ -215,7 +236,7 @@ i {
 
 .tab-content {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   padding-left: 20px;
   width: 100%;
 }
@@ -241,7 +262,7 @@ i {
 }
 
 #tab-c{
-  margin: 3px 5px;
+  margin: 17px 5px;
 }
 @media (max-width: 768px) {
   .container {

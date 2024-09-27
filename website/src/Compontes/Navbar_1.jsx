@@ -38,9 +38,10 @@ function Navbar_1() {
   };
 
   return (
-    <div className="container">
+    <div className="container-fluid">
       <Navbar expand="lg" className="flex-wrap">
-        <Container id="con">
+        <div id="con">
+          
           <Navbar.Brand as={Link} to={"/"}>
             <img
               src="./image/logo.png"
@@ -54,7 +55,7 @@ function Navbar_1() {
               type="search"
               placeholder="Search for items..."
               id="search"
-              // className="form-control"
+          
             />
             <Dropdown>
               <Dropdown.Toggle id="dropdown-basic" style={{ background: "transparent", color: "black" }}>
@@ -100,7 +101,10 @@ function Navbar_1() {
               <div>Cart</div>
             </div>
           </div>
+          <div className="bor"></div>
+          </div>
 
+          <Container>
           <div className="col-12 col-lg-4">
             <div className="paste-button">
               <button className="button" style={{ fontWeight: 500 }}>
