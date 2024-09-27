@@ -41,7 +41,6 @@ function Navbar_1() {
     <div className="container-fluid">
       <Navbar expand="lg" className="flex-wrap">
         <div id="con">
-          
           <Navbar.Brand as={Link} to={"/"}>
             <img
               src="./image/logo.png"
@@ -55,10 +54,12 @@ function Navbar_1() {
               type="search"
               placeholder="Search for items..."
               id="search"
-          
             />
             <Dropdown>
-              <Dropdown.Toggle id="dropdown-basic" style={{ background: "transparent", color: "black" }}>
+              <Dropdown.Toggle
+                id="dropdown-basic"
+                style={{ background: "transparent", color: "black" }}
+              >
                 All Categories
               </Dropdown.Toggle>
 
@@ -78,37 +79,57 @@ function Navbar_1() {
 
           <div className="col-12 col-lg-3 d-flex justify-content-around align-items-center">
             <div className="d-flex align-items-center">
-              <i className="ri-user-line" style={{ fontSize: "20px", margin: "0px 5px" }}></i>
+              <i
+                className="ri-user-line"
+                style={{ fontSize: "20px", margin: "0px 5px" }}
+              ></i>
               <div>
                 <div className="paste-button">
-                  <button className="button" style={{ fontWeight: 500 }}>Account</button>
+                  <button className="button" style={{ fontWeight: 500 }}>
+                    Account
+                  </button>
                   <div className="dropdown-content">
-                    <Link id="top" to={"/signup"}>Register</Link>
-                    <Link id="middle" to={"/checkout"}>Checkout</Link>
-                    <Link id="bottom" to={"/login"}>Login</Link>
+                    <Link id="top" to={"/signup"}>
+                      Register
+                    </Link>
+                    <Link id="middle" to={"/checkout"}>
+                      Checkout
+                    </Link>
+                    <Link id="bottom" to={"/login"}>
+                      Login
+                    </Link>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="d-flex align-items-center">
-              <i className="ri-heart-line" style={{ color: "black", margin: "0px 5px", fontSize: "20px" }}></i>
+              <i
+                className="ri-heart-line"
+                style={{ color: "black", margin: "0px 5px", fontSize: "20px" }}
+              ></i>
               <div>Wishlist</div>
             </div>
 
             <div className="d-flex align-items-center">
-              <i className="ri-shopping-cart-line" style={{ color: "black", margin: "0px 5px", fontSize: "20px" }}></i>
+              <i
+                className="ri-shopping-cart-line"
+                style={{ color: "black", margin: "0px 5px", fontSize: "20px" }}
+              ></i>
               <div>Cart</div>
             </div>
           </div>
           <div className="bor"></div>
-          </div>
+        </div>
 
-          <Container>
+        <Container>
           <div className="col-12 col-lg-4">
             <div className="paste-button">
               <button className="button" style={{ fontWeight: 500 }}>
-                Category Menu
+                <i
+                  class="ri-bar-chart-horizontal-line border p-2"
+                  style={{ borderRadius: "4px" }}
+                ></i>
               </button>
               <div className="dropdown-content">
                 <div className="container">
@@ -117,7 +138,9 @@ function Navbar_1() {
                       {Object.keys(categories).map((category) => (
                         <button
                           key={category}
-                          className={`tab-btn ${activeCategory === category ? "active" : ""}`}
+                          className={`tab-btn ${
+                            activeCategory === category ? "active" : ""
+                          }`}
                           onClick={() => handleCategoryClick(category)}
                         >
                           {category}
@@ -125,16 +148,20 @@ function Navbar_1() {
                       ))}
                     </div>
                     <div className="tab-content">
-                      {Object.keys(categories[activeCategory]).map((subCategory) => (
-                        <div key={subCategory} id="tab-c">
-                          <h4>{subCategory}</h4>
-                          <ul>
-                            {categories[activeCategory][subCategory].map((item) => (
-                              <li key={item}>{item}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
+                      {Object.keys(categories[activeCategory]).map(
+                        (subCategory) => (
+                          <div key={subCategory} id="tab-c">
+                            <h4>{subCategory}</h4>
+                            <ul>
+                              {categories[activeCategory][subCategory].map(
+                                (item) => (
+                                  <li key={item}>{item}</li>
+                                )
+                              )}
+                            </ul>
+                          </div>
+                        )
+                      )}
                     </div>
                   </div>
                 </div>
@@ -143,6 +170,146 @@ function Navbar_1() {
           </div>
 
           <div className="col-12">
+            {/* <div className="d-flex align-items-center">
+              <i className="ri-user-line" style={{ fontSize: "20px", margin: "0px 5px" }}></i>
+              <div>
+                <div className="paste-button nav2">
+                  <button className="button" style={{ fontWeight: 500 }}>Account</button>
+                  <ul>
+                  <div className="dropdown-content">
+                    <Link id="top" to={"/signup"}>Register</Link>
+                    <Link id="middle" to={"/checkout"}>Checkout</Link>
+                    <Link id="bottom" to={"/login"}>Login</Link>
+                  </div>
+                  </ul>
+                  
+                </div>
+              </div>
+            </div> */}
+            <nav class="nav2">
+              <ul>
+                <li>
+                  <div>
+                    <div class="paste-button">
+                      <button className="button d-flex">
+                        Home <i class="ri-arrow-down-s-line arrow-icon "></i>
+                      </button>
+                      <div class="dropdown-content">
+                        <a id="top" href="#">
+                          Keep source formatting
+                        </a>
+                        <a id="middle" href="#">
+                          Merge formatting
+                        </a>
+                        <a id="bottom" href="#">
+                          Keep text only
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <div class="paste-button">
+                      <button className="button d-flex">
+                        Catogory <i class="ri-arrow-down-s-line arrow-icon "></i>
+                      </button>
+                      <div class="dropdown-content">
+                        <a id="top" href="#">
+                          Keep source formatting
+                        </a>
+                        <a id="middle" href="#">
+                          Merge formatting
+                        </a>
+                        <a id="bottom" href="#">
+                          Keep text only
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  </li>
+                <li>
+                <div>
+                    <div class="paste-button">
+                      <button className="button d-flex">
+                        Products<i class="ri-arrow-down-s-line arrow-icon "></i>
+                      </button>
+                      <div class="dropdown-content">
+                        <a id="top" href="#">
+                          Keep source formatting
+                        </a>
+                        <a id="middle" href="#">
+                          Merge formatting
+                        </a>
+                        <a id="bottom" href="#">
+                          Keep text only
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li><div>
+                    <div class="paste-button">
+                      <button className="button d-flex">
+                        Pages <i class="ri-arrow-down-s-line arrow-icon "></i>
+                      </button>
+                      <div class="dropdown-content">
+                        <a id="top" href="#">
+                          Keep source formatting
+                        </a>
+                        <a id="middle" href="#">
+                          Merge formatting
+                        </a>
+                        <a id="bottom" href="#">
+                          Keep text only
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  </li>
+                <li>
+                <div>
+                    <div class="paste-button">
+                      <button className="button d-flex">
+                        Blog <i class="ri-arrow-down-s-line arrow-icon "></i>
+                      </button>
+                      <div class="dropdown-content">
+                        <a id="top" href="#">
+                          Keep source formatting
+                        </a>
+                        <a id="middle" href="#">
+                          Merge formatting
+                        </a>
+                        <a id="bottom" href="#">
+                          Keep text only
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                <div>
+                    <div class="paste-button">
+                      <button className="button d-flex">
+                        Elements <i class="ri-arrow-down-s-line arrow-icon "></i>
+                      </button>
+                      <div class="dropdown-content">
+                        <a id="top" href="#">
+                          Keep source formatting
+                        </a>
+                        <a id="middle" href="#">
+                          Merge formatting
+                        </a>
+                        <a id="bottom" href="#">
+                          Keep text only
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </nav>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
