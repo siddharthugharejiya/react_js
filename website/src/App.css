@@ -1,108 +1,258 @@
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-#con{
-  border-bottom:1px solid rgb(233 233 233/1);
-}
-.in{
-  margin: 0px 80px !important; 
-    border: rgb(100 180 150);
-}
-.glass{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgb(100 180 150/ 1) ;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    
-}
-[type=search]{
-    outline-offset: 0;
-}
-#search{
-    width: 100%;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border: 1px solid #198754 !important;
-}
-#search::placeholder{
-    margin-left: 20px !important;
-    /* color: red; */
-    padding: 25px;
-}
-#dropdown-basic{
-    background: none;
-    color: black;
-    border-radius: 0;
-    border-left: 0;
-}
-.paste-button {
-  position: relative;
-  display: block;
-  color: #212121;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Navbar Container */
+.container {
+  margin-top: 20px;
 }
 
-.button {
-  /* background-color: #4CAF50; */
-  color: #212121;
-  /* padding: 10px 15px; */
-  font-size: 15px;
-  font-weight: bold;
+#con {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(233, 233, 233 / 1);
+}
+
+/* Input and Dropdown Styles */
+.in {
+  margin: 0px 80px !important;
+  border: rgb(100, 180, 150);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.glass {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+   background-color: rgb(100, 180, 150);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   border: none;
+}
+
+[type="search"] {
+  outline-offset: 0;
+}
+
+#search {
+  padding: 6px;
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: 1px solid #198754 !important;
+}
+
+#search::placeholder {
+  margin-left: 20px !important;
+  /* color: red; */
+  padding: 25px;
+}
+
+/* Dropdown Styles */
+#dropdown-basic {
+  background: none;
+  color: black;
+  border-radius: 0;
+  border-left: 0;
+}
+
+/* Additional Navbar Item Styles */
+.tab-btn {
+  margin: 5px 0;
+  padding: 10px;
   background: transparent;
-  /* border: 2px solid transparent; */
-  /* border-radius: 15px; */
+  border: none;
   cursor: pointer;
 }
 
+.tab-btn.active {
+  font-weight: bold;
+  color: rgb(100, 180, 150);
+}
+
+/* Navbar Item Styles */
+.navbar-section {
+  padding: 10px;
+}
+
 .dropdown-content {
-  display: none;
-  font-size: 13px;
-  position: absolute;
-  z-index: 1;
-  min-width: 200px;
-  /* background-color: #212121; */
-  /* border: 2px solid #4CAF50; */
-  border-radius: 0px 15px 15px 15px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 8px 10px;
-  text-decoration: none;
-  display: block;
-  transition: 0.1s;
-}
-
-.dropdown-content a:hover {
-  background-color: transparent;
-  color: #212121;
-}
-
-.dropdown-content a:focus {
-  /* background-color: #212121; */
-  border: 1px solid;
-  /* color: #4CAF50; */
-}
-
-.dropdown-content #top:hover {
-  border-radius: 0px 13px 0px 0px;
-}
-
-.dropdown-content #bottom:hover {
-  border-radius: 0px 0px 13px 13px;
-}
-
-.paste-button:hover button {
-  border-radius: 15px 15px 0px 0px;
+  display: none; /* Change this to 'block' when dropdown is active */
 }
 
 .paste-button:hover .dropdown-content {
   display: block;
+}
+
+/* Miscellaneous */
+.row {
+  margin: 0;
+}
+
+.fs-light {
+  font-size: 0.875rem;
+}
+
+/* Icon Styles */
+i {
+  margin-right: 5px;
+}
+
+
+/* Logo styling */
+#con img {
+  width: 100px;
+}
+
+/* Search bar container */
+.col-xl-5.d-flex.in {
+  display: flex;
+  align-items: center;
+}
+
+
+.fa-magnifying-glass {
+  font-size: 18px;
+}
+
+/* Account, Wishlist, and Cart */
+.col-3.d-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.paste-button {
+  position: relative;
+}
+
+.paste-button button {
+  background-color: transparent;
+  border: none;
+  /* padding: 10px 20px; */
+  /* color: white; */
+  border-radius: 4px;
+  
+  cursor: pointer;
+}
+
+.paste-button .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 150px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.paste-button .dropdown-content a {
+  padding: 8px 16px;
+  display: block;
+  color: black;
+  text-decoration: none;
+}
+
+.paste-button .dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.paste-button:hover .dropdown-content {
+  display: block;
+}
+
+
+i {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.navbar-section{
+  display: flex;
+}
+.navbar-section a {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+
+}
+
+
+
+.dropdown-content .container {
+  display: flex;
+  justify-content: space-between;
+  
+  padding: 20px;
+  border: 1px solid #e1e1e1;
+}
+
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-btn {
+  padding: 10px 15px;
+  /* background-color: #fff; */
+  border: 1px solid #ddd;
+  cursor: pointer;
+  text-align: left;
+  font-size: 16px;
+  margin-bottom: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.tab-btn.active {
+  /* background-color: #28a745; */
+  /* color: white; */
+  font-weight: bold;
+}
+
+/* .tab-btn:hover {
+  background-color: #f2f2f2;
+} */
+
+
+.tab-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 20px;
+  width: 100%;
+}
+
+.tab-content h4 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.tab-content ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.tab-content ul li {
+  padding: 5px 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.tab-content ul li:hover {
+  color: #e60000;
+}
+
+#tab-c{
+  margin: 3px 5px;
+}
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .dropdown-content .container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .tab-content {
+    padding-left: 0;
+  }
 }
