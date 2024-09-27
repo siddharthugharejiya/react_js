@@ -15,8 +15,7 @@
   justify-content: space-between;
   align-items: center;
   margin: 20px;
-
-  /* border-bottom: 1px solid rgb(233, 233, 233 / 1) !important; */
+  flex-wrap: wrap;
   border-bottom: 1px solid rgb(233 233 233 / 1);
 }
 .bor{
@@ -109,13 +108,13 @@
   font-size: 0.875rem;
 }
 
-/* Icon Styles */
+
 i {
   margin-right: 5px;
 }
 
 
-/* Logo styling */
+
 #con img {
   width: 125px;
 }
@@ -158,6 +157,7 @@ i {
 
 .paste-button .dropdown-content {
   display: none;
+  border-radius: 10px;
   position: absolute;
   background-color: white;
   min-width: 150px;
@@ -214,7 +214,7 @@ i {
 
 .tab-btn {
   padding: 10px 15px;
-  /* background-color: #fff; */
+
   border: 1px solid #ddd;
   cursor: pointer;
   text-align: left;
@@ -224,14 +224,10 @@ i {
 }
 
 .tab-btn.active {
-  /* background-color: #28a745; */
-  /* color: white; */
+
   font-weight: bold;
 }
 
-/* .tab-btn:hover {
-  background-color: #f2f2f2;
-} */
 
 
 .tab-content {
@@ -265,6 +261,9 @@ i {
   margin: 17px 5px;
 }
 @media (max-width: 768px) {
+  .col-12.col-lg-5.d-flex.align-items-center{
+    margin: 0;
+  }
   .container {
     flex-direction: column;
   }
@@ -276,5 +275,12 @@ i {
 
   .tab-content {
     padding-left: 0;
+  }
+}
+
+@media(max-width:576px)
+{
+  .col-12.col-lg-5.d-flex.align-items-center{
+    margin: 0;
   }
 }

@@ -50,7 +50,7 @@ function Navbar_1() {
             />
           </Navbar.Brand>
 
-          <div className="col-12 col-lg-5 d-flex align-items-center">
+          <div className="col-12 col-lg-4 col-md-7 col-sm-12 d-flex align-items-center">
             <input
               type="search"
               placeholder="Search for items..."
