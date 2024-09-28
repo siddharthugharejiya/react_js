@@ -9,18 +9,27 @@
 .col-12.col-lg-3.d-flex.justify-content-around.align-items-center{
        margin-right: -110px;
 }
+.navbar-brand{
+  margin: 0px 20px;
+}
+.bb{
+  margin: 0px -40px;
+}
 #con {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px;
+  margin: -10px;
   flex-wrap: wrap;
   border-bottom: 1px solid rgb(233 233 233 / 1);
 }
 .bor{
-  border-bottom: 85px solid rgb(233 233 233 / 1);
+  border-bottom: 72px solid rgb(233 233 233 / 1);
 
+}
+.button{
+  font-weight: 500 !important;
 }
 /* Input and Dropdown Styles */
 .in {
@@ -150,7 +159,7 @@ i {
 
 .paste-button .dropdown-content {
   display: none;
-  top: 48px;
+  top: 43px;
   border-radius: 10px;
   position: absolute;
   background-color: white;
@@ -252,9 +261,12 @@ i {
 }
 
 #tab-c{
-  margin: 17px 5px;
+  margin: 17px 30px;
 }
 
+.tab-content ul li{
+  font-size: 15px;
+}
 .nav2 {
   /* border: 1px solid white; */
   width: 60%;
@@ -375,13 +387,29 @@ i {
   font-size: 16px; 
   margin-top: -3px;
 }
+@media (max-width: 992px){
+  #phone {
+    width: 100%;
+  }
+}
 @media (max-width: 768px) {
   .col-12.col-lg-5.d-flex.align-items-center{
     margin: 0;
   }
-  .container {
-    flex-direction: column;
+  #phone {
+    display: none !important;
   }
+  .col-12.col-lg-3.d-flex.justify-content-around.align-items-center{
+    margin: 0;
+  }
+  .bb{
+    margin: 8px -50px;
+  }
+
+  #con{
+    justify-content: center;
+  }
+
 
   .dropdown-content .container {
     flex-direction: column;
@@ -391,15 +419,51 @@ i {
   .tab-content {
     padding-left: 0;
   }
+  .drop{
+    display: none;
+  }
+ 
 }
 
 @media(max-width:576px)
 {
+
+  #phone {
+    display: none !important;
+  }
+  .nav2{
+    display: none !important;
+  }
+  .drop{
+    display: none;
+  }
+  #con{
+    justify-content: center;
+  }
   .col-12.col-lg-5.d-flex.align-items-center{
     margin: 0;
   }
+  .dropdown{
+    display: none;
+  }
 }
 
+
+@media(max-width:480px)
+{
+  #con{
+    justify-content: center;
+  }
+  .col-12.col-lg-5.d-flex.align-items-center{
+    margin: 0;
+  }
+  .col-12.col-lg-3.d-flex.justify-content-around.align-items-center{
+    margin: 0;
+  }
+  .dropdown{
+    display: none;
+  }
+}
 
 
 
