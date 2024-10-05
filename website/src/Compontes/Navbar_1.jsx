@@ -170,7 +170,7 @@ function Navbar_1() {
       </div>
 
  
-      <div className="col-9 col-lg-8 col-xl-7 drop">
+      <div className="col-9 col-lg-8 col-xl-9 drop">
         <nav className="nav2 d-flex justify-content-center">
           <ul className="d-flex justify-content-between">
             <li>

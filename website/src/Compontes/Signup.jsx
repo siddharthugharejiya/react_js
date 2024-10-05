@@ -29,10 +29,7 @@ const Signup = () => {
                     email: "",
                     password: ""
            
-                })
-              
-           
-                
+                })  
     };
 
     return (

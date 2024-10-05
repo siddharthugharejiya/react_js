@@ -5,6 +5,9 @@ import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { store } from './Redux/store.js'
+// import "rsuite/dist/styles/rsuite-default.css";
+
+
 
 createRoot(document.getElementById('root')).render(
     <Provider store={store}>
@@ -14,3 +17,10 @@ createRoot(document.getElementById('root')).render(
     </Provider>
   
 )
+
+
+
+
+
+
+
