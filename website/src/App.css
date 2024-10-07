@@ -103,6 +103,10 @@
   display: block;
 }
 
+button.tab-btn.active{
+  border: 1px solid #198754;
+  padding: 10px 20px;
+}
 /* Miscellaneous */
 .row {
   margin: 0;
@@ -379,7 +383,6 @@ i {
   display: block;
 }
 
-
 .arrow-icon {
   margin: 0px 5px;
   transform: translateY(3px); 
@@ -389,7 +392,7 @@ i {
 
 .slider-1{
   position:relative;
-  height: 60vh;
+  height: auto;
   width: 100%;
 }
 .items{
@@ -523,15 +526,7 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
   overflow: hidden;
   height: 100%;
 }
-/* .carousel-item {
-  position: relative;
-  text-align: center;
-  height: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f9f9f9;
-} */
+
 .overlay {
   position: absolute;
   top: 0;
@@ -585,7 +580,156 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
   height: 200vh;
 }
 
+/* Wrapper for the entire component */
+/* Existing .t */
+.t {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-wrap: wrap;
+}
 
+/* Vertical Tabs layout */
+.tabs-list {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #e0e0e0;
+  padding: 0 10px;
+}
+
+.tab {
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+}
+
+.tab:hover {
+  background-color: #f0f0f0;
+}
+
+/* Panel content */
+.tab-panel {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.tab-image {
+  display: flex;
+  height: 73vh;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 1px solid red; */
+  flex-wrap: wrap;
+}
+
+/* Added hover effect for the card */
+.card:hover {
+  filter: brightness(0.9); /* Darkens the background on hover */
+  /* transform: scale(1.05);  Slight zoom on hover */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+.card {
+  height: 70vh !important;
+  width: 300px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex !important;
+  justify-content: end !important;
+  align-items: center !important;
+  flex-direction: column !important;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Before and after hover background effect */
+.card:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: #00838d;
+  border-radius: 32px;
+  transform: scale(1);
+  transform-origin: 50% 50%;
+  transition: transform 0.25s ease-out;
+}
+
+.card:hover:before {
+  transform: scale(21);
+}
+
+.card-body {
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #52a57b;
+}
+
+/* Additional CSS for tab container */
+.css-la0xb7 {
+  background-color: transparent;
+  width: 75% !important;
+}
+
+.car {
+  position: relative;
+}
+
+.tt {
+  width: 180px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.css-1t05hy2 {
+  min-width: 27% !important;
+  color: black !important;
+  /* background-color: #veF7F7F8 !important; */
+}
+.css-1jb7xyw{
+  color: black !important;
+
+}
+
+.css-1jb7xyw:hover{
+  background-color: transparent !important;
+    color: #198754 !important;
+
+ 
+}
+.css-1jb7xyw.base--selected {
+  background-color: transparent;
+  color: #198754 !important;
+}
+.css-t87ios{
+  width: 64% !important;
+}
 
 @media (max-width: 992px){
   #phone {
@@ -593,6 +737,10 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
   }
   .juicy-left-main{
     width: fit-content;
+  }
+  .tab-image{
+    height: auto;
+    justify-content: center;
   }
 }
 @media (max-width: 768px) {
@@ -628,6 +776,10 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
   .juicy-left-main{
     width: fit-content;
   }
+  .tab-image{
+    height: auto;
+    justify-content: center;
+  }
  
 }
 
@@ -655,6 +807,10 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
   .juicy-left-main{
     width: fit-content;
   }
+  .tab-image{
+    height: auto;
+    justify-content: center;
+  }
 }
 
 
@@ -678,6 +834,11 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
 }
 
 
-
+@media (min-width:300px) {
+  .juicy-left-main{
+    width: fit-content;
+  }
+  
+}
 
 

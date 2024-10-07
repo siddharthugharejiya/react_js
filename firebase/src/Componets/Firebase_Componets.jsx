@@ -57,7 +57,7 @@ const Firebase_Components = () => {
     await deleteDoc(docRef);
     get(); 
     alert("Deleted successfully");
-  };
+  };;
 
   const edit = (id) => {
     const record = arr.find((el) => el.id === id);

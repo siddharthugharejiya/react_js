@@ -2,9 +2,9 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { useEffect } from "react";
 
-// Firebase configuration
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyCOcjqRnUvn1houR-kDHe_D2MKlB3WDfCk",
   authDomain: "react-practice-f0ed3.firebaseapp.com",
@@ -34,5 +34,5 @@ export const googleauth = () => {
 };
 
 
-// Initialize Firestore
+
 export const db = getFirestore(app);

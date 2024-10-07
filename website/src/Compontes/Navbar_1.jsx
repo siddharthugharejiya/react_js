@@ -123,7 +123,7 @@ function Navbar_1() {
         </div>
 
         <Container className="d-flex flex-wrap justify-content-between align-items-center bb" >
-      <div className="col-3 col-lg-1 d-flex ">
+      <div className="col-3 col-lg-1 d-flex " style={{margin:"10px"}}>
         <div className="paste-button">
           <button className="button" style={{ fontWeight: 500 }}>
             <i
@@ -170,7 +170,7 @@ function Navbar_1() {
       </div>
 
  
-      <div className="col-9 col-lg-8 col-xl-9 drop">
+      <div className="col-12 col-lg-8 col-xl-8 drop">
         <nav className="nav2 d-flex justify-content-center">
           <ul className="d-flex justify-content-between">
             <li>
