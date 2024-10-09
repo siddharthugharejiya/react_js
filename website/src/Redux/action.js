@@ -1,7 +1,7 @@
 import { DATA, EMAIL, PASSWORD, USERNAME } from "./action_type";
 
 export const product_action = () => (dispatch) => {
-    fetch('https://fakestoreapi.com/products')
+    fetch('http://localhost:9595/products')
         .then((res) => res.json())
         .then((data) => {
             console.log(data);

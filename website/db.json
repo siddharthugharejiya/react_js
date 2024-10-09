@@ -42,5 +42,15 @@
       "email": "sid123@gmail.com",
       "password": "134f"
     }
-  ]
+  ],
+   "products":[
+    {
+      "image":"https://maraviyainfotech.com/projects/carrot-tailwind/assets/img/product/1.jpg",
+      "price":120.25,
+      
+      "category":"Vegetables",
+      "star":"4.5",
+      "description":"Fresh organic villa farm lomon 500gm pack"
+    }
+   ]
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "animate.css";
 import "./section.css";
@@ -9,11 +9,84 @@ import { TabsList as BaseTabsList } from '@mui/base/TabsList';
 import { TabPanel as BaseTabPanel } from '@mui/base/TabPanel';
 import { buttonClasses } from '@mui/base/Button';
 import { Tab as BaseTab, tabClasses } from '@mui/base/Tab';
+import { useDispatch, useSelector } from "react-redux";
+import { product_action } from "../Redux/action";
+import { color } from "framer-motion";
+import 'swiper/css';
+import 'swiper/css/pagination';
+import Slider from "react-slick";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
 const Home = () => {
 
+  const dispatch = useDispatch();
+  const products = useSelector(state => state.product.data);
+
+  useEffect(() => {
+      dispatch(product_action());
+  }, [dispatch]);
+
   AOS.init({
-    duration: 1200,
+    duration: 1500,
   })
+
+  var settings = {
+    dots: true,
+    infinite: true, 
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    initialSlide: 0,
+    responsive: [
+      {
+     
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        // For smaller tablets
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 0
+        }
+      },
+      {
+        // For mobile devices
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 0
+        }
+      },
+      {
+        // For extra small mobile devices
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true // Keeping dots for better navigation
+        }
+      }
+    ]
+  };
   
 const blue = {
   50: '#F0F7FF',
@@ -238,7 +311,7 @@ const TabsList = styled(BaseTabsList)`
           </Carousel.Item>
         </Carousel>
       </div>
-      <div className="t" data-aos="fade-up">
+<div className="t" data-aos="fade-up">
   <Tabs defaultValue={0} orientation="vertical" style={{ flexWrap: "wrap" }}>
     <TabsList className="tabs-list col-lg-4 col-sm-12 col-12">
       <Tab>Cake and Milk <br />(65 Items)</Tab>
@@ -588,9 +661,138 @@ const TabsList = styled(BaseTabsList)`
 </div>
 
 
+{/* <div className="pro">
+  <div className="container">
+
+<div className="row">
+  <div className="col-lg-3">
+    {products.map((el) => (
+        <div className="card c" style={{ width: '13rem' }} key={el.id}>
+          <img src={el.image} className="card-img-top" alt={el.title} />
+          <div className="card-body">
+            <h5 className="card-title">{el.category}</h5>
+            <p className="card-text">{el.description}</p>
+            <p className="card-text">{el.star}</p>
+            <a href="#" className="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+    
+    ))}
+  </div>
+</div>
+
+  </div>
+</div> */}
+<div className="container d-flex justify-content-center align-items-center">
+  <div className="fresh">
+    <div className="row">
+    
+<div className="slider-container">
+      <Slider {...settings}>
+        <div>
+          <div className="col-lg-12 col-md-11 col-sm-12 col-7" style={{padding:"3px"}}>
+            <div className="product" style={{ background: `url("./image/3 (2).jpg")`, backgroundPosition:"center", backgroundSize:"cover" }}>
+              <div className="product-body">
+                <div className="product-t">
+                  <strong>Fresh &amp; healthy </strong>  <br />
+                  <strong> Organic Fruits</strong> 
+                </div>
+                <div className="d-flex align-items-center">
+                  <h2 style={{color:"#198754"}}>35%</h2>
+                  <h6 style={{color:"rgba(119, 119, 119, 1)", margin:"0px 10px"}}>on first order</h6>
+                </div>
+                <span>
+                  <button className="btn" style={{background:"#198754",color:"white"}}>Shop Now</button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className="col-lg-11 col-md-11 col-sm-12 col-7"style={{padding:"3px"}}>
+            <div className="product" style={{ background: `url("./image/3 (2).jpg")`, backgroundPosition:"center", backgroundSize:"cover" }}>
+              <div className="product-body">
+                <div className="product-t">
+                  <strong>Fresh &amp; healthy </strong>  <br />
+                  <strong> Organic Fruits</strong> 
+                </div>
+                <div className="d-flex align-items-center">
+                  <h2 style={{color:"#198754"}}>35%</h2>
+                  <h6 style={{color:"rgba(119, 119, 119, 1)", margin:"0px 10px"}}>on first order</h6>
+                </div>
+                <span>
+                  <button className="btn" style={{background:"#198754",color:"white"}}>Shop Now</button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+        <div className="col-lg-11 col-md-11 col-sm-12 col-7" style={{padding:"3px"}}>
+            <div className="product" style={{ background: `url("./image/3 (2).jpg")`, backgroundPosition:"center", backgroundSize:"cover" }}>
+              <div className="product-body">
+                <div className="product-t">
+                  <strong>Fresh &amp; healthy </strong>  <br />
+                  <strong> Organic Fruits</strong> 
+                </div>
+                <div className="d-flex align-items-center">
+                  <h2 style={{color:"#198754"}}>35%</h2>
+                  <h6 style={{color:"rgba(119, 119, 119, 1)", margin:"0px 10px"}}>on first order</h6>
+                </div>
+                <span>
+                  <button className="btn" style={{background:"#198754",color:"white"}}>Shop Now</button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+        <div className="col-lg-11 col-md-11 col-sm-12 col-7" style={{padding:"3px"}}>
+            <div className="product" style={{ background: `url("./image/3 (2).jpg")`, backgroundPosition:"center", backgroundSize:"cover" }}>
+              <div className="product-body">
+                <div className="product-t">
+                  <strong>Fresh &amp; healthy </strong>  <br />
+                  <strong> Organic Fruits</strong> 
+                </div>
+                <div className="d-flex align-items-center">
+                  <h2 style={{color:"#198754"}}>35%</h2>
+                  <h6 style={{color:"rgba(119, 119, 119, 1)", margin:"0px 10px"}}>on first order</h6>
+                </div>
+                <span>
+                  <button className="btn" style={{background:"#198754",color:"white"}}>Shop Now</button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3>5</h3>
+        </div>
+        <div>
+          <h3>6</h3>
+        </div>
+        <div>
+          <h3>7</h3>
+        </div>
+        <div>
+          <h3>8</h3>
+        </div>
+        <div>
+          <h3>9</h3>
+        </div>
+      </Slider>
+    </div>
+
+      
+
+    </div>
+  </div>
+</div>
+
+
+
     </>
   );
 };
 
 export default Home;
-  

@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+.row{
+  --bs-gutter-x:0.rem !important;  
+}
+
+
+
 
 .container-fluid{
   width: 80% !important;
@@ -625,16 +631,15 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
   flex-wrap: wrap;
 }
 
-/* Added hover effect for the card */
 .card:hover {
-  filter: brightness(0.9); /* Darkens the background on hover */
-  /* transform: scale(1.05);  Slight zoom on hover */
-  transition: all 0.3s ease; /* Smooth transition */
+  filter: brightness(0.9);
+
+  transition: all 0.3s ease; 
 }
 
-.card {
+.car {
   height: 70vh !important;
-  width: 300px;
+  width: 470px !important;
   border: 1px solid #ddd;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -730,7 +735,49 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
 .css-t87ios{
   width: 64% !important;
 }
+.c{
+  cursor: zoom-in;
 
+}
+
+.product{
+  height:35vh;
+  width: 100%;
+  /* border:1px solid red; */
+  border-radius: 10px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.product-body{
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  flex-direction: column;
+  padding: 20px;
+}
+.fresh{
+  height: auto;
+  width: 100%;
+  /* border:1px solid red; */
+
+}
+.swiper-slide.swiper-slide-next{
+  width: max-content;
+}
+.slick-slider{
+  width: 92% !important;
+  margin: auto;
+}
+.swiper-slide{
+  width: 30% !important;
+}
+.slick-slide.slick-active{
+  width:400px !important;
+}
+.slick-slide.slick-active.slick-current{
+  width: 400px !important;
+}
 @media (max-width: 992px){
   #phone {
     width: 100%;
@@ -741,6 +788,12 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
   .tab-image{
     height: auto;
     justify-content: center;
+  }
+  .t{
+    height: auto;
+  }
+  .slick-slide.slick-active.slick-current{
+    width: 630px !important;
   }
 }
 @media (max-width: 768px) {
@@ -780,6 +833,12 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
     height: auto;
     justify-content: center;
   }
+  .t{
+    height: auto;
+  }
+  .slick-slide.slick-active.slick-current{
+    width: 425px !important;
+  }
  
 }
 
@@ -811,6 +870,15 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
     height: auto;
     justify-content: center;
   }
+  .t{
+    height: auto;
+  }
+  .slick-slider{
+    width: 83% !important;
+  }
+  .slick-slide.slick-active.slick-current{
+    width: 425px !important;
+  }
 }
 
 
@@ -831,12 +899,24 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
   .juicy-left-main{
     width: fit-content;
   }
+  .t{
+    height: auto;
+  }
+  .slick-slider{
+    width: 83% !important;
+  }
 }
 
 
-@media (min-width:300px) {
+@media (min-width:350px) {
   .juicy-left-main{
     width: fit-content;
+  }
+  .t{
+    height: auto;
+  }
+  .slick-slider{
+    width: 83% !important;
   }
   
 }
