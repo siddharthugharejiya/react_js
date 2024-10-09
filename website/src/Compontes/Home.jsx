@@ -30,7 +30,7 @@ const Home = () => {
     duration: 1500,
   })
 
-  var settings = {
+ var settings = {
     dots: true,
     infinite: true, 
     speed: 500,
@@ -39,8 +39,8 @@ const Home = () => {
     initialSlide: 0,
     responsive: [
       {
-     
-        breakpoint: 1280,
+        // Extra large desktops (xl)
+        breakpoint: 1200,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
@@ -49,8 +49,8 @@ const Home = () => {
         }
       },
       {
-        
-        breakpoint: 1024,
+        // Large devices (lg)
+        breakpoint: 992,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -59,8 +59,8 @@ const Home = () => {
         }
       },
       {
-        // For smaller tablets
-        breakpoint: 800,
+        // Medium devices (md)
+        breakpoint: 768,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -68,8 +68,8 @@ const Home = () => {
         }
       },
       {
-        // For mobile devices
-        breakpoint: 600,
+        // Small devices (sm)
+        breakpoint: 576,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -77,16 +77,17 @@ const Home = () => {
         }
       },
       {
-        // For extra small mobile devices
-        breakpoint: 480,
+        // Extra small devices (xs)
+        breakpoint: 0,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          dots: true // Keeping dots for better navigation
+          dots: true
         }
       }
     ]
   };
+
   
 const blue = {
   50: '#F0F7FF',
@@ -683,14 +684,14 @@ const TabsList = styled(BaseTabsList)`
 
   </div>
 </div> */}
-<div className="container d-flex justify-content-center align-items-center">
+<div className="container d-flex justify-content-center align-items-center" >
   <div className="fresh">
     <div className="row">
     
-<div className="slider-container">
-      <Slider {...settings}>
-        <div>
-          <div className="col-lg-12 col-md-11 col-sm-12 col-7" style={{padding:"3px"}}>
+<div className="slider-container" data-aos="fade-up">
+      <Slider {...settings} data-aos="fade-up">
+        <div className="d-flex justify-content-center align-items-center">
+          <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style={{padding:"3px"}}>
             <div className="product" style={{ background: `url("./image/3 (2).jpg")`, backgroundPosition:"center", backgroundSize:"cover" }}>
               <div className="product-body">
                 <div className="product-t">
@@ -708,8 +709,47 @@ const TabsList = styled(BaseTabsList)`
             </div>
           </div>
         </div>
-        <div>
-          <div className="col-lg-11 col-md-11 col-sm-12 col-7"style={{padding:"3px"}}>
+        <div className="d-flex justify-content-center align-items-center">
+          <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"style={{padding:"3px"}}>
+            <div className="product" style={{ background: `url("./image/1 (2).jpg")`, backgroundPosition:"center", backgroundSize:"cover" }}>
+              <div className="product-body">
+                <div className="product-t">
+                  <strong>Fresh &amp; healthy </strong>  <br />
+                  <strong> Organic Fruits</strong> 
+                </div>
+                <div className="d-flex align-items-center">
+                  <h2 style={{color:"#198754"}}>35%</h2>
+                  <h6 style={{color:"rgba(119, 119, 119, 1)", margin:"0px 10px"}}>on first order</h6>
+                </div>
+                <span>
+                  <button className="btn" style={{background:"#198754",color:"white"}}>Shop Now</button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+       <div className="d-flex justify-content-center align-items-center">
+        <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style={{padding:"3px"}}>
+            <div className="product" style={{ background: `url("./image/2 (2).jpg")`, backgroundPosition:"center", backgroundSize:"cover" }}>
+              <div className="product-body">
+                <div className="product-t">
+                  <strong>Fresh &amp; healthy </strong>  <br />
+                  <strong> Organic Fruits</strong> 
+                </div>
+                <div className="d-flex align-items-center">
+                  <h2 style={{color:"#198754"}}>35%</h2>
+                  <h6 style={{color:"rgba(119, 119, 119, 1)", margin:"0px 10px"}}>on first order</h6>
+                </div>
+                <span>
+                  <button className="btn" style={{background:"#198754",color:"white"}}>Shop Now</button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="d-flex justify-content-center align-items-center">
+          <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style={{padding:"3px"}}>
             <div className="product" style={{ background: `url("./image/3 (2).jpg")`, backgroundPosition:"center", backgroundSize:"cover" }}>
               <div className="product-body">
                 <div className="product-t">
@@ -727,9 +767,9 @@ const TabsList = styled(BaseTabsList)`
             </div>
           </div>
         </div>
-        <div>
-        <div className="col-lg-11 col-md-11 col-sm-12 col-7" style={{padding:"3px"}}>
-            <div className="product" style={{ background: `url("./image/3 (2).jpg")`, backgroundPosition:"center", backgroundSize:"cover" }}>
+        <div className="d-flex justify-content-center align-items-center">
+          <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"style={{padding:"3px"}}>
+            <div className="product" style={{ background: `url("./image/1 (2).jpg")`, backgroundPosition:"center", backgroundSize:"cover" }}>
               <div className="product-body">
                 <div className="product-t">
                   <strong>Fresh &amp; healthy </strong>  <br />
@@ -746,9 +786,9 @@ const TabsList = styled(BaseTabsList)`
             </div>
           </div>
         </div>
-        <div>
-        <div className="col-lg-11 col-md-11 col-sm-12 col-7" style={{padding:"3px"}}>
-            <div className="product" style={{ background: `url("./image/3 (2).jpg")`, backgroundPosition:"center", backgroundSize:"cover" }}>
+       <div className="d-flex justify-content-center align-items-center">
+        <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style={{padding:"3px"}}>
+            <div className="product" style={{ background: `url("./image/2 (2).jpg")`, backgroundPosition:"center", backgroundSize:"cover" }}>
               <div className="product-body">
                 <div className="product-t">
                   <strong>Fresh &amp; healthy </strong>  <br />
@@ -765,21 +805,8 @@ const TabsList = styled(BaseTabsList)`
             </div>
           </div>
         </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
-        <div>
-          <h3>7</h3>
-        </div>
-        <div>
-          <h3>8</h3>
-        </div>
-        <div>
-          <h3>9</h3>
-        </div>
+     
+
       </Slider>
     </div>
 
@@ -789,6 +816,19 @@ const TabsList = styled(BaseTabsList)`
   </div>
 </div>
 
+
+
+<div className="container">
+  <div className="row">
+    <div className="col-xxl-3">
+         <div className="packing">
+           <div className="paking-icon">
+           <i class="ri-store-3-fill" style={{color:"#52a57b"}} id="icon"></i>
+           </div>
+         </div>
+    </div>
+  </div>
+</div>
 
 
     </>
