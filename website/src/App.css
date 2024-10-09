@@ -765,9 +765,15 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
 .swiper-slide.swiper-slide-next{
   width: max-content;
 }
+.slick-initialized{
+
+  width: 94% !important;
+}
 .slick-slider{
-  width: 92% !important;
   margin: auto;
+  width: 90% !important;
+  
+   border: 1px solid red;
 }
 .swiper-slide{
   width: 30% !important;
@@ -837,7 +843,8 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
     height: auto;
   }
   .slick-slide.slick-active.slick-current{
-    width: 425px !important;
+    width: 470px !important;
+    border: 1px solid red;
   }
  
 }
@@ -908,7 +915,7 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
 }
 
 
-@media (min-width:350px) {
+@media (max-width:350px) {
   .juicy-left-main{
     width: fit-content;
   }
