@@ -830,6 +830,26 @@ div#pro-1{
   background-size: cover;
   background-repeat: no-repeat;
 }
+.food-count{
+  height: 30vh;
+  width: 100%;
+  border: 1px solid red;
+}
+.food-timer{
+  height: auto;
+  width: 100%;
+  border: 1px solid red;
+  display: flex;
+
+}
+.f-t{
+  height: auto;
+  width: 100%;
+  border: 1px solid red;
+  display: flex;
+
+}
+
 @media (max-width:1500px)
 {
   .t{

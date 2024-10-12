@@ -1044,8 +1044,9 @@ const TabsList = styled(BaseTabsList)`
 </div>
 
         <div className="food">
-           <div className="col-xxl-6">
-           <div className="col-12 d-flex">
+           <div className="col-xxl-5">
+            <div className="food-count">
+            <div className="col-12 d-flex">
                         <p
                           style={{
                             borderBottom: "2px solid #4CAF50",
@@ -1058,6 +1059,39 @@ const TabsList = styled(BaseTabsList)`
                           OFF
                         </b>
                       </div>
+                      <p style={{color:"#7a7a7a"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do maecenas accumsan lacus vel facilisis.</p>
+            <div className="food-timer">
+              <div className="f-t">
+
+               <div>
+                <h3>77</h3>
+                <p>Days</p> 
+               </div>
+               <div style={{fontSize:"50px",margin:"-10px 10px"}}>:</div>
+              </div>
+
+              <div className="f-t">
+
+               <div>
+                <h3>77</h3>
+                <p>Days</p> 
+               </div>
+               <div style={{fontSize:"50px",margin:"-10px 10px"}}>:</div>
+              </div>
+
+
+
+              <div className="f-t">
+
+               <div>
+                <h3>77</h3>
+                <p>Days</p> 
+               </div>
+               <div style={{fontSize:"50px",margin:"-10px 10px"}}>:</div>
+              </div>
+            </div>
+            </div>
+          
            </div>
         </div>
 
