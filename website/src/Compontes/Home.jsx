@@ -121,8 +121,8 @@ const Home = () => {
      
         breakpoint: 1400,
         settings: {
-          slidesToShow: 4,
-          slidesToScroll: 4,
+          slidesToShow: 3,
+          slidesToScroll: 3,
           infinite: true,
           dots: true
         }
@@ -746,7 +746,7 @@ const TabsList = styled(BaseTabsList)`
 </div>
 
 
-{/* <div className="pro">
+  {/* <div className="pro">
   <div className="container">
 
 <div className="row">
@@ -964,13 +964,16 @@ const TabsList = styled(BaseTabsList)`
 </div>
 </div>
   
-<div className="pro">
-<div className="container">
+<div className="pro" >
+
 
   <div className="row">
-  <Slider {...settings1} data-aos="fade-up">
+    <div className="slid-1"data-aos="fade-up">
 
-    <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-5 border" style={{gap:"10px !important"}}>
+   
+  <Slider {...settings1}  >
+
+    <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12"id="pro-1">
          <div className="packing">
            <div className="paking-body">
            <i class="ri-store-3-fill" style={{color:"#52a57b"}} id="icon"></i>
@@ -982,7 +985,7 @@ const TabsList = styled(BaseTabsList)`
   
 
 
-    <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-5 border" style={{gap:"10px !important"}}>
+    <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 "id="pro-1">
          <div className="packing">
            <div className="paking-body">
            <i class="ri-customer-service-2-line" style={{color:"#52a57b"}} id="icon"></i>
@@ -992,7 +995,40 @@ const TabsList = styled(BaseTabsList)`
          </div>
     </div>
 
-    <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-5 border" style={{gap:"10px !important"}}>
+    <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 "id="pro-1">
+         <div className="packing">
+           <div className="paking-body">
+           <i class="ri-truck-line" style={{color:"#52a57b"}} id="icon"></i>
+             <h4>24X7 Support</h4>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+           </div>
+         </div>
+    </div>
+
+
+    <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12"id="pro-1">
+         <div className="packing">
+           <div className="paking-body">
+           <i class="ri-store-3-fill" style={{color:"#52a57b"}} id="icon"></i>
+             <h4>Product Packing</h4>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+           </div>
+         </div>
+    </div>
+  
+
+
+    <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 "id="pro-1">
+         <div className="packing">
+           <div className="paking-body">
+           <i class="ri-customer-service-2-line" style={{color:"#52a57b"}} id="icon"></i>
+             <h4>24X7 Support</h4>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+           </div>
+         </div>
+    </div>
+
+    <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 "id="pro-1">
          <div className="packing">
            <div className="paking-body">
            <i class="ri-truck-line" style={{color:"#52a57b"}} id="icon"></i>
@@ -1002,14 +1038,31 @@ const TabsList = styled(BaseTabsList)`
          </div>
     </div>
     </Slider>
+    </div>  
   </div>
-</div>
+
 </div>
 
-
+        <div className="food">
+           <div className="col-xxl-6">
+           <div className="col-12 d-flex">
+                        <p
+                          style={{
+                            borderBottom: "2px solid #4CAF50",
+                            color: "#4CAF50",
+                          }}
+                        >
+                          35%
+                        </p>
+                        <b style={{ fontSize: "18px", margin: "0 10px" }}>
+                          OFF
+                        </b>
+                      </div>
+           </div>
+        </div>
 
     </>
 
-  );
+  )
 }
 export default Home;

@@ -780,14 +780,17 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
 
 .packing{
   height:auto;
-  width: 100%;
+  width: 86%;
   /* border: 1px solid red; */
   background: #f7f7f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 }
 .paking-body{
  height: inherit;
- width: 100%;
+ width: 80%;
  display: flex;
  justify-content: center;
  /* padding: 33px; */
@@ -799,8 +802,33 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
 #icon{
   font-size: 45px;
 }
+
+div#pro-1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slick-slide.slick-active{
+  margin: 0px 10px !important;
+}
+.slick-list{
+  height: 32vh;
+  margin: 15px 0;
+
+}
 .pro{
+  height: auto;
+  width: 100%;
+  /* border: 1px solid red; */
+}
+.food{
+  height: 75vh;
+  width: 100%;
   border: 1px solid red;
+  background-image: url(../public/image/bg-deal.jpg) ;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 @media (max-width:1500px)
 {
@@ -811,9 +839,13 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
    .product{
     height: auto !important;
    }
-   /* .slick-slide.slick-active.slick-current{
-    width: 313px !important;
-   } */
+   .packing {
+    width: auto;
+   }
+   .slick-list{
+    margin: 30px 0;
+  
+  }
 }
 @media (max-width:1400px)
 {
@@ -842,6 +874,9 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
   }
   .t{
     height: auto;
+  }
+  div#pro-1{
+    width: 55%;
   }
 
 }
@@ -888,12 +923,22 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
   }
 
   .slick-slide.slick-active.slick-current{
-    width: 85vw !important;
+    width: 87vw !important;
     /* border: 1px solid red; */
+    /* margin: 0px 20px !important; */
   }
   .slick-slide{
+    
     width: 255px;
+  
   }
+  .slick-list{
+    height: 35vh;
+  }
+  .packing{
+    height: auto;
+    width: auto;
+  } 
   .paking-body{
     padding: 20px;
     width: fit-content;
@@ -931,7 +976,11 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
   .t{
     height: auto;
   }
-
-
+  div#pro-1{
+    width: 100%;
+  }
+  .slick-slide.slick-active.slick-current{
+    width: 88vw !important;
+  }
 }
 
