@@ -759,7 +759,7 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
 }
 .fresh{
   height: auto;
-  width: 100%;
+  width: 94vw;
   /* border:1px solid red; */
 
 }
@@ -773,16 +773,15 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
 
 .slick-slider{
   margin: auto;
-  width: 90% !important;
-  
-   /* border: 1px solid red; */
+  width:90% !important;
+  /* border: 1px solid red; */
 
 }
 
 .packing{
-  height:20vh;
+  height:auto;
   width: 100%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   background: #f7f7f8;
 
 }
@@ -791,7 +790,7 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
  width: 100%;
  display: flex;
  justify-content: center;
- padding: 33px;
+ /* padding: 33px; */
  align-items: center;
  flex-direction: column;
  text-align: center;
@@ -799,6 +798,9 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
 }
 #icon{
   font-size: 45px;
+}
+.pro{
+  border: 1px solid red;
 }
 @media (max-width:1500px)
 {
@@ -809,6 +811,9 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
    .product{
     height: auto !important;
    }
+   /* .slick-slide.slick-active.slick-current{
+    width: 313px !important;
+   } */
 }
 @media (max-width:1400px)
 {
@@ -822,10 +827,7 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
   .product{
     height: auto !important;
    }
-  /* .slick-slider{
-    width: 83% !important;
-    margin: auto;
-  } */
+
 }
 @media (max-width: 992px){
   #phone {
@@ -841,14 +843,13 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
   .t{
     height: auto;
   }
-  /* .slick-slide.slick-active.slick-current{
-    width: 630px !important;
-  } */
+
 }
 @media (max-width: 768px) {
   .col-12.col-lg-5.d-flex.align-items-center{
     margin: 0;
   }
+  
   #phone {
     display: none !important;
   }
@@ -887,10 +888,16 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
   }
 
   .slick-slide.slick-active.slick-current{
-    width: 470px !important;
-    border: 1px solid red;
+    width: 85vw !important;
+    /* border: 1px solid red; */
   }
-
+  .slick-slide{
+    width: 255px;
+  }
+  .paking-body{
+    padding: 20px;
+    width: fit-content;
+  }
 }
 
 @media(max-width:576px)
@@ -925,8 +932,6 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
     height: auto;
   }
 
-  /* .slick-slide.slick-active.slick-current{
-    width: 425px !important;
-  }  */
+
 }
 

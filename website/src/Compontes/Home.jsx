@@ -89,7 +89,93 @@ const Home = () => {
     ]
   };
 
-
+  var settings1 = {
+    dots: true,
+    infinite: true, 
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    initialSlide: 0,
+    responsive: [
+      {
+      
+        breakpoint: 2000,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+      
+        breakpoint: 1700,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+     
+        breakpoint: 1400,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        // Extra large desktops (xl)
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        // Large devices (lg)
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        // Medium devices (md)
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 0
+        }
+      },
+      {
+        // Small devices (sm)
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 0
+        }
+      },
+      {
+        // Extra small devices (xs)
+        breakpoint: 0,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true
+        }
+      }
+    ]
+  };
   
 const blue = {
   50: '#F0F7FF',
@@ -877,19 +963,14 @@ const TabsList = styled(BaseTabsList)`
   </div>
 </div>
 </div>
-
-<div class="slider slider-nav">
-    <div><h3>1</h3></div>
-    <div><h3>2</h3></div>
-    <div><h3>3</h3></div>
-    <div><h3>4</h3></div>
-    <div><h3>5</h3></div>
-  </div>
   
-
+<div className="pro">
 <div className="container">
+
   <div className="row">
-    <div className="col-xxl-4">
+  <Slider {...settings1} data-aos="fade-up">
+
+    <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-5 border" style={{gap:"10px !important"}}>
          <div className="packing">
            <div className="paking-body">
            <i class="ri-store-3-fill" style={{color:"#52a57b"}} id="icon"></i>
@@ -898,9 +979,10 @@ const TabsList = styled(BaseTabsList)`
            </div>
          </div>
     </div>
+  
 
 
-    <div className="col-xxl-4">
+    <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-5 border" style={{gap:"10px !important"}}>
          <div className="packing">
            <div className="paking-body">
            <i class="ri-customer-service-2-line" style={{color:"#52a57b"}} id="icon"></i>
@@ -910,10 +992,7 @@ const TabsList = styled(BaseTabsList)`
          </div>
     </div>
 
-
-
-
-    <div className="col-xxl-4">
+    <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-5 border" style={{gap:"10px !important"}}>
          <div className="packing">
            <div className="paking-body">
            <i class="ri-truck-line" style={{color:"#52a57b"}} id="icon"></i>
@@ -922,9 +1001,11 @@ const TabsList = styled(BaseTabsList)`
            </div>
          </div>
     </div>
-
+    </Slider>
   </div>
 </div>
+</div>
+
 
 
     </>
