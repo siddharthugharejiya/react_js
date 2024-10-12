@@ -17,6 +17,7 @@ import 'swiper/css/pagination';
 import Slider from "react-slick";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
+// import $ from "jquary"
 const Home = () => {
 
   const dispatch = useDispatch();
@@ -87,6 +88,7 @@ const Home = () => {
       }
     ]
   };
+
 
   
 const blue = {
@@ -689,7 +691,7 @@ const TabsList = styled(BaseTabsList)`
     <div className="slider-container" data-aos="fade-up">
   <Slider {...settings} data-aos="fade-up">
     <div className="d-flex justify-content-center align-items-center">
-      <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style={{ padding: "3px" }}>
+      <div className="col-xxl-11 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style={{ padding: "3px" }}>
         <div
           className="product"
           style={{
@@ -718,44 +720,10 @@ const TabsList = styled(BaseTabsList)`
       </div>
     </div>
 
-    <div className="slider-container-fluid">
-      <Slider {...settings}>
-        {Array.from({ length: 8 }, (_, index) => (
-          <div key={index}>
-            <div className="col-lg-12 col-md-12 col-sm-12 col-12" style={{ padding: "3px" }}>
-              <div
-                className="product"
-                style={{
-                  background: `url("./image/3 (2).jpg")`,
-                  backgroundPosition: "center",
-                  backgroundSize: "cover",
-                }}
-              >
-                <div className="product-body">
-                  <div className="product-t">
-                    <strong>Fresh &amp; healthy</strong>
-                    <br />
-                    <strong>Organic Fruits</strong>
-                  </div>
-                  <div className="d-flex align-items-center">
-                    <h2 style={{ color: "#198754" }}>35%</h2>
-                    <h6 style={{ color: "rgba(119, 119, 119, 1)", margin: "0px 10px" }}>on first order</h6>
-                  </div>
-                  <span>
-                    <button className="btn" style={{ background: "#198754", color: "white" }}>
-                      Shop Now
-                    </button>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </Slider>
-    </div>
+   
 
     <div className="d-flex justify-content-center align-items-center">
-      <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style={{ padding: "3px" }}>
+      <div className="col-xxl-11 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style={{ padding: "3px" }}>
         <div
           className="product"
           style={{
@@ -785,7 +753,7 @@ const TabsList = styled(BaseTabsList)`
     </div>
 
     <div className="d-flex justify-content-center align-items-center">
-      <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style={{ padding: "3px" }}>
+      <div className="col-xxl-11 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style={{ padding: "3px" }}>
         <div
           className="product"
           style={{
@@ -815,7 +783,7 @@ const TabsList = styled(BaseTabsList)`
     </div>
 
     <div className="d-flex justify-content-center align-items-center">
-      <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style={{ padding: "3px" }}>
+      <div className="col-xxl-11 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style={{ padding: "3px" }}>
         <div
           className="product"
           style={{
@@ -845,7 +813,7 @@ const TabsList = styled(BaseTabsList)`
     </div>
 
     <div className="d-flex justify-content-center align-items-center">
-      <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style={{ padding: "3px" }}>
+      <div className="col-xxl-11 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style={{ padding: "3px" }}>
         <div
           className="product"
           style={{
@@ -875,7 +843,7 @@ const TabsList = styled(BaseTabsList)`
     </div>
 
     <div className="d-flex justify-content-center align-items-center">
-      <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style={{ padding: "3px" }}>
+      <div className="col-xxl-11 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style={{ padding: "3px" }}>
         <div
           className="product"
           style={{
@@ -910,18 +878,51 @@ const TabsList = styled(BaseTabsList)`
 </div>
 </div>
 
-
-
+<div class="slider slider-nav">
+    <div><h3>1</h3></div>
+    <div><h3>2</h3></div>
+    <div><h3>3</h3></div>
+    <div><h3>4</h3></div>
+    <div><h3>5</h3></div>
+  </div>
+  
 
 <div className="container">
   <div className="row">
-    <div className="col-xxl-3">
+    <div className="col-xxl-4">
          <div className="packing">
-           <div className="paking-icon">
+           <div className="paking-body">
            <i class="ri-store-3-fill" style={{color:"#52a57b"}} id="icon"></i>
+             <h4>Product Packing</h4>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
            </div>
          </div>
     </div>
+
+
+    <div className="col-xxl-4">
+         <div className="packing">
+           <div className="paking-body">
+           <i class="ri-customer-service-2-line" style={{color:"#52a57b"}} id="icon"></i>
+             <h4>24X7 Support</h4>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+           </div>
+         </div>
+    </div>
+
+
+
+
+    <div className="col-xxl-4">
+         <div className="packing">
+           <div className="paking-body">
+           <i class="ri-truck-line" style={{color:"#52a57b"}} id="icon"></i>
+             <h4>24X7 Support</h4>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+           </div>
+         </div>
+    </div>
+
   </div>
 </div>
 
