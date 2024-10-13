@@ -43,3 +43,24 @@ export const Signup_reducer = (state=Signup_initial,action) =>{
         default:return state
       }
 }
+const login_state = {
+    email:"",
+    password:""
+}
+export const login_reducer = (state=login_reducer,action) =>{
+    switch(action.type)
+    {
+        case EMAIL:
+        return {
+            ...state,
+            email:action.payload
+        }
+        case PASSWORD:
+            return {
+                ...state,
+                password:action.payload
+            }
+        default :return state
+    }
+
+}

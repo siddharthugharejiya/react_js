@@ -850,6 +850,13 @@ div#pro-1{
 
 }
 
+#form{
+  width: 70%;
+}
+.form-control{
+  width: 70% !important;
+}
+
 @media (max-width:1500px)
 {
   .t{
@@ -897,6 +904,9 @@ div#pro-1{
   }
   div#pro-1{
     width: 55%;
+  }
+  #hide{
+    display: none !important;
   }
 
 }

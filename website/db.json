@@ -41,16 +41,27 @@
       "username": "Sid_00_95",
       "email": "sid123@gmail.com",
       "password": "134f"
+    },
+    {
+      "id": "0bf7",
+      "username": "",
+      "email": "multiera95@gmail.com",
+      "password": "17131432",
+      "address": "fsdfs",
+      "city": "fsdfs",
+      "state": "India",
+      "zip": "123456",
+      "checkbox": false
     }
   ],
-   "products":[
+  "products": [
     {
-      "image":"https://maraviyainfotech.com/projects/carrot-tailwind/assets/img/product/1.jpg",
-      "price":120.25,
-      
-      "category":"Vegetables",
-      "star":"4.5",
-      "description":"Fresh organic villa farm lomon 500gm pack"
+      "image": "https://maraviyainfotech.com/projects/carrot-tailwind/assets/img/product/1.jpg",
+      "price": 120.25,
+      "category": "Vegetables",
+      "star": "4.5",
+      "description": "Fresh organic villa farm lomon 500gm pack",
+      "id": "3ba4"
     }
-   ]
+  ]
 }

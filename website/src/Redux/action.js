@@ -46,3 +46,20 @@ export const signup_action = (userData, navigate) => (dispatch) => {
         console.error("Error during signup:", error);
     });
 };
+
+export const login_action = (login,dispatch)=> {
+       fetch(`http://localhost:9595/username?email=${login.email}`)
+       .then(res=>res.json())
+       .then(res=>{
+        console.log(res);
+        dispatch({
+            type:EMAIL,
+            payload:res.email
+          })
+          dispatch({
+            type:PASSWORD,
+            payload:res.password
+          })
+          
+       })
+}
