@@ -17,6 +17,7 @@ import 'swiper/css/pagination';
 import Slider from "react-slick";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
+import { image } from "framer-motion/client";
 // import $ from "jquary"
 const Home = () => {
 
@@ -770,203 +771,140 @@ const TabsList = styled(BaseTabsList)`
 </div> */}
 <div className="container d-flex justify-content-center align-items-center" >
 
-  <div className="fresh">
-    <div className="row">
+<div className="fresh">
+  <div className="row">
 
-    
-    <div className="slider-container" data-aos="fade-up">
-  <Slider {...settings} data-aos="fade-up">
-    <div className="d-flex justify-content-center align-items-center">
-      <div className="col-xxl-11 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style={{ padding: "3px" }}>
-        <div
-          className="product"
-          style={{
-            background: `url("./image/3 (2).jpg")`,
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-          }}
-        >
-          <div className="product-body">
-            <div className="product-t">
-              <strong>Fresh &amp; healthy</strong>
-              <br />
-              <strong>Organic Fruits</strong>
-            </div>
-            <div className="d-flex align-items-center">
-              <h2 style={{ color: "#198754" }}>35%</h2>
-              <h6 style={{ color: "rgba(119, 119, 119, 1)", margin: "0px 10px" }}>on first order</h6>
-            </div>
-            <span>
-              <button className="btn" style={{ background: "#198754", color: "white" }}>
-                Shop Now
-              </button>
-            </span>
+  
+  <div className="slider-container" data-aos="fade-up">
+<Slider {...settings} data-aos="fade-up">
+  <div className="d-flex justify-content-center align-items-center">
+    <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style={{ padding: "3px" }}>
+      <div
+        className="product"
+        style={{
+          background: `url("./image/3 (2).jpg")`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+        }}
+      >
+        <div className="product-body">
+          <div className="product-t">
+            <strong>Fresh &amp; healthy</strong>
+            <br />
+            <strong>Organic Fruits</strong>
           </div>
+          <div className="d-flex align-items-center">
+            <h2 style={{ color: "#198754" }}>35%</h2>
+            <h6 style={{ color: "rgba(119, 119, 119, 1)", margin: "0px 10px" }}>on first order</h6>
+          </div>
+          <span>
+            <button className="btn" style={{ background: "#198754", color: "white" }}>
+              Shop Now
+            </button>
+          </span>
         </div>
       </div>
     </div>
+  </div>
 
-   
-
-    <div className="d-flex justify-content-center align-items-center">
-      <div className="col-xxl-11 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style={{ padding: "3px" }}>
-        <div
-          className="product"
-          style={{
-            background: `url("./image/1 (2).jpg")`,
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-          }}
-        >
-          <div className="product-body">
-            <div className="product-t">
-              <strong>Fresh &amp; healthy</strong>
-              <br />
-              <strong>Organic Fruits</strong>
-            </div>
-            <div className="d-flex align-items-center">
-              <h2 style={{ color: "#198754" }}>35%</h2>
-              <h6 style={{ color: "rgba(119, 119, 119, 1)", margin: "0px 10px" }}>on first order</h6>
-            </div>
-            <span>
-              <button className="btn" style={{ background: "#198754", color: "white" }}>
-                Shop Now
-              </button>
-            </span>
+  <div className="d-flex justify-content-center align-items-center">
+    <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style={{ padding: "3px" }}>
+      <div
+        className="product"
+        style={{
+          background: `url("./image/1 (2).jpg")`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+        }}
+      >
+        <div className="product-body">
+          <div className="product-t">
+            <strong>Fresh &amp; healthy</strong>
+            <br />
+            <strong>Organic Fruits</strong>
           </div>
+          <div className="d-flex align-items-center">
+            <h2 style={{ color: "#198754" }}>35%</h2>
+            <h6 style={{ color: "rgba(119, 119, 119, 1)", margin: "0px 10px" }}>on first order</h6>
+          </div>
+          <span>
+            <button className="btn" style={{ background: "#198754", color: "white" }}>
+              Shop Now
+            </button>
+          </span>
         </div>
       </div>
     </div>
+  </div>
 
-    <div className="d-flex justify-content-center align-items-center">
-      <div className="col-xxl-11 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style={{ padding: "3px" }}>
-        <div
-          className="product"
-          style={{
-            background: `url("./image/2 (2).jpg")`,
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-          }}
-        >
-          <div className="product-body">
-            <div className="product-t">
-              <strong>Fresh &amp; healthy</strong>
-              <br />
-              <strong>Organic Fruits</strong>
-            </div>
-            <div className="d-flex align-items-center">
-              <h2 style={{ color: "#198754" }}>35%</h2>
-              <h6 style={{ color: "rgba(119, 119, 119, 1)", margin: "0px 10px" }}>on first order</h6>
-            </div>
-            <span>
-              <button className="btn" style={{ background: "#198754", color: "white" }}>
-                Shop Now
-              </button>
-            </span>
+  <div className="d-flex justify-content-center align-items-center">
+    <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style={{ padding: "3px" }}>
+      <div
+        className="product"
+        style={{
+          background: `url("./image/2 (2).jpg")`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+        }}
+      >
+        <div className="product-body">
+          <div className="product-t">
+            <strong>Fresh &amp; healthy</strong>
+            <br />
+            <strong>Organic Fruits</strong>
           </div>
+          <div className="d-flex align-items-center">
+            <h2 style={{ color: "#198754" }}>35%</h2>
+            <h6 style={{ color: "rgba(119, 119, 119, 1)", margin: "0px 10px" }}>on first order</h6>
+          </div>
+          <span>
+            <button className="btn" style={{ background: "#198754", color: "white" }}>
+              Shop Now
+            </button>
+          </span>
         </div>
       </div>
     </div>
+  </div>
 
-    <div className="d-flex justify-content-center align-items-center">
-      <div className="col-xxl-11 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style={{ padding: "3px" }}>
-        <div
-          className="product"
-          style={{
-            background: `url("./image/3 (2).jpg")`,
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-          }}
-        >
-          <div className="product-body">
-            <div className="product-t">
-              <strong>Fresh &amp; healthy</strong>
-              <br />
-              <strong>Organic Fruits</strong>
-            </div>
-            <div className="d-flex align-items-center">
-              <h2 style={{ color: "#198754" }}>35%</h2>
-              <h6 style={{ color: "rgba(119, 119, 119, 1)", margin: "0px 10px" }}>on first order</h6>
-            </div>
-            <span>
-              <button className="btn" style={{ background: "#198754", color: "white" }}>
-                Shop Now
-              </button>
-            </span>
+  <div className="d-flex justify-content-center align-items-center">
+    <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style={{ padding: "3px" }}>
+      <div
+        className="product"
+        style={{
+          background:` url("./image/3 (2).jpg")`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+        }}
+      >
+        <div className="product-body">
+          <div className="product-t">
+            <strong>Fresh &amp; healthy</strong>
+            <br />
+            <strong>Organic Fruits</strong>
           </div>
+          <div className="d-flex align-items-center">
+            <h2 style={{ color: "#198754" }}>35%</h2>
+            <h6 style={{ color: "rgba(119, 119, 119, 1)", margin: "0px 10px" }}>on first order</h6>
+          </div>
+          <span>
+            <button className="btn" style={{ background: "#198754", color: "white" }}>
+              Shop Now
+            </button>
+          </span>
         </div>
       </div>
     </div>
-
-    <div className="d-flex justify-content-center align-items-center">
-      <div className="col-xxl-11 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style={{ padding: "3px" }}>
-        <div
-          className="product"
-          style={{
-            background: `url("./image/1 (2).jpg")`,
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-          }}
-        >
-          <div className="product-body">
-            <div className="product-t">
-              <strong>Fresh &amp; healthy</strong>
-              <br />
-              <strong>Organic Fruits</strong>
-            </div>
-            <div className="d-flex align-items-center">
-              <h2 style={{ color: "#198754" }}>35%</h2>
-              <h6 style={{ color: "rgba(119, 119, 119, 1)", margin: "0px 10px" }}>on first order</h6>
-            </div>
-            <span>
-              <button className="btn" style={{ background: "#198754", color: "white" }}>
-                Shop Now
-              </button>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div className="d-flex justify-content-center align-items-center">
-      <div className="col-xxl-11 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style={{ padding: "3px" }}>
-        <div
-          className="product"
-          style={{
-            background: `url("./image/2 (2).jpg")`,
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-          }}
-        >
-          <div className="product-body">
-            <div className="product-t">
-              <strong>Fresh &amp; healthy</strong>
-              <br />
-              <strong>Organic Fruits</strong>
-            </div>
-            <div className="d-flex align-items-center">
-              <h2 style={{ color: "#198754" }}>35%</h2>
-              <h6 style={{ color: "rgba(119, 119, 119, 1)", margin: "0px 10px" }}>on first order</h6>
-            </div>
-            <span>
-              <button className="btn" style={{ background: "#198754", color: "white" }}>
-                Shop Now
-              </button>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </Slider>
+  </div>
+</Slider>
 </div>
 
-  </div>
+
+</div>
 </div>
 </div>
   
 <div className="pro" >
-
-
   <div className="row">
     <div className="slid-1"data-aos="fade-up">
 
