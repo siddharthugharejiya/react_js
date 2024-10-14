@@ -1,5 +1,5 @@
 import { act } from "react";
-import { DATA, EMAIL, PASSWORD, USERNAME } from "./action_type";
+import { DATA, EMAIL, L_EMAIL, L_PASSWORD, PASSWORD, USERNAME } from "./action_type";
 
 const initial_pro = {
     data: []
@@ -50,13 +50,13 @@ const login_state = {
 export const login_reducer = (state=login_reducer,action) =>{
     switch(action.type)
     {
-        case EMAIL:
+        case L_EMAIL:
         return {
             ...state,
             email:action.payload
         }
-        case PASSWORD:
-            return {
+        case L_PASSWORD: 
+               return {
                 ...state,
                 password:action.payload
             }

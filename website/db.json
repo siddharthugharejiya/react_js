@@ -52,6 +52,17 @@
       "state": "India",
       "zip": "123456",
       "checkbox": false
+    },
+    {
+      "id": "3be5",
+      "username": "",
+      "email": "multiera95@gmail.com",
+      "password": "17131432",
+      "address": "",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "checkbox": false
     }
   ],
   "products": [

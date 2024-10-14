@@ -6,6 +6,7 @@ import { signup_action } from '../Redux/action';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
+import { Link } from 'react-router-dom';
 import Row from 'react-bootstrap/Row';
 
 const Signup = () => {
@@ -93,10 +94,16 @@ const Signup = () => {
             <Form.Control name="zip" value={state.zip} onChange={change} />
           </Form.Group>
         </Row>
-
-        <Form.Group className="mb-3" controlId="formGridCheckbox">
+      
+      <Form.Group as={Col} controlId="formGridZip">
+            <Form.Label>Post Code</Form.Label>
+            <Form.Control name="zip" value={state.zip} onChange={change} />
+          </Form.Group>
+        <Form.Group className="mt-3" controlId="formGridCheckbox">
           <Form.Check type="checkbox" label="Check me out" name="checkbox" checked={state.checkbox} onChange={change} />
         </Form.Group>
+
+          <Link to={"/login"} className='btn d-flex justify-content-end align-items-center'>Have An Account?</Link>
 
         <Button className='btn btn-success' type="submit">
           Submit

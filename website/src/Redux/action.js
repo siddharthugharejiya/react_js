@@ -1,4 +1,4 @@
-import { DATA, EMAIL, PASSWORD, USERNAME } from "./action_type";
+import { DATA, EMAIL, L_EMAIL, L_PASSWORD, PASSWORD, USERNAME } from "./action_type";
 
 export const product_action = () => (dispatch) => {
     fetch('http://localhost:9595/products')
@@ -47,19 +47,42 @@ export const signup_action = (userData, navigate) => (dispatch) => {
     });
 };
 
-export const login_action = (login,dispatch)=> {
-       fetch(`http://localhost:9595/username?email=${login.email}`)
-       .then(res=>res.json())
-       .then(res=>{
-        console.log(res);
-        dispatch({
-            type:EMAIL,
-            payload:res.email
-          })
-          dispatch({
-            type:PASSWORD,
-            payload:res.password
-          })
-          
-       })
+export const login_action = (login,nav)=> (dispatch)=>{
+    if(login.email && login.password)
+    {
+        
+        fetch(`http://localhost:9595/username?email=${login.email}`)
+        .then(res=>res.json())
+        .then(res=>{
+           if(res.length > 0)
+           {
+            if(res[0].password ==  login.password)
+            {
+                alert("Login successfully ")
+                nav("/")
+            }
+            else{
+                alert("invid email or password")
+            }
+           }
+           else{
+            alert("invid email or password")
+
+           }
+         dispatch({
+             type:L_EMAIL,
+             payload:res.email
+           })
+           dispatch({
+             type:L_PASSWORD,
+             payload:res.password
+           })
+     
+           
+        })
+    }
+    else{
+        alert("invalid email or password")
+    }
+     
 }

@@ -1,4 +1,6 @@
 export const  DATA = "data"
 export const  USERNAME = "USERNAME"
 export const  EMAIL = "EMAIL"
-export const  PASSWORD = "PASSWORD"
+export const  L_EMAIL = "L_EMAIL"
+export const PASSWORD = "PASSWORD"
+export const  L_PASSWORD = "L_PASSWORD"
