@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+// import React from "react";
+
 import Carousel from "react-bootstrap/Carousel";
 import "animate.css";
 import "./section.css";
@@ -9,28 +10,24 @@ import { TabsList as BaseTabsList } from '@mui/base/TabsList';
 import { TabPanel as BaseTabPanel } from '@mui/base/TabPanel';
 import { buttonClasses } from '@mui/base/Button';
 import { Tab as BaseTab, tabClasses } from '@mui/base/Tab';
-import { useDispatch, useSelector } from "react-redux";
-import { product_action } from "../Redux/action";
-import { color } from "framer-motion";
+// import { useDispatch } from "react-redux";
+// import { product_action } from "../Redux/action";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import Slider from "react-slick";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
-import { image } from "framer-motion/client";
-// import $ from "jquary"
+
+
 const Home = () => {
 
-  const dispatch = useDispatch();
-  const products = useSelector(state => state.product.data);
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-      dispatch(product_action());
-  }, [dispatch]);
+  // useEffect(() => {
+  //     dispatch(product_action());
+  // }, [dispatch]);
 
-  AOS.init({
-    duration: 1500,
-  })
+  // AOS.init({
+  //   duration: 1500,
+  // })
 
  var settings = {
     dots: true,
@@ -267,8 +264,47 @@ const TabsList = styled(BaseTabsList)`
   align-items: center;
   justify-content: center;
   align-content: space-between;
-  box-shadow: 0px 4px 8px ${props => props.theme.palette.mode === 'dark' ? grey[900] : grey[200]};
+  box-shadow: 0px 4px 8px ${props => props === 'dark' ? grey[900] : grey[200]};
 `;
+
+function updateCountdown() {
+  const targetDate = new Date("2025-01-01T00:00:00");
+  const now = new Date();
+  const timeDifference = targetDate - now;
+
+  if (timeDifference <= 0) {
+    document.getElementById("months").innerText = "00";
+    document.getElementById("days").innerText = "00";
+    document.getElementById("hours").innerText = "00";
+    document.getElementById("minutes").innerText = "00";
+    document.getElementById("seconds").innerText = "00";
+    return;
+  }
+
+  const months = Math.floor(timeDifference / (1000 * 60 * 60 * 24 * 30));
+  const days = Math.floor(
+    (timeDifference % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24)
+  );
+  const hours = Math.floor(
+    (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+  document.getElementById("months").innerText = String(months).padStart(2, "0");
+  document.getElementById("days").innerText = String(days).padStart(2, "0");
+  document.getElementById("hours").innerText = String(hours).padStart(2, "0");
+  document.getElementById("minutes").innerText = String(minutes).padStart(
+    2,
+    "0"
+  );
+  document.getElementById("seconds").innerText = String(seconds).padStart(
+    2,
+    "0"
+  );
+}
+
+setInterval(updateCountdown, 1000);
 
   return (
     <>  
@@ -410,8 +446,8 @@ const TabsList = styled(BaseTabsList)`
     </TabsList>
 
     <TabPanel value={0} className="tab-panel">
-      <div className="tab-image row justify-content-center">
-     <div className="col-lg-6 col-md-6 col-sm-12 col-12 mb-3 d-flex justify-content-center">
+      <div className="tab-image row justify-content-between">
+     <div className="col-lg-5 col-md-6 col-sm-12 col-12 mb-3 d-flex justify-content-center">
           <div
             className="card car"
             style={{
@@ -437,7 +473,7 @@ const TabsList = styled(BaseTabsList)`
         </div>
 
  
-        <div className="col-lg-6 col-md-6 col-sm-12 col-12 mb-3 d-flex justify-content-center">
+        <div className="col-lg-5 col-md-6 col-sm-12 col-12 mb-3 d-flex justify-content-center">
           <div
             className="card car "
             style={{
@@ -466,7 +502,7 @@ const TabsList = styled(BaseTabsList)`
 
     <TabPanel value={1} className="tab-panel">
       <div className="tab-image row">
-        <div className="col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+        <div className="col-lg-5 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
           <div
             className="card car"
             style={{
@@ -492,7 +528,7 @@ const TabsList = styled(BaseTabsList)`
         </div>
 
      
-        <div className="col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+        <div className="col-lg-5 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
           <div
             className="card car"
             style={{
@@ -521,7 +557,7 @@ const TabsList = styled(BaseTabsList)`
 
     <TabPanel value={2} className="tab-panel">
     <div className="tab-image row">
-        <div className="col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+        <div className="col-lg-5 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
           <div
             className="card car"
             style={{
@@ -547,7 +583,7 @@ const TabsList = styled(BaseTabsList)`
         </div>
 
      
-        <div className="col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+        <div className="col-lg-5 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
           <div
             className="card car"
             style={{
@@ -577,7 +613,7 @@ const TabsList = styled(BaseTabsList)`
 
     <TabPanel value={3} className="tab-panel">
     <div className="tab-image row">
-        <div className="col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+        <div className="col-lg-5 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
           <div
             className="card car"
             style={{
@@ -603,7 +639,7 @@ const TabsList = styled(BaseTabsList)`
         </div>
 
      
-        <div className="col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+        <div className="col-lg-5 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
           <div
             className="card car"
             style={{
@@ -634,7 +670,7 @@ const TabsList = styled(BaseTabsList)`
     
     <TabPanel value={4} className="tab-panel">
     <div className="tab-image row">
-        <div className="col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+        <div className="col-lg-5 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
           <div
             className="card car"
             style={{
@@ -660,7 +696,7 @@ const TabsList = styled(BaseTabsList)`
         </div>
 
      
-        <div className="col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+        <div className="col-lg-5 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
           <div
             className="card car"
             style={{
@@ -691,7 +727,7 @@ const TabsList = styled(BaseTabsList)`
 
     <TabPanel value={5} className="tab-panel">
     <div className="tab-image row">
-        <div className="col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+        <div className="col-lg-5 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
           <div
             className="card car"
             style={{
@@ -717,7 +753,7 @@ const TabsList = styled(BaseTabsList)`
         </div>
 
      
-        <div className="col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+        <div className="col-lg-5 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
           <div
             className="card car"
             style={{
@@ -914,7 +950,7 @@ const TabsList = styled(BaseTabsList)`
     <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12"id="pro-1">
          <div className="packing">
            <div className="paking-body">
-           <i class="ri-store-3-fill" style={{color:"#52a57b"}} id="icon"></i>
+           <i className="ri-store-3-fill" style={{color:"#52a57b"}} id="icon"></i>
              <h4>Product Packing</h4>
              <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
            </div>
@@ -926,7 +962,7 @@ const TabsList = styled(BaseTabsList)`
     <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 "id="pro-1">
          <div className="packing">
            <div className="paking-body">
-           <i class="ri-customer-service-2-line" style={{color:"#52a57b"}} id="icon"></i>
+           <i className="ri-customer-service-2-line" style={{color:"#52a57b"}} id="icon"></i>
              <h4>24X7 Support</h4>
              <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
            </div>
@@ -936,7 +972,7 @@ const TabsList = styled(BaseTabsList)`
     <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 "id="pro-1">
          <div className="packing">
            <div className="paking-body">
-           <i class="ri-truck-line" style={{color:"#52a57b"}} id="icon"></i>
+           <i className="ri-truck-line" style={{color:"#52a57b"}} id="icon"></i>
              <h4>24X7 Support</h4>
              <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
            </div>
@@ -947,7 +983,7 @@ const TabsList = styled(BaseTabsList)`
     <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12"id="pro-1">
          <div className="packing">
            <div className="paking-body">
-           <i class="ri-store-3-fill" style={{color:"#52a57b"}} id="icon"></i>
+           <i className="ri-store-3-fill" style={{color:"#52a57b"}} id="icon"></i>
              <h4>Product Packing</h4>
              <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
            </div>
@@ -959,7 +995,7 @@ const TabsList = styled(BaseTabsList)`
     <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 "id="pro-1">
          <div className="packing">
            <div className="paking-body">
-           <i class="ri-customer-service-2-line" style={{color:"#52a57b"}} id="icon"></i>
+           <i className="ri-customer-service-2-line" style={{color:"#52a57b"}} id="icon"></i>
              <h4>24X7 Support</h4>
              <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
            </div>
@@ -969,7 +1005,7 @@ const TabsList = styled(BaseTabsList)`
     <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 "id="pro-1">
          <div className="packing">
            <div className="paking-body">
-           <i class="ri-truck-line" style={{color:"#52a57b"}} id="icon"></i>
+           <i className="ri-truck-line" style={{color:"#52a57b"}} id="icon"></i>
              <h4>24X7 Support</h4>
              <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
            </div>
@@ -981,58 +1017,52 @@ const TabsList = styled(BaseTabsList)`
 
 </div>
 
-        <div className="food">
-           <div className="col-xxl-5">
-            <div className="food-count">
+<div className="food">
+        <div className="col-xxl-5 m-5">
+          <div className="food-count col-xxl-12  col-xl-6 col-lg-7 col-sm-8 col-12 " style={{display:"flex",flexWrap:"wrap"}}>
             <div className="col-12 d-flex">
-                        <p
-                          style={{
-                            borderBottom: "2px solid #4CAF50",
-                            color: "#4CAF50",
-                          }}
-                        >
-                          35%
-                        </p>
-                        <b style={{ fontSize: "18px", margin: "0 10px" }}>
-                          OFF
-                        </b>
-                      </div>
-                      <p style={{color:"#7a7a7a"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do maecenas accumsan lacus vel facilisis.</p>
+              <p
+                style={{
+                  borderBottom: "2px solid #4CAF50",
+                  color: "#4CAF50",
+                }}
+              >
+                35%
+              </p>
+              <b style={{ fontSize: "18px", margin: "0 10px" }}>OFF</b>
+            </div>
+            <h2>Great deal on organic food.</h2>
+            <p style={{ color: "#7a7a7a" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              maecenas accumsan lacus vel facilisis.
+            </p>
             <div className="food-timer">
-              <div className="f-t">
-
-               <div>
-                <h3>77</h3>
-                <p>Days</p> 
-               </div>
-               <div style={{fontSize:"50px",margin:"-10px 10px"}}>:</div>
-              </div>
-
-              <div className="f-t">
-
-               <div>
-                <h3>77</h3>
-                <p>Days</p> 
-               </div>
-               <div style={{fontSize:"50px",margin:"-10px 10px"}}>:</div>
-              </div>
-
-
-
-              <div className="f-t">
-
-               <div>
-                <h3>77</h3>
-                <p>Days</p> 
-               </div>
-               <div style={{fontSize:"50px",margin:"-10px 10px"}}>:</div>
+              <div className="countdown">
+                <div>
+                  <span id="months">00</span>
+                  <div className="label">Months</div>
+                </div>
+                <div>
+                  <span id="days">00</span>
+                  <div className="label">Days</div>
+                </div>
+                <div>
+                  <span id="hours">00</span>
+                  <div className="label">Hours</div>
+                </div>
+                <div>
+                  <span id="minutes">00</span>
+                  <div className="label">Minutes</div>
+                </div>
+                <div>
+                  <span id="seconds">00</span>
+                  <div className="label">Seconds</div>
+                </div>
               </div>
             </div>
-            </div>
-          
-           </div>
+          </div>
         </div>
-
+</div>
     </>
 
   )

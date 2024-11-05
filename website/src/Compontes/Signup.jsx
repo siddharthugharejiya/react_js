@@ -70,7 +70,7 @@ const Signup = () => {
 
         <Form.Group className="mb-3" controlId="formGridAddress1">
           <Form.Label>Address</Form.Label>
-          <Form.Control name='address' value={state.address} onChange={change} placeholder="1234 Main St" />
+          <Form.Control name='address' value={state.address} onChange={change} placeholder="Please enter your address" />
         </Form.Group>
 
         <Row className="mb-3">
@@ -94,16 +94,7 @@ const Signup = () => {
             <Form.Control name="zip" value={state.zip} onChange={change} />
           </Form.Group>
         </Row>
-      
-      <Form.Group as={Col} controlId="formGridZip">
-            <Form.Label>Post Code</Form.Label>
-            <Form.Control name="zip" value={state.zip} onChange={change} />
-          </Form.Group>
-        <Form.Group className="mt-3" controlId="formGridCheckbox">
-          <Form.Check type="checkbox" label="Check me out" name="checkbox" checked={state.checkbox} onChange={change} />
-        </Form.Group>
-
-          <Link to={"/login"} className='btn d-flex justify-content-end align-items-center'>Have An Account?</Link>
+     <Link to={"/login"} className='btn d-flex justify-content-end align-items-center'>Have An Account?</Link>
 
         <Button className='btn btn-success' type="submit">
           Submit

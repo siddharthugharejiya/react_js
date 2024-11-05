@@ -822,30 +822,38 @@ div#pro-1{
   /* border: 1px solid red; */
 }
 .food{
-  height: 75vh;
+  height: auto;
   width: 100%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   background-image: url(../public/image/bg-deal.jpg) ;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
 }
 .food-count{
-  height: 30vh;
-  width: 100%;
-  border: 1px solid red;
+  height: auto;
+  width: 85%;
+  /* border: 1px solid red; */
+  margin-left: 30px;
+  /* margin-top: 25px; */
+  padding: 40px;
+  border-radius: 20px;
+  background-color: #ffffff38;
+  box-shadow: -3px 3px 8px 5px rgba(0, 0, 0, 0.05);
 }
 .food-timer{
   height: auto;
   width: 100%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
 
 }
 .f-t{
   height: auto;
   width: 100%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
 
 }
@@ -855,6 +863,24 @@ div#pro-1{
 }
 .form-control{
   width: 70% !important;
+}
+.countdown {
+  text-align: center;
+}
+
+.countdown div {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.countdown div span {
+  display: block;
+  font-size: 2rem;
+}
+
+.label {
+  font-size: 1rem;
+  color: hsl(0, 0%, 67%);
 }
 
 @media (max-width:1500px)
@@ -1011,6 +1037,13 @@ div#pro-1{
   }
   .slick-slide.slick-active.slick-current{
     width: 88vw !important;
+  }
+  .countdown{
+  display: flex;
+  flex-wrap: wrap;
+  }
+  .countdown div{
+    width: 35%;
   }
 }
 

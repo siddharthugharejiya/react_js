@@ -47,7 +47,7 @@ const login_state = {
     email:"",
     password:""
 }
-export const login_reducer = (state=login_reducer,action) =>{
+export const login_reducer = (state=login_state,action) =>{
     switch(action.type)
     {
         case L_EMAIL:
