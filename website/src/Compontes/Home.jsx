@@ -9,6 +9,7 @@ import { Tabs as BaseTabs } from '@mui/base/Tabs';
 import { TabsList as BaseTabsList } from '@mui/base/TabsList';
 import { TabPanel as BaseTabPanel } from '@mui/base/TabPanel';
 import { buttonClasses } from '@mui/base/Button';
+import  {Card} from 'react-bootstrap'
 import { Tab as BaseTab, tabClasses } from '@mui/base/Tab';
 // import { useDispatch } from "react-redux";
 // import { product_action } from "../Redux/action";
@@ -1019,7 +1020,7 @@ setInterval(updateCountdown, 1000);
 
 <div className="food">
         <div className="col-xxl-5 m-5">
-          <div className="food-count col-xxl-12  col-xl-6 col-lg-7 col-sm-8 col-12 " style={{display:"flex",flexWrap:"wrap"}}>
+          <div className="food-count col-xxl-11  col-xl-6 col-lg-7 col-sm-8 col-12 " style={{display:"flex",flexWrap:"wrap"}}>
             <div className="col-12 d-flex">
               <p
                 style={{
@@ -1063,8 +1064,297 @@ setInterval(updateCountdown, 1000);
           </div>
         </div>
 </div>
+
+<div className="bottom-silder row mt-5">
+  <div className="col-xxl-12 d-flex justify-content-center" >
+    <div className="bottom-text d-flex justify-content-center flex-column align-items-center">
+      <h1>Great Words From People</h1>
+      <div className="d-flex justify-content-center" >
+
+      <p className="text-center" style={{color:"rgb(122 122 122 / 1",width:"70%"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore lacus vel facilisis.</p>
+      </div>
+    </div>
+  </div>
+<Slider {...settings} data-aos="fade-up">
+
+<div className="col-xl-3">
+  <article>
+    <figure>
+      <img src="./image/1 (3).jpg" />
+    </figure>
+
+    <div>
+      <p>Co Founder</p>
+      <b> Stephen Smith</b>
+      <p>
+        “eiusmpsu dolor sit amet, conse cte tur ng elit, sed do eiusmod
+        tem lacus velfacilisis.”
+      </p>
+      <p>
+        <i
+          className="fa-solid fa-star"
+          style={{ color: " #FFD43B" }}
+        ></i>{" "}
+        <i
+          className="fa-solid fa-star"
+          style={{ color: " #FFD43B" }}
+        ></i>{" "}
+        <i
+          className="fa-solid fa-star"
+          style={{ color: " #FFD43B" }}
+        ></i>{" "}
+        <i
+          className="fa-solid fa-star"
+          style={{ color: " #FFD43B" }}
+        ></i>{" "}
+        <i
+          className="fa-solid fa-star"
+          style={{ color: " #FFD43B" }}
+        ></i>
+      </p>
+    </div>
+  </article>
+</div>
+
+<div className="col-xl-3">
+  <article>
+    <figure>
+      <img src="./image/2 (3).jpg" />
+    </figure>
+
+    <div>
+      <p>Manger</p>
+      <b>Lorem Robinson</b>
+
+      <p>
+        “eiusmpsu dolor sit amet, conse cte tur ng elit, sed do eiusmod
+        tem lacus velfacilisis.”
+      </p>
+      <p>
+        <i
+          className="fa-solid fa-star"
+          style={{ color: " #FFD43B" }}
+        ></i>{" "}
+        <i
+          className="fa-solid fa-star"
+          style={{ color: " #FFD43B" }}
+        ></i>{" "}
+        <i
+          className="fa-solid fa-star"
+          style={{ color: " #FFD43B" }}
+        ></i>{" "}
+        <i
+          className="fa-solid fa-star"
+          style={{ color: " #FFD43B" }}
+        ></i>{" "}
+        <i
+          className="fa-solid fa-star"
+          style={{ color: " #FFD43B" }}
+        ></i>
+      </p>
+    </div>
+  </article>
+</div>
+
+<div className="col-xl-3">
+  <article>
+    <figure>
+      <img src="./image/3 (3).jpg" />
+    </figure>
+
+    <div>
+      <p>Team Leader</p>
+      <b>Saddika Alard</b>
+
+      <p>
+        “eiusmpsu dolor sit amet, conse cte tur ng elit, sed do eiusmod
+        tem lacus velfacilisis.”
+      </p>
+      <p>
+        <i
+          className="fa-solid fa-star"
+          style={{ color: " #FFD43B" }}
+        ></i>{" "}
+        <i
+          className="fa-solid fa-star"
+          style={{ color: " #FFD43B" }}
+        ></i>{" "}
+        <i
+          className="fa-solid fa-star"
+          style={{ color: " #FFD43B" }}
+        ></i>{" "}
+        <i
+          className="fa-solid fa-star"
+          style={{ color: " #FFD43B" }}
+        ></i>{" "}
+        <i
+          className="fa-solid fa-star"
+          style={{ color: " #FFD43B" }}
+        ></i>
+      </p>
+    </div>
+  </article>
+</div>
+
+<div className="col-xl-3">
+  <article>
+    <figure>
+      <img src="./image/1 (3).jpg" />
+    </figure>
+
+    <div>
+      <p>Co Founder</p>
+      <b> Stephen Smith</b>
+      <p>
+        “eiusmpsu dolor sit amet, conse cte tur ng elit, sed do eiusmod
+        tem lacus velfacilisis.”
+      </p>
+      <p>
+        <i
+          className="fa-solid fa-star"
+          style={{ color: " #FFD43B" }}
+        ></i>{" "}
+        <i
+          className="fa-solid fa-star"
+          style={{ color: " #FFD43B" }}
+        ></i>{" "}
+        <i
+          className="fa-solid fa-star"
+          style={{ color: " #FFD43B" }}
+        ></i>{" "}
+        <i
+          className="fa-solid fa-star"
+          style={{ color: " #FFD43B" }}
+        ></i>{" "}
+        <i
+          className="fa-solid fa-star"
+          style={{ color: " #FFD43B" }}
+        ></i>
+      </p>
+    </div>
+  </article>
+</div>
+</Slider>
+</div>
+
+
+<div className="latest-news">
+<div className="col-xxl-12 d-flex justify-content-center" >
+    <div className="bottom-text d-flex justify-content-center flex-column align-items-center">
+      <h1>Latest News</h1>
+      <div className="d-flex justify-content-center" >
+
+      <p className="text-center" style={{color:"rgb(122 122 122 / 1",width:"70%"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore lacus vel facilisis.</p>
+      </div>
+    </div>
+  </div>
+
+  <Slider {...settings} data-aos="fade-up">
+
+  <div className="col-xl-12 col-md-12">
+    <Card id="card" >
+      <Card.Body id="card-body">
+        <p style={{ color: "rgb(122 122 122 / 1)", fontSize: "14px" }}>By Admin | Snacks</p>
+        
+          <b>Urna pretium elit mauris cursus at elit Vestibulum.</b>
+        
+        <div>
+        <button className="cta">
+          <span>Hover me</span>
+          <svg width="15px" height="10px" viewBox="0 0 13 10">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+          </svg>
+        </button>
+        </div>
+     
+      </Card.Body>
+      <div className="img">
+      <Card.Img variant="top" id="card-img" src="./image/1 (4).jpg"  />
+      <div className="box">
+        <span>10</span>
+        <span>oct</span>
+      </div>
+      </div>
+    
+    </Card>
+  </div>
+
+  <div className="col-xl-12">
+    <Card id="card" >
+      <Card.Body id="card-body">
+        <p style={{ color: "rgb(122 122 122 / 1)", fontSize: "14px" }}>By Admin | Snacks</p>
+        
+          <b>Urna pretium elit mauris cursus at elit Vestibulum.</b>
+        
+        <div>
+        <button className="cta">
+          <span>Hover me</span>
+          <svg width="15px" height="10px" viewBox="0 0 13 10">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+          </svg>
+        </button>
+        </div>
+     
+      </Card.Body>
+      <div className="img">
+      <Card.Img variant="top" id="card-img" src="./image/2 (4).jpg"  />
+      <div className="box">
+        <span>10</span>
+        <span>oct</span>
+      </div>
+      </div>
+    
+    </Card>
+  </div>
+
+  <div className="col-xl-12">
+    <Card id="card" >
+      <Card.Body id="card-body">
+        <p style={{ color: "rgb(122 122 122 / 1)", fontSize: "14px" }}>By Admin | Snacks</p>
+        
+          <b>Urna pretium elit mauris cursus at elit Vestibulum.</b>
+        
+        <div>
+        <button className="cta">
+          <span>Hover me</span>
+          <svg width="15px" height="10px" viewBox="0 0 13 10">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+          </svg>
+        </button>
+        </div>
+     
+      </Card.Body>
+      <div className="img">
+      <Card.Img variant="top" id="card-img" src="./image/3 (4).jpg"  />
+      <div className="box">
+        <span>10</span>
+        <span>oct</span>
+      </div>
+      </div>
+    
+    </Card>
+  </div>
+
+
+  
+
+    </Slider>
+ 
+
+
+</div>
+
+  
     </>
 
   )
 }
+
+
 export default Home;
+
+
+

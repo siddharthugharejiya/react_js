@@ -433,25 +433,6 @@ i {
   justify-content:space-between;
   align-items:center;
 }
-/* .button{
-  width:32px;
-  height:32px;
-  border:none;
-  outline:none;
-  padding:0;
-  background:transparent center no-repeat;
-  cursor:pointer;
-  opacity:.4;
-  &.prev{
-    background-image: url(https://codeisle.info/blog/wp-content/uploads/2018/12/ico_next_b32.png);
-  }
-  &.next{
-    background-image:url(https://codeisle.info/blog/wp-content/uploads/2018/12/ico_next_b32-1.png);
-  }
-  &:hover{
-    opacity:.8;
-  }
-} */
 span.carousel-control-next-icon,span.carousel-control-prev-icon{
   display:none
 }
@@ -773,7 +754,7 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
 
 .slick-slider{
   margin: auto;
-  width:90% !important;
+  width:92% !important;
   /* border: 1px solid red; */
 
 }
@@ -812,9 +793,17 @@ div#pro-1{
   margin: 0px 10px !important;
 }
 .slick-list{
-  height: 32vh;
+  height: auto;
   margin: 15px 0;
+}
 
+.slick-list .slick-slide {
+  flex: 0 0 auto; /* Prevent slides from stretching */
+  width: auto; /* Adjust to fit content */
+}
+.slick-track {
+  display: flex; 
+  width: 100%; 
 }
 .pro{
   height: auto;
@@ -822,7 +811,7 @@ div#pro-1{
   /* border: 1px solid red; */
 }
 .food{
-  height: auto;
+  height: 85vh;
   width: 100%;
   /* border: 1px solid red; */
   background-image: url(../public/image/bg-deal.jpg) ;
@@ -883,6 +872,263 @@ div#pro-1{
   color: hsl(0, 0%, 67%);
 }
 
+.bottom-silder{
+  height:auto;
+  width:100%;
+  border:1px solid red;
+  display:flex;
+
+
+}
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: black;
+  line-height: 2;
+  border-radius: 10px;
+  margin: 4rem 10px; 
+  /* transition for the transform property, updated in the script */
+  background-color: rgb(247 243 248 / 1);
+  transition: transform 0.2s ease-out;
+  box-shadow: 0 0 5px -2px hsla(0, 0%, 0%, 0.1);
+}
+article figure {
+  /* limit the width and height of the figure to show the image in a circle */
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  /* specify negative margin matching half the height of the element */
+  margin-top: -60px;
+  /* position relative for the pseudo element */
+  position: relative;
+
+  
+}
+article figure:before {
+  /* add a border around the figure matching the color of the background, faking the clip */
+  content: "";
+  border-radius: inherit;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  border: 1rem solid hsl(250, 85%, 97%);
+  box-shadow: 0 1px hsla(0, 0%, 0%, 0.1);
+}
+article figure img {
+  /* stretch the image to cover the size of the wrapping container */
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  /* object fit to maintain the aspect ratio and fit the width/height */
+  object-fit: cover;
+}
+
+article div {
+  /* center the text in the div container */
+  text-align: center;
+  margin: 2rem;
+}
+article div p {
+  color: hsl(250, 5%, 45%);
+  font-weight: 400;
+  font-style: italic;
+  /* margin: 1rem 0 3rem; */
+  font-family: "Noticia Text", serif;
+  /* position relative for the pseudo element */
+  position: relative;
+  z-index: 5;
+}
+article div p:before {
+  /* with SVG elements include two icons for the quote */
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  z-index: -5;
+  opacity: 0.05;
+  /* position the icons at either end of the paragraph, rotate the second to have a mirrorer image */
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70" width="70" height="70"><rect x="0" y="40" width="30" height="30"></rect><path d="M 0 40 q 0 -40 30 -40 v 15 q -15 0 -15 25"></path><rect x="40" y="40" width="30" height="30"></rect><path d="M 40 40 q 0 -40 30 -40 v 15 q -15 0 -15 25"></path></svg>'),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70" width="70" height="70" transform="rotate(180)"><rect x="0" y="40" width="30" height="30"></rect><path d="M 0 40 q 0 -40 30 -40 v 15 q -15 0 -15 25"></path><rect x="40" y="40" width="30" height="30"></rect><path d="M 40 40 q 0 -40 30 -40 v 15 q -15 0 -15 25"></path></svg>');
+  background-position: 20% 20%, 80% 80%;
+  background-repeat: no-repeat;
+}
+article div h1 {
+  /* considerably reduce the size of the heading */
+  color: hsl(260, 5%, 55%);
+  font-family: "Lato", sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+/* From Uiverse.io by alexmaracinaru */ 
+.cta {
+  position: relative;
+  margin: auto;
+  padding: 12px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #b1dae7;
+  width: 26px;
+  height: 26px;
+  transition: all 0.3s ease;
+}
+
+.cta span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #234567;
+}
+
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #234567;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+  width: 100%;
+  background: #b1dae7;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active {
+  transform: scale(0.95);
+}
+/* Make slider container responsive */
+.Slider {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Card container styling */
+.col-xl-12, .col-md-12 {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Card styling */
+#card {
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Body Styling */
+#card-body {
+  text-align: start;
+  padding: 15px;
+  width: 100%;
+}
+
+/* Image styling for responsive fit */
+.img {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+#card-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Date box positioning on image */
+.box {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+}
+
+/* Button styling */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta:hover svg path {
+  stroke: #555;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .col-xl-12, .col-md-12 {
+    padding: 5px;
+  }
+
+  #card {
+    flex-direction: column;
+  }
+
+  #card-body {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .box {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  #card-body {
+    font-size: 12px;
+  }
+
+  .cta {
+    font-size: 12px;
+  }
+}
 @media (max-width:1500px)
 {
   .t{
@@ -933,6 +1179,12 @@ div#pro-1{
   }
   #hide{
     display: none !important;
+  }
+  .food{
+    height: auto;
+  }
+  .slick-list{
+    height:fit-content;
   }
 
 }
@@ -989,7 +1241,7 @@ div#pro-1{
   
   }
   .slick-list{
-    height: 35vh;
+    height: fit-content;
   }
   .packing{
     height: auto;
@@ -998,6 +1250,9 @@ div#pro-1{
   .paking-body{
     padding: 20px;
     width: fit-content;
+  }
+  .food{
+    height: auto;
   }
 }
 
@@ -1044,6 +1299,9 @@ div#pro-1{
   }
   .countdown div{
     width: 35%;
+  }
+  .food{
+    height: auto;
   }
 }
 
