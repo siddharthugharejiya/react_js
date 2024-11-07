@@ -578,6 +578,10 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
   flex-wrap: wrap;
 }
 
+.css-11lwzu7{
+  /* flex-wrap: wra; */
+  width: 75% !important;
+}
 /* Vertical Tabs layout */
 .tabs-list {
   display: flex;
@@ -804,6 +808,7 @@ div#pro-1{
 .slick-track {
   display: flex; 
   width: 100%; 
+  left: -35px;
 }
 .pro{
   height: auto;
@@ -875,7 +880,7 @@ div#pro-1{
 .bottom-silder{
   height:auto;
   width:100%;
-  border:1px solid red;
+  /* border:1px solid red; */
   display:flex;
 
 
@@ -1073,7 +1078,7 @@ article div h1 {
 .box {
   position: absolute;
   bottom: 10px;
-  left: 10px;
+  right: 20px;
   background-color: rgba(0, 0, 0, 0.7);
   color: #fff;
   padding: 5px 10px;
@@ -1099,36 +1104,189 @@ article div h1 {
   stroke: #555;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .col-xl-12, .col-md-12 {
-    padding: 5px;
-  }
-
-  #card {
-    flex-direction: column;
-  }
-
-  #card-body {
-    text-align: center;
-    padding: 10px;
-  }
-
-  .box {
-    font-size: 10px;
-    padding: 3px 8px;
-  }
+.input-container {
+  position: relative;
+  display: flex;
+  height: 2.8rem;
+  width: 100%;
+  min-width: 200px;
+  max-width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, .05);
 }
 
-@media (max-width: 480px) {
-  #card-body {
-    font-size: 12px;
-  }
-
-  .cta {
-    font-size: 12px;
-  }
+.input-container input {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid  rgb(176 190 197);
+  background-color: transparent;
+  padding: 0.625rem 70px 0.625rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: rgb(69 90 100);
+  outline: none;
+  transition: all .15s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+
+
+.invite-btn {
+  position: absolute;
+  width: 65px;
+  right: 4px;
+  top: 4px;
+  bottom: 4px;
+  z-index: 10;
+  border-radius: 4px;
+  /* background-color: rgb(236 72 153 ); */
+  color: #fff;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  transition: .6s ease;
+}
+
+.invite-btn:hover {
+  right: 2px;
+  top: 2px;
+  bottom: 2px;
+  border-radius: 8px;
+}
+
+.input-container input:placeholder-shown ~ .invite-btn {
+  pointer-events: none;
+   background: transparent;
+   color: black;
+  opacity: 0.5;
+}
+
+/* From Uiverse.io by david-mohseni */ 
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+  height: 100px;
+  width: 100%;
+  /* padding-top: 40px; */
+  font-family: "Poppins", sans-serif;
+  justify-content: start;
+  align-items: center;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #1877f2;
+  color: #fff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: #1da1f2;
+  color: #fff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #e4405f;
+  color: #fff;
+}
+.footer{
+  height: 65vh;
+  width: 100%;
+  background-color: rgb(247 247 248 /1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-img-main{
+  height: auto;
+  width: 100%;
+  border: 1px solid red ;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-img{
+  height: 60px;
+  width: 18%;
+  border: 1px solid red ;
+  border-radius: 5px;
+  
+}
+#image-1{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+
 @media (max-width:1500px)
 {
   .t{
@@ -1145,6 +1303,12 @@ article div h1 {
     margin: 30px 0;
   
   }
+  .css-11lwzu7{
+    flex-wrap: nowrap;
+  }
+  .footer{
+    height: auto;
+  }
 }
 @media (max-width:1400px)
 {
@@ -1152,12 +1316,24 @@ article div h1 {
   .product{
     height: auto !important;
    }
+   .css-11lwzu7{
+    flex-wrap: nowrap;
+  }
+  .footer{
+    height: auto;
+  }
 }
 @media (max-width:1200px)
 {
   .product{
     height: auto !important;
    }
+   .css-11lwzu7{
+    flex-wrap: nowrap;
+  }
+  .footer{
+    height: auto;
+  }
 
 }
 @media (max-width: 992px){
@@ -1186,7 +1362,15 @@ article div h1 {
   .slick-list{
     height:fit-content;
   }
-
+  .car{
+    margin: 10px;
+  }
+  .css-11lwzu7{
+    flex-wrap: wrap;
+  }
+  .footer{
+    height: auto;
+  }
 }
 @media (max-width: 768px) {
   .col-12.col-lg-5.d-flex.align-items-center{
@@ -1254,6 +1438,26 @@ article div h1 {
   .food{
     height: auto;
   }
+  .col-xl-12, .col-md-12 {
+    padding: 5px;
+  }
+
+  #card {
+    flex-direction: column;
+  }
+
+  #card-body {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .box {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+  .footer{
+    height: auto;
+  }
 }
 
 @media(max-width:576px)
@@ -1303,5 +1507,21 @@ article div h1 {
   .food{
     height: auto;
   }
+  .footer{
+    height: auto;
+  }
 }
 
+
+@media (max-width: 480px) {
+  #card-body {
+    font-size: 12px;
+  }
+
+  .cta {
+    font-size: 12px;
+  }
+  .footer{
+    height: auto;
+  }
+}
