@@ -61,7 +61,7 @@ const CustomMenu = React.forwardRef(
 );
 
 const Home = () => {
-   const navigate = useNavigate()
+
    const navigates = useNavigate()
   const dispatch = useDispatch()
  const product=useSelector(state=>state.product.data)

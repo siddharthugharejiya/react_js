@@ -1,32 +1,59 @@
-// import React from "react";
-
 import Carousel from "react-bootstrap/Carousel";
 import "animate.css";
 import "./section.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { styled } from "@mui/system";
+import { styled, width } from "@mui/system";
 import { Tabs as BaseTabs } from "@mui/base/Tabs";
 import { TabsList as BaseTabsList } from "@mui/base/TabsList";
 import { TabPanel as BaseTabPanel } from "@mui/base/TabPanel";
 import { buttonClasses } from "@mui/base/Button";
 import { Card } from "react-bootstrap";
 import { Tab as BaseTab, tabClasses } from "@mui/base/Tab";
-// import { useDispatch } from "react-redux";
-// import { product_action } from "../Redux/action";
 import "swiper/css";
 import "swiper/css/pagination";
 import Slider from "react-slick";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { product_action } from "../Redux/action";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch()
+  const product = useSelector(state => state.product.data)
+  console.log(product);
 
-  // useEffect(() => {
-  //     dispatch(product_action());
-  // }, [dispatch]);
 
-  // AOS.init({
-  //   duration: 1500,
-  // })
+
+  useEffect(() => {
+    dispatch(product_action())
+  }, [dispatch])
+  const nav = useNavigate()
+
+  const [filter, setFilter] = useState('All');
+
+
+  const handleButtonClick = (category) => {
+    setFilter(category);
+  };
+
+  const getFilteredProducts = () => {
+    if (filter === 'All') {
+      return product;
+    } else if (filter === 'Snacks') {
+      return product.filter(el => el.category === 'Snacks');
+    } else if (filter === 'Bakery') {
+      return product.filter(el => el.category === 'Bakery');
+    } else {
+      return [];
+    }
+  };
+
+  const filteredProducts = getFilteredProducts();
+  const handleclick = (id) => {
+    console.log(id)
+    nav(`/${id}`)
+  }
+
 
   var settings = {
     dots: true,
@@ -290,10 +317,7 @@ const Home = () => {
     );
     const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-    document.getElementById("months").innerText = String(months).padStart(
-      2,
-      "0"
-    );
+    document.getElementById("months").innerText = String(months).padStart(2, "0");
     document.getElementById("days").innerText = String(days).padStart(2, "0");
     document.getElementById("hours").innerText = String(hours).padStart(2, "0");
     document.getElementById("minutes").innerText = String(minutes).padStart(
@@ -310,6 +334,7 @@ const Home = () => {
 
   return (
     <>
+
       <div className="slider-1">
         <Carousel data-bs-theme="dark">
           <Carousel.Item>
@@ -463,7 +488,7 @@ const Home = () => {
         <Tabs
           defaultValue={0}
           orientation="vertical"
-          // style={{ flexWrap: "wrap" }}
+        // style={{ flexWrap: "wrap" }}
         >
           <TabsList className="tabs-list col-lg-4 col-sm-12 col-12">
             <Tab>
@@ -493,8 +518,8 @@ const Home = () => {
           </TabsList>
 
           <TabPanel value={0} className="tab-panel">
-            <div className="tab-image row justify-content-between">
-              <div className="col-lg-6 col-md-6 col-sm-12 col-12 mb-3 d-flex justify-content-center">
+            <div className="tab-image row justify-content-around">
+              <div className="col-lg-5 col-md-6 col-sm-12 col-12 mb-3 d-flex justify-content-around">
                 <div
                   className="card car"
                   style={{
@@ -559,8 +584,8 @@ const Home = () => {
           </TabPanel>
 
           <TabPanel value={1} className="tab-panel">
-            <div className="tab-image row">
-              <div className="col-lg-5 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+            <div className="tab-image row justify-content-around">
+              <div className="col-lg-5 col-md-6 col-sm-12 mb-3 d-flex justify-content-around">
                 <div
                   className="card car"
                   style={{
@@ -591,7 +616,7 @@ const Home = () => {
                 </div>
               </div>
 
-              <div className="col-lg-5 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+              <div className="col-lg-5 col-md-6 col-sm-12 mb-3 d-flex justify-content-around">
                 <div
                   className="card car"
                   style={{
@@ -625,8 +650,8 @@ const Home = () => {
           </TabPanel>
 
           <TabPanel value={2} className="tab-panel">
-            <div className="tab-image row">
-              <div className="col-lg-5 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+            <div className="tab-image row justify-content-around">
+              <div className="col-lg-5 col-md-6 col-sm-12 mb-3 d-flex justify-content-around">
                 <div
                   className="card car"
                   style={{
@@ -657,7 +682,7 @@ const Home = () => {
                 </div>
               </div>
 
-              <div className="col-lg-5 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+              <div className="col-lg-5 col-md-6 col-sm-12 mb-3 d-flex justify-content-around">
                 <div
                   className="card car"
                   style={{
@@ -691,8 +716,8 @@ const Home = () => {
           </TabPanel>
 
           <TabPanel value={3} className="tab-panel">
-            <div className="tab-image row">
-              <div className="col-lg-5 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+            <div className="tab-image row justify-content-around">
+              <div className="col-lg-5 col-md-6 col-sm-12 mb-3 d-flex justify-content-around">
                 <div
                   className="card car"
                   style={{
@@ -723,7 +748,7 @@ const Home = () => {
                 </div>
               </div>
 
-              <div className="col-lg-5 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+              <div className="col-lg-5 col-md-6 col-sm-12 mb-3 d-flex justify-content-around">
                 <div
                   className="card car"
                   style={{
@@ -757,7 +782,7 @@ const Home = () => {
           </TabPanel>
 
           <TabPanel value={4} className="tab-panel">
-            <div className="tab-image row">
+            <div className="tab-image row justify-content-around">
               <div className="col-lg-5 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
                 <div
                   className="card car"
@@ -823,7 +848,7 @@ const Home = () => {
           </TabPanel>
 
           <TabPanel value={5} className="tab-panel">
-            <div className="tab-image row">
+            <div className="tab-image row justify-content-around">
               <div className="col-lg-5 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
                 <div
                   className="card car"
@@ -1516,120 +1541,155 @@ const Home = () => {
 
       <div className="footer">
         <div className="container-fluid">
-        <div className="container mt-5">
-  <div className="row">
-    <div className="col-lg-4 col-md-6 mb-4">
-      <img src="./image/logo.png" alt="Logo" className="img-fluid" />
-      <div style={{ color: "rgb(122, 122, 122)" }}>
-        <p>
-          Carrot is the biggest market of grocery products. Get your daily
-          needs from our store.
-        </p>
-        <div className="d-flex align-items-center mb-2">
-          <i
-            className="fa-solid fa-location-dot"
-            style={{ color: "#64b496", marginRight: "8px" }}
-          ></i>
-          <p>
-            51 Green St.Huntington ohaio beach ontario, NY 11746 KY 4783, USA.
-          </p>
-        </div>
-        <div className="d-flex align-items-center mb-2">
-          <i
-            className="fa-regular fa-envelope"
-            style={{ color: "#64b496", marginRight: "8px" }}
-          ></i>
-          <p>example@email.com</p>
-        </div>
-        <div className="d-flex align-items-center">
-          <i
-            className="fa-solid fa-phone"
-            style={{ color: "#64b496", marginRight: "8px" }}
-          ></i>
-          <p>+91 123 4567890</p>
+          <div className="container mt-5">
+            <div className="row">
+              <div className="col-lg-4 col-md-6 mb-4">
+                <img src="./image/logo.png" alt="Logo" className="img-fluid" />
+                <div style={{ color: "rgb(122, 122, 122)" }}>
+                  <p>
+                    Carrot is the biggest market of grocery products. Get your daily
+                    needs from our store.
+                  </p>
+                  <div className="d-flex align-items-center mb-2">
+                    <i
+                      className="fa-solid fa-location-dot"
+                      style={{ color: "#64b496", marginRight: "8px" }}
+                    ></i>
+                    <p>
+                      51 Green St.Huntington ohaio beach ontario, NY 11746 KY 4783, USA.
+                    </p>
+                  </div>
+                  <div className="d-flex align-items-center mb-2">
+                    <i
+                      className="fa-regular fa-envelope"
+                      style={{ color: "#64b496", marginRight: "8px" }}
+                    ></i>
+                    <p>example@email.com</p>
+                  </div>
+                  <div className="d-flex align-items-center">
+                    <i
+                      className="fa-solid fa-phone"
+                      style={{ color: "#64b496", marginRight: "8px" }}
+                    ></i>
+                    <p>+91 123 4567890</p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-2 col-md-3 mb-4">
+                <b>Company</b>
+                <div style={{ color: "rgb(122, 122, 122)" }}>
+                  <p>About Us</p>
+                  <p>Delivery Information</p>
+                  <p>Privacy Policy</p>
+                  <p>Terms & Conditions</p>
+                  <p>Contact Us</p>
+                  <p>Support Center</p>
+                </div>
+              </div>
+              <div className="col-lg-2 col-md-3 mb-4">
+                <b>Category</b>
+                <div style={{ color: "rgb(122, 122, 122)" }}>
+                  <p>Dairy & Bakery</p>
+                  <p>Fruits & Vegetables</p>
+                  <p>Snack & Spice</p>
+                  <p>Juice & Drinks</p>
+                  <p>Chicken & Meat</p>
+                  <p>Fast Food</p>
+                </div>
+              </div>
+              <div className="col-lg-4 col-md-6">
+                <b>Subscribe Our Newsletter</b>
+                <div className="input-container mt-3 d-flex">
+                  <input required placeholder="Email Address" type="email" className="form-control" />
+                  <button className="btn invite-btn" type="button">
+                    <i className="fa-regular fa-paper-plane"></i>
+                  </button>
+                </div>
+                <div className="d-flex justify-content-between mt-3">
+                  <ul className="d-flex list-unstyled">
+                    <li className="me-3">
+                      <span className="tooltip">Facebook</span>
+                      <svg
+                        viewBox="0 0 320 512"
+                        height="1.2em"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
+                      </svg>
+                    </li>
+                    <li className="me-3">
+                      <span className="tooltip">Twitter</span>
+                      <svg
+                        height="1.2em"
+                        fill="currentColor"
+                        viewBox="0 0 48 48"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="twitter"
+                      >
+                        <path d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429"></path>
+                      </svg>
+                    </li>
+                    <li>
+                      <span className="tooltip">Instagram</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="1.2em"
+                        fill="currentColor"
+                        className="bi bi-instagram"
+                        viewBox="0 0 16 16"
+                      >
+                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.165 1.204-.275 1.486a2.472 2.472 0 0 1-.598.919c-.28.281-.546.454-.92.598-.282.11-.706.24-1.485.276-.844.038-1.097.047-3.232.047s-2.389-.009-3.232-.047c-.78-.036-1.204-.166-1.486-.276a2.47 2.47 0 0 1-.92-.598 2.472 2.472 0 0 1-.598-.92c-.11-.282-.24-.705-.276-1.485-.038-.844-.046-1.097-.046-3.232s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486a2.48 2.48 0 0 1 .598-.92 2.478 2.478 0 0 1 .92-.598c.282-.11.705-.24 1.485-.276.843-.038 1.096-.047 3.231-.047zM8 3.89a4.11 4.11 0 1 0 0 8.22 4.11 4.11 0 0 0 0-8.22zm0 6.77a2.66 2.66 0 1 1 0-5.32 2.66 2.66 0 0 1 0 5.32zm4.271-6.77a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92z"></path>
+                      </svg>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="col-lg-12 border-top mt-3 text-center">
+                © 2024 Carrot, All rights reserved.
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>
-    <div className="col-lg-2 col-md-3 mb-4">
-      <b>Company</b>
-      <div style={{ color: "rgb(122, 122, 122)" }}>
-        <p>About Us</p>
-        <p>Delivery Information</p>
-        <p>Privacy Policy</p>
-        <p>Terms & Conditions</p>
-        <p>Contact Us</p>
-        <p>Support Center</p>
-      </div>
-    </div>
-    <div className="col-lg-2 col-md-3 mb-4">
-      <b>Category</b>
-      <div style={{ color: "rgb(122, 122, 122)" }}>
-        <p>Dairy & Bakery</p>
-        <p>Fruits & Vegetables</p>
-        <p>Snack & Spice</p>
-        <p>Juice & Drinks</p>
-        <p>Chicken & Meat</p>
-        <p>Fast Food</p>
-      </div>
-    </div>
-    <div className="col-lg-4 col-md-6">
-      <b>Subscribe Our Newsletter</b>
-      <div className="input-container mt-3 d-flex">
-        <input required placeholder="Email Address" type="email" className="form-control" />
-        <button className="btn invite-btn" type="button">
-          <i className="fa-regular fa-paper-plane"></i>
+
+      <div>
+      <div className="button-list col-lg-4 col-sm-12 col-12">
+        <button className="btn" onClick={() => handleButtonClick('All')}>
+          All
+        </button>
+
+        <button
+          className="btn"
+          onClick={() => handleButtonClick('Snacks')}
+        >
+          Snacks
+        </button>
+
+        <button
+          className="btn"
+          onClick={() => handleButtonClick('Bakery')}
+        >
+          Bakery
         </button>
       </div>
-      <div className="d-flex justify-content-between mt-3">
-        <ul className="d-flex list-unstyled">
-          <li className="me-3">
-            <span className="tooltip">Facebook</span>
-            <svg
-              viewBox="0 0 320 512"
-              height="1.2em"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
-            </svg>
-          </li>
-          <li className="me-3">
-            <span className="tooltip">Twitter</span>
-            <svg
-              height="1.2em"
-              fill="currentColor"
-              viewBox="0 0 48 48"
-              xmlns="http://www.w3.org/2000/svg"
-              className="twitter"
-            >
-              <path d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429"></path>
-            </svg>
-          </li>
-          <li>
-            <span className="tooltip">Instagram</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="1.2em"
-              fill="currentColor"
-              className="bi bi-instagram"
-              viewBox="0 0 16 16"
-            >
-              <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.165 1.204-.275 1.486a2.472 2.472 0 0 1-.598.919c-.28.281-.546.454-.92.598-.282.11-.706.24-1.485.276-.844.038-1.097.047-3.232.047s-2.389-.009-3.232-.047c-.78-.036-1.204-.166-1.486-.276a2.47 2.47 0 0 1-.92-.598 2.472 2.472 0 0 1-.598-.92c-.11-.282-.24-.705-.276-1.485-.038-.844-.046-1.097-.046-3.232s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486a2.48 2.48 0 0 1 .598-.92 2.478 2.478 0 0 1 .92-.598c.282-.11.705-.24 1.485-.276.843-.038 1.096-.047 3.231-.047zM8 3.89a4.11 4.11 0 1 0 0 8.22 4.11 4.11 0 0 0 0-8.22zm0 6.77a2.66 2.66 0 1 1 0-5.32 2.66 2.66 0 0 1 0 5.32zm4.271-6.77a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92z"></path>
-            </svg>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div className="col-lg-12 border-top mt-3 text-center">
-    © 2024 Carrot, All rights reserved.
-    </div>
-  </div>
-</div>
 
-        </div>
+      <div className="button-content">
+        {filteredProducts.map((el) => (
+          <div className="col-lg-4" key={el.id}>
+            <div className="card" onClick={() => handleclick(el.id)}>
+              <img src={el.image} alt="" className="img-fluid" />
+            </div>
+          </div>
+        ))}
       </div>
+    </div>
+
+
+
+
     </>
   );
-};
-
+}
 export default Home;

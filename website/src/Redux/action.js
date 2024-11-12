@@ -1,4 +1,4 @@
-import { DATA, EMAIL, L_EMAIL, L_PASSWORD, PASSWORD, USERNAME } from "./action_type";
+import { DATA, EMAIL, L_EMAIL, L_PASSWORD, PASSWORD,  SINGLE,  USERNAME } from "./action_type";
 
 export const product_action = () => (dispatch) => {
     fetch('http://localhost:9595/products')
@@ -14,6 +14,19 @@ export const product_action = () => (dispatch) => {
             console.error("Error fetching products:", error);
         });
 };
+export const single_action = (id) => (dispatch)=>{
+    fetch(`http://localhost:5173/${id}`)
+    .then(res => res.json())
+    .then(data =>{
+        console.log(data);
+        
+        dispatch({
+            type : SINGLE,
+            payload : data
+        })
+    })
+
+}
 
 export const signup_action = (userData, navigate) => (dispatch) => {
     fetch('http://localhost:9595/username', {

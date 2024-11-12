@@ -46,8 +46,8 @@ const Signup = () => {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center vh-100 mt-5">
-      <Form className=" p-4 p-md-5" style={{ width: "90%", maxWidth: "500px" }} onSubmit={submit}>
+    <div className="d-flex justify-content-center align-items-center mt-md-3">
+      <Form className=" p-4 p-md-2" style={{ width: "90%", maxWidth: "500px" }} onSubmit={submit}>
         <Row className="justify-content-center align-items-center">
           <Col xs={6} className="mb-4 d-flex justify-content-center align-items-center">
             <img src="./image/logo.png" alt="Logo" className="img-fluid" />
@@ -89,7 +89,7 @@ const Signup = () => {
 
           <Form.Group as={Col} xs={6} md={3} controlId="formGridZip">
             <Form.Label>Post Code</Form.Label>
-            <Form.Control name="zip" value={state.zip} onChange={change} />
+            <Form.Control name="zip" value={state.zip} onChange={change} style={{margin:"0px 5px"}} />
           </Form.Group>
         </Row>
 

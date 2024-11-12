@@ -1,14 +1,15 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { single_action } from '../Redux/action'
 
-const Singlepage = () => {
-    
-
-    return (
-        <div>
-            
-        </div>
-    );
+export default function Singlepage() {
+    const dispatch = useDispatch()
+    const single = useSelector(state => state.single)
+    console.log(single)
+    useEffect(()=>{
+        dispatch(single_action())
+    },[])
+  return (
+    <div>Singlepage</div>
+  )
 }
-
-export default Singlepage;

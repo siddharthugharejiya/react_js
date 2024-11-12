@@ -1,5 +1,5 @@
-import { act } from "react";
-import { DATA, EMAIL, L_EMAIL, L_PASSWORD, PASSWORD, USERNAME } from "./action_type";
+
+import { DATA, EMAIL, L_EMAIL, L_PASSWORD, PASSWORD, SINGLE, SINGLE_DATA, USERNAME } from "./action_type";
 
 const initial_pro = {
     data: []
@@ -16,6 +16,22 @@ export const product_reducer = (state = initial_pro, { type, payload }) => {
             return state;
     }
 };
+const initial_single = {
+    data: null
+}
+
+export const single_reducer = (state = initial_single, { type, payload }) => {
+
+    switch (type) {
+        case SINGLE:
+            return {
+                ...state,
+                data: payload
+            }
+        default:
+            return state
+    }
+}
 
 const Signup_initial={
     username:"",

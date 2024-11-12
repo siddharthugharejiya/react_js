@@ -84,6 +84,32 @@
       "star": "4.5",
       "description": "Fresh organic villa farm lomon 500gm pack",
       "id": "3ba4"
+    },
+
+    {
+      "image": "https://maraviyainfotech.com/projects/carrot-tailwind/assets/img/product/9.jpg",
+      "price": 145.05,
+      "category": "Snacks",
+      "star": "4.5",
+      "description": "Best snakes with hazel nut pack 200gm"
+    },
+
+    {
+      "image": " https://maraviyainfotech.com/projects/carrot-tailwind/assets/img/product/2.jpg",
+      "price": 145.05,
+      "category": "Snacks",
+      "star": "4.5",
+      "description": "Best snakes with hazel nut pack 200gm"
+    },
+
+    
+    {
+      "image": "https://maraviyainfotech.com/projects/carrot-tailwind/assets/img/product/17.jpg",
+      "price": 20.05,
+      "category": "Bakery",
+      "star": "5.0 ",
+      "description": "Delicious white baked fresh bread and toast"
     }
+   
   ]
 }

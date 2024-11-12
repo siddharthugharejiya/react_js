@@ -281,8 +281,8 @@ i {
   font-size: 15px;
 }
 .nav2 {
-  width: 60%;
-  height: 100px;
+  width: 100%;
+  height: 75px;
 }
 
 .nav2 ul {
@@ -574,8 +574,9 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
   width: 100%;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 88vh;
   flex-wrap: wrap;
+  /* border: 1px solid red; */
 }
 
 .css-11lwzu7{
@@ -603,7 +604,7 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
 
 /* Panel content */
 .tab-panel {
-  padding: 20px;
+  /* padding: 20px; */
   flex-grow: 1;
 }
 
@@ -1285,7 +1286,12 @@ article div h1 {
   width: 100%;
   object-fit: cover;
 }
-
+@media (max-width:2000px) {
+  .t{
+    height: auto;
+    margin: 20px 0;
+  }
+}
 
 @media (max-width:1500px)
 {
@@ -1333,6 +1339,10 @@ article div h1 {
   }
   .footer{
     height: auto;
+  }
+  .car{
+    height: 100vh !important;
+    width: 630px !important;
   }
 
 }
@@ -1425,6 +1435,7 @@ article div h1 {
   
   }
   .slick-list{
+    margin: 10px;
     height: fit-content;
   }
   .packing{
@@ -1439,8 +1450,9 @@ article div h1 {
     height: auto;
   }
   .col-xl-12, .col-md-12 {
-    padding: 5px;
-  }
+    margin: 0px 3px;
+   }
+  
 
   #card {
     flex-direction: column;
@@ -1496,6 +1508,7 @@ article div h1 {
   }
   .slick-slide.slick-active.slick-current{
     width: 88vw !important;
+    margin: 30px;
   }
   .countdown{
   display: flex;
