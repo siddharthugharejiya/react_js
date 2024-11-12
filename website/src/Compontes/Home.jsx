@@ -7,7 +7,8 @@ import { Tabs as BaseTabs } from "@mui/base/Tabs";
 import { TabsList as BaseTabsList } from "@mui/base/TabsList";
 import { TabPanel as BaseTabPanel } from "@mui/base/TabPanel";
 import { buttonClasses } from "@mui/base/Button";
-import { Card } from "react-bootstrap";
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 import { Tab as BaseTab, tabClasses } from "@mui/base/Tab";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -51,6 +52,7 @@ const Home = () => {
   const filteredProducts = getFilteredProducts();
   const handleclick = (id) => {
     console.log(id)
+
     nav(`/${id}`)
   }
 
@@ -1654,37 +1656,56 @@ const Home = () => {
         </div>
       </div>
 
-      <div>
-      <div className="button-list col-lg-4 col-sm-12 col-12">
-        <button className="btn" onClick={() => handleButtonClick('All')}>
-          All
-        </button>
-
-        <button
-          className="btn"
-          onClick={() => handleButtonClick('Snacks')}
-        >
-          Snacks
-        </button>
-
-        <button
-          className="btn"
-          onClick={() => handleButtonClick('Bakery')}
-        >
-          Bakery
-        </button>
-      </div>
-
-      <div className="button-content">
-        {filteredProducts.map((el) => (
-          <div className="col-lg-4" key={el.id}>
-            <div className="card" onClick={() => handleclick(el.id)}>
-              <img src={el.image} alt="" className="img-fluid" />
+      <div className="col-lg-12 row">
+        <div className="button-list col-lg-4 col-sm-12 col-12">
+          <div className="row g-3 justify-content-center">
+            <div className="col-lg-7" onClick={() => handleButtonClick('All')} id="side"  >
+              <div>All &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+              <h6 className="p-2"> All</h6>
+              <i class="fa-solid fa-arrow-right" id="button-icon"></i>
             </div>
+
+
+            <div className="col-lg-7" onClick={() => handleButtonClick('Snacks')} id="side"  >
+              <h6 className="p-2">Snacks</h6>
+              <i class="fa-solid fa-arrow-right" id="button-icon"></i>
+            </div>
+
+            <div className="col-lg-7" onClick={() => handleButtonClick('Bakery')} id="side"  >
+              <h6 className="p-2">Bakery</h6>
+              <i class="fa-solid fa-arrow-right" id="button-icon"></i>
+            </div>
+
           </div>
-        ))}
+        </div>
+        <div className="col-lg-7">
+          <div className="button-content row g-4">
+            {filteredProducts.map((el) => (
+              <div className="col-lg-3 g-4" key={el.id}>
+                <Card onClick={() => handleclick(el.id)} id="card-1 ">
+                  <Card.Img variant="top" src={el.image} id="card-1-img" className="zoom-image" />
+                  <i className="fa-solid fa-bag-shopping" style={{ color: '#64b496' }} id="card-img-icon"></i>
+                  <Card.Body>
+                    <Card.Title id="card-1-title">{el.category}</Card.Title>
+                    <Card.Text>
+                      <i class="fa-solid fa-star" style={{ color: "rgb(245 136 95 / 1)" }}></i>  <i class="fa-solid fa-star" style={{ color: "rgb(245 136 95 / 1)" }}></i>   <i class="fa-solid fa-star" style={{ color: "rgb(245 136 95 / 1)" }}></i>   <i class="fa-solid fa-star" style={{ color: "rgb(245 136 95 / 1)" }}></i>   {el.star}
+                    </Card.Text>
+                    <Card.Text>
+                      {el.description}
+                    </Card.Text>
+
+                    <Card.Text style={{ color: "rgb(100 180 150 / 1)" }}>
+                      ${el.price}
+                    </Card.Text>
+
+                  </Card.Body>
+                </Card>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
-    </div>
 
 
 

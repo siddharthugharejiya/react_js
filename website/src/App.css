@@ -1286,6 +1286,48 @@ article div h1 {
   width: 100%;
   object-fit: cover;
 }
+#card-1{
+  height: 100%;
+  width: 100%;
+}
+#card-1-img{
+  height: 100%;
+  width: 100%;
+  padding: 15px;
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+}
+#card-img-icon{
+  position: absolute;
+  left:42%;
+  top: 45%;
+  padding: 7px;
+  border: 1px solid;
+  border-radius: 20px;
+  font-size: 13px;
+  background-color: rgb(33 37 41 / 7%);
+}
+#card-1-title{
+  font-size: 13px;
+  color: rgb(119 119 119 / 1);
+}
+
+#card-img-icon {
+    color: #64b496;
+}
+#side{
+  background: rgb(247 247 248 / 1);
+  position: relative;
+  border-radius: 9px;
+}
+#button-icon{
+  position: absolute; 
+  top: 15px;
+  left: 215px;
+
+}
+
 @media (max-width:2000px) {
   .t{
     height: auto;
