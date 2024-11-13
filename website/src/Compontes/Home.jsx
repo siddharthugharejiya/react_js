@@ -7,7 +7,6 @@ import { Tabs as BaseTabs } from "@mui/base/Tabs";
 import { TabsList as BaseTabsList } from "@mui/base/TabsList";
 import { TabPanel as BaseTabPanel } from "@mui/base/TabPanel";
 import { buttonClasses } from "@mui/base/Button";
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Tab as BaseTab, tabClasses } from "@mui/base/Tab";
 import "swiper/css";
@@ -40,11 +39,20 @@ const Home = () => {
   const getFilteredProducts = () => {
     if (filter === 'All') {
       return product;
-    } else if (filter === 'Snacks') {
+    }
+    else if (filter === 'Snacks') {
       return product.filter(el => el.category === 'Snacks');
-    } else if (filter === 'Bakery') {
+    }
+    else if (filter === "Fruits") {
+      return product.filter(el => el.category === "Fruits")
+    }
+    else if (filter === 'Bakery') {
       return product.filter(el => el.category === 'Bakery');
-    } else {
+    }
+    else if (filter === "Vegetables") {
+      return product.filter(el => el.category === "Vegetables")
+    }
+    else {
       return [];
     }
   };
@@ -1651,33 +1659,59 @@ const Home = () => {
                 © 2024 Carrot, All rights reserved.
               </div>
             </div>
-          </div>
+          </div>  
 
         </div>
       </div>
 
-      <div className="col-lg-12 row">
+      <div className="col-lg-12 row fruits">
         <div className="button-list col-lg-4 col-sm-12 col-12">
-          <div className="row g-3 justify-content-center">
-            <div className="col-lg-7" onClick={() => handleButtonClick('All')} id="side"  >
-              <div>All &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+          <div className="row g-3 justify-content-center bb">
+            <div className="col-lg-7 col-sm-7 col-11" onClick={() => handleButtonClick('All')} id="side"  >
+
               <h6 className="p-2"> All</h6>
               <i class="fa-solid fa-arrow-right" id="button-icon"></i>
             </div>
 
 
-            <div className="col-lg-7" onClick={() => handleButtonClick('Snacks')} id="side"  >
+            <div className="col-lg-7 col-sm-7 col-11" onClick={() => handleButtonClick('Snacks')} id="side"  >
               <h6 className="p-2">Snacks</h6>
               <i class="fa-solid fa-arrow-right" id="button-icon"></i>
             </div>
 
-            <div className="col-lg-7" onClick={() => handleButtonClick('Bakery')} id="side"  >
+            <div className="col-lg-7 col-sm-7 col-11" onClick={() => handleButtonClick('Vegetables')} id="side"  >
+              <h6 className="p-2">Vegetables</h6>
+              <i class="fa-solid fa-arrow-right" id="button-icon"></i>
+            </div>
+
+            <div className="col-lg-7 col-sm-7 col-11" onClick={() => handleButtonClick('Bakery')} id="side"  >
               <h6 className="p-2">Bakery</h6>
               <i class="fa-solid fa-arrow-right" id="button-icon"></i>
             </div>
 
+
+            <div className="col-lg-7 col-sm-7 col-11" onClick={() => handleButtonClick('Fruits')} id="side"  >
+              <h6 className="p-2">Fruits</h6>
+              <i class="fa-solid fa-arrow-right" id="button-icon"></i>
+            </div>
+
+            <div className="button-img">
+              <div className="button-img-1" id="image-b">
+                <div className="button-text p-4">
+                  <span style={{color:"rgb(255 255 255 / 1)",fontSize:"34px",lineHeight:"1.2"}}>Juicy</span>
+                  <span style={{color:"rgb(247 232 170 / 1)",textTransform:"uppercase",fontSize:"45px",fontWeight:"900"}}>Fruits</span>
+                  <span style={{color:"rgb(255 255 255 / 1)",fontWeight:"500"}}>100% Natural</span>
+                  <div className="mt-2">
+                  <button className="btn btn-success">Shop Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+
+
         </div>
+
         <div className="col-lg-7">
           <div className="button-content row g-4">
             {filteredProducts.map((el) => (
