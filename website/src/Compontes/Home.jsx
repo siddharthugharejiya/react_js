@@ -1693,7 +1693,7 @@ const Home = () => {
                 </div>
 
                 <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
-                  <div className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border" onClick={() => buttonClick("Vegetable")}>
+                  <div className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border" onClick={() => buttonClick("Vegetables")}>
                     <span>Vegetable</span>
                     <i className="fa-solid fa-arrow-right" style={{ color: "black" }}></i>
                   </div>
