@@ -17,6 +17,7 @@ import { useEffect, useState } from "react";
 import { product_action } from "../Redux/action";
 import { useNavigate } from "react-router-dom";
 
+
 const Home = () => {
   const dispatch = useDispatch()
   const product = useSelector(state => state.product.data)
@@ -29,12 +30,13 @@ const Home = () => {
   }, [dispatch])
   const nav = useNavigate()
 
-  const [filter, setFilter] = useState('All');
+  const [filter, setFilter] = useState("All");
 
+  const buttonClick = (category) => {
+    setFilter(category)
+  }
+  console.log(filter)
 
-  const handleButtonClick = (category) => {
-    setFilter(category);
-  };
 
   const getFilteredProducts = () => {
     if (filter === 'All') {
@@ -1659,90 +1661,80 @@ const Home = () => {
                 © 2024 Carrot, All rights reserved.
               </div>
             </div>
-          </div>  
+          </div>
 
         </div>
       </div>
 
-      <div className="col-lg-12 row fruits">
-        <div className="button-list col-lg-4 col-sm-12 col-12">
-          <div className="row g-3 justify-content-center bb">
-            <div className="col-lg-7 col-sm-7 col-11" onClick={() => handleButtonClick('All')} id="side"  >
-
-              <h6 className="p-2"> All</h6>
-              <i class="fa-solid fa-arrow-right" id="button-icon"></i>
-            </div>
-
-
-            <div className="col-lg-7 col-sm-7 col-11" onClick={() => handleButtonClick('Snacks')} id="side"  >
-              <h6 className="p-2">Snacks</h6>
-              <i class="fa-solid fa-arrow-right" id="button-icon"></i>
-            </div>
-
-            <div className="col-lg-7 col-sm-7 col-11" onClick={() => handleButtonClick('Vegetables')} id="side"  >
-              <h6 className="p-2">Vegetables</h6>
-              <i class="fa-solid fa-arrow-right" id="button-icon"></i>
-            </div>
-
-            <div className="col-lg-7 col-sm-7 col-11" onClick={() => handleButtonClick('Bakery')} id="side"  >
-              <h6 className="p-2">Bakery</h6>
-              <i class="fa-solid fa-arrow-right" id="button-icon"></i>
-            </div>
-
-
-            <div className="col-lg-7 col-sm-7 col-11" onClick={() => handleButtonClick('Fruits')} id="side"  >
-              <h6 className="p-2">Fruits</h6>
-              <i class="fa-solid fa-arrow-right" id="button-icon"></i>
-            </div>
-
-            <div className="button-img">
-              <div className="button-img-1" id="image-b">
-                <div className="button-text p-4">
-                  <span style={{color:"rgb(255 255 255 / 1)",fontSize:"34px",lineHeight:"1.2"}}>Juicy</span>
-                  <span style={{color:"rgb(247 232 170 / 1)",textTransform:"uppercase",fontSize:"45px",fontWeight:"900"}}>Fruits</span>
-                  <span style={{color:"rgb(255 255 255 / 1)",fontWeight:"500"}}>100% Natural</span>
-                  <div className="mt-2">
-                  <button className="btn btn-success">Shop Now</button>
+      <div className="row fruits">
+        <div className="col-xl-4 col-12">
+          <div className="side col-xl-12 col-lg-10 col-12">
+            <div className="side-1 col-xl-10 col-lg-7 col-sm-5 col-12">
+              <div className="row">
+                <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
+                  <div className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border" onClick={() => buttonClick("All")}>
+                    <span>All</span>
+                    <i className="fa-solid fa-arrow-right" style={{ color: "black" }}></i>
                   </div>
+                </div>
+
+                <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
+                  <div className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border" onClick={() => buttonClick("Bakery")}>
+                    <span>Bakery</span>
+                    <i className="fa-solid fa-arrow-right" style={{ color: "black" }}></i>
+                  </div>
+                </div>
+
+                <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
+                  <div className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border" onClick={() => buttonClick("Snacks")}>
+                    <span>Snacks</span>
+                    <i className="fa-solid fa-arrow-right" style={{ color: "black" }}></i>
+                  </div>
+                </div>
+
+                <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
+                  <div className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border" onClick={() => buttonClick("Vegetable")}>
+                    <span>Vegetable</span>
+                    <i className="fa-solid fa-arrow-right" style={{ color: "black" }}></i>
+                  </div>
+                </div>
+
+                <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
+                  <div className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border" onClick={() => buttonClick("Fruits")}>
+                    <span>Fruits</span>
+                    <i className="fa-solid fa-arrow-right" style={{ color: "black" }}></i>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div className="side-2 col-xxl-12 col-xl-12 col-lg-5 col-sm-6 col-6">
+              <div className="side-2-sub">
+                <div className="side-2-sub-text p-3 py-5 ">
+                  <span className="text-light" style={{ fontSize: "35px" }}>Juicy</span>
+                  <span className="fs-2 mt-1" style={{ textTransform: "uppercase", color: "rgb(247 232 170 /1)", fontWeight: "800" }}>Fruits</span>
+                  <span className="text-light" style={{ fontSize: "14px" }}>100% Natural</span>
+                  <button className="btn btn-success mt-1">Shop Now</button>
                 </div>
               </div>
             </div>
+
           </div>
-
-
         </div>
 
-        <div className="col-lg-7">
-          <div className="button-content row g-4">
-            {filteredProducts.map((el) => (
-              <div className="col-lg-3 g-4" key={el.id}>
-                <Card onClick={() => handleclick(el.id)} id="card-1 ">
-                  <Card.Img variant="top" src={el.image} id="card-1-img" className="zoom-image" />
-                  <i className="fa-solid fa-bag-shopping" style={{ color: '#64b496' }} id="card-img-icon"></i>
-                  <Card.Body>
-                    <Card.Title id="card-1-title">{el.category}</Card.Title>
-                    <Card.Text>
-                      <i class="fa-solid fa-star" style={{ color: "rgb(245 136 95 / 1)" }}></i>  <i class="fa-solid fa-star" style={{ color: "rgb(245 136 95 / 1)" }}></i>   <i class="fa-solid fa-star" style={{ color: "rgb(245 136 95 / 1)" }}></i>   <i class="fa-solid fa-star" style={{ color: "rgb(245 136 95 / 1)" }}></i>   {el.star}
-                    </Card.Text>
-                    <Card.Text>
-                      {el.description}
-                    </Card.Text>
+        <div className="col-xl-6">
+        <div className="button-content">
+  {filteredProducts.map((el) => (
+    <div className="card" key={el.id}>
+      <img src={el.image} alt="alt" />
+    </div>
+  ))}
+</div>
 
-                    <Card.Text style={{ color: "rgb(100 180 150 / 1)" }}>
-                      ${el.price}
-                    </Card.Text>
 
-                  </Card.Body>
-                </Card>
-              </div>
-            ))}
-          </div>
         </div>
 
       </div>
-
-
-
 
     </>
   );
