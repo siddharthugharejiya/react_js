@@ -7,8 +7,8 @@ import { Tabs as BaseTabs } from "@mui/base/Tabs";
 import { TabsList as BaseTabsList } from "@mui/base/TabsList";
 import { TabPanel as BaseTabPanel } from "@mui/base/TabPanel";
 import { buttonClasses } from "@mui/base/Button";
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 import { Tab as BaseTab, tabClasses } from "@mui/base/Tab";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -18,55 +18,58 @@ import { useEffect, useState } from "react";
 import { product_action } from "../Redux/action";
 import { useNavigate } from "react-router-dom";
 
-
 const Home = () => {
-  const dispatch = useDispatch()
-  const product = useSelector(state => state.product.data)
-  console.log(product);
-
-
 
   useEffect(() => {
-    dispatch(product_action())
-  }, [dispatch])
-  const nav = useNavigate()
+    // Initialize MagicZoom with the options after the component mounts
+    if (typeof window !== 'undefined' && window.MagicZoom) {
+      // Initialize MagicZoom with your custom options
+      window.MagicZoom.options = mzOptions;
+    }
+  }, []);
+
+  const mzOptions = {
+    zoomPosition: "inner",
+  };
+
+  const dispatch = useDispatch();
+  const product = useSelector((state) => state.product.data);
+  console.log(product);
+
+  useEffect(() => {
+    dispatch(product_action());
+  }, [dispatch]);
+  const nav = useNavigate();
 
   const [filter, setFilter] = useState("All");
 
   const buttonClick = (category) => {
-    setFilter(category)
-  }
-  console.log(filter)
-
+    setFilter(category);
+  };
+  console.log(filter);
 
   const getFilteredProducts = () => {
-    if (filter === 'All') {
+    if (filter === "All") {
       return product;
-    }
-    else if (filter === 'Snacks') {
-      return product.filter(el => el.category === 'Snacks');
-    }
-    else if (filter === "Fruits") {
-      return product.filter(el => el.category === "Fruits")
-    }
-    else if (filter === 'Bakery') {
-      return product.filter(el => el.category === 'Bakery');
-    }
-    else if (filter === "Vegetables") {
-      return product.filter(el => el.category === "Vegetables")
-    }
-    else {
+    } else if (filter === "Snacks") {
+      return product.filter((el) => el.category === "Snacks");
+    } else if (filter === "Fruits") {
+      return product.filter((el) => el.category === "Fruits");
+    } else if (filter === "Bakery") {
+      return product.filter((el) => el.category === "Bakery");
+    } else if (filter === "Vegetables") {
+      return product.filter((el) => el.category === "Vegetables");
+    } else {
       return [];
     }
   };
 
   const filteredProducts = getFilteredProducts();
   const handleclick = (id) => {
-    console.log(id)
+    console.log(id);
 
-    nav(`/${id}`)
-  }
-
+    nav(`/${id}`);
+  };
 
   var settings = {
     dots: true,
@@ -330,7 +333,10 @@ const Home = () => {
     );
     const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-    document.getElementById("months").innerText = String(months).padStart(2, "0");
+    document.getElementById("months").innerText = String(months).padStart(
+      2,
+      "0"
+    );
     document.getElementById("days").innerText = String(days).padStart(2, "0");
     document.getElementById("hours").innerText = String(hours).padStart(2, "0");
     document.getElementById("minutes").innerText = String(minutes).padStart(
@@ -347,7 +353,6 @@ const Home = () => {
 
   return (
     <>
-
       <div className="slider-1">
         <Carousel data-bs-theme="dark">
           <Carousel.Item>
@@ -501,7 +506,7 @@ const Home = () => {
         <Tabs
           defaultValue={0}
           orientation="vertical"
-        // style={{ flexWrap: "wrap" }}
+          // style={{ flexWrap: "wrap" }}
         >
           <TabsList className="tabs-list col-lg-4 col-sm-12 col-12">
             <Tab>
@@ -1560,8 +1565,8 @@ const Home = () => {
                 <img src="./image/logo.png" alt="Logo" className="img-fluid" />
                 <div style={{ color: "rgb(122, 122, 122)" }}>
                   <p>
-                    Carrot is the biggest market of grocery products. Get your daily
-                    needs from our store.
+                    Carrot is the biggest market of grocery products. Get your
+                    daily needs from our store.
                   </p>
                   <div className="d-flex align-items-center mb-2">
                     <i
@@ -1569,7 +1574,8 @@ const Home = () => {
                       style={{ color: "#64b496", marginRight: "8px" }}
                     ></i>
                     <p>
-                      51 Green St.Huntington ohaio beach ontario, NY 11746 KY 4783, USA.
+                      51 Green St.Huntington ohaio beach ontario, NY 11746 KY
+                      4783, USA.
                     </p>
                   </div>
                   <div className="d-flex align-items-center mb-2">
@@ -1613,7 +1619,12 @@ const Home = () => {
               <div className="col-lg-4 col-md-6">
                 <b>Subscribe Our Newsletter</b>
                 <div className="input-container mt-3 d-flex">
-                  <input required placeholder="Email Address" type="email" className="form-control" />
+                  <input
+                    required
+                    placeholder="Email Address"
+                    type="email"
+                    className="form-control"
+                  />
                   <button className="btn invite-btn" type="button">
                     <i className="fa-regular fa-paper-plane"></i>
                   </button>
@@ -1663,7 +1674,6 @@ const Home = () => {
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
@@ -1673,86 +1683,130 @@ const Home = () => {
             <div className="side-1 col-xl-10 col-lg-7 col-sm-5 col-12">
               <div className="row">
                 <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
-                  <div className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border" onClick={() => buttonClick("All")}>
+                  <div
+                    className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border"
+                    onClick={() => buttonClick("All")}
+                  >
                     <span>All</span>
-                    <i className="fa-solid fa-arrow-right" style={{ color: "black" }}></i>
+                    <i
+                      className="fa-solid fa-arrow-right"
+                      style={{ color: "black" }}
+                    ></i>
                   </div>
                 </div>
 
                 <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
-                  <div className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border" onClick={() => buttonClick("Bakery")}>
+                  <div
+                    className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border"
+                    onClick={() => buttonClick("Bakery")}
+                  >
                     <span>Bakery</span>
-                    <i className="fa-solid fa-arrow-right" style={{ color: "black" }}></i>
+                    <i
+                      className="fa-solid fa-arrow-right"
+                      style={{ color: "black" }}
+                    ></i>
                   </div>
                 </div>
 
                 <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
-                  <div className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border" onClick={() => buttonClick("Snacks")}>
+                  <div
+                    className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border"
+                    onClick={() => buttonClick("Snacks")}
+                  >
                     <span>Snacks</span>
-                    <i className="fa-solid fa-arrow-right" style={{ color: "black" }}></i>
+                    <i
+                      className="fa-solid fa-arrow-right"
+                      style={{ color: "black" }}
+                    ></i>
                   </div>
                 </div>
 
                 <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
-                  <div className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border" onClick={() => buttonClick("Vegetables")}>
+                  <div
+                    className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border"
+                    onClick={() => buttonClick("Vegetables")}
+                  >
                     <span>Vegetable</span>
-                    <i className="fa-solid fa-arrow-right" style={{ color: "black" }}></i>
+                    <i
+                      className="fa-solid fa-arrow-right"
+                      style={{ color: "black" }}
+                    ></i>
                   </div>
                 </div>
 
                 <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
-                  <div className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border" onClick={() => buttonClick("Fruits")}>
+                  <div
+                    className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border"
+                    onClick={() => buttonClick("Fruits")}
+                  >
                     <span>Fruits</span>
-                    <i className="fa-solid fa-arrow-right" style={{ color: "black" }}></i>
+                    <i
+                      className="fa-solid fa-arrow-right"
+                      style={{ color: "black" }}
+                    ></i>
                   </div>
                 </div>
-
               </div>
             </div>
             <div className="side-2 col-xxl-12 col-xl-12 col-lg-5 col-sm-6 col-6">
               <div className="side-2-sub">
                 <div className="side-2-sub-text p-3 py-5 ">
-                  <span className="text-light" style={{ fontSize: "35px" }}>Juicy</span>
-                  <span className="fs-2 mt-1" style={{ textTransform: "uppercase", color: "rgb(247 232 170 /1)", fontWeight: "800" }}>Fruits</span>
-                  <span className="text-light" style={{ fontSize: "14px" }}>100% Natural</span>
+                  <span className="text-light" style={{ fontSize: "35px" }}>
+                    Juicy
+                  </span>
+                  <span
+                    className="fs-2 mt-1"
+                    style={{
+                      textTransform: "uppercase",
+                      color: "rgb(247 232 170 /1)",
+                      fontWeight: "800",
+                    }}
+                  >
+                    Fruits
+                  </span>
+                  <span className="text-light" style={{ fontSize: "14px" }}>
+                    100% Natural
+                  </span>
                   <button className="btn btn-success mt-1">Shop Now</button>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
-       
+
         <div className="col-xl-6">
           <div className="button-content">
-
-
             {filteredProducts.map((el) => (
-               <Card id="card-product">
-               <Card.Img variant="top" src={el.image} id="image-id" />
-               <div id="shop">
-                 <i className="fa-solid fa-bag-shopping"></i>
-               </div>
-               <div id="product-icon">
-                 <i className="fa-regular fa-eye p-3"></i>
-                 <i className="fa-regular fa-heart p-3"></i>
-               </div>
-               <Card.Body id="card-body-1">
-                 <Card.Title>{el.title || 'Card Title'}</Card.Title>
-                 <Card.Text>{el.description || 'Description goes here.'}</Card.Text>
-                 <Button variant="primary">Go somewhere</Button>
-               </Card.Body>
-             </Card>
+              <Card id="card-product">
+      <Card.Img
+        variant="top"
+        src={el.image}
+        id="image-id"
+        className="MagicZoom"
+        data-options="zoomPosition: inner"
+      />
 
+
+                <div id="shop">
+                  <i className="fa-solid fa-bag-shopping"></i>
+                </div>
+                <div id="product-icon">
+                  <i className="fa-regular fa-eye p-3"></i>
+                  <i className="fa-regular fa-heart p-3"></i>
+                </div>
+                <Card.Body id="card-body-1">
+                  <Card.Title>{el.title || "Card Title"}</Card.Title>
+                  <Card.Text>
+                    {el.description || "Description goes here."}
+                  </Card.Text>
+                  <Button variant="primary">Go somewhere</Button>
+                </Card.Body>
+              </Card>
             ))}
           </div>
-
-
         </div>
-
       </div>
-
     </>
   );
-}
+};
 export default Home;

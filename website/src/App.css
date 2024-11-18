@@ -1395,6 +1395,7 @@ article div h1 {
 .button-content{
   height: auto;
   width: 100%;
+  transition: 3s;
   border: 1px solid red;
 }
 
@@ -1402,6 +1403,7 @@ article div h1 {
 #card-product {
   position: relative;
   width: 18rem;
+  transition: 3s;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
@@ -1443,14 +1445,15 @@ article div h1 {
   height: auto;
   width: fit-content;
   display: flex;
-  gap: 10px;
+  /* gap: 10px; */
   position: absolute;
-  top: 30%;
+  top: 18%;
   right: 10%;
   background: rgba(255, 255, 255, 0.9);
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  flex-direction: column;
 }
 
 #product-icon i {
