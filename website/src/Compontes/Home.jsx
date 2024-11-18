@@ -8,6 +8,7 @@ import { TabsList as BaseTabsList } from "@mui/base/TabsList";
 import { TabPanel as BaseTabPanel } from "@mui/base/TabPanel";
 import { buttonClasses } from "@mui/base/Button";
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 import { Tab as BaseTab, tabClasses } from "@mui/base/Tab";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -1721,15 +1722,30 @@ const Home = () => {
 
           </div>
         </div>
-
+       
         <div className="col-xl-6">
-        <div className="button-content">
-  {filteredProducts.map((el) => (
-    <div className="card" key={el.id}>
-      <img src={el.image} alt="alt" />
-    </div>
-  ))}
-</div>
+          <div className="button-content">
+
+
+            {filteredProducts.map((el) => (
+               <Card id="card-product">
+               <Card.Img variant="top" src={el.image} id="image-id" />
+               <div id="shop">
+                 <i className="fa-solid fa-bag-shopping"></i>
+               </div>
+               <div id="product-icon">
+                 <i className="fa-regular fa-eye p-3"></i>
+                 <i className="fa-regular fa-heart p-3"></i>
+               </div>
+               <Card.Body id="card-body-1">
+                 <Card.Title>{el.title || 'Card Title'}</Card.Title>
+                 <Card.Text>{el.description || 'Description goes here.'}</Card.Text>
+                 <Button variant="primary">Go somewhere</Button>
+               </Card.Body>
+             </Card>
+
+            ))}
+          </div>
 
 
         </div>

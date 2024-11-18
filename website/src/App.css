@@ -1386,17 +1386,95 @@ article div h1 {
  }
  .arr{
    padding: 15px;
-   border-radius: 20px;
+   border-radius: 17px;
    display: flex;
    justify-content: space-between;
    align-items: center;
-  /* background-color: rgb(233 233 233 / 1); */
+  background-color: rgb(233 233 233 / 1);
  }
 .button-content{
   height: auto;
   width: 100%;
   border: 1px solid red;
 }
+
+/* Main card container */
+#card-product {
+  position: relative;
+  width: 18rem;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+/* Image styling */
+#image-id {
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Shop icon styling */
+#shop {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 1;
+  margin: -45px auto 0 auto;
+  background: rgba(247, 247, 248, 0.8);
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Product icons hidden by default */
+#product-icon {
+  display: none;
+}
+
+/* Show icons on hover */
+#card-product:hover #product-icon {
+  height: auto;
+  width: fit-content;
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 30%;
+  right: 10%;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+#product-icon i {
+  cursor: pointer;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+#product-icon i:hover {
+  color: red;
+}
+
+/* Card body */
+#card-body-1 {
+  margin: 10% 0;
+  text-align: center;
+}
+
+#card-body-1 .btn {
+  margin-top: 10px;
+}
+
+
+
 @media (max-width:2000px) {
   .t{
     height: auto;
@@ -1640,7 +1718,7 @@ article div h1 {
     width: 100%;
   }
   .slick-slide.slick-active.slick-current{
-    width: 88vw !important;
+    width: 86vw !important;
     margin: 30px;
   }
   .countdown{
@@ -1705,11 +1783,19 @@ article div h1 {
   .side-2{
     display: none;
   }
+  /* .slick-slide.slick-cloned{
+    width: 400px !important;
+    margin: auto !important;
+  } */
+  
 }
 @media (max-width:300px)
 {
   #card-img-icon{
     top: 46%;
     left: 46%;
+  }
+  .slick-slide.slick-cloned{
+    width: 310px;
   }
 }
