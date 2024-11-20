@@ -19,10 +19,9 @@ import { product_action } from "../Redux/action";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-
   useEffect(() => {
     // Initialize MagicZoom with the options after the component mounts
-    if (typeof window !== 'undefined' && window.MagicZoom) {
+    if (typeof window !== "undefined" && window.MagicZoom) {
       // Initialize MagicZoom with your custom options
       window.MagicZoom.options = mzOptions;
     }
@@ -1778,14 +1777,14 @@ const Home = () => {
           <div className="button-content">
             {filteredProducts.map((el) => (
               <Card id="card-product">
-      <Card.Img
-        variant="top"
-        src={el.image}
-        id="image-id"
-        className="MagicZoom"
-        data-options="zoomPosition: inner"
-      />
-
+                <a href="" className="MagicZoom" data-options="zoomPosition: inner;">
+                  <Card.Img
+                    variant="top"
+                    src={el.image}
+                    id="image-id"
+                    
+                  />
+                </a>
 
                 <div id="shop">
                   <i className="fa-solid fa-bag-shopping"></i>

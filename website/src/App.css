@@ -620,11 +620,11 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
   flex-wrap: wrap;
 }
 
-.card:hover {
+/* .card:hover {
   filter: brightness(0.9);
 
   transition: all 0.3s ease; 
-}
+} */
 
 .car {
   height: 70vh !important;
@@ -1441,11 +1441,10 @@ article div h1 {
 }
 
 /* Show icons on hover */
-#card-product:hover #product-icon {
+/* #card-product:hover #product-icon {
   height: auto;
   width: fit-content;
   display: flex;
-  /* gap: 10px; */
   position: absolute;
   top: 18%;
   right: 10%;
@@ -1454,7 +1453,7 @@ article div h1 {
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   flex-direction: column;
-}
+} */
 
 #product-icon i {
   cursor: pointer;
