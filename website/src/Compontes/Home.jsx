@@ -14,22 +14,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import Slider from "react-slick";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { product_action } from "../Redux/action";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  useEffect(() => {
-    // Initialize MagicZoom with the options after the component mounts
-    if (typeof window !== "undefined" && window.MagicZoom) {
-      // Initialize MagicZoom with your custom options
-      window.MagicZoom.options = mzOptions;
-    }
-  }, []);
-
-  const mzOptions = {
-    zoomPosition: "inner",
-  };
+ // Run only once on mount
 
   const dispatch = useDispatch();
   const product = useSelector((state) => state.product.data);
@@ -64,6 +54,33 @@ const Home = () => {
   };
 
   const filteredProducts = getFilteredProducts();
+  useLayoutEffect(() => {
+    const containers = document.querySelectorAll(".image-container")
+
+    containers.forEach((container) => {
+      const img = container.querySelector("img");
+
+      if (img) {
+        const handleMouseMove = (e) => {
+          const { left, top, width, height } = container.getBoundingClientRect();
+          const x = ((e.clientX - left) / width) * 100;
+          const y = ((e.clientY - top) / height) * 100;
+
+          img.style.transformOrigin = `${x}% ${y}%`;
+          img.style.transform = "scale(3)"; // Zoom scale
+        };
+
+        const handleMouseLeave = () => {
+          img.style.transformOrigin = "center";
+          img.style.transform = "scale(1)";
+        };
+
+        // Attach event listeners
+        container.addEventListener("mousemove", handleMouseMove);
+        container.addEventListener("mouseleave", handleMouseLeave);
+      }
+    });
+  }, [filteredProducts]); 
   const handleclick = (id) => {
     console.log(id);
 
@@ -1774,35 +1791,29 @@ const Home = () => {
         </div>
 
         <div className="col-xl-6">
-          <div className="button-content">
-            {filteredProducts.map((el) => (
-              <Card id="card-product">
-                <a href="" className="MagicZoom" data-options="zoomPosition: inner;">
-                  <Card.Img
-                    variant="top"
-                    src={el.image}
-                    id="image-id"
-                    
-                  />
-                </a>
+        <div className="button-content">
+  {filteredProducts.map((el, index) => (
+    <Card id="card-product" key={index}>
+      <div className="image-container">
+        <Card.Img variant="top" alt="image" src={el.image} className="zoom-image" />
+      </div>
 
-                <div id="shop">
-                  <i className="fa-solid fa-bag-shopping"></i>
-                </div>
-                <div id="product-icon">
-                  <i className="fa-regular fa-eye p-3"></i>
-                  <i className="fa-regular fa-heart p-3"></i>
-                </div>
-                <Card.Body id="card-body-1">
-                  <Card.Title>{el.title || "Card Title"}</Card.Title>
-                  <Card.Text>
-                    {el.description || "Description goes here."}
-                  </Card.Text>
-                  <Button variant="primary">Go somewhere</Button>
-                </Card.Body>
-              </Card>
-            ))}
-          </div>
+      <div id="shop">
+        <i className="fa-solid fa-bag-shopping"></i>
+      </div>
+      <div id="product-icon">
+        <i className="fa-regular fa-eye p-3"></i>
+        <i className="fa-regular fa-heart p-3"></i>
+      </div>
+      <Card.Body id="card-body-1">
+        <Card.Title>{el.title || "Card Title"}</Card.Title>
+        <Card.Text>{el.description || "Description goes here."}</Card.Text>
+        <Button variant="primary">Go somewhere</Button>
+      </Card.Body>
+    </Card>
+  ))}
+</div>
+
         </div>
       </div>
     </>
