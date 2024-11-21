@@ -71,11 +71,14 @@ const Home = () => {
         };
 
         const handleMouseLeave = () => {
-          img.style.transformOrigin = "center";
+          // img.style.transformOrigin = "center";
           img.style.transform = "scale(1)";
+          img.style.height = "100%"
+          img.style.width = "100%"
+          img.style.position ="absolute"
         };
 
-        // Attach event listeners
+       
         container.addEventListener("mousemove", handleMouseMove);
         container.addEventListener("mouseleave", handleMouseLeave);
       }
@@ -1241,6 +1244,130 @@ const Home = () => {
         </div>
       </div>
 
+      <div className="row fruits">
+        <div className="col-xl-4 col-12">
+          <div className="side col-xl-12 col-lg-10 col-12">
+            <div className="side-1 col-xl-10 col-lg-7 col-sm-5 col-12">
+              <div className="row">
+                <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
+                  <div
+                    className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border"
+                    onClick={() => buttonClick("All")}
+                  >
+                    <span>All</span>
+                    <i
+                      className="fa-solid fa-arrow-right"
+                      style={{ color: "black" }}
+                    ></i>
+                  </div>
+                </div>
+
+                <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
+                  <div
+                    className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border"
+                    onClick={() => buttonClick("Bakery")}
+                  >
+                    <span>Bakery</span>
+                    <i
+                      className="fa-solid fa-arrow-right"
+                      style={{ color: "black" }}
+                    ></i>
+                  </div>
+                </div>
+
+                <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
+                  <div
+                    className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border"
+                    onClick={() => buttonClick("Snacks")}
+                  >
+                    <span>Snacks</span>
+                    <i
+                      className="fa-solid fa-arrow-right"
+                      style={{ color: "black" }}
+                    ></i>
+                  </div>
+                </div>
+
+                <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
+                  <div
+                    className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border"
+                    onClick={() => buttonClick("Vegetables")}
+                  >
+                    <span>Vegetable</span>
+                    <i
+                      className="fa-solid fa-arrow-right"
+                      style={{ color: "black" }}
+                    ></i>
+                  </div>
+                </div>
+
+                <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
+                  <div
+                    className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border"
+                    onClick={() => buttonClick("Fruits")}
+                  >
+                    <span>Fruits</span>
+                    <i
+                      className="fa-solid fa-arrow-right"
+                      style={{ color: "black" }}
+                    ></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="side-2 col-xxl-12 col-xl-12 col-lg-5 col-sm-6 col-6">
+              <div className="side-2-sub">
+                <div className="side-2-sub-text p-3 py-5 ">
+                  <span className="text-light" style={{ fontSize: "35px" }}>
+                    Juicy
+                  </span>
+                  <span
+                    className="fs-2 mt-1"
+                    style={{
+                      textTransform: "uppercase",
+                      color: "rgb(247 232 170 /1)",
+                      fontWeight: "800",
+                    }}
+                  >
+                    Fruits
+                  </span>
+                  <span className="text-light" style={{ fontSize: "14px" }}>
+                    100% Natural
+                  </span>
+                  <button className="btn btn-success mt-1">Shop Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-xl-6">
+     <div className="button-content">
+  {filteredProducts.map((el, index) => (
+    <Card id="card-product" key={index}>
+      <div className="image-container">
+        <Card.Img variant="top" alt="image" src={el.image} className="zoom-image" />
+      </div>
+
+      <div id="shop">
+        <i className="fa-solid fa-bag-shopping"></i>
+      </div>
+      <div id="product-icon">
+        <i className="fa-regular fa-eye p-3"></i>
+        <i className="fa-regular fa-heart p-3"></i>
+      </div>
+      <Card.Body id="card-body-1">
+        <Card.Title style={{fontSize:"15px",color:"rgb(119 119 119 / 1)"}}>{el.category || "Card Title"}</Card.Title>
+        <Card.Text >{el.description || "Description goes here."}</Card.Text>
+        <Card.Text style={{padding:"10px",color:"rgb(100 180 150 / 1)",fontWeight:"800"}}> ${el.price}</Card.Text>
+    
+      </Card.Body>
+    </Card>
+  ))}
+</div>
+
+        </div>
+      </div>
       <div className="food">
         <div className="col-xxl-5 m-5">
           <div
@@ -1693,129 +1820,6 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="row fruits">
-        <div className="col-xl-4 col-12">
-          <div className="side col-xl-12 col-lg-10 col-12">
-            <div className="side-1 col-xl-10 col-lg-7 col-sm-5 col-12">
-              <div className="row">
-                <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
-                  <div
-                    className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border"
-                    onClick={() => buttonClick("All")}
-                  >
-                    <span>All</span>
-                    <i
-                      className="fa-solid fa-arrow-right"
-                      style={{ color: "black" }}
-                    ></i>
-                  </div>
-                </div>
-
-                <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
-                  <div
-                    className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border"
-                    onClick={() => buttonClick("Bakery")}
-                  >
-                    <span>Bakery</span>
-                    <i
-                      className="fa-solid fa-arrow-right"
-                      style={{ color: "black" }}
-                    ></i>
-                  </div>
-                </div>
-
-                <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
-                  <div
-                    className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border"
-                    onClick={() => buttonClick("Snacks")}
-                  >
-                    <span>Snacks</span>
-                    <i
-                      className="fa-solid fa-arrow-right"
-                      style={{ color: "black" }}
-                    ></i>
-                  </div>
-                </div>
-
-                <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
-                  <div
-                    className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border"
-                    onClick={() => buttonClick("Vegetables")}
-                  >
-                    <span>Vegetable</span>
-                    <i
-                      className="fa-solid fa-arrow-right"
-                      style={{ color: "black" }}
-                    ></i>
-                  </div>
-                </div>
-
-                <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
-                  <div
-                    className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border"
-                    onClick={() => buttonClick("Fruits")}
-                  >
-                    <span>Fruits</span>
-                    <i
-                      className="fa-solid fa-arrow-right"
-                      style={{ color: "black" }}
-                    ></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="side-2 col-xxl-12 col-xl-12 col-lg-5 col-sm-6 col-6">
-              <div className="side-2-sub">
-                <div className="side-2-sub-text p-3 py-5 ">
-                  <span className="text-light" style={{ fontSize: "35px" }}>
-                    Juicy
-                  </span>
-                  <span
-                    className="fs-2 mt-1"
-                    style={{
-                      textTransform: "uppercase",
-                      color: "rgb(247 232 170 /1)",
-                      fontWeight: "800",
-                    }}
-                  >
-                    Fruits
-                  </span>
-                  <span className="text-light" style={{ fontSize: "14px" }}>
-                    100% Natural
-                  </span>
-                  <button className="btn btn-success mt-1">Shop Now</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="col-xl-6">
-        <div className="button-content">
-  {filteredProducts.map((el, index) => (
-    <Card id="card-product" key={index}>
-      <div className="image-container">
-        <Card.Img variant="top" alt="image" src={el.image} className="zoom-image" />
-      </div>
-
-      <div id="shop">
-        <i className="fa-solid fa-bag-shopping"></i>
-      </div>
-      <div id="product-icon">
-        <i className="fa-regular fa-eye p-3"></i>
-        <i className="fa-regular fa-heart p-3"></i>
-      </div>
-      <Card.Body id="card-body-1">
-        <Card.Title>{el.title || "Card Title"}</Card.Title>
-        <Card.Text>{el.description || "Description goes here."}</Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card>
-  ))}
-</div>
-
-        </div>
-      </div>
     </>
   );
 };
