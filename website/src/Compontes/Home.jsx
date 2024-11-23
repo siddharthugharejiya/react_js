@@ -71,7 +71,7 @@ const Home = () => {
         };
 
         const handleMouseLeave = () => {
-          // img.style.transformOrigin = "center";
+       
           img.style.transform = "scale(1)";
           img.style.height = "100%"
           img.style.width = "100%"
@@ -1246,8 +1246,8 @@ const Home = () => {
 
       <div className="row fruits">
         <div className="col-xl-4 col-12">
-          <div className="side col-xl-12 col-lg-10 col-12">
-            <div className="side-1 col-xl-10 col-lg-7 col-sm-5 col-12">
+          <div className="side col-xl-12 col-lg-12 col-md-12 col-12">
+            <div className="side-1 col-xl-9 col-lg-6 col-md-5 col-sm-5 col-12">
               <div className="row">
                 <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
                   <div
@@ -1318,11 +1318,11 @@ const Home = () => {
             <div className="side-2 col-xxl-12 col-xl-12 col-lg-5 col-sm-6 col-6">
               <div className="side-2-sub">
                 <div className="side-2-sub-text p-3 py-5 ">
-                  <span className="text-light" style={{ fontSize: "35px" }}>
+                  <span className="text-light" style={{ fontSize: "40px" }}>
                     Juicy
                   </span>
                   <span
-                    className="fs-2 mt-1"
+                    className="fs-1 mt-1"
                     style={{
                       textTransform: "uppercase",
                       color: "rgb(247 232 170 /1)",
@@ -1331,18 +1331,21 @@ const Home = () => {
                   >
                     Fruits
                   </span>
-                  <span className="text-light" style={{ fontSize: "14px" }}>
+                  <span className="text-light" style={{ fontSize: "17px" }}>
                     100% Natural
                   </span>
+                  <span>
+
                   <button className="btn btn-success mt-1">Shop Now</button>
+                  </span>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="col-xl-6">
-     <div className="button-content">
+        <div className="col-xl-8">
+     <div className="card-content">
   {filteredProducts.map((el, index) => (
     <Card id="card-product" key={index}>
       <div className="image-container">
@@ -1353,11 +1356,12 @@ const Home = () => {
         <i className="fa-solid fa-bag-shopping"></i>
       </div>
       <div id="product-icon">
-        <i className="fa-regular fa-eye p-3"></i>
-        <i className="fa-regular fa-heart p-3"></i>
+        <i className="fa-regular fa-eye p-3" id="product-icon-1"></i>
+        <i className="fa-regular fa-heart p-3" id="product-icon-1"></i>
       </div>
       <Card.Body id="card-body-1">
         <Card.Title style={{fontSize:"15px",color:"rgb(119 119 119 / 1)"}}>{el.category || "Card Title"}</Card.Title>
+        <Card.Text><i className="fa-regular fa-star" style={{color : "orange"}}></i> <i className="fa-regular fa-star" style={{color : "orange"}}></i> <i className="fa-regular fa-star" style={{color : "orange"}}></i><i className="fa-regular fa-star" style={{color : "orange"}}></i><i className="fa-regular fa-star" style={{color : "orange"}}></i></Card.Text>
         <Card.Text >{el.description || "Description goes here."}</Card.Text>
         <Card.Text style={{padding:"10px",color:"rgb(100 180 150 / 1)",fontWeight:"800"}}> ${el.price}</Card.Text>
     

@@ -123,7 +123,7 @@ function Navbar_1() {
         </div>
 
         <Container className="d-flex flex-wrap justify-content-between align-items-center bb" >
-      <div className="col-3 col-lg-1 d-flex " style={{margin:"-20px"}} id="hide">
+      <div className="col-3 col-lg-1 d-flex " style={{margin:"-100px"}} id="hide">
         <div className="paste-button">
           <button className="button" style={{ fontWeight: 500 }}>
             <i
@@ -131,7 +131,7 @@ function Navbar_1() {
               style={{ borderRadius: "4px" }}
             ></i>
           </button>
-          <div className="dropdown-content">
+          <div className="dropdown-content content-written">
             <div className="container">
               <div className="navbar-section">
                 <div className="tabs">
@@ -170,7 +170,7 @@ function Navbar_1() {
       </div>
 
  
-      <div className="col-12 col-lg-8 col-xl-6 drop">
+      <div className="col-12 col-lg-8 col-xl-7 drop">
         <nav className="nav2 d-flex justify-content-center">
           <ul className="d-flex justify-content-between">
             <li>
@@ -185,9 +185,7 @@ function Navbar_1() {
                   <a id="middle" href="#">
                    Fashion
                   </a>
-                  {/* <a id="bottom" href="#">
-                    Keep text only
-                  </a> */}
+             
                 </div>
               </div>
             </li>

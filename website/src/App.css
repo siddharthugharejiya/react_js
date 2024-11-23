@@ -172,13 +172,16 @@ i {
 
 .paste-button .dropdown-content {
   display: none;
-  top: 47px;
+  top: 46px;
   border-radius: 10px;
   position: absolute;
   background-color: white;
   min-width: 150px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
+}
+.content-written{
+  top: 45px !important;
 }
 
 .paste-button .dropdown-content a {
@@ -1343,7 +1346,7 @@ article div h1 {
  .fruits{
   height: auto;
   width: 100%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
  }
  .side{
   height: auto;
@@ -1381,6 +1384,7 @@ article div h1 {
    height: auto;
    display: flex;
    flex-wrap: wrap;
+   flex-direction: column;
   font-size: 20px;
 
  }
@@ -1396,7 +1400,7 @@ article div h1 {
   height: auto;
   width: 100%;
   transition: 3s;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 /* Main card container */
@@ -1405,24 +1409,26 @@ article div h1 {
   width: 16rem;
   transition: 3s;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 10px auto ;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .image-container {
   position: relative;
-  width: 100%;
-  height: 300px !important;
+  width: 90%;
+  height: 200px !important;
   overflow: hidden;
-  border: 1px solid red;
-  margin: 0 auto;
+  /* border: 1px solid red; */
+  border-radius: 10px;
+  margin: 10px auto;
 }
 
 .image-container img {
 
-  padding: 20px;
+  /* padding: 20px; */
   position: relative;
-  border-radius: 10px 10px 0 0;
+  /* border-radius: 10px 10px 0 0; */
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -1434,10 +1440,19 @@ article div h1 {
 .zoom-image{
   height: 100%; 
   width: 100%;
-  padding: 20px;
+  /* padding: 20px; */
   overflow: hidden;
 
-  border: 1px solid red;
+  /* border: 1px solid red; */
+}
+.card-content{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.card-text{
+  margin-bottom: 0px !important;
 }
 /* Shop icon styling */
 #shop {
@@ -1467,17 +1482,17 @@ article div h1 {
   position: absolute;
   top: 18%;
   right: 10%;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
   flex-direction: column;
 }
-
-#product-icon i {
-  cursor: pointer;
-  color: #555;
-  transition: color 0.3s ease;
+#product-icon-1{
+  padding: 4px;
+  border-radius: 20px;
+  margin: 3px 0;
+  /* background-color: black; */
+  /* background: rgb(247, 247, 248); */
+  font-size: 14px;
+  background-color: rgb(255 255 255 / 1);
 }
 
 /* #product-icon i:hover {
@@ -1493,7 +1508,10 @@ article div h1 {
 #card-body-1 .btn {
   margin-top: 10px;
 }
-
+i.fa-solid.fa-bag-shopping{
+  margin: auto;
+ color:  rgb(100 180 150 / 1)
+}
 
 
 @media (max-width:2000px) {
@@ -1547,6 +1565,9 @@ article div h1 {
   }
   .side-2{
     height: 110vh;
+  }
+  .side-2-sub{
+    height: 75%;
   }
 }
 @media (max-width:1200px)
@@ -1606,6 +1627,9 @@ article div h1 {
   }
   .side-2{
     height: 94vh;
+  }
+  .side-2-sub{
+    height: 70%;
   }
 }
 @media (max-width: 768px) {
