@@ -123,7 +123,7 @@ function Navbar_1() {
         </div>
 
         <Container className="d-flex flex-wrap justify-content-between align-items-center bb" >
-      <div className="col-3 col-lg-1 d-flex " style={{margin:"-100px"}} id="hide">
+      <div className="col-3 col-lg-1 d-flex " style={{margin:"-40px"}} id="hide">
         <div className="paste-button">
           <button className="button" style={{ fontWeight: 500 }}>
             <i

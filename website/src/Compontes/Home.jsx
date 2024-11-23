@@ -8,7 +8,7 @@ import { TabsList as BaseTabsList } from "@mui/base/TabsList";
 import { TabPanel as BaseTabPanel } from "@mui/base/TabPanel";
 import { buttonClasses } from "@mui/base/Button";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
 import { Tab as BaseTab, tabClasses } from "@mui/base/Tab";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -325,13 +325,13 @@ const Home = () => {
     box-shadow: 0px 4px 8px
       ${(props) => (props === "dark" ? grey[900] : grey[200])};
   `;
-
   function updateCountdown() {
     const targetDate = new Date("2025-01-01T00:00:00");
     const now = new Date();
     const timeDifference = targetDate - now;
-
+  
     if (timeDifference <= 0) {
+      // Set all countdown values to 00 when the target date is reached or passed
       document.getElementById("months").innerText = "00";
       document.getElementById("days").innerText = "00";
       document.getElementById("hours").innerText = "00";
@@ -339,7 +339,8 @@ const Home = () => {
       document.getElementById("seconds").innerText = "00";
       return;
     }
-
+  
+    // Calculate time remaining
     const months = Math.floor(timeDifference / (1000 * 60 * 60 * 24 * 30));
     const days = Math.floor(
       (timeDifference % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24)
@@ -351,24 +352,20 @@ const Home = () => {
       (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
     );
     const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-    document.getElementById("months").innerText = String(months).padStart(
-      2,
-      "0"
-    );
+  
+    // Update the countdown elements
+    document.getElementById("months").innerText = String(months).padStart(2, "0");
     document.getElementById("days").innerText = String(days).padStart(2, "0");
     document.getElementById("hours").innerText = String(hours).padStart(2, "0");
-    document.getElementById("minutes").innerText = String(minutes).padStart(
-      2,
-      "0"
-    );
-    document.getElementById("seconds").innerText = String(seconds).padStart(
-      2,
-      "0"
-    );
+    document.getElementById("minutes").innerText = String(minutes).padStart(2, "0");
+    document.getElementById("seconds").innerText = String(seconds).padStart(2, "0");
   }
-
+  
+  // Update the countdown every second
   setInterval(updateCountdown, 1000);
+  
+
+
 
   return (
     <>
@@ -1244,7 +1241,21 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="row fruits">
+      <div className="row fruits aos-init aos-animate" data-aos="fade-up">
+      <div className="col-xxl-12 d-flex justify-content-center mt-3">
+          <div className="bottom-text d-flex justify-content-center flex-column align-items-center">
+            <h1>Popular Products</h1>
+            <div className="d-flex justify-content-center">
+              <p
+                className="text-center"
+                style={{ color: "rgb(122 122 122 / 1", width: "70%" }}
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore lacus vel facilisis.
+              </p>
+            </div>
+          </div>
+        </div>
         <div className="col-xl-4 col-12">
           <div className="side col-xl-12 col-lg-12 col-md-12 col-12">
             <div className="side-1 col-xl-9 col-lg-6 col-md-5 col-sm-5 col-12">
@@ -1344,10 +1355,10 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="col-xl-8">
+        <div className="col-xl-8 aos-init aos-animate" data-aos="fade-up">
      <div className="card-content">
   {filteredProducts.map((el, index) => (
-    <Card id="card-product" key={index}>
+    <Card id="card-product" key={index} onClick={()=>handleclick(el.id)}>
       <div className="image-container">
         <Card.Img variant="top" alt="image" src={el.image} className="zoom-image" />
       </div>
@@ -1373,9 +1384,9 @@ const Home = () => {
         </div>
       </div>
       <div className="food">
-        <div className="col-xxl-5 m-5">
+        <div className="col-xxl-5 m-5 aos-init aos-animate" data-aos="fade-up">
           <div
-            className="food-count col-xxl-11  col-xl-6 col-lg-7 col-sm-8 col-12 "
+            className="food-count col-xxl-11  col-xl-6 col-lg-7 col-sm-8 col-12 aos-init aos-animate" data-aos="fade-up"
             style={{ display: "flex", flexWrap: "wrap" }}
           >
             <div className="col-12 d-flex">
@@ -1422,8 +1433,8 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="bottom-silder row mt-5">
-        <div className="col-xxl-12 d-flex justify-content-center">
+      <div className="bottom-silder row mt-5 aos-init aos-animate" data-aos="fade-up">
+        <div className="col-xxl-12 d-flex justify-content-center aos-init aos-animate" data-aos="fade-up">
           <div className="bottom-text d-flex justify-content-center flex-column align-items-center">
             <h1>Great Words From People</h1>
             <div className="d-flex justify-content-center">
@@ -1598,8 +1609,8 @@ const Home = () => {
         </Slider>
       </div>
 
-      <div className="latest-news">
-        <div className="col-xxl-12 d-flex justify-content-center">
+      <div className="latest-news aos-init aos-animate" data-aos="fade-up">
+        <div className="col-xxl-12 d-flex justify-content-center aos-init aos-animate" data-aos="fade-up">
           <div className="bottom-text d-flex justify-content-center flex-column align-items-center">
             <h1>Latest News</h1>
             <div className="d-flex justify-content-center">
@@ -1704,7 +1715,7 @@ const Home = () => {
         </Slider>
       </div>
 
-      <div className="footer">
+      <div className="footer aos-init aos-animate" data-aos="fade-up">
         <div className="container-fluid">
           <div className="container mt-5">
             <div className="row">

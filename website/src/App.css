@@ -7,7 +7,10 @@
 .row{
   --bs-gutter-x:0.rem !important;  
 }
-
+body{
+  scroll-behavior: smooth;
+  /* transition: ; */
+}
 
 
 
@@ -1058,7 +1061,7 @@ article div h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); */
 }
 
 /* Card Body Styling */
@@ -1512,6 +1515,7 @@ i.fa-solid.fa-bag-shopping{
   margin: auto;
  color:  rgb(100 180 150 / 1)
 }
+
 
 
 @media (max-width:2000px) {
