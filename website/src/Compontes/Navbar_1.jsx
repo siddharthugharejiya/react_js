@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import  { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 
 import Navbar from "react-bootstrap/Navbar";
@@ -6,7 +6,12 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";
 
 function Navbar_1() {
+  // const [isLoading, setIsLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState("Dairy & Bakery");
+  // useEffect(() => {
+  //   const timer = setTimeout(() => setIsLoading(false), 2000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   const categories = {
     "Dairy & Bakery": {
@@ -39,15 +44,18 @@ function Navbar_1() {
 
   return (
     <div className="container-fluid">
-      <Navbar expand="lg" className="flex-wrap">
+      {/* <Skeleton></Skeleton> */}
+      <Navbar expand="lg" className="flex-wrap" >
         <div id="con">
-          <Navbar.Brand as={Link} to={"/"}>
+        <Navbar.Brand as={Link} to={"/"}>
             <img
               src="./image/logo.png"
               className="img-fluid rounded-top"
               alt="Logo"
             />
           </Navbar.Brand>
+    
+        
 
           <div className="col-12 col-lg-4 col-md-7 col-sm-12 d-flex align-items-center">
             <input
@@ -123,7 +131,7 @@ function Navbar_1() {
         </div>
 
         <Container className="d-flex flex-wrap justify-content-between align-items-center bb" >
-      <div className="col-3 col-lg-1 d-flex " style={{margin:"-40px"}} id="hide">
+      <div className="col-3 col-lg-1 d-flex " style={{margin:"-15px"}} id="hide">
         <div className="paste-button">
           <button className="button" style={{ fontWeight: 500 }}>
             <i
@@ -170,7 +178,7 @@ function Navbar_1() {
       </div>
 
  
-      <div className="col-12 col-lg-8 col-xl-7 drop">
+      <div className="col-12 col-lg-8 col-xl-8 drop">
         <nav className="nav2 d-flex justify-content-center">
           <ul className="d-flex justify-content-between">
             <li>

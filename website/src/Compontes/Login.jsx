@@ -31,7 +31,7 @@ const Login = () => {
     };
 
     return (
-        <div className='d-flex justify-content-center align-items-center vh-100'>
+        <div className='d-flex justify-content-center align-items-center vh-95'>
             <Form className='border border-1 p-4 p-md-5' style={{ width: "90%", maxWidth: "500px" }} onSubmit={submit}>
                 <Row className="justify-content-center align-items-center">
                     <Col xs={6} className="mb-4 d-flex justify-content-center align-items-center">

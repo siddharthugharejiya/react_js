@@ -175,7 +175,7 @@ i {
 
 .paste-button .dropdown-content {
   display: none;
-  top: 46px;
+  top: 45px !important;
   border-radius: 10px;
   position: absolute;
   background-color: white;
@@ -1063,6 +1063,11 @@ article div h1 {
   align-items: center;
   /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); */
 }
+.css-1sm2a48{
+  box-shadow: none !important;
+  border: none !important;
+}
+/* .css-1sm2a48 */
 
 /* Card Body Styling */
 #card-body {
@@ -1506,6 +1511,7 @@ article div h1 {
 #card-body-1 {
   /* margin: 10% 0; */
   text-align: center;
+  cursor: pointer;
 }
 
 #card-body-1 .btn {
@@ -1516,6 +1522,34 @@ i.fa-solid.fa-bag-shopping{
  color:  rgb(100 180 150 / 1)
 }
 
+.cate{
+  height: 100vh;
+  width: 100%;
+  border: 1px solid red;
+  background-color: rgb(247 247 248 / 1);
+}
+
+/* margin-bottom: 10px; */
+.cate-sub{
+  height: 200px;
+  width: 100%;
+  margin: auto;
+  border: 1px solid red;
+}
+.bbb{
+  font-size: 20px;
+  color: rgb(21 21 31);
+  border-bottom: 2px solid rgb(233 233 233 / 1);
+}
+.dair{
+  height: auto;
+  width: 100%;
+  display: flex;
+  margin: 3px 0;
+  justify-content:space-around;
+  align-items: center;
+  border : 1px solid red;
+}
 
 
 @media (max-width:2000px) {

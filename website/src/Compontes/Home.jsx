@@ -8,6 +8,9 @@ import { TabsList as BaseTabsList } from "@mui/base/TabsList";
 import { TabPanel as BaseTabPanel } from "@mui/base/TabPanel";
 import { buttonClasses } from "@mui/base/Button";
 import Card from "react-bootstrap/Card";
+
+import { Skeleton } from "@mui/material";
+import "react-loading-skeleton/dist/skeleton.css";
 // import Button from "react-bootstrap/Button";
 import { Tab as BaseTab, tabClasses } from "@mui/base/Tab";
 import "swiper/css";
@@ -24,6 +27,15 @@ const Home = () => {
   const dispatch = useDispatch();
   const product = useSelector((state) => state.product.data);
   console.log(product);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading delay
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Adjust delay as needed
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     dispatch(product_action());
@@ -1356,32 +1368,114 @@ const Home = () => {
         </div>
 
         <div className="col-xl-8 aos-init aos-animate" data-aos="fade-up">
-     <div className="card-content">
-  {filteredProducts.map((el, index) => (
-    <Card id="card-product" key={index} onClick={()=>handleclick(el.id)}>
-      <div className="image-container">
-        <Card.Img variant="top" alt="image" src={el.image} className="zoom-image" />
+      <div className="card-content">
+        {loading
+          ? Array.from({ length: 6 }).map((_, index) => (
+              <Card key={index} id="card-product" style={{ marginBottom: "20px" }}>
+                <div className="image-container">
+                  <Skeleton
+                    variant="rectangular"
+                    height={200}
+                    style={{
+                      borderRadius: "10px",
+                      marginBottom: "10px",
+                      width: "100%",
+                    }}
+                  />
+                </div>
+                <div id="shop">
+                  <Skeleton variant="circular" width={30} height={30} />
+                </div>
+                {/* <div id="product-icon" style={{ display: "flex", gap: "10px" }}>
+                  <Skeleton variant="circular" width={25} height={25} />
+                  <Skeleton variant="circular" width={25} height={25} />
+                </div> */}
+                <Card.Body id="card-body-1">
+                  <Skeleton
+                    variant="text"
+                    width="60%"
+                    height={20}
+                    style={{ marginBottom: "5px" }}
+                  />
+                  <Skeleton
+                    variant="text"
+                    width="80%"
+                    height={20}
+                    style={{ marginBottom: "5px" }}
+                  />
+                  <Skeleton variant="text" width="40%" height={20} />
+                </Card.Body>
+              </Card>
+            ))
+          : filteredProducts.map((el, index) => (
+              <Card
+                id="card-product"
+                key={index}
+                onClick={() => handleclick(el.id)}
+              >
+                <div className="image-container">
+                  <Card.Img
+                    variant="top"
+                    alt="image"
+                    src={el.image}
+                    className="zoom-image"
+                  />
+                </div>
+                <div id="shop">
+                  <i className="fa-solid fa-bag-shopping"></i>
+                </div>
+                <div id="product-icon">
+                  <i className="fa-regular fa-eye p-3" id="product-icon-1"></i>
+                  <i className="fa-regular fa-heart p-3" id="product-icon-1"></i>
+                </div>
+                <Card.Body id="card-body-1">
+                  <Card.Title
+                    style={{
+                      fontSize: "15px",
+                      color: "rgb(119 119 119 / 1)",
+                    }}
+                  >
+                    {el.category || "Card Title"}
+                  </Card.Title>
+                  <Card.Text>
+                    <i
+                      className="fa-regular fa-star"
+                      style={{ color: "orange" }}
+                    ></i>{" "}
+                    <i
+                      className="fa-regular fa-star"
+                      style={{ color: "orange" }}
+                    ></i>{" "}
+                    <i
+                      className="fa-regular fa-star"
+                      style={{ color: "orange" }}
+                    ></i>
+                    <i
+                      className="fa-regular fa-star"
+                      style={{ color: "orange" }}
+                    ></i>
+                    <i
+                      className="fa-regular fa-star"
+                      style={{ color: "orange" }}
+                    ></i>
+                  </Card.Text>
+                  <Card.Text>
+                    {el.description || "Description goes here."}
+                  </Card.Text>
+                  <Card.Text
+                    style={{
+                      padding: "10px",
+                      color: "rgb(100 180 150 / 1)",
+                      fontWeight: "800",
+                    }}
+                  >
+                    ${el.price}
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            ))}
       </div>
-
-      <div id="shop">
-        <i className="fa-solid fa-bag-shopping"></i>
-      </div>
-      <div id="product-icon">
-        <i className="fa-regular fa-eye p-3" id="product-icon-1"></i>
-        <i className="fa-regular fa-heart p-3" id="product-icon-1"></i>
-      </div>
-      <Card.Body id="card-body-1">
-        <Card.Title style={{fontSize:"15px",color:"rgb(119 119 119 / 1)"}}>{el.category || "Card Title"}</Card.Title>
-        <Card.Text><i className="fa-regular fa-star" style={{color : "orange"}}></i> <i className="fa-regular fa-star" style={{color : "orange"}}></i> <i className="fa-regular fa-star" style={{color : "orange"}}></i><i className="fa-regular fa-star" style={{color : "orange"}}></i><i className="fa-regular fa-star" style={{color : "orange"}}></i></Card.Text>
-        <Card.Text >{el.description || "Description goes here."}</Card.Text>
-        <Card.Text style={{padding:"10px",color:"rgb(100 180 150 / 1)",fontWeight:"800"}}> ${el.price}</Card.Text>
-    
-      </Card.Body>
-    </Card>
-  ))}
-</div>
-
-        </div>
+    </div>
       </div>
       <div className="food">
         <div className="col-xxl-5 m-5 aos-init aos-animate" data-aos="fade-up">
