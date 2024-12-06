@@ -79,7 +79,7 @@ const Home = () => {
           const y = ((e.clientY - top) / height) * 100;
 
           img.style.transformOrigin = `${x}% ${y}%`;
-          img.style.transform = "scale(3)"; // Zoom scale
+          img.style.transform = "scale(3)";
         };
 
         const handleMouseLeave = () => {
