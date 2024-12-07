@@ -32,6 +32,21 @@ export const single_reducer = (state = initial_single, { type, payload }) => {
             return state
     }
 }
+const cart_reducer_data = {
+    data : []
+}
+export const cart_reducer = (state = cart_reducer_data,action) =>{
+    switch(action.type)
+    {
+     case "CART":
+        return {
+            ...state,
+            data : action.payload
+        }
+        default : return state
+    }
+
+}
 
 const Signup_initial={
     username:"",

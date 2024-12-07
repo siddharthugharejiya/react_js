@@ -960,6 +960,230 @@ const Home = () => {
           </TabPanel>
         </Tabs>
       </div>
+      <div className="row fruits aos-init aos-animate" data-aos="fade-up">
+      <div className="col-xxl-12 d-flex justify-content-center mt-3">
+          <div className="bottom-text d-flex justify-content-center flex-column align-items-center">
+            <h1>Popular Products</h1>
+            <div className="d-flex justify-content-center">
+              <p
+                className="text-center"
+                style={{ color: "rgb(122 122 122 / 1", width: "70%" }}
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore lacus vel facilisis.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="col-xl-4 col-12">
+          <div className="side col-xl-12 col-lg-12 col-md-12 col-12">
+            <div className="side-1 col-xl-9 col-lg-6 col-md-5 col-sm-5 col-12">
+              <div className="row">
+                <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
+                  <div
+                    className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border"
+                    onClick={() => buttonClick("All")}
+                  >
+                    <span>All</span>
+                    <i
+                      className="fa-solid fa-arrow-right"
+                      style={{ color: "black" }}
+                    ></i>
+                  </div>
+                </div>
+
+                <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
+                  <div
+                    className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border"
+                    onClick={() => buttonClick("Bakery")}
+                  >
+                    <span>Bakery</span>
+                    <i
+                      className="fa-solid fa-arrow-right"
+                      style={{ color: "black" }}
+                    ></i>
+                  </div>
+                </div>
+
+                <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
+                  <div
+                    className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border"
+                    onClick={() => buttonClick("Snacks")}
+                  >
+                    <span>Snacks</span>
+                    <i
+                      className="fa-solid fa-arrow-right"
+                      style={{ color: "black" }}
+                    ></i>
+                  </div>
+                </div>
+
+                <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
+                  <div
+                    className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border"
+                    onClick={() => buttonClick("Vegetables")}
+                  >
+                    <span>Vegetable</span>
+                    <i
+                      className="fa-solid fa-arrow-right"
+                      style={{ color: "black" }}
+                    ></i>
+                  </div>
+                </div>
+
+                <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
+                  <div
+                    className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border"
+                    onClick={() => buttonClick("Fruits")}
+                  >
+                    <span>Fruits</span>
+                    <i
+                      className="fa-solid fa-arrow-right"
+                      style={{ color: "black" }}
+                    ></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="side-2 col-xxl-12 col-xl-12 col-lg-5 col-sm-6 col-6">
+              <div className="side-2-sub">
+                <div className="side-2-sub-text p-3 py-5 ">
+                  <span className="text-light" style={{ fontSize: "40px" }}>
+                    Juicy
+                  </span>
+                  <span
+                    className="fs-1 mt-1"
+                    style={{
+                      textTransform: "uppercase",
+                      color: "rgb(247 232 170 /1)",
+                      fontWeight: "800",
+                    }}
+                  >
+                    Fruits
+                  </span>
+                  <span className="text-light" style={{ fontSize: "17px" }}>
+                    100% Natural
+                  </span>
+                  <span>
+
+                  <button className="btn btn-success mt-1">Shop Now</button>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-xl-8 aos-init aos-animate" data-aos="fade-up">
+      <div className="card-content">
+        {loading
+          ? Array.from({ length: 6 }).map((_, index) => (
+              <Card key={index} id="card-product" style={{ marginBottom: "20px" }}>
+                <div className="image-container">
+                  <Skeleton
+                    variant="rectangular"
+                    height={200}
+                    style={{
+                      borderRadius: "10px",
+                      marginBottom: "10px",
+                      width: "100%",
+                    }}
+                  />
+                </div>
+                <div id="shop">
+                  <Skeleton variant="circular" width={30} height={30} />
+                </div>
+                {/* <div id="product-icon" style={{ display: "flex", gap: "10px" }}>
+                  <Skeleton variant="circular" width={25} height={25} />
+                  <Skeleton variant="circular" width={25} height={25} />
+                </div> */}
+                <Card.Body id="card-body-1">
+                  <Skeleton
+                    variant="text"
+                    width="60%"
+                    height={20}
+                    style={{ marginBottom: "5px" }}
+                  />
+                  <Skeleton
+                    variant="text"
+                    width="80%"
+                    height={20}
+                    style={{ marginBottom: "5px" }}
+                  />
+                  <Skeleton variant="text" width="40%" height={20} />
+                </Card.Body>
+              </Card>
+            ))
+          : filteredProducts.map((el, index) => (
+              <Card
+                id="card-product"
+                key={index}
+                onClick={() => handleclick(el.id)}
+              >
+                <div className="image-container">
+                  <Card.Img
+                    variant="top"
+                    alt="image"
+                    src={el.image}
+                    className="zoom-image"
+                  />
+                </div>
+                <div id="shop">
+                  <i className="fa-solid fa-bag-shopping"></i>
+                </div>
+                <div id="product-icon">
+                  <i className="fa-regular fa-eye p-3" id="product-icon-1"></i>
+                  <i className="fa-regular fa-heart p-3" id="product-icon-1"></i>
+                </div>
+                <Card.Body id="card-body-1">
+                  <Card.Title
+                    style={{
+                      fontSize: "15px",
+                      color: "rgb(119 119 119 / 1)",
+                    }}
+                  >
+                    {el.category || "Card Title"}
+                  </Card.Title>
+                  <Card.Text>
+                    <i
+                      className="fa-regular fa-star"
+                      style={{ color: "orange" }}
+                    ></i>{" "}
+                    <i
+                      className="fa-regular fa-star"
+                      style={{ color: "orange" }}
+                    ></i>{" "}
+                    <i
+                      className="fa-regular fa-star"
+                      style={{ color: "orange" }}
+                    ></i>
+                    <i
+                      className="fa-regular fa-star"
+                      style={{ color: "orange" }}
+                    ></i>
+                    <i
+                      className="fa-regular fa-star"
+                      style={{ color: "orange" }}
+                    ></i>
+                  </Card.Text>
+                  <Card.Text>
+                    {el.description || "Description goes here."}
+                  </Card.Text>
+                  <Card.Text
+                    style={{
+                      padding: "10px",
+                      color: "rgb(100 180 150 / 1)",
+                      fontWeight: "800",
+                    }}
+                  >
+                    ${el.price}
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            ))}
+      </div>
+    </div>
+      </div>
 
       <div className="container d-flex justify-content-center align-items-center">
         <div className="fresh">
@@ -1253,230 +1477,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="row fruits aos-init aos-animate" data-aos="fade-up">
-      <div className="col-xxl-12 d-flex justify-content-center mt-3">
-          <div className="bottom-text d-flex justify-content-center flex-column align-items-center">
-            <h1>Popular Products</h1>
-            <div className="d-flex justify-content-center">
-              <p
-                className="text-center"
-                style={{ color: "rgb(122 122 122 / 1", width: "70%" }}
-              >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore lacus vel facilisis.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="col-xl-4 col-12">
-          <div className="side col-xl-12 col-lg-12 col-md-12 col-12">
-            <div className="side-1 col-xl-9 col-lg-6 col-md-5 col-sm-5 col-12">
-              <div className="row">
-                <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
-                  <div
-                    className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border"
-                    onClick={() => buttonClick("All")}
-                  >
-                    <span>All</span>
-                    <i
-                      className="fa-solid fa-arrow-right"
-                      style={{ color: "black" }}
-                    ></i>
-                  </div>
-                </div>
-
-                <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
-                  <div
-                    className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border"
-                    onClick={() => buttonClick("Bakery")}
-                  >
-                    <span>Bakery</span>
-                    <i
-                      className="fa-solid fa-arrow-right"
-                      style={{ color: "black" }}
-                    ></i>
-                  </div>
-                </div>
-
-                <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
-                  <div
-                    className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border"
-                    onClick={() => buttonClick("Snacks")}
-                  >
-                    <span>Snacks</span>
-                    <i
-                      className="fa-solid fa-arrow-right"
-                      style={{ color: "black" }}
-                    ></i>
-                  </div>
-                </div>
-
-                <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
-                  <div
-                    className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border"
-                    onClick={() => buttonClick("Vegetables")}
-                  >
-                    <span>Vegetable</span>
-                    <i
-                      className="fa-solid fa-arrow-right"
-                      style={{ color: "black" }}
-                    ></i>
-                  </div>
-                </div>
-
-                <div className="col-xl-12 col-lg-10 col-md-12 col-sm-12 col-11">
-                  <div
-                    className="arr col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 border"
-                    onClick={() => buttonClick("Fruits")}
-                  >
-                    <span>Fruits</span>
-                    <i
-                      className="fa-solid fa-arrow-right"
-                      style={{ color: "black" }}
-                    ></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="side-2 col-xxl-12 col-xl-12 col-lg-5 col-sm-6 col-6">
-              <div className="side-2-sub">
-                <div className="side-2-sub-text p-3 py-5 ">
-                  <span className="text-light" style={{ fontSize: "40px" }}>
-                    Juicy
-                  </span>
-                  <span
-                    className="fs-1 mt-1"
-                    style={{
-                      textTransform: "uppercase",
-                      color: "rgb(247 232 170 /1)",
-                      fontWeight: "800",
-                    }}
-                  >
-                    Fruits
-                  </span>
-                  <span className="text-light" style={{ fontSize: "17px" }}>
-                    100% Natural
-                  </span>
-                  <span>
-
-                  <button className="btn btn-success mt-1">Shop Now</button>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="col-xl-8 aos-init aos-animate" data-aos="fade-up">
-      <div className="card-content">
-        {loading
-          ? Array.from({ length: 6 }).map((_, index) => (
-              <Card key={index} id="card-product" style={{ marginBottom: "20px" }}>
-                <div className="image-container">
-                  <Skeleton
-                    variant="rectangular"
-                    height={200}
-                    style={{
-                      borderRadius: "10px",
-                      marginBottom: "10px",
-                      width: "100%",
-                    }}
-                  />
-                </div>
-                <div id="shop">
-                  <Skeleton variant="circular" width={30} height={30} />
-                </div>
-                {/* <div id="product-icon" style={{ display: "flex", gap: "10px" }}>
-                  <Skeleton variant="circular" width={25} height={25} />
-                  <Skeleton variant="circular" width={25} height={25} />
-                </div> */}
-                <Card.Body id="card-body-1">
-                  <Skeleton
-                    variant="text"
-                    width="60%"
-                    height={20}
-                    style={{ marginBottom: "5px" }}
-                  />
-                  <Skeleton
-                    variant="text"
-                    width="80%"
-                    height={20}
-                    style={{ marginBottom: "5px" }}
-                  />
-                  <Skeleton variant="text" width="40%" height={20} />
-                </Card.Body>
-              </Card>
-            ))
-          : filteredProducts.map((el, index) => (
-              <Card
-                id="card-product"
-                key={index}
-                onClick={() => handleclick(el.id)}
-              >
-                <div className="image-container">
-                  <Card.Img
-                    variant="top"
-                    alt="image"
-                    src={el.image}
-                    className="zoom-image"
-                  />
-                </div>
-                <div id="shop">
-                  <i className="fa-solid fa-bag-shopping"></i>
-                </div>
-                <div id="product-icon">
-                  <i className="fa-regular fa-eye p-3" id="product-icon-1"></i>
-                  <i className="fa-regular fa-heart p-3" id="product-icon-1"></i>
-                </div>
-                <Card.Body id="card-body-1">
-                  <Card.Title
-                    style={{
-                      fontSize: "15px",
-                      color: "rgb(119 119 119 / 1)",
-                    }}
-                  >
-                    {el.category || "Card Title"}
-                  </Card.Title>
-                  <Card.Text>
-                    <i
-                      className="fa-regular fa-star"
-                      style={{ color: "orange" }}
-                    ></i>{" "}
-                    <i
-                      className="fa-regular fa-star"
-                      style={{ color: "orange" }}
-                    ></i>{" "}
-                    <i
-                      className="fa-regular fa-star"
-                      style={{ color: "orange" }}
-                    ></i>
-                    <i
-                      className="fa-regular fa-star"
-                      style={{ color: "orange" }}
-                    ></i>
-                    <i
-                      className="fa-regular fa-star"
-                      style={{ color: "orange" }}
-                    ></i>
-                  </Card.Text>
-                  <Card.Text>
-                    {el.description || "Description goes here."}
-                  </Card.Text>
-                  <Card.Text
-                    style={{
-                      padding: "10px",
-                      color: "rgb(100 180 150 / 1)",
-                      fontWeight: "800",
-                    }}
-                  >
-                    ${el.price}
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            ))}
-      </div>
-    </div>
-      </div>
+    
       <div className="food">
         <div className="col-xxl-5 m-5 aos-init aos-animate" data-aos="fade-up">
           <div

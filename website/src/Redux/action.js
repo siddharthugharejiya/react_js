@@ -1,3 +1,4 @@
+import { json } from "react-router-dom";
 import { DATA, EMAIL, L_EMAIL, L_PASSWORD, PASSWORD,  SINGLE,  USERNAME } from "./action_type";
 
 export const product_action = () => (dispatch) => {
@@ -28,10 +29,28 @@ export const single_action = (id) => (dispatch) => {
             console.error("Error fetching single product:", error);
         });
 };
-
+export const cart_action = (id) => (dispatch) =>{
+    fetch(`https://data-3-hyvi.onrender.com/cart/${id}`,{
+        method : "POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify()
+    })
+    .then((res)=> res.json())
+    .then((data)=>{
+        console.log(data);
+        dispatch({
+            type : "CART",
+            payload : data
+        })
+        
+    })
+}
 
 export const signup_action = (userData, navigate) => (dispatch) => {
-    fetch('http://localhost:9595/username', {
+   
+    fetch('https://data-3-hyvi.onrender.com/username', {
         method: "POST",
         headers: {
             "Content-Type": "application/json" 
@@ -66,7 +85,7 @@ export const login_action = (login,nav)=> (dispatch)=>{
     if(login.email && login.password)
     {
         
-        fetch(`http://localhost:9595/username?email=${login.email}`)
+        fetch(`https://data-3-hyvi.onrender.com/username?email=${login.email}`)
         .then(res=>res.json())
         .then(res=>{
            if(res.length > 0)
