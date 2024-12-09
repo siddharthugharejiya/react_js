@@ -9,18 +9,20 @@ import { useNavigate } from "react-router-dom";
 const AllProduct = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.product.data);
+  const [filtered,setfiltered]=useState([])
 
   useEffect(() => {
     dispatch(product_action());
   }, [dispatch]);
-  const [price, setprice] = useState([100]);
-  const change = (e) => {
-    const { name, value, type, checked } = e.target;
-    setprice({
-      ...state,
-      [name]: type === "checkbox" ? checked : value,
-    });
-  };
+  useEffect(()=>{
+ setfiltered(products)
+  },[products])
+  const [price, setprice] = useState([300]);
+  const handlefilter = () =>{
+    const fillter_pro = products.filter((el)=>el.price <= price)
+     setfiltered(fillter_pro)
+  }
+
   useLayoutEffect(() => {
     const containers = document.querySelectorAll(".image-container");
 
@@ -51,12 +53,13 @@ const AllProduct = () => {
     });
   }, [products]);
   const nav= useNavigate()
-  const  handleclick=(id)=>{
-     nav(`/${id}`)
+  const handleclick=(id)=>{
+   nav(`/single/${id}`)
   }
+
   return (
     <>
-      <div className="row justify-content-center align-items-center">
+      <div className="row justify-content-center">
         <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-8">
           <div className="row">
             <div className="col-xxl-12 cate">
@@ -143,7 +146,7 @@ const AllProduct = () => {
                       background: "rgb(100 180 150 / 1)",
                       color: "white",
                     }}
-                  >
+                    onClick={handlefilter}   >
                     Filter
                   </button>
                 </div>
@@ -313,11 +316,12 @@ const AllProduct = () => {
           </div>
         </div>
         <div className="col-xxl-8 d-flex flex-wrap justify-content-around">
-          {products.map((el, index) => (
+          {filtered.map((el, index) => (
             <Card
               id="card-product"
               key={index}
               onClick={() => handleclick(el.id)}
+              style={{height:"fit-content"}}
             >
               <div className="image-container">
                 <Card.Img

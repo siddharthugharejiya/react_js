@@ -124,9 +124,7 @@ export const Singlepage_action = (id) => (dispatch) => {
       dispatch({ type: FETCH_SINGLEPAGE_FAILURE, error: error.message });
     });
 };
-export const Cart_items = () =>(dispatch)=>{
-              //  console.log(hello);
-               
+export const Cart_items = () =>(dispatch)=>{        
         fetch(`https://mock-server-rea1.onrender.com/cart`)
         .then(res=>res.json())
         .then(res=>{

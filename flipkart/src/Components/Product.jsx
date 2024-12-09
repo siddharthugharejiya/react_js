@@ -48,7 +48,7 @@ const Product = () => {
       icon: "success"
     });
 
-    navigate("/add", { state: cartItem });
+    navigate("/add", { state : cartItem });
   };
 
   return (

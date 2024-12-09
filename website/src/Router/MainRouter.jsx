@@ -17,7 +17,7 @@ const MainRouter = () => {
          <Route element={<Signup/>} path='/signup'></Route>
          <Route element={<Login/>} path='/login'></Route>
          <Route element={<AllProduct/>} path='/product'></Route>
-         <Route element={<Singlepage/>} path='/:id'></Route>
+         <Route element={<Singlepage/>} path='/single/:id'></Route>
         
         </Routes>
     )

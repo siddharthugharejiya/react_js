@@ -1584,6 +1584,21 @@ i.fa-solid.fa-bag-shopping{
   /* border: 1px solid red; */
 }
 
+.cart{
+  height: auto;
+  width: 100%;
+  border: 1px solid red;
+  display: flex;
+ 
+}
+.cart-img{
+  height: 100px;
+  width: 25%;
+}
+.cart-img img{
+  height: 100%;
+  width: 100%;
+}
 @media (max-width:2000px) {
   .t{
     height: auto;

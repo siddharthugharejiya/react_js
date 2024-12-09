@@ -1,5 +1,6 @@
 
-import { DATA, EMAIL, L_EMAIL, L_PASSWORD, PASSWORD, SINGLE, SINGLE_DATA, USERNAME } from "./action_type";
+import { fetchCartData } from "./action";
+import { CART_ADD, CART_FETCH, DATA, EMAIL, L_EMAIL, L_PASSWORD, PASSWORD, SINGLE,  USERNAME } from "./action_type";
 
 const initial_pro = {
     data: []
@@ -33,12 +34,12 @@ export const single_reducer = (state = initial_single, { type, payload }) => {
     }
 }
 const cart_reducer_data = {
-    data : []
+    data : null
 }
 export const cart_reducer = (state = cart_reducer_data,action) =>{
     switch(action.type)
     {
-     case "CART":
+     case CART_ADD:
         return {
             ...state,
             data : action.payload
@@ -47,6 +48,21 @@ export const cart_reducer = (state = cart_reducer_data,action) =>{
     }
 
 }
+const ini = { 
+    data: [] 
+};
+
+export const card_fetch = (state = ini, { type, payload }) => {
+    switch(type) {
+        case CART_FETCH:
+            return { 
+                ...state, 
+                data: payload 
+            };
+        default: 
+            return state;
+    }
+};
 
 const Signup_initial={
     username:"",

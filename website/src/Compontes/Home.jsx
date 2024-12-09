@@ -98,8 +98,7 @@ const Home = () => {
   }, [filteredProducts]); 
   const handleclick = (id) => {
     console.log(id);
-
-    nav(`/${id}`);
+    nav(`/product`);
   };
 
   var settings = {

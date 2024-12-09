@@ -1,9 +1,12 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
-
 import Navbar from "react-bootstrap/Navbar";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCartData } from "../Redux/action";
 
 function Navbar_1() {
   // const [isLoading, setIsLoading] = useState(true);
@@ -13,6 +16,11 @@ function Navbar_1() {
   //   return () => clearTimeout(timer);
   // }, []);
 
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const categories = {
     "Dairy & Bakery": {
       Dairy: ["Milk", "Ice Cream", "Cheese", "Frozen Custard", "Frozen Yogurt"],
@@ -41,21 +49,34 @@ function Navbar_1() {
   const handleCategoryClick = (category) => {
     setActiveCategory(category);
   };
+  
+  const dispatch = useDispatch()
+  useEffect(()=>{
+   dispatch(fetchCartData())
+  },[])
+
+  useEffect(()=>{
+   dispatch(fetchCartData())
+  },[])
+  
+  const cart = useSelector(state => state.fetch_cart.data)
+  console.log(`cart data is ${cart}`);
+
+  
 
   return (
     <div className="container-fluid">
-      {/* <Skeleton></Skeleton> */}
       <Navbar expand="lg" className="flex-wrap" >
         <div id="con">
-        <Navbar.Brand as={Link} to={"/"}>
+          <Navbar.Brand as={Link} to={"/"}>
             <img
               src="./image/logo.png"
               className="img-fluid rounded-top"
               alt="Logo"
             />
           </Navbar.Brand>
-    
-        
+
+
 
           <div className="col-12 col-lg-4 col-md-7 col-sm-12 d-flex align-items-center">
             <input
@@ -120,186 +141,209 @@ function Navbar_1() {
             </div>
 
             <div className="d-flex align-items-center">
-              <i
-                className="ri-shopping-cart-line"
-                style={{ color: "black", margin: "0px 5px", fontSize: "20px" }}
-              ></i>
-              <div>Cart</div>
+              <div onClick={handleShow} className="me-2 btn" style={{background:"transparent",color:"black",border:"none"}}>
+                <i className="ri-shopping-cart-line"></i> 
+              </div>
+              <Offcanvas show={show} onHide={handleClose} placement="end">
+                <Offcanvas.Header closeButton>
+                  <Offcanvas.Title>Cart</Offcanvas.Title>
+                </Offcanvas.Header>
+                {/* <Offcanvas.Body>
+                 {
+                  <div className="col-xxl-12">
+                    <div className="cart">
+                      <div className="cart-img">
+                        <img src={cart.image} alt="image" className="img-fluid" />
+                      </div>
+                      <div className="row">
+                      <div className="col-xl-6">
+                      {cart.category}
+                      </div>
+                      <div className="col-xl-6">
+                        {`${cart.price} x 1Kg`}
+                      </div>
+                      </div>
+                     
+                    </div>
+                  </div>
+                 }
+                </Offcanvas.Body> */}
+              </Offcanvas>
             </div>
+
           </div>
           <div className="bor"></div>
         </div>
 
         <Container className="d-flex flex-wrap justify-content-between align-items-center bb" >
-      <div className="col-3 col-lg-1 d-flex " style={{margin:"-15px"}} id="hide">
-        <div className="paste-button">
-          <button className="button" style={{ fontWeight: 500 }}>
-            <i
-              className="ri-bar-chart-horizontal-line border p-2"
-              style={{ borderRadius: "4px" }}
-            ></i>
-          </button>
-          <div className="dropdown-content content-written">
-            <div className="container">
-              <div className="navbar-section">
-                <div className="tabs">
-                  {Object.keys(categories).map((category) => (
-                    <button
-                      key={category}
-                      className={`tab-btn ${
-                        activeCategory === category ? "active" : ""
-                      }`}
-                      onClick={() => handleCategoryClick(category)}
-                    >
-                      {category}
-                    </button>
-                  ))}
-                </div>
-                <div className="tab-content">
-                  {Object.keys(categories[activeCategory]).map(
-                    (subCategory) => (
-                      <div key={subCategory} id="tab-c">
-                        <h4>{subCategory}</h4>
-                        <ul>
-                          {categories[activeCategory][subCategory].map(
-                            (item) => (
-                              <li key={item}>{item}</li>
-                            )
-                          )}
-                        </ul>
-                      </div>
-                    )
-                  )}
+          <div className="col-3 col-lg-1 d-flex " style={{ margin: "-15px" }} id="hide">
+            <div className="paste-button">
+              <button className="button" style={{ fontWeight: 500 }}>
+                <i
+                  className="ri-bar-chart-horizontal-line border p-2"
+                  style={{ borderRadius: "4px" }}
+                ></i>
+              </button>
+              <div className="dropdown-content content-written">
+                <div className="container">
+                  <div className="navbar-section">
+                    <div className="tabs">
+                      {Object.keys(categories).map((category) => (
+                        <button
+                          key={category}
+                          className={`tab-btn ${activeCategory === category ? "active" : ""
+                            }`}
+                          onClick={() => handleCategoryClick(category)}
+                        >
+                          {category}
+                        </button>
+                      ))}
+                    </div>
+                    <div className="tab-content">
+                      {Object.keys(categories[activeCategory]).map(
+                        (subCategory) => (
+                          <div key={subCategory} id="tab-c">
+                            <h4>{subCategory}</h4>
+                            <ul>
+                              {categories[activeCategory][subCategory].map(
+                                (item) => (
+                                  <li key={item}>{item}</li>
+                                )
+                              )}
+                            </ul>
+                          </div>
+                        )
+                      )}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
- 
-      <div className="col-12 col-lg-8 col-xl-8 drop">
-        <nav className="nav2 d-flex justify-content-center">
-          <ul className="d-flex justify-content-between">
-            <li>
-              <div className="paste-button">
-                <button className="button d-flex">
-                  Home <i className="ri-arrow-down-s-line arrow-icon"></i>
-                </button>
-                <div className="dropdown-content">
-                  <a id="top" href="#">
-                  Grocery
-                  </a>
-                  <a id="middle" href="#">
-                   Fashion
-                  </a>
-             
-                </div>
-              </div>
-            </li>
-            <li>
-              <div className="paste-button">
-                <button className="button d-flex">
-                  Category <i className="ri-arrow-down-s-line arrow-icon"></i>
-                </button>
-                <div className="dropdown-content">
-                  <a id="top" href="#">
-                  Shop Left sidebar
-                  </a>
-                  <a id="middle" href="#">
-                  Shop Right sidebar
-                  </a>
-                  <a id="bottom" href="#">
-                  Full Width
-                  </a>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div className="paste-button">
-                <button className="button d-flex">
-                  Products <i className="ri-arrow-down-s-line arrow-icon"></i>
-                </button>
-                <div className="dropdown-content">
-                  <a id="top" href="#">
-                  product Left sidebar 
-                  </a>
-                  <a id="middle" href="#">
-                  product Right sidebar 
-                  </a>
-                  <a id="bottom" href="#">
-                  Product Full Width 
-                  </a>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div className="paste-button">
-                <button className="button d-flex">
-                  Pages <i className="ri-arrow-down-s-line arrow-icon"></i>
-                </button>
-                <div className="dropdown-content">
-                  <a id="top" href="#">
-                  About Us
-                  </a>
-                  <a id="middle" href="#">
-                  Contact Us
-                  </a>
-                  <a id="bottom" href="#">
-                  Cart
-                  </a>
-                  <a id="bottom" href="#">
-                  Checkout
-                  </a>
-             
-                </div>
-              </div>
-            </li>
-            <li>
-              <div className="paste-button">
-                <button className="button d-flex">
-                  Blog <i className="ri-arrow-down-s-line arrow-icon"></i>
-                </button>
-                <div className="dropdown-content">
-                  <a id="top" href="#">
-                    Keep source formatting
-                  </a>
-                  <a id="middle" href="#">
-                    Merge formatting
-                  </a>
-                  <a id="bottom" href="#">
-                    Keep text only
-                  </a>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div className="paste-button">
-                <button className="button d-flex">
-                  Elements <i className="ri-arrow-down-s-line arrow-icon"></i>
-                </button>
-                <div className="dropdown-content">
-                  <a id="top" href="#">
-                    Keep source formatting
-                  </a>
-                  <a id="middle" href="#">
-                    Merge formatting
-                  </a>
-                  <a id="bottom" href="#">
-                    Keep text only
-                  </a>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </nav>
-      </div>
 
-  
-      <div className="col-xl-2 col-lg-4 col-md-4 d-flex justify-content-center align-items-center" id="phone">
-        <i className="ri-phone-line"></i> +123 (456) (7890)
-      </div>
-    </Container>
+          <div className="col-12 col-lg-8 col-xl-8 drop">
+            <nav className="nav2 d-flex justify-content-center">
+              <ul className="d-flex justify-content-between">
+                <li>
+                  <div className="paste-button">
+                    <button className="button d-flex">
+                      Home <i className="ri-arrow-down-s-line arrow-icon"></i>
+                    </button>
+                    <div className="dropdown-content">
+                      <a id="top" href="#">
+                        Grocery
+                      </a>
+                      <a id="middle" href="#">
+                        Fashion
+                      </a>
+
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div className="paste-button">
+                    <button className="button d-flex">
+                      Category <i className="ri-arrow-down-s-line arrow-icon"></i>
+                    </button>
+                    <div className="dropdown-content">
+                      <a id="top" href="#">
+                        Shop Left sidebar
+                      </a>
+                      <a id="middle" href="#">
+                        Shop Right sidebar
+                      </a>
+                      <a id="bottom" href="#">
+                        Full Width
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div className="paste-button">
+                    <button className="button d-flex">
+                      Products <i className="ri-arrow-down-s-line arrow-icon"></i>
+                    </button>
+                    <div className="dropdown-content">
+                      <a id="top" href="#">
+                        product Left sidebar
+                      </a>
+                      <a id="middle" href="#">
+                        product Right sidebar
+                      </a>
+                      <a id="bottom" href="#">
+                        Product Full Width
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div className="paste-button">
+                    <button className="button d-flex">
+                      Pages <i className="ri-arrow-down-s-line arrow-icon"></i>
+                    </button>
+                    <div className="dropdown-content">
+                      <a id="top" href="#">
+                        About Us
+                      </a>
+                      <a id="middle" href="#">
+                        Contact Us
+                      </a>
+                      <a id="bottom" href="#">
+                        Cart
+                      </a>
+                      <a id="bottom" href="#">
+                        Checkout
+                      </a>
+
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div className="paste-button">
+                    <button className="button d-flex">
+                      Blog <i className="ri-arrow-down-s-line arrow-icon"></i>
+                    </button>
+                    <div className="dropdown-content">
+                      <a id="top" href="#">
+                        Keep source formatting
+                      </a>
+                      <a id="middle" href="#">
+                        Merge formatting
+                      </a>
+                      <a id="bottom" href="#">
+                        Keep text only
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div className="paste-button">
+                    <button className="button d-flex">
+                      Elements <i className="ri-arrow-down-s-line arrow-icon"></i>
+                    </button>
+                    <div className="dropdown-content">
+                      <a id="top" href="#">
+                        Keep source formatting
+                      </a>
+                      <a id="middle" href="#">
+                        Merge formatting
+                      </a>
+                      <a id="bottom" href="#">
+                        Keep text only
+                      </a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+
+          <div className="col-xl-2 col-lg-4 col-md-4 d-flex justify-content-center align-items-center" id="phone">
+            <i className="ri-phone-line"></i> +123 (456) (7890)
+          </div>
+        </Container>
       </Navbar>
     </div>
   );

@@ -1,5 +1,5 @@
-import { json } from "react-router-dom";
-import { DATA, EMAIL, L_EMAIL, L_PASSWORD, PASSWORD,  SINGLE,  USERNAME } from "./action_type";
+
+import { CART_ADD, CART_FETCH, DATA, EMAIL, L_EMAIL, L_PASSWORD, PASSWORD,  SINGLE,  USERNAME } from "./action_type";
 
 export const product_action = () => (dispatch) => {
     fetch('https://data-3-hyvi.onrender.com/products')
@@ -29,25 +29,53 @@ export const single_action = (id) => (dispatch) => {
             console.error("Error fetching single product:", error);
         });
 };
-export const cart_action = (id) => (dispatch) =>{
-    fetch(`https://data-3-hyvi.onrender.com/cart/${id}`,{
-        method : "POST",
-        headers:{
-            "Content-Type":"application/json"
-        },
-        body:JSON.stringify()
-    })
-    .then((res)=> res.json())
-    .then((data)=>{
-        console.log(data);
-        dispatch({
-            type : "CART",
-            payload : data
-        })
-        
-    })
-}
+export const addToCart = (product) => async (dispatch) => {
+    console.log("Sending product to cart:", product);
 
+    try {
+        
+        const response = await fetch(`https://data-3-hyvi.onrender.com/cart`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(product)
+        });
+
+        if (!response.ok) {
+      
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log("Product added to cart:", data);
+
+        dispatch({
+            type: CART_ADD,
+            payload: data
+        });
+    } catch (error) {
+        console.error("Error adding product to cart:", error);
+        alert("Failed to add product to cart. Please try again.");
+    }
+};
+
+
+
+export const fetchCartData = () => (dispatch) => {
+    fetch(`https://mock-server-rea1.onrender.com/cart`)
+    .then((res) => res.json())
+    .then((data) => {
+        console.log("Cart data fetched", data);
+        dispatch({
+            type: CART_FETCH, 
+            payload: data
+        });
+    })
+    .catch((error) => {
+        console.error("Error fetching cart data:", error);
+    });
+};
 export const signup_action = (userData, navigate) => (dispatch) => {
    
     fetch('https://data-3-hyvi.onrender.com/username', {
