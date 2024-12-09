@@ -34,7 +34,7 @@ export const single_reducer = (state = initial_single, { type, payload }) => {
     }
 }
 const cart_reducer_data = {
-    data : null
+    data : []
 }
 export const cart_reducer = (state = cart_reducer_data,action) =>{
     switch(action.type)
@@ -57,7 +57,7 @@ export const card_fetch = (state = ini, { type, payload }) => {
         case CART_FETCH:
             return { 
                 ...state, 
-                data: payload 
+                data : payload 
             };
         default: 
             return state;

@@ -20,21 +20,15 @@ export default function Singlepage() {
 
   const [price, setprice] = useState([100]);
 
-  // const handlefilter = () =>{
-  //   const fillter_pro = product.filter((el)=>el.price <= price)
-  //    setfiltered(fillter_pro)
-  // }
+
   useEffect(() => {
     dispatch(single_action(id));
   }, [dispatch, id]);
 
   const handleCart = (product) => {
     console.log(product);
-    
       dispatch(addToCart(product))
-
-    
-  };       
+  }
 
 
   return (

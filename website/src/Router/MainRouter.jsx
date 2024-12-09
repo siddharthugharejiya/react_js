@@ -5,7 +5,7 @@ import Cart from '../Compontes/Cart';
 import Signup from '../Compontes/Signup';
 import Login from '../Compontes/Login';
 import Singlepage from '../Compontes/Singlepage';
-import Product from '../Compontes/Cart';
+
 import AllProduct from '../Compontes/Product';
 
 

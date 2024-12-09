@@ -30,40 +30,47 @@ export const single_action = (id) => (dispatch) => {
         });
 };
 export const addToCart = (product) => async (dispatch) => {
-    console.log("Sending product to cart:", product);
-
     try {
-        
+      
         const response = await fetch(`https://data-3-hyvi.onrender.com/cart`, {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Accept": "application/json"
             },
-            body: JSON.stringify(product)
+            body:JSON.stringify(product)
         });
 
-        if (!response.ok) {
-      
-            throw new Error(`HTTP error! Status: ${response.status}`);
+        const contentType = response.headers.get("content-type");
+
+        let data;
+        if (contentType && contentType.includes("application/json")) {
+            data = await response.json(); 
+        } else {
+            data = await response.text(); 
         }
 
-        const data = await response.json();
-        console.log("Product added to cart:", data);
+        if (!response.ok) {
+            console.error('Server Error:', data);
+            throw new Error(`HTTP Error! status: ${response.status} - ${data}`);
+        }
+
+        console.log('Response Data:', data);
 
         dispatch({
             type: CART_ADD,
             payload: data
         });
+
     } catch (error) {
-        console.error("Error adding product to cart:", error);
-        alert("Failed to add product to cart. Please try again.");
+        console.error("Error sending product to cart:", error);
     }
-};
+}
 
 
 
 export const fetchCartData = () => (dispatch) => {
-    fetch(`https://mock-server-rea1.onrender.com/cart`)
+    fetch(`https://data-3-hyvi.onrender.com/cart`)
     .then((res) => res.json())
     .then((data) => {
         console.log("Cart data fetched", data);

@@ -11,10 +11,7 @@ import { fetchCartData } from "../Redux/action";
 function Navbar_1() {
   // const [isLoading, setIsLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState("Dairy & Bakery");
-  // useEffect(() => {
-  //   const timer = setTimeout(() => setIsLoading(false), 2000);
-  //   return () => clearTimeout(timer);
-  // }, []);
+
 
 
   const [show, setShow] = useState(false);
@@ -55,12 +52,11 @@ function Navbar_1() {
    dispatch(fetchCartData())
   },[])
 
-  useEffect(()=>{
-   dispatch(fetchCartData())
-  },[])
   
-  const cart = useSelector(state => state.fetch_cart.data)
-  console.log(`cart data is ${cart}`);
+  
+  const cart = useSelector(state => state.all_card_data.data);
+  console.log(`cart data is here ${cart}`);
+  
 
   
 
@@ -150,23 +146,17 @@ function Navbar_1() {
                 </Offcanvas.Header>
                 {/* <Offcanvas.Body>
                  {
-                  <div className="col-xxl-12">
-                    <div className="cart">
-                      <div className="cart-img">
-                        <img src={cart.image} alt="image" className="img-fluid" />
-                      </div>
-                      <div className="row">
-                      <div className="col-xl-6">
-                      {cart.category}
-                      </div>
-                      <div className="col-xl-6">
-                        {`${cart.price} x 1Kg`}
-                      </div>
-                      </div>
-                     
+                   <div className="offcanvas-content">
+                   {cart && cart.length > 0 ? (
+                     cart.map((item, index) => (
+                       <div key={index} className="offcanvas-item">
+                         <h3>{item.name}</h3>
+                         <p>Price: {item.price}</p>
+                       </div>
+                     )))}
+                    ) 
                     </div>
-                  </div>
-                 }
+                  }
                 </Offcanvas.Body> */}
               </Offcanvas>
             </div>
