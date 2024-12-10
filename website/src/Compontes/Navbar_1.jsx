@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCartData } from "../Redux/action";
+import { div, h1, img } from "framer-motion/m";
 
 function Navbar_1() {
   // const [isLoading, setIsLoading] = useState(true);
@@ -54,8 +55,9 @@ function Navbar_1() {
 
   
   
-  const cart = useSelector(state => state.all_card_data.data);
-  console.log(`cart data is here ${cart}`);
+  const cat = useSelector(el =>el.All.data);
+ console.log(cat);
+ 
   
 
   
@@ -142,28 +144,38 @@ function Navbar_1() {
               </div>
               <Offcanvas show={show} onHide={handleClose} placement="end">
                 <Offcanvas.Header closeButton>
-                  <Offcanvas.Title>Cart</Offcanvas.Title>
+                  <Offcanvas.Title> 
+
+                  </Offcanvas.Title>
                 </Offcanvas.Header>
-                {/* <Offcanvas.Body>
+                <Offcanvas.Body>
+                  {/* <h1>fds</h1> */}
                  {
-                   <div className="offcanvas-content">
-                   {cart && cart.length > 0 ? (
-                     cart.map((item, index) => (
-                       <div key={index} className="offcanvas-item">
-                         <h3>{item.name}</h3>
-                         <p>Price: {item.price}</p>
-                       </div>
-                     )))}
-                    ) 
-                    </div>
-                  }
-                </Offcanvas.Body> */}
+          cat.map((el)=>{
+            return(
+              <div key={el.id} id="el">
+                <div className="col-3">
+              <img src={el.image} alt="img" id="cat_img" />
+                </div>
+                <div className="col-6">
+                  {el.category}
+                  ${el.price} x 1Kg
+                </div>
+                {/* <div className="col-4">
+                </div> */}
+              </div>
+            )
+            
+          })
+        }
+                </Offcanvas.Body>
               </Offcanvas>
             </div>
 
           </div>
           <div className="bor"></div>
         </div>
+       
 
         <Container className="d-flex flex-wrap justify-content-between align-items-center bb" >
           <div className="col-3 col-lg-1 d-flex " style={{ margin: "-15px" }} id="hide">

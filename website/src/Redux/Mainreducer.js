@@ -6,5 +6,5 @@ export const MainReducer = combineReducers({
     product:product_reducer,
      single: single_reducer,
      cart : cart_reducer,
-     all_card_data : card_fetch
+     All : card_fetch 
 })

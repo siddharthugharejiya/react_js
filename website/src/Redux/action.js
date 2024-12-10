@@ -31,6 +31,7 @@ export const single_action = (id) => (dispatch) => {
 };
 export const addToCart = (product) => async (dispatch) => {
     try {
+        
       
         const response = await fetch(`https://data-3-hyvi.onrender.com/cart`, {
             method: "POST",
@@ -42,7 +43,6 @@ export const addToCart = (product) => async (dispatch) => {
         });
 
         const contentType = response.headers.get("content-type");
-
         let data;
         if (contentType && contentType.includes("application/json")) {
             data = await response.json(); 

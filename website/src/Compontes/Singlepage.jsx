@@ -315,7 +315,7 @@ export default function Singlepage() {
                   <Card.Body>
                     <Card.Title>{product.category}</Card.Title>
                     <Card.Text>{product.description}</Card.Text>
-                    <Button variant="primary"  onClick={() => handleCart(product)}>
+                    <Button variant="success"  onClick={() => handleCart(product)}>
                       Add to Cart
                     </Button>
                   </Card.Body>

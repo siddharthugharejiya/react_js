@@ -1,5 +1,5 @@
 
-import { fetchCartData } from "./action";
+
 import { CART_ADD, CART_FETCH, DATA, EMAIL, L_EMAIL, L_PASSWORD, PASSWORD, SINGLE,  USERNAME } from "./action_type";
 
 const initial_pro = {
@@ -49,7 +49,7 @@ export const cart_reducer = (state = cart_reducer_data,action) =>{
 
 }
 const ini = { 
-    data: [] 
+    data : [] 
 };
 
 export const card_fetch = (state = ini, { type, payload }) => {

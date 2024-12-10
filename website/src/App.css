@@ -1599,10 +1599,23 @@ i.fa-solid.fa-bag-shopping{
   height: 100%;
   width: 100%;
 }
+#el{
+  height: 130px;
+  width: 100%;
+  border: 1px solid red;
+  display: flex;
+}
+#cat_img{
+  height: 100%;
+  width: 100%;
+}
 @media (max-width:2000px) {
   .t{
     height: auto;
     margin: 20px 0;
+  }
+  #hide{
+    margin: -110px !important ;
   }
 
 }
@@ -1635,6 +1648,7 @@ i.fa-solid.fa-bag-shopping{
   #button-icon{
     left: 210px;
   }
+
 }
 @media (max-width:1400px)
 {
