@@ -57,6 +57,12 @@ function Navbar_1() {
   
   const cat = useSelector(el =>el.All.data);
  console.log(cat);
+ const [inc,setinc]=useState(1)
+ const handleIncrement = (id) => {
+  console.log(id);
+   if(id)
+        setinc(inc+1)
+ }
  
   
 
@@ -145,11 +151,11 @@ function Navbar_1() {
               <Offcanvas show={show} onHide={handleClose} placement="end">
                 <Offcanvas.Header closeButton>
                   <Offcanvas.Title> 
-
+                      Cart
                   </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
-                  {/* <h1>fds</h1> */}
+                 
                  {
           cat.map((el)=>{
             return(
@@ -157,12 +163,14 @@ function Navbar_1() {
                 <div className="col-3">
               <img src={el.image} alt="img" id="cat_img" />
                 </div>
-                <div className="col-6">
-                  {el.category}
-                  ${el.price} x 1Kg
+                <div className="col-6 d-flex flex-column">
+                 <span> {el.category} </span>
+                 <span> ${el.price} x 1Kg </span>
+                 <button className="btn" onClick={()=>handleIncrement(el.id)}>+</button>
+                 <span>{inc}</span>
+                 <button className="btn">-</button>
                 </div>
-                {/* <div className="col-4">
-                </div> */}
+            
               </div>
             )
             
