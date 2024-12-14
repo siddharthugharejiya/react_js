@@ -47,6 +47,7 @@ function Navbar_1() {
     setActiveCategory(category);
   };
 
+<<<<<<< HEAD
   const cartData = useSelector((state) => state.All.data);
   const dispatch = useDispatch();
 
@@ -54,6 +55,18 @@ function Navbar_1() {
     dispatch(fetchCartData());
   }, [dispatch]);
 
+=======
+  
+  
+  const cat = useSelector(el =>el.All.data);
+ console.log(cat);
+ const [inc,setinc]=useState(1)
+ const handleIncrement = (id) => {
+  console.log(id);
+   if(id)
+        setinc(inc+1)
+ }
+>>>>>>> 6b94396d2fb331ea8da9e1d692674358a90973ca
  
   const handleQuantityChange = (itemId, change) => {
     setQuantities((prevQuantities) => {
@@ -149,6 +162,7 @@ function Navbar_1() {
               </div>
               <Offcanvas show={show} onHide={handleClose} placement="end">
                 <Offcanvas.Header closeButton>
+<<<<<<< HEAD
                   <Offcanvas.Title>Shopping Cart</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
@@ -172,6 +186,34 @@ function Navbar_1() {
                     <strong>Total: ${calculateTotal().toFixed(2)}</strong>
                   </div>
                   <button className="btn text-light mt-1" style={{background:"rgb(100, 180, 150)"}} onClick={checkout}>Checkout</button>
+=======
+                  <Offcanvas.Title> 
+                      Cart
+                  </Offcanvas.Title>
+                </Offcanvas.Header>
+                <Offcanvas.Body>
+                 
+                 {
+          cat.map((el)=>{
+            return(
+              <div key={el.id} id="el">
+                <div className="col-3">
+              <img src={el.image} alt="img" id="cat_img" />
+                </div>
+                <div className="col-6 d-flex flex-column">
+                 <span> {el.category} </span>
+                 <span> ${el.price} x 1Kg </span>
+                 <button className="btn" onClick={()=>handleIncrement(el.id)}>+</button>
+                 <span>{inc}</span>
+                 <button className="btn">-</button>
+                </div>
+            
+              </div>
+            )
+            
+          })
+        }
+>>>>>>> 6b94396d2fb331ea8da9e1d692674358a90973ca
                 </Offcanvas.Body>
               </Offcanvas>
             </div>
