@@ -64,6 +64,20 @@ export const card_fetch = (state = ini, { type, payload }) => {
     }
 };
 
+const whole_data = {
+    Data : []
+}
+export const Whole_data_reducer = (state=whole_data,{type,payload})=>{
+    switch(type){
+     case "WHOLE":
+     return {
+        ...state,
+          Data : payload
+     }
+    
+    default : return state
+}
+}
 const Signup_initial={
     username:"",
     email:"",

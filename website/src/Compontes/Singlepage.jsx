@@ -1,39 +1,78 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, single_action } from "../Redux/action";
+import { addToCart, single_action, wholedata } from "../Redux/action";
 import { useNavigate, useParams } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "../App.css";
+
 import Form from "react-bootstrap/Form";
 
 export default function Singlepage() {
-
-
   const { id } = useParams();
   const dispatch = useDispatch();
-  const navi = useNavigate();
-
-  const product = useSelector((state) => state.single.data);
-
-
   const [price, setprice] = useState([100]);
 
+  const [items,setItems] = useState([])
+  const product = useSelector((state) => state.single.data);
+  console.log(product);
+  const whole = useSelector((state)=>state.whole_data.Data)
+  console.log(whole);
+  useEffect(() => {
+ 
+    if (product && whole) {
+      const filteredItems = whole.filter((el) => el.category === product.category);
+      setItems(filteredItems);
+    }
+  }, [product, whole]);
+
+ 
+ console.log(items);
+ 
+  
+  
+
+
+  const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
     dispatch(single_action(id));
+    dispatch(wholedata())
   }, [dispatch, id]);
 
-  const handleCart = (product) => {
-    console.log(product);
-      dispatch(addToCart(product))
-  }
 
+  const mainSliderSettings = {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: false,
+    infinite: true,
+    arrows: false, // No next/prev buttons
+    fade: true, // Smooth fade effect
+    asNavFor: ".thumbnail-slider", // Link with thumbnail slider
+  };
+
+  const thumbnailSliderSettings = {
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    dots: false,
+    arrows: true, // Show next/prev buttons
+    focusOnSelect: true, // Click to select an image
+    asNavFor: ".main-slider", // Link with main slider
+    responsive: [
+      { breakpoint: 768, settings: { slidesToShow: 3 } },
+      { breakpoint: 480, settings: { slidesToShow: 2 } },
+    ],
+  };
+
+  const handleCart = (product) => {
+    dispatch(addToCart(product));
+  };
 
   return (
     <>
-      <div
+     <div
         className="d-flex justify-content-between align-items-center"
         style={{
           backgroundColor: "rgb(228 242 237 / 1)",
@@ -135,6 +174,7 @@ export default function Singlepage() {
                   <button
                     className="btn"
                     style={{
+
                       background: "rgb(100 180 150 / 1)",
                       color: "white",
                     }}
@@ -331,5 +371,5 @@ export default function Singlepage() {
         </div>
       </div>
     </>
-  );
+  )
 }

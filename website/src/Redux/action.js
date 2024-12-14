@@ -83,6 +83,16 @@ export const fetchCartData = () => (dispatch) => {
         console.error("Error fetching cart data:", error);
     });
 };
+export const wholedata = () => (dispatch)=>{
+          fetch('https://data-3-hyvi.onrender.com/products')
+          .then(res => res.json())
+          .then((res)=>{
+            dispatch({
+                type : "WHOLE",
+                payload : res
+            })
+          })
+}
 export const signup_action = (userData, navigate) => (dispatch) => {
    
     fetch('https://data-3-hyvi.onrender.com/username', {
