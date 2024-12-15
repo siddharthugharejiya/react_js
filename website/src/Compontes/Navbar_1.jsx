@@ -16,7 +16,7 @@ function Navbar_1() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
  
-  const nav = useNavigate()
+  const nav = useNavigate();
 
   const categories = {
     "Dairy & Bakery": {
@@ -47,7 +47,6 @@ function Navbar_1() {
     setActiveCategory(category);
   };
 
-<<<<<<< HEAD
   const cartData = useSelector((state) => state.All.data);
   const dispatch = useDispatch();
 
@@ -55,19 +54,13 @@ function Navbar_1() {
     dispatch(fetchCartData());
   }, [dispatch]);
 
-=======
-  
-  
-  const cat = useSelector(el =>el.All.data);
- console.log(cat);
- const [inc,setinc]=useState(1)
- const handleIncrement = (id) => {
-  console.log(id);
-   if(id)
-        setinc(inc+1)
- }
->>>>>>> 6b94396d2fb331ea8da9e1d692674358a90973ca
- 
+  const cat = useSelector(el => el.All.data);
+  const [inc, setInc] = useState(1);
+
+  const handleIncrement = (id) => {
+    if (id) setInc(inc + 1);
+  };
+
   const handleQuantityChange = (itemId, change) => {
     setQuantities((prevQuantities) => {
       const updatedQuantities = { ...prevQuantities };
@@ -80,13 +73,14 @@ function Navbar_1() {
 
   const calculateTotal = () => {
     return cartData.reduce((total, item) => {
-      const quantity = quantities[item.id] || 1
+      const quantity = quantities[item.id] || 1;
       return total + item.price * quantity;
     }, 0);
   };
-  const checkout = () =>{
-    nav("/")
-  }
+
+  const checkout = () => {
+    nav("/");
+  };
 
   return (
     <div className="container-fluid">
@@ -135,6 +129,7 @@ function Navbar_1() {
                 style={{ fontSize: "20px", margin: "0px 5px" }}
               ></i>
               <div>
+          
                 <div className="paste-button">
                   <button className="button" style={{ fontWeight: 500 }}>
                     Account
@@ -162,7 +157,6 @@ function Navbar_1() {
               </div>
               <Offcanvas show={show} onHide={handleClose} placement="end">
                 <Offcanvas.Header closeButton>
-<<<<<<< HEAD
                   <Offcanvas.Title>Shopping Cart</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
@@ -186,34 +180,6 @@ function Navbar_1() {
                     <strong>Total: ${calculateTotal().toFixed(2)}</strong>
                   </div>
                   <button className="btn text-light mt-1" style={{background:"rgb(100, 180, 150)"}} onClick={checkout}>Checkout</button>
-=======
-                  <Offcanvas.Title> 
-                      Cart
-                  </Offcanvas.Title>
-                </Offcanvas.Header>
-                <Offcanvas.Body>
-                 
-                 {
-          cat.map((el)=>{
-            return(
-              <div key={el.id} id="el">
-                <div className="col-3">
-              <img src={el.image} alt="img" id="cat_img" />
-                </div>
-                <div className="col-6 d-flex flex-column">
-                 <span> {el.category} </span>
-                 <span> ${el.price} x 1Kg </span>
-                 <button className="btn" onClick={()=>handleIncrement(el.id)}>+</button>
-                 <span>{inc}</span>
-                 <button className="btn">-</button>
-                </div>
-            
-              </div>
-            )
-            
-          })
-        }
->>>>>>> 6b94396d2fb331ea8da9e1d692674358a90973ca
                 </Offcanvas.Body>
               </Offcanvas>
             </div>
@@ -269,7 +235,114 @@ function Navbar_1() {
           <div className="col-12 col-lg-8 col-xl-8 drop">
             <nav className="nav2 d-flex justify-content-center">
               <ul className="d-flex justify-content-between">
-               
+                <li>
+                  <div className="paste-button">
+                    <button className="button d-flex">
+                      Home <i className="ri-arrow-down-s-line arrow-icon"></i>
+                    </button>
+                    <div className="dropdown-content">
+                      <a id="top" href="#">
+                        Grocery
+                      </a>
+                      <a id="middle" href="#">
+                        Fashion
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div className="paste-button">
+                    <button className="button d-flex">
+                      Category <i className="ri-arrow-down-s-line arrow-icon"></i>
+                    </button>
+                    <div className="dropdown-content">
+                      <a id="top" href="#">
+                        Shop Left sidebar
+                      </a>
+                      <a id="middle" href="#">
+                        Shop Right sidebar
+                      </a>
+                      <a id="bottom" href="#">
+                        Full Width
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div className="paste-button">
+                    <button className="button d-flex">
+                      Products <i className="ri-arrow-down-s-line arrow-icon"></i>
+                    </button>
+                    <div className="dropdown-content">
+                      <a id="top" href="#">
+                        Product Left sidebar
+                      </a>
+                      <a id="middle" href="#">
+                        Product Right sidebar
+                      </a>
+                      <a id="bottom" href="#">
+                        Product Full Width
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div className="paste-button">
+                    <button className="button d-flex">
+                      Pages <i className="ri-arrow-down-s-line arrow-icon"></i>
+                    </button>
+                    <div className="dropdown-content">
+                      <a id="top" href="#">
+                        About Us
+                      </a>
+                      <a id="middle" href="#">
+                        Contact Us
+                      </a>
+                      <a id="bottom" href="#">
+                        Cart
+                      </a>
+                      <a id="bottom" href="#">
+                        Checkout
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div className="paste-button">
+                    <button className="button d-flex">
+                      Blog <i className="ri-arrow-down-s-line arrow-icon"></i>
+                    </button>
+                    <div className="dropdown-content">
+                      <a id="top" href="#">
+                        Keep source formatting
+                      </a>
+                      <a id="middle" href="#">
+                        Merge formatting
+                      </a>
+                      <a id="bottom" href="#">
+                        Keep text only
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div className="paste-button">
+                    <button className="button d-flex">
+                      Elements <i className="ri-arrow-down-s-line arrow-icon"></i>
+                    </button>
+                    <div className="dropdown-content">
+                      <a id="top" href="#">
+                        Keep source formatting
+                      </a>
+                      <a id="middle" href="#">
+                        Merge formatting
+                      </a>
+                      <a id="bottom" href="#">
+                        Keep text only
+                      </a>
+                    </div>
+                  </div>
+                </li>
               </ul>
             </nav>
           </div>
