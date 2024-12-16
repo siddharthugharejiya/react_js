@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCartData } from "../Redux/action";
+import { fetchCartData, remove_action } from "../Redux/action";
 
 function Navbar_1() {
   const [activeCategory, setActiveCategory] = useState("Dairy & Bakery");
@@ -48,6 +48,7 @@ function Navbar_1() {
   };
 
   const cartData = useSelector((state) => state.All.data);
+  const remove_card = useSelector((state)=> state.remove_items.data)
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -77,6 +78,12 @@ function Navbar_1() {
       return total + item.price * quantity;
     }, 0);
   };
+  const handleclose = (items) =>{
+    console.log(items)
+    
+       dispatch(remove_action(items.id)) 
+    
+  }
 
   const checkout = () => {
     nav("/");
@@ -169,6 +176,7 @@ function Navbar_1() {
                         <div>{item.category}</div>
                         <div>${item.price} x 1Kg</div>
                       </div>
+                      <i class="fa-solid fa-xmark" style={{color : "red"}} id="el_close" onClick={()=>handleclose(item.id)}></i>
                       <div className="col-3 d-flex justify-content-around">
                         <Button variant="outline-dark" onClick={() => handleQuantityChange(item.id, -1)}>-</Button>
                         <div>{ quantities[item.id] || 1 }</div>

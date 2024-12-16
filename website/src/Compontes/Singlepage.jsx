@@ -2,14 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, single_action, wholedata } from "../Redux/action";
 import { useNavigate, useParams } from "react-router-dom";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../App.css";
 
 import Form from "react-bootstrap/Form";
-import { textAlign } from "@mui/system";
 
 export default function Singlepage() {
   const { id } = useParams();
@@ -19,24 +17,24 @@ export default function Singlepage() {
   const [items, setItems] = useState([])
   const product = useSelector((state) => state.single.data);
   console.log(product);
-  const whole = useSelector((state) => state.whole_data.Data)
-  console.log(whole);
-  useEffect(() => {
+  // // const whole = useSelector((state) => state.whole_data.Data)
+  // // console.log(whole);
+  // useEffect(() => {
 
-    if (product && whole) {
-      const filteredItems = whole.filter((el) => el.category === product.category);
-      setItems(filteredItems);
-    }
-  }, [product, whole]);
-
-
-  console.log(items);
+  //   if (product && whole) {
+  //     const filteredItems = whole.filter((el) => el.category === product.category);
+  //     setItems(filteredItems);
+  //   }
+  // }, [product, whole]);
 
 
+  // console.log(items);
 
 
 
-  const [selectedImage, setSelectedImage] = useState(null);
+
+
+
 
   useEffect(() => {
     dispatch(single_action(id));
@@ -72,7 +70,7 @@ export default function Singlepage() {
   };
 
   return (
-    <>
+    <>  
       <div
         className="d-flex justify-content-between align-items-center"
         style={{
@@ -371,8 +369,20 @@ export default function Singlepage() {
                           <h5 class="card-title">Seeds Of Change Oraganic Quinoa, Brown</h5>
                           <p class="card-text" style={{color:"rgb(122 122 122 / 1)",textAlign:"start"}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, iure minus error doloribus saepe natus?</p>
                           <p><i class="fa-solid fa-star" style={{color: "#e67a00"}}></i><i class="fa-solid fa-star" style={{color: "#e67a00"}}></i><i class="fa-solid fa-star" style={{color: "#e67a00"}}></i><i class="fa-solid fa-star" style={{color: "#e67a00"}}></i><i class="fa-solid fa-star" style={{color: "#e67a00"}}></i><span style={{color:"rgb(122 122 122 / 1)"}}>( 75 Reviews )</span></p>
-                          <p>Brand : <span>E</span></p>
+                          <p>Brand : <span style={{color:"rgb(122 122 122 / 1)"}}>ESTA BETTERU CO</span></p>
+                          <p>Flavour : <span style={{color:"rgb(122 122 122 / 1)"}}>Super Saver Pack</span></p>
+                          <p>Diet Type : <span style={{color:"rgb(122 122 122 / 1)"}}>Vegetarian</span></p>
+                          <p>Weight : <span style={{color:"rgb(122 122 122 / 1)"}}>200 Grams</span></p>
+                          <p>Speciality : <span style={{color:"rgb(122 122 122 / 1)"}}>Gluten Free, Sugar Free</span></p>
+                          <p>Info : <span style={{color:"rgb(122 122 122 / 1)"}}>Egg Free, Allergen-Free</span></p>
+                          <p>Items : <span style={{color:"rgb(122 122 122 / 1)"}}>1</span></p>
+                          <h2 style={{color:"rgb(100 180 150 / 1)"}}>${product.price}</h2>
+                          <p className="foooo">Size / Weight : <div className="fooo">50kg </div>  <div className="fooo">80kg </div>  <div className="fooo">120kg </div>  <div className="fooo">200kg </div> </p>
                         </div>
+                        <span>1</span>
+                        <button className="btn">+</button>
+                        <button className="btn">-</button>
+                        <button className="btn btn-primary" onClick={()=>handleCart(product)}>add to card</button>
                       </div>
                     </div>
                   </div>

@@ -807,7 +807,7 @@ div#pro-1{
   margin: 0px 10px !important;
 }
 .slick-list{
-  height: auto;
+  height: 66vh !important;
   margin: 15px 0;
 }
 
@@ -899,14 +899,14 @@ article {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: black;
+  /* background: black; */
   line-height: 2;
   border-radius: 10px;
   margin: 4rem 10px; 
-  /* transition for the transform property, updated in the script */
+
   background-color: rgb(247 243 248 / 1);
   transition: transform 0.2s ease-out;
-  box-shadow: 0 0 5px -2px hsla(0, 0%, 0%, 0.1);
+  /* box-shadow: 0 0 5px -2px hsla(0, 0%, 0%, 0.1); */
 }
 article figure {
   /* limit the width and height of the figure to show the image in a circle */
@@ -968,9 +968,9 @@ article div p:before {
   transform: translate(-50%, -50%);
   z-index: -5;
   opacity: 0.05;
-  /* position the icons at either end of the paragraph, rotate the second to have a mirrorer image */
+  /* position the icons at either end of the paragraph, rotate the second to have a mirrorer image
   background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70" width="70" height="70"><rect x="0" y="40" width="30" height="30"></rect><path d="M 0 40 q 0 -40 30 -40 v 15 q -15 0 -15 25"></path><rect x="40" y="40" width="30" height="30"></rect><path d="M 40 40 q 0 -40 30 -40 v 15 q -15 0 -15 25"></path></svg>'),
-    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70" width="70" height="70" transform="rotate(180)"><rect x="0" y="40" width="30" height="30"></rect><path d="M 0 40 q 0 -40 30 -40 v 15 q -15 0 -15 25"></path><rect x="40" y="40" width="30" height="30"></rect><path d="M 40 40 q 0 -40 30 -40 v 15 q -15 0 -15 25"></path></svg>');
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70" width="70" height="70" transform="rotate(180)"><rect x="0" y="40" width="30" height="30"></rect><path d="M 0 40 q 0 -40 30 -40 v 15 q -15 0 -15 25"></path><rect x="40" y="40" width="30" height="30"></rect><path d="M 40 40 q 0 -40 30 -40 v 15 q -15 0 -15 25"></path></svg>'); */
   background-position: 20% 20%, 80% 80%;
   background-repeat: no-repeat;
 }
@@ -1570,10 +1570,33 @@ i.fa-solid.fa-bag-shopping{
   transition: 0.3s;
   margin: 10px;
 }
+.foooo{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.fooo{
+  padding: 3px 8px;
+  height: fit-content;
+  width: fit-content;
+  border-radius: 8px;
+  border:  1px solid rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  margin: 7px;
+}
 .foo:hover{
   color:white;
   cursor: pointer;
   background: rgb(100 180 150 / 1);
+}
+.fooo:hover{
+  color:white;
+  cursor: pointer;
+  background: rgb(100 180 150 / 1);
+}
+.double{
+  margin: 1px 0px -18px 75px;
 }
 .cate-subb{
   height: auto;
@@ -1604,6 +1627,12 @@ i.fa-solid.fa-bag-shopping{
   width: 100%;
   border: 1px solid red;
   display: flex;
+  position: relative;
+}
+#el_close{
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }
 #cat_img{
   height: 100%;

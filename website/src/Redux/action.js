@@ -83,6 +83,23 @@ export const fetchCartData = () => (dispatch) => {
         console.error("Error fetching cart data:", error);
     });
 };
+export const remove_action = (id) => (dispatch) => {
+    fetch(`https://data-3-hyvi.onrender.com/cart/${id}`, {
+      method: "DELETE",
+    })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Product removed", data);
+      dispatch({
+        type: "REMOVE_FROM_CART",
+        payload: id, 
+      });
+    })
+    .catch((error) => {
+      console.error("Error removing product from cart:", error);
+    });
+  };
+  
 export const wholedata = () => (dispatch)=>{
           fetch('https://data-3-hyvi.onrender.com/products')
           .then(res => res.json())

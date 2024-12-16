@@ -33,21 +33,25 @@ export const single_reducer = (state = initial_single, { type, payload }) => {
             return state
     }
 }
-const cart_reducer_data = {
-    data : []
-}
-export const cart_reducer = (state = cart_reducer_data,action) =>{
-    switch(action.type)
-    {
-     case CART_ADD:
+export const cartReducer = (state = initialState, action) => {
+    switch (action.type) {
+      case "CART_FETCH":
         return {
-            ...state,
-            data : action.payload
-        }
-        default : return state
+          ...state,
+          data: action.payload
+        };
+      
+      case "REMOVE_FROM_CART":
+        return {
+          ...state,
+          data: state.data.filter(item => item.id !== action.payload) 
+        };
+      
+      default:
+        return state;
     }
-
-}
+  };
+  
 const ini = { 
     data : [] 
 };
@@ -63,6 +67,20 @@ export const card_fetch = (state = ini, { type, payload }) => {
             return state;
     }
 };
+const remove_data = {
+    data : []
+}
+export const remove_reducer = (state = remove_data,action) =>{
+      switch(action.type)
+      {
+        case "REMOVE_FROM_CART":
+        return {
+            ...state,
+            data : state.data.filter(item = item.id !== action.payload)
+        };
+        default : return state;
+      }
+}
 
 const whole_data = {
     Data : []
