@@ -807,7 +807,7 @@ div#pro-1{
   margin: 0px 10px !important;
 }
 .slick-list{
-  height: 66vh !important;
+  height: auto !important;
   margin: 15px 0;
 }
 

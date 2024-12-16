@@ -1,6 +1,6 @@
 
 
-import { CART_ADD, CART_FETCH, DATA, EMAIL, L_EMAIL, L_PASSWORD, PASSWORD, SINGLE,  USERNAME } from "./action_type";
+import {  CART_FETCH, DATA, EMAIL, L_EMAIL, L_PASSWORD, PASSWORD, SINGLE,  USERNAME } from "./action_type";
 
 const initial_pro = {
     data: []
@@ -33,7 +33,10 @@ export const single_reducer = (state = initial_single, { type, payload }) => {
             return state
     }
 }
-export const cartReducer = (state = initialState, action) => {
+const initialState = {
+    data : []
+}
+export const cartReducer_Data = (state = initialState, action) => {
     switch (action.type) {
       case "CART_FETCH":
         return {

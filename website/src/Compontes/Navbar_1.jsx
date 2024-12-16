@@ -49,18 +49,13 @@ function Navbar_1() {
 
   const cartData = useSelector((state) => state.All.data);
   const remove_card = useSelector((state)=> state.remove_items.data)
+  console.log(remove_card);
+  
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchCartData());
   }, [dispatch]);
-
-  const cat = useSelector(el => el.All.data);
-  const [inc, setInc] = useState(1);
-
-  const handleIncrement = (id) => {
-    if (id) setInc(inc + 1);
-  };
 
   const handleQuantityChange = (itemId, change) => {
     setQuantities((prevQuantities) => {
@@ -78,11 +73,9 @@ function Navbar_1() {
       return total + item.price * quantity;
     }, 0);
   };
-  const handleclose = (items) =>{
-    console.log(items)
-    
-       dispatch(remove_action(items.id)) 
-    
+  const handleclose = (id) =>{
+    console.log(id)
+       dispatch(remove_action(id)) 
   }
 
   const checkout = () => {
@@ -240,7 +233,7 @@ function Navbar_1() {
             </div>
           </div>
 
-          <div className="col-12 col-lg-8 col-xl-8 drop">
+          <div className="col-12 col-lg-8 col-xl-9 drop">
             <nav className="nav2 d-flex justify-content-center">
               <ul className="d-flex justify-content-between">
                 <li>

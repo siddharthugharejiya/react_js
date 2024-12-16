@@ -379,10 +379,10 @@ export default function Singlepage() {
                           <h2 style={{color:"rgb(100 180 150 / 1)"}}>${product.price}</h2>
                           <p className="foooo">Size / Weight : <div className="fooo">50kg </div>  <div className="fooo">80kg </div>  <div className="fooo">120kg </div>  <div className="fooo">200kg </div> </p>
                         </div>
-                        <span>1</span>
-                        <button className="btn">+</button>
-                        <button className="btn">-</button>
-                        <button className="btn btn-primary" onClick={()=>handleCart(product)}>add to card</button>
+                          {/* <span>1</span>
+                          <button className="btn">+</button>
+                          <button className="btn">-</button> */}
+                        <button className="btn" onClick={()=>handleCart(product)} style={{background : "rgb(100, 180, 150)"}}>add to card</button>
                       </div>
                     </div>
                   </div>
