@@ -77,11 +77,11 @@ export const all_data = () => (dispatch) =>{
    fetch('http://localhost:9595/getting')
    .then(res => res.json())
    .then(res => {
-       console.log('Fetched Data:', res.data);  // Ensure the data exists in the response
+       console.log('Fetched Data:', res.data);
        if (res.data) {
            dispatch({
                type: get_data,
-               payload: res.data  // Pass the fetched data to the reducer
+               payload: res.data 
            });
        } else {
            console.error('No data found:', res);
@@ -122,16 +122,16 @@ export const edite_action = (id, task) => (dispatch) => {
    })
    .then(res => res.json())
    .then(res => {
-       console.log('API Response:', res);  // Log the response
+       console.log('API Response:', res)
 
        if (res.update) {
            dispatch({
                type: edite_data,
-               payload: { _id: id, task: res.update.task }
-           });
+               payload:  res.update.task
+           })
        } else {
            console.error('Update data not found in response:', res);
        }
    })
    .catch(err => console.log('Error:', err));
-};
+}

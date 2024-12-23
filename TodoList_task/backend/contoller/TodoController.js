@@ -43,9 +43,9 @@ const todo_edite = async (req, res) => {
     
     try {
         const data = await TodoModel.findByIdAndUpdate(id, user_data)
-        res.send({ msg: "Item updated successfully", update : data });
+        res.send({ msg: "Item updated successfully", update : data })
     } catch (error) {
-        res.send({ msg: "Error updating item", error });
+        res.send({ msg: "Error updating item", error })
     }
 }
 

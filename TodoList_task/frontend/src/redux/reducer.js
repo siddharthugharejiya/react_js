@@ -94,32 +94,12 @@ const todo_edite_reducer_initial = {
 export const todo_edite_reducer = (state = todo_edite_reducer_initial, { type, payload }) => {
     switch (type) {
         case edite_data:
-            console.log('Payload:', payload);  // Log the payload to check it
-
-            // Check if the payload has _id and task, otherwise return the current state
-            if (!payload || !payload._id || !payload.task) {
-                console.error('Invalid payload:', payload);
-                return state;
-            }
-
-            // Update the task by matching _id
-            const updatedData = state.data.map((el) => {
-                if (el._id === payload._id) {
-                    // Update the task if _id matches
-                    return { ...el, task: payload.task };
-                }
-                return el;  // Otherwise, keep the task unchanged
-            });
-
-            console.log('Updated Data:', updatedData);  // Log updated data to check
-
             return {
                 ...state,
-                data: updatedData
-            };
-
+                data : payload
+            }
         default:
             return state;
     }
-};
+}
 
