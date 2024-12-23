@@ -18,7 +18,7 @@ export const Firebase_Com = () => {
   const [update, setUpdate] = useState(null);
   const [arr, setArr] = useState([]);
 
-  const usercollection = collection(db, "tasks");
+    const usercollection = collection(db, "tasks");
 
   const change = (e) => {
     const { name, value } = e.target;

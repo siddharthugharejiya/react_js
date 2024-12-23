@@ -1,0 +1,9 @@
+export const data = 'data'
+export const username = "username"
+export const email = "email"
+export const password = "password"
+export const todo_add = "todo_add"
+export const delete_data = "delete_data"
+export const get_data = "todo_get"
+export const edite_data = "todo_edite"
+export const status = "todo_status"
