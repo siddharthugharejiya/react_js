@@ -37,16 +37,20 @@ const todo_del = async (req, res) => {
         res.send({ error: error })
     }
 }
-const todo_edite = async (req, res) => {
-    const { id } = req.params;
-    const user_data = req.body;
-    
-    try {
-        const data = await TodoModel.findByIdAndUpdate(id, user_data)
-        res.send({ msg: "Item updated successfully", update : data })
-    } catch (error) {
-        res.send({ msg: "Error updating item", error })
-    }
+const edite_controller = async(req,res) =>{
+    const id = req.params.id
+    console.log(id);
+    const data = await TodoModel.findById(id)
+    console.log(data);
+    res.send({msg:"data added", data : data})
 }
+const edite_update = async(req,res) =>{
+    const {id} = req.params
+    const user = req.body
+    console.log(id,user);
+    const data = await TodoModel.findByIdAndUpdate(id,user)
+    console.log(`new data added${data}`);
+    res.send({data})
 
-module.exports = { Todo_con, todo_all_data, todo_del, todo_edite  }
+}
+module.exports = { Todo_con, todo_all_data, todo_del , edite_controller ,edite_update}

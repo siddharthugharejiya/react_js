@@ -1,7 +1,7 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react'
 import "../App.css"
 import { useDispatch, useSelector } from 'react-redux'
-import { all_data, del_action, edite_action, todo_action } from '../redux/action'
+import { all_data, del_action, edite_action, edite_update_action, todo_action } from '../redux/action'
 
 
 function Todo() {
@@ -11,7 +11,8 @@ function Todo() {
 
   const [state, setstate] = useState({
     task: "",
-  } || [])
+    id : ""
+  })
   const change = (e) => {
     const { name, value } = e.target
     setstate({
@@ -19,64 +20,63 @@ function Todo() {
       [name]: value
     })
   }
-  const todo = useSelector(state => state.todo_get.data)
-  useDispatch(() => {
+  const todo = useSelector(state => state.todo_get.data || [])
+  
+
+  useLayoutEffect(() => {
     dispatch(all_data())
-  }, [dispatch])
+  }, [state])
 
 
   const del = (id) => {
     dispatch(del_action(id))
-   if(id)
-   {
-    setstate([1])
-   }
+    dispatch(all_data())
   }
 
   const handleclick = (id) => {
     setCheck(Check => {
-      return Check === id ? null : id;
+      return Check === id ? null : id
     })
   }
-  const edite_data = useSelector(state => state.todo_edite.data)
-  console.log(edite_data);
-  
-  useEffect(() => {
-    if (edite_data) {
-      setstate({
-        task: edite_data
-      })
+
+  const edite_data = useSelector(state => state.todo_edite.data);  
+   useEffect(()=>{
+    if(edite_data != null)
+    {
+       setstate({
+        task : edite_data.task,
+        id : edite_data._id
+       })     
     }
-  }, [edite_data])
-
-
-
-  // const edite = (id, task) => {
-     
-  //   dispatch(edite_action(id,task))
-  //   setupdate(true)
-  // }
+   },[edite_data])
 
   const edite = (id, task) => {
-    dispatch(edite_action(id, task)); // Dispatch the action to edit the task
-    dispatch(all_data())
-    setupdate(false); // Reset the update state
-    setCheck(null); // Close any selected check state
-};
-
-  
-  
-
-  const submit = (e) => {
-    e.preventDefault()
-    dispatch(todo_action(state))
-    dispatch(all_data())
     setstate({
-      task: ""
+      task : task,
+      id : id
     })
-    setupdate(false)
+    dispatch(edite_action(id,task))   
+    setupdate(true) 
   }
 
+  
+  
+  const submit = (e) => {
+    e.preventDefault();
+ 
+    if (update) {
+      dispatch(edite_update_action(state.id, state.task))
+    } else {
+      dispatch(todo_action(state)); 
+    }
+    setupdate(false);
+    dispatch(all_data())
+    setstate({
+      task : "",
+      id : ""
+    })
+  };
+  
 
 
   return (
@@ -100,6 +100,8 @@ function Todo() {
             name="task"
             className="todo-input"
             value={state.task}
+
+
             onChange={change}
             placeholder="Enter your task"
           />

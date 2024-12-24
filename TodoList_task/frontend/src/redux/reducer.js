@@ -1,4 +1,4 @@
-import { data, edite_data, email, get_data, password, status, todo_add, username } from "./actionType";
+import {  edite_data, email, get_data, password, todo_add, update, username } from "./actionType";
 
 const INITIAL_STATE = {
     username: "",
@@ -88,18 +88,35 @@ export const todo_del_reducer = (state = todo_del, { type, payload }) => {
         default: return state
     }
 }
-const todo_edite_reducer_initial = {
+const todo_edite_reducer = {
     data : []
 }
-export const todo_edite_reducer = (state = todo_edite_reducer_initial, { type, payload }) => {
-    switch (type) {
+export const todo_edite = (state = todo_edite_reducer,{type,payload}) =>{
+    switch(type)
+    {
         case edite_data:
-            return {
-                ...state,
-                data : payload
-            }
-        default:
-            return state;
+        return {
+            ...state,
+            data : payload
+        }
+        default : return state;
     }
 }
+
+
+const todo_edite_update_reducer = {
+    data : []
+}
+export const todo_edite_update = (state = todo_edite_update_reducer,{type,payload}) =>{
+    switch(type)
+    {
+        case update:
+        return {
+            ...state,
+            data : payload
+        }
+        default : return state;
+    }
+}
+
 

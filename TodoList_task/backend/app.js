@@ -6,6 +6,7 @@ const UserRoute = require('./Router/UserRouter')
 const app = express()
 app.use(cors())
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
 app.use("/",TodoRouter)
 app.use("/",UserRoute)
 app.listen(9595,()=>{
