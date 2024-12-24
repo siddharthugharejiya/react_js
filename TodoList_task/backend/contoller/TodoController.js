@@ -45,12 +45,18 @@ const edite_controller = async(req,res) =>{
     res.send({msg:"data added", data : data})
 }
 const edite_update = async(req,res) =>{
-    const {id} = req.params
+    try {
+        const {id} = req.params
     const user = req.body
-    console.log(id,user);
+    // console.log(id,user);
     const data = await TodoModel.findByIdAndUpdate(id,user)
     console.log(`new data added${data}`);
     res.send({data})
+    } catch (error) {
+     console.log(error);
+        
+    }
+    
 
 }
 module.exports = { Todo_con, todo_all_data, todo_del , edite_controller ,edite_update}

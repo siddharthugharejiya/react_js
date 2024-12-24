@@ -1,6 +1,7 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react'
 import "../App.css"
 import { useDispatch, useSelector } from 'react-redux'
+
 import { all_data, del_action, edite_action, edite_update_action, todo_action } from '../redux/action'
 
 
@@ -20,7 +21,7 @@ function Todo() {
       [name]: value
     })
   }
-  const todo = useSelector(state => state.todo_get.data || [])
+  const todo = useSelector(state => state.todo_get.data)
   
 
   useLayoutEffect(() => {
@@ -94,7 +95,7 @@ function Todo() {
           <span id="leftArrow" className="arrow"></span>
         </button>
         </header>
-        <form action="" onSubmit={submit}>
+        <form action="" onSubmit={submit} className='d-flex justify-content-center flex-wrap '>
           <input
             type="text"
             name="task"

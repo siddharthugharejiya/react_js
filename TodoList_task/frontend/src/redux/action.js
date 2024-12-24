@@ -1,6 +1,5 @@
-
 import { delete_data, edite_data, email, get_data, password, todo_add, update, username } from "./actionType"
-
+import Swal from 'sweetalert2'
 
 export const register_action = (state ,nav) => (dispatch)=>{
    try {
@@ -13,7 +12,16 @@ export const register_action = (state ,nav) => (dispatch)=>{
         })
         .then(res => res.json())
         .then(res =>{
-         alert(res.msg)
+         console.log(res);
+         
+         if(res.data)
+         {
+            Swal.fire({
+               title: "Good job!",
+               text: "Your SignUp SuccessFully",
+               icon: "success"
+             });
+         }
            nav("/login")
          dispatch({
             type : username,
@@ -36,6 +44,8 @@ export const register_action = (state ,nav) => (dispatch)=>{
 }
 export const Login_action = (state,nav) => (dispatch)=>{
    try {
+      console.log(state);
+      
       fetch("http://localhost:9595/login",{
          method : "POST",
          headers : {
@@ -46,21 +56,48 @@ export const Login_action = (state,nav) => (dispatch)=>{
         .then(res => res.json())
         .then(res =>{
          console.log(res);
-         if(res.miss)
-            {
-               nav("/login")
-            }
-         alert(res.data)
-        localStorage.setItem("login",true)
-         nav("/")
-         dispatch({
-            type : email,
-            payload : res.email
-         })
-         dispatch({
-            type : password,
-            payload : res.password
-         })
+         console.log(res.password);
+         
+         
+        
+         if(res.miss === "User Not register")
+         {
+            Swal.fire({
+               icon: "error",
+               title: "Oops...",
+               text: `${res.miss}`,
+             });
+             nav("/login")
+         }
+         
+       if(res.password === "Invalid Password")
+         {
+            // Swal.fire({
+            //    title: "Good job!",
+            //    text: `${res.password}`,
+            //    icon: "wrong"
+            //  })
+            alert("Invalid Password")
+             nav("/login")
+         }
+         if(res.data === "User Loggin Successfully")
+         {
+            Swal.fire({
+               title: "Good job!",
+               text: "Your SignUp SuccessFully",
+               icon: "success"
+             });
+            localStorage.setItem("login",true)
+            nav("/")
+            dispatch({
+               type : email,
+               payload : res.email
+            })
+            dispatch({
+               type : password,
+               payload : res.password
+            })
+         }
          
         })
    } catch (error) {
@@ -124,6 +161,13 @@ export const del_action = (id) => (dispatch) =>{
    })
    .then(res => res.json())
    .then(res =>{
+     if(res){
+      Swal.fire({
+         title: "Good job!",
+         text: "Your data will be Delete",
+         icon: "success"
+       });
+     }
       dispatch({
          type : delete_data,
          payload : id
@@ -165,6 +209,13 @@ export const edite_update_action = (id,task) => (dispatch)=>{
       })
       .then(res => res.json())
       .then(res => {
+         Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1500
+          })
             dispatch({
                type : update,
                payload : res.data
