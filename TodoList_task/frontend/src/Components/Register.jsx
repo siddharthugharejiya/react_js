@@ -41,7 +41,7 @@ function Register() {
               <div className="inputBox">
                 <input
                   type="text"
-                  name="user"
+                  name="username"
                   required="required"
                   onChange={change}
                 />
@@ -61,7 +61,7 @@ function Register() {
               <div className="inputBox">
                 <input
                   type="password"
-                  name="pass"
+                  name="password"
                   required="required"
                   onChange={change}
                 />

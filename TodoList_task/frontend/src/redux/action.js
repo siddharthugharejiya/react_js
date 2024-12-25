@@ -3,6 +3,8 @@ import Swal from 'sweetalert2'
 
 export const register_action = (state ,nav) => (dispatch)=>{
    try {
+      console.log(state);
+      
       fetch("http://localhost:9595/register",{
          method : "POST",
          headers : {
@@ -72,12 +74,12 @@ export const Login_action = (state,nav) => (dispatch)=>{
          
        if(res.password === "Invalid Password")
          {
-            // Swal.fire({
-            //    title: "Good job!",
-            //    text: `${res.password}`,
-            //    icon: "wrong"
-            //  })
-            alert("Invalid Password")
+            Swal.fire({
+               icon: "error",
+               title: "Oops...",
+               text: `${res.password}`,
+              
+             })
              nav("/login")
          }
          if(res.data === "User Loggin Successfully")

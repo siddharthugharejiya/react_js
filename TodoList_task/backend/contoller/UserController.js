@@ -30,10 +30,10 @@ const Login = async (req, res) => {
   }
   const matching_pass = await bcrypt.compare(password, data.password)
   console.log("Password Match:", matching_pass)
-  // if (!matching_pass)
-  //    {
-  //   return res.send({ password : "Invalid Password" })
-  // }
+  if (!matching_pass)
+     {
+    return res.send({ password : "Invalid Password" })
+  }
   if (matching_pass) {
     return res.send({ data : "User Loggin Successfully" })
   }

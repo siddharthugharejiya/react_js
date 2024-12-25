@@ -31,8 +31,8 @@ function Todo() {
 
   const del = (id) => {
     dispatch(del_action(id))
-    dispatch(all_data())
   }
+
 
   const handleclick = (id) => {
     setCheck(Check => {
@@ -41,7 +41,7 @@ function Todo() {
   }
 
   const edite_data = useSelector(state => state.todo_edite.data);  
-   useEffect(()=>{
+   useLayoutEffect(()=>{
     if(edite_data != null)
     {
        setstate({
